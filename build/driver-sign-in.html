@@ -53,6 +53,10 @@
   <!-- <link rel="stylesheet" href="assets/css/lightgallery.min.css"> -->
 
 
+
+
+
+
   <link rel="stylesheet" href="css/main/main.css">
 </head>
 <body class="scrollbar scroll-style">
@@ -506,8 +510,8 @@
 </div>
 
 <section class="row no-gutters  bg-light min-vh-100 account-sign-in-cover2 p-0">
-  
-    <div class="col-6 pt-lg-5 ml-auto mr-auto">
+
+    <div class="col-sm-12 col-lg-8 col-xl-6 pt-lg-5 ml-auto mr-auto">
         <section class="p-0">
             <div class="container min-vh-lg-100 d-flex flex-column justify-content-between text-center  py-md-5">
                 <!-- <a href="index-2.html" class="fade-page">
@@ -515,62 +519,112 @@
                 </a> -->
                 <div class="row justify-content-center mb-3 my-lg-5 ">
                     <div class="col-xl-7 col-lg-8">
-                        <div class="card card-body shadow text-left account-form">
-                            <h5 class="h5 text-center">Sign In</h5>
-                            <form id="sign-in-form">
-                                <div class="form-group validation-form">
-                                    <label for="phoneNumber" class="form-label form__label">Elə indi qeydiyyatdan
-                                        keç</label>
-                                    <!-- <input type="text" class="form-control form__control"  id="phoneNumber" 
-                                
-                                    data-parsley-trigger="keyup" data-parsley-validation-threshold="1"
-                                    data-parsley-minlength="11"  data-parsley-maxlength="11" required> -->
-                                    <input type="text" class="form-control form__control"  id="phoneNumber" value="+994" >
+                        <div class="card card-body shadow text-left driver-sign">
 
-                                    <span id="valid-msg" class="valid-hide text-success">✓ Valid</span>
-                                    <span id="error-msg" class="valid-hide text-danger d-block"></span>
-                        
+                            <form id="driver-form">
+                                <h5 class="h5 text-center">Sürücü kimi qeydiyyatdan keçin</h5>
+                                <div class="form-group validation-form mt-4">
+                                    <div class="form-group">
+                                        <label class="form-label form__label">Adınız :</label>
+                                        <input type="text" class="form-control form__control mb-3" placeholder="Mammad">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label form__label">Soyadınız :</label>
+                                        <input type="text" class="form-control form__control mb-3"
+                                            placeholder="Mammadov">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label form__label">Doğum tarixiniz : </label>
+                                        <input type="text" id="driver-birthday" autocomplete="off"
+                                            class="form-control form__control mb-3" placeholder="20/12/1990">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="d-block  form-label form__label">Cinsiniz :</label>
+                                        <div class="row">
+                                            <div class="col">
+                                                <input class="gender-input form-control form__control " type="radio"
+                                                    name="gender" id="gender1" />
+                                                <label class="gender--label" for="gender1">Kişi</label>
+
+                                            </div>
+                                            <div class="col">
+                                                <input class="gender-input form-control form__control " type="radio"
+                                                    name="gender" id="gender2" />
+                                                <label class="gender--label " for="gender2">Qadın</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <h5 class="h5 text-center">Nəqliyyat vasitəniz haqqında olan məlumatları əlavə edin
+                                    </h5>
+                                    <div class="form-group">
+                                        <label class="form-label form__label">İstehsalçı :</label>
+                                        <input id="autocomplete-car-producer" list="autocomplete-car-producer-list"
+                                            class="form-control form__control mb-3" placeholder="Hyundai" />
+                                        <datalist id="autocomplete-car-producer-list">
+                                            <option value="Hyundai"></option>
+                                            <option value="BMW"></option>
+                                            <option value="Toyota"></option>
+                                        </datalist>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-label form__label">Avtomobilin modeli :</label>
+                                        <input id="autocomplete-car-model" list="autocomplete-car-model-list"
+                                            class="form-control form__control mb-3" placeholder="Corolla" />
+                                        <datalist id="autocomplete-car-model-list">
+                                            <option value="Corolla"></option>
+                                            <option value="Matrix"></option>
+                                            <option value="Camry"></option>
+                                        </datalist>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label form__label">Avtomobilin buraxılış ili :</label>
+                                        <input id="autocomplete-release-year" list="autocomplete-release-year-list"
+                                            class="form-control form__control mb-3"
+                                            placeholder="2019" />
+                                        <datalist id="autocomplete-release-year-list">
+                                            <option value="2018"></option>
+                                            <option value="2019"></option>
+                                            <option value="2020"></option>
+                                        </datalist>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-label form__label">Dövlət Qeydiyyat Nişanı :</label>
+                                        <input type="text" class="form-control form__control mb-3"
+                                            placeholder="90-AB-123">
+                                    </div>
 
 
-                                 
-                            
+
                                 </div>
 
 
-                                <label class="account-sign-in-cover2__label">
+                                <label class="driver-sign__label">
                                     <a href="#" class="color-purple membership" data-toggle="modal"
-                                        data-target="#membership-agreement"> Üzvlük müqaviləsi</a> şərtlərini oxudum və
-                                    qəbul
-                                    edirəm.
-                                    <input type="checkbox" class="account-sign-in-cover2__label--checkbox"
+                                        data-target="#membership-agreement-driver"> Üzvlük müqaviləsi</a> şərtlərini oxudum və qəbul edirəm.
+                                    <input type="checkbox" class="driver-sign__label--checkbox"
                                         checked="checked" id="membership-checkbox" required>
-                                    <span class="account-sign-in-cover2__label--checkmark membership-span"></span>
+                                    <span class="driver-sign__label--checkmark membership-span"></span>
                                 </label>
 
 
 
-                                <div class="account-sign-in-cover2__btn-group">
+                                
                                     <button
-                                        class="btn btn-purple text-uppercase  account-sign-in-cover2__btn-group--btn mb-3 " id="use-sms"
-                                        type="submit">Use SMS</button>
-                                    <button
-                                        class="btn btn-success account-sign-in-cover2__btn-group--btn use-whatsapp-btn"
-                                        type="submit"> <i class="fab fa-whatsapp mr-2"></i>
-                                        <span>USE Whatsapp</span>
-                                    </button>
-                                </div>
+                                        class="btn btn-purple text-uppercase  driver-sign__btn mb-3 mt-3"
+                                         type="submit">Növbəti</button>
+
 
                             </form>
                         </div>
-                       
+
                     </div>
-                </div>
-                <div>
-                    <a href="index-2.html" class="btn btn-sm btn-outline-primary fade-page">Back to Overview</a>
                 </div>
             </div>
         </section>
-        <div class="modal fade" id="membership-agreement" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal fade" id="membership-agreement-driver" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -583,7 +637,7 @@
                     </div>
                     <div class="modal-body">
 
-                       
+
 
                         1. SORUMLULUKLAR
                         a.Firma, fiyatlar ve sunulan ürün ve hizmetler üzerinde değişiklik yapma hakkını her zaman saklı
@@ -806,127 +860,121 @@
       </div>
     </div>
   </footer>
-    
-    
-    
-    
-    <!-- Required vendor scripts (Do not remove) -->
-    <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script> -->
-      <script src="libs/jquery/dist/jquery.min.js"></script>
-    <!-- SWIPER -->
-      <!-- <script src="https://cdn.bootcss.com/Swiper/3.3.1/js/swiper.jquery.min.js"></script> -->
-      <script src="assets/js/swiper.jquery.min.js"></script>
-    
-      
-      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/0.11.1/typeahead.bundle.min.js"></script> -->
-      <script src="assets/js/typeahead.min.js"></script>
-    <script>
-      window.jQuery || document.write('<script src="libs/jquery/dist/jquery.min.js"><\/script>')
-    </script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
-    <!-- <script src="libs/bootstrap/dist/js/bootstrap.js" type="text/javascript" charset="utf-8" async defer></script> -->
-    <!-- <script type="text/javascript" src="assets/js/jquery.min.js"></script> -->
-    <script type="text/javascript" src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.js"></script>
-    
-    <!-- 
-                 This appears in the demo only.  This script ensures our demo countdowns are always showing a date in the future 
-                 by altering the date before the countdown is initialized 
-            -->
-    <!-- <script type="text/javascript">
-          (($) => {
-                var now             = new Date;
-                var day             = 864e5;
-                var weeksToAdd      = 2;
-                var tenWeeksFromNow = new Date(+now + day * 7 * weeksToAdd).toISOString().slice(0,10).replace(/\-/g, 'index.html');
-                $('[data-countdown-date].add-countdown-time').attr('data-countdown-date', tenWeeksFromNow);
-              })(jQuery);
-        </script> -->
-    
-    <!-- Optional Vendor Scripts (Remove the plugin script here and comment initializer script out of index.js if site does not use that feature) -->
-    
-    <!-- AOS (Animate On Scroll - animates elements into view while scrolling down) -->
-    <script  src="assets/js/aos.js"></script>
-    <!-- Clipboard (copies content from browser into OS clipboard) -->
-    <script  src="assets/js/clipboard.min.js"></script>
-    <!-- Fancybox (handles image and video lightbox and galleries) -->
-    <script  src="assets/js/jquery.fancybox.min.js"></script>
-    <!-- Flatpickr (calendar/date/time picker UI) -->
-    <script  src="assets/js/flatpickr.min.js"></script>
-    <!-- Flickity (handles touch enabled carousels and sliders) -->
-    <script src="assets/js/flickity.pkgd.min.js"></script>
-    <!-- Ion rangeSlider (flexible and pretty range slider elements) -->
-    <script src="assets/js/ion.rangeSlider.min.js"></script>
-    <!-- Isotope (masonry layouts and filtering) -->
-    <script src="assets/js/isotope.pkgd.min.js"></script>
-    <!-- jarallax (parallax effect and video backgrounds) -->
-    <script src="assets/js/jarallax.min.js"></script>
-    <script src="assets/js/jarallax-video.min.js"></script>
-    <script src="assets/js/jarallax-element.min.js"></script>
-    <!-- jQuery Countdown (displays countdown text to a specified date) -->
-    <script src="assets/js/jquery.countdown.min.js"></script>
-    <!-- jQuery smartWizard facilitates steppable wizard content -->
-    <script src="assets/js/jquery.smartWizard.min.js"></script>
-    <!-- Plyr (unified player for Video, Audio, Vimeo and Youtube) -->
-    <script src="assets/js/plyr.polyfilled.min.js"></script>
-    <!-- Prism (displays formatted code boxes) -->
-    <script src="assets/js/prism.js"></script>
-    <!-- ScrollMonitor (manages events for elements scrolling in and out of view) -->
-    <script src="assets/js/scrollMonitor.js"></script>
-    <!-- Smooth scroll (animation to links in-page)-->
-    <script src="assets/js/smooth-scroll.polyfills.min.js"></script>
-    <!-- SVGInjector (replaces img tags with SVG code to allow easy inclusion of SVGs with the benefit of inheriting colors and styles)-->
-    <script src="assets/js/svg-injector.umd.production.js"></script>
-    <!-- TwitterFetcher (displays a feed of tweets from a specified account)-->
-    <script src="assets/js/twitterFetcher_min.js"></script>
-    <!-- Typed text (animated typing effect)-->
-    <script src="assets/js/typed.min.js"></script>
-    
-    
-    
-    
-    
-    <!-- Required theme scripts (Do not remove) -->
-    <script src="assets/js/theme.js"></script>
-    
-    <script src="js/badge.js"></script>
-    <script src="js/tooltip.js"></script>
-    
-    <!-- FOOTER FOR ACCOUNT SIGN IN COVER2 -->
-    
-    
-    
-    <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/jquery-ui.min.js"></script>
-    <script src="assets/js/jquery-ui.min.js"></script>
-    
-    
-    
-    
-    
-    <!-- PARSLEY -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.1/parsley.js"></script> -->
-    <script src="assets/js/parsley.js"></script>
-    
-    
-    <!-- intlTelInput  -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.4/js/intlTelInput.min.js"></script>
-    <!-- <script src="assets/js/intlTelInput.min.js"></script> -->
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.4/js/intlTelInput-jquery.min.js"></script>
-    <!-- <script src="../assets/js/intlTelInput-jquery.min.js"></script> -->
-    
-    
-    
-    <!-- JQUERY MASK -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script> -->
-    <script src="assets/js/jquery.mask.js"></script>
-    
-    <script src="js/intlTelInput.js"></script>
-    <script src="js/parsley-sign-in.js"></script>
-    
-    
-    </body>
-    
-    </html>
+
+
+
+
+<!-- Required vendor scripts (Do not remove) -->
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script> -->
+  <script src="libs/jquery/dist/jquery.min.js"></script>
+<!-- SWIPER -->
+  <!-- <script src="https://cdn.bootcss.com/Swiper/3.3.1/js/swiper.jquery.min.js"></script> -->
+  <script src="assets/js/swiper.jquery.min.js"></script>
+
+  
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/0.11.1/typeahead.bundle.min.js"></script> -->
+  <script src="assets/js/typeahead.min.js"></script>
+<script>
+  window.jQuery || document.write('<script src="libs/jquery/dist/jquery.min.js"><\/script>')
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
+<!-- <script src="libs/bootstrap/dist/js/bootstrap.js" type="text/javascript" charset="utf-8" async defer></script> -->
+<!-- <script type="text/javascript" src="assets/js/jquery.min.js"></script> -->
+<script type="text/javascript" src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+
+<!-- 
+             This appears in the demo only.  This script ensures our demo countdowns are always showing a date in the future 
+             by altering the date before the countdown is initialized 
+        -->
+<!-- <script type="text/javascript">
+      (($) => {
+            var now             = new Date;
+            var day             = 864e5;
+            var weeksToAdd      = 2;
+            var tenWeeksFromNow = new Date(+now + day * 7 * weeksToAdd).toISOString().slice(0,10).replace(/\-/g, 'index.html');
+            $('[data-countdown-date].add-countdown-time').attr('data-countdown-date', tenWeeksFromNow);
+          })(jQuery);
+    </script> -->
+
+<!-- Optional Vendor Scripts (Remove the plugin script here and comment initializer script out of index.js if site does not use that feature) -->
+
+<!-- AOS (Animate On Scroll - animates elements into view while scrolling down) -->
+<script  src="assets/js/aos.js"></script>
+<!-- Clipboard (copies content from browser into OS clipboard) -->
+<script  src="assets/js/clipboard.min.js"></script>
+<!-- Fancybox (handles image and video lightbox and galleries) -->
+<script  src="assets/js/jquery.fancybox.min.js"></script>
+<!-- Flatpickr (calendar/date/time picker UI) -->
+<script  src="assets/js/flatpickr.min.js"></script>
+<!-- Flickity (handles touch enabled carousels and sliders) -->
+<script src="assets/js/flickity.pkgd.min.js"></script>
+<!-- Ion rangeSlider (flexible and pretty range slider elements) -->
+<script src="assets/js/ion.rangeSlider.min.js"></script>
+<!-- Isotope (masonry layouts and filtering) -->
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<!-- jarallax (parallax effect and video backgrounds) -->
+<script src="assets/js/jarallax.min.js"></script>
+<script src="assets/js/jarallax-video.min.js"></script>
+<script src="assets/js/jarallax-element.min.js"></script>
+<!-- jQuery Countdown (displays countdown text to a specified date) -->
+<script src="assets/js/jquery.countdown.min.js"></script>
+<!-- jQuery smartWizard facilitates steppable wizard content -->
+<script src="assets/js/jquery.smartWizard.min.js"></script>
+<!-- Plyr (unified player for Video, Audio, Vimeo and Youtube) -->
+<script src="assets/js/plyr.polyfilled.min.js"></script>
+<!-- Prism (displays formatted code boxes) -->
+<script src="assets/js/prism.js"></script>
+<!-- ScrollMonitor (manages events for elements scrolling in and out of view) -->
+<script src="assets/js/scrollMonitor.js"></script>
+<!-- Smooth scroll (animation to links in-page)-->
+<script src="assets/js/smooth-scroll.polyfills.min.js"></script>
+<!-- SVGInjector (replaces img tags with SVG code to allow easy inclusion of SVGs with the benefit of inheriting colors and styles)-->
+<script src="assets/js/svg-injector.umd.production.js"></script>
+<!-- TwitterFetcher (displays a feed of tweets from a specified account)-->
+<script src="assets/js/twitterFetcher_min.js"></script>
+<!-- Typed text (animated typing effect)-->
+<script src="assets/js/typed.min.js"></script>
+
+
+
+
+
+<!-- Required theme scripts (Do not remove) -->
+<script src="assets/js/theme.js"></script>
+
+<script src="js/badge.js"></script>
+<script src="js/tooltip.js"></script>
+
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/jquery-ui.min.js"></script>
+<!-- <script src="assets/js/jquery-ui.min.js"></script> -->
+
+<!--  DATEPICKER LANGUAGE  WHICH IS LAST -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.2/i18n/jquery.ui.datepicker-en-AU.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.2/i18n/jquery.ui.datepicker-ru.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.2/i18n/jquery.ui.datepicker-az.min.js"></script> -->
+
+<script src="assets/js/datepicker-en-AU.min.js"></script>
+<script src="assets/js/datepicker-ru.min.js"></script>
+<script src="assets/js/datepicker-az.min.js"></script>
+
+<!-- JQUERY MASK -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script> -->
+<script src="assets/js/jquery.mask.js"></script>
+
+<!-- AUTOCOMPLETE  -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.2.24/jquery.autocomplete.min.js"></script> -->
+<script src="assets/js/autocomplete.min.js"></script>
+ <script src="js/autocomplete-car-producer.js"></script>
+ <script src="js/autocomplete-car-model.js"></script>
+ <script src="js/autocomplete-car-release-year.js"></script>
+
+ <!-- PARSLEY -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.1/parsley.js"></script> -->
+<script src="assets/js/parsley.js"></script>
+
+</body>
+
+</html>

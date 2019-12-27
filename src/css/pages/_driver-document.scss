@@ -1,0 +1,20 @@
+.driver-document {
+    @include respondmax(lg) {
+        margin-top: 4rem;
+    }
+
+    @include respondmax(md) {
+        margin-top: 6rem;
+    }
+
+    &__form-group {
+        border-bottom:1px solid #d0d2d7;
+    }
+
+    &__btn {
+        width: 100%;
+
+
+
+    }
+}

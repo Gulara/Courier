@@ -505,63 +505,283 @@
           </div>
         </nav>
       </div> -->
-<div class=" p-3 p-lg-5">
-    <div class=" container">
-        <div class=" bg-white services-1 mt-5">
-<div class="services-1__heading"> GoLife Services</div>
-            <div class="row">
-                <div class="col-sm-4 col-md-3 mb-3 mb-md-4">
-                    <div class="card shadow-sm">
-                        <div class="card-body">
-                            <img src="assets/img/about-2.jpg" alt="img" class=" services-1__img">
-                            <h4>Default Style</h4>
-                            <p>
-                                Some quick example text to build on the card title and make up the bulk of the card's
-                                content.
-                            </p>
+<div class="loader">
+    <div class="loading-animation"></div>
+</div>
+
+<section class="row no-gutters  bg-light min-vh-100 account-sign-in-cover2 p-0">
+
+    <div class="col-sm-12 col-lg-8 col-xl-6 pt-lg-5 ml-auto mr-auto">
+        <section class="p-0">
+            <div class="container min-vh-lg-100 d-flex flex-column justify-content-between text-center  py-md-5">
+                <!-- <a href="index-2.html" class="fade-page">
+                    <img src="assets/img/logos/jumpstart.svg" alt="Jumpstart">
+                </a> -->
+                <div class="row justify-content-center mb-3 my-lg-5 ">
+                    <div class="col-xl-7 col-lg-8">
+                        <div class="card card-body shadow text-left driver-sign">
+                            <div class="transition__div">
+                                <div class="form-group  transition__form-group">
+
+                                    <input class="transition__input " type="radio" name="transition"
+                                        data-id="transition" id="pedestrian" checked="checked" />
+                                    <label class="transition__label" for="pedestrian">
+                                        <img src="img/pedestrian.png" alt="car" class="transition--img">
+                                        <span class="transition__label--span">Piyada</span>
+                                    </label>
+                                </div>
+
+                                <div class="form-group  car-pills__form-group">
+
+                                    <input class="car-pills__input" type="radio" name="transition"
+                                        data-id="transition" id="motorbike" />
+                                    <label class="car-pills__label1" for="motorbike">
+                                        <img src="img/motorbike.png" alt="car" class="car-pills__label1--img">
+                                        <span class="car-pills__label1--span">Motosiklet</span>
+                                    </label>
+
+                                </div>
+                                <div class="form-group  car-pills__form-group">
+                                    <input class="car-pills__input " type="radio" name="transition"
+                                        id="car" data-id="transition" required />
+                                    <label class="car-pills__label1" for="car">
+                                        <img src="img/car.png" alt="car" class="car-pills__label1--img">
+                                        <span class="car-pills__label1--span">Avtomobil</span>
+                                    </label>
+
+                                </div>
+                            </div>
+                            <form id="driver-form">
+                                <h5 class="h5 text-center">Sürücü kimi qeydiyyatdan keçin</h5>
+                                <div class="form-group validation-form mt-4">
+                                    <div class="form-group">
+                                        <label class="form-label form__label">Adınız :</label>
+                                        <input type="text" class="form-control form__control mb-3" placeholder="Mammad">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label form__label">Soyadınız :</label>
+                                        <input type="text" class="form-control form__control mb-3"
+                                            placeholder="Mammadov">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label form__label">Doğum tarixiniz : </label>
+                                        <input type="text" id="driver-birthday" autocomplete="off"
+                                            class="form-control form__control mb-3" placeholder="20/12/1990">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="d-block  form-label form__label">Cinsiniz :</label>
+                                        <div class="row">
+                                            <div class="col">
+                                                <input class="gender-input form-control form__control " type="radio"
+                                                    name="gender" id="gender1" />
+                                                <label class="gender--label" for="gender1">Kişi</label>
+
+                                            </div>
+                                            <div class="col">
+                                                <input class="gender-input form-control form__control " type="radio"
+                                                    name="gender" id="gender2" />
+                                                <label class="gender--label " for="gender2">Qadın</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <h5 class="h5 text-center">Nəqliyyat vasitəniz haqqında olan məlumatları əlavə edin
+                                    </h5>
+                                    <div class="form-group">
+                                        <label class="form-label form__label">İstehsalçı :</label>
+                                        <input id="autocomplete-car-producer" list="autocomplete-car-producer-list"
+                                            class="form-control form__control mb-3" placeholder="Hyundai" />
+                                        <datalist id="autocomplete-car-producer-list">
+                                            <option value="Hyundai"></option>
+                                            <option value="BMW"></option>
+                                            <option value="Toyota"></option>
+                                        </datalist>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-label form__label">Avtomobilin modeli :</label>
+                                        <input id="autocomplete-car-model" list="autocomplete-car-model-list"
+                                            class="form-control form__control mb-3" placeholder="Corolla" />
+                                        <datalist id="autocomplete-car-model-list">
+                                            <option value="Corolla"></option>
+                                            <option value="Matrix"></option>
+                                            <option value="Camry"></option>
+                                        </datalist>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label form__label">Avtomobilin buraxılış ili :</label>
+                                        <input id="autocomplete-release-year" list="autocomplete-release-year-list"
+                                            class="form-control form__control mb-3"
+                                            placeholder="2019" />
+                                        <datalist id="autocomplete-release-year-list">
+                                            <option value="2018"></option>
+                                            <option value="2019"></option>
+                                            <option value="2020"></option>
+                                        </datalist>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-label form__label">Dövlət Qeydiyyat Nişanı :</label>
+                                        <input type="text" class="form-control form__control mb-3"
+                                            placeholder="90-AB-123">
+                                    </div>
+
+
+
+                                </div>
+
+
+                                <label class="driver-sign__label">
+                                    <a href="#" class="color-purple membership" data-toggle="modal"
+                                        data-target="#membership-agreement-driver"> Üzvlük müqaviləsi</a> şərtlərini oxudum və qəbul edirəm.
+                                    <input type="checkbox" class="driver-sign__label--checkbox"
+                                        checked="checked" id="membership-checkbox" required>
+                                    <span class="driver-sign__label--checkmark membership-span"></span>
+                                </label>
+
+
+
+                                
+                                    <button
+                                        class="btn btn-purple text-uppercase  driver-sign__btn mb-3 mt-3"
+                                         type="submit">Növbəti</button>
+
+
+                            </form>
                         </div>
+
                     </div>
                 </div>
-                <div class="col-sm-4 col-md-3  mb-3 mb-md-4">
-                    <div class="card shadow-sm">
-                        <div class="card-body">
-                            <img src="assets/img/about-2.jpg" alt="img" class=" services-1__img">
-                            <h4>Default Style</h4>
-                            <p>
-                                Some quick example text to build on the card title and make up the bulk of the card's
-                                content.
-                            </p>
-                        </div>
+            </div>
+        </section>
+        <div class="modal fade" id="membership-agreement-driver" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Üzvlük müqaviləsi</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">
+                                <img src="assets/img/icons/interface/icon-x.svg" alt="Icon">
+                            </span>
+                        </button>
                     </div>
-                </div>
-                <div class="col-sm-4  col-md-3  mb-3 mb-md-4">
-                    <div class="card shadow-sm">
-                        <div class="card-body">
-                            <img src="assets/img/about-2.jpg" alt="img" class=" services-1__img">
-                            <h4>Default Style</h4>
-                            <p>
-                                Some quick example text to build on the card title and make up the bulk of the card's
-                                content.
-                            </p>
-                        </div>
+                    <div class="modal-body">
+
+
+
+                        1. SORUMLULUKLAR
+                        a.Firma, fiyatlar ve sunulan ürün ve hizmetler üzerinde değişiklik yapma hakkını her zaman saklı
+                        tutar.
+                        b.Firma, üyenin sözleşme konusu hizmetlerden, teknik arızalar dışında yararlandırılacağını kabul
+                        ve taahhüt eder.
+                        c.Kullanıcı, sitenin kullanımında tersine mühendislik yapmayacağını ya da bunların kaynak kodunu
+                        bulmak veya elde etmek amacına yönelik herhangi bir başka işlemde bulunmayacağını aksi halde ve
+                        3. Kişiler nezdinde doğacak zararlardan sorumlu olacağını, hakkında hukuki ve cezai işlem
+                        yapılacağını peşinen kabul eder.
+                        d.Kullanıcı, site içindeki faaliyetlerinde, sitenin herhangi bir bölümünde veya iletişimlerinde
+                        genel ahlaka ve adaba aykırı, kanuna aykırı, 3. Kişilerin haklarını zedeleyen, yanıltıcı,
+                        saldırgan, müstehcen, pornografik, kişilik haklarını zedeleyen, telif haklarına aykırı, yasa
+                        dışı faaliyetleri teşvik eden içerikler üretmeyeceğini, paylaşmayacağını kabul eder. Aksi halde
+                        oluşacak zarardan tamamen kendisi sorumludur ve bu durumda ‘Site’ yetkilileri, bu tür hesapları
+                        askıya alabilir, sona erdirebilir, yasal süreç başlatma hakkını saklı tutar. Bu sebeple yargı
+                        mercilerinden etkinlik veya kullanıcı hesapları ile ilgili bilgi talepleri gelirse paylaşma
+                        hakkını saklı tutar.
+                        e.Sitenin üyelerinin birbirleri veya üçüncü şahıslarla olan ilişkileri kendi sorumluluğundadır.
+
+                        2. Fikri Mülkiyet Hakları
+
+                        2.1. İşbu Site’de yer alan ünvan, işletme adı, marka, patent, logo, tasarım, bilgi ve yöntem
+                        gibi tescilli veya tescilsiz tüm fikri mülkiyet hakları site işleteni ve sahibi firmaya veya
+                        belirtilen ilgilisine ait olup, ulusal ve uluslararası hukukun koruması altındadır. İşbu
+                        Site’nin ziyaret edilmesi veya bu Site’deki hizmetlerden yararlanılması söz konusu fikri
+                        mülkiyet hakları konusunda hiçbir hak vermez.
+                        2.2. Site’de yer alan bilgiler hiçbir şekilde çoğaltılamaz, yayınlanamaz, kopyalanamaz,
+                        sunulamaz ve/veya aktarılamaz. Site’nin bütünü veya bir kısmı diğer bir internet sitesinde
+                        izinsiz olarak kullanılamaz.
+
+                        3. Gizli Bilgi
+                        3.1. Firma, site üzerinden kullanıcıların ilettiği kişisel bilgileri 3. Kişilere
+                        açıklamayacaktır. Bu kişisel bilgiler; kişi adı-soyadı, adresi, telefon numarası, cep telefonu,
+                        e-posta adresi gibi Kullanıcı’yı tanımlamaya yönelik her türlü diğer bilgiyi içermekte olup,
+                        kısaca ‘Gizli Bilgiler’ olarak anılacaktır.
+
+                        3.2. Kullanıcı, sadece tanıtım, reklam, kampanya, promosyon, duyuru vb. pazarlama faaliyetleri
+                        kapsamında kullanılması ile sınırlı olmak üzere, Site’nin sahibi olan firmanın kendisine ait
+                        iletişim, portföy durumu ve demografik bilgilerini iştirakleri ya da bağlı bulunduğu grup
+                        şirketleri ile paylaşmasına muvafakat ettiğini kabul ve beyan eder. Bu kişisel bilgiler firma
+                        bünyesinde müşteri profili belirlemek, müşteri profiline uygun promosyon ve kampanyalar sunmak
+                        ve istatistiksel çalışmalar yapmak amacıyla kullanılabilecektir.
+
+                        3.3. Gizli Bilgiler, ancak resmi makamlarca usulü dairesinde bu bilgilerin talep edilmesi
+                        halinde ve yürürlükteki emredici mevzuat hükümleri gereğince resmi makamlara açıklama
+                        yapılmasının zorunlu olduğu durumlarda resmi makamlara açıklanabilecektir.
+
+                        4. Garanti Vermeme: İŞBU SÖZLEŞME MADDESİ UYGULANABİLİR KANUNUN İZİN VERDİĞİ AZAMİ ÖLÇÜDE
+                        GEÇERLİ OLACAKTIR. FİRMA TARAFINDAN SUNULAN HİZMETLER "OLDUĞU GİBİ” VE "MÜMKÜN OLDUĞU” TEMELDE
+                        SUNULMAKTA VE PAZARLANABİLİRLİK, BELİRLİ BİR AMACA UYGUNLUK VEYA İHLAL ETMEME KONUSUNDA TÜM
+                        ZIMNİ GARANTİLER DE DÂHİL OLMAK ÜZERE HİZMETLER VEYA UYGULAMA İLE İLGİLİ OLARAK (BUNLARDA YER
+                        ALAN TÜM BİLGİLER DÂHİL) SARİH VEYA ZIMNİ, KANUNİ VEYA BAŞKA BİR NİTELİKTE HİÇBİR GARANTİDE
+                        BULUNMAMAKTADIR.
+
+                        5. Kayıt ve Güvenlik
+                        Kullanıcı, doğru, eksiksiz ve güncel kayıt bilgilerini vermek zorundadır. Aksi halde bu Sözleşme
+                        ihlal edilmiş sayılacak ve Kullanıcı bilgilendirilmeksizin hesap kapatılabilecektir.
+                        Kullanıcı, site ve üçüncü taraf sitelerdeki şifre ve hesap güvenliğinden kendisi sorumludur.
+                        Aksi halde oluşacak veri kayıplarından ve güvenlik ihlallerinden veya donanım ve cihazların
+                        zarar görmesinden Firma sorumlu tutulamaz.
+
+                        6. Mücbir Sebep
+
+                        Tarafların kontrolünde olmayan; tabii afetler, yangın, patlamalar, iç savaşlar, savaşlar,
+                        ayaklanmalar, halk hareketleri, seferberlik ilanı, grev, lokavt ve salgın hastalıklar, altyapı
+                        ve internet arızaları, elektrik kesintisi gibi sebeplerden (aşağıda birlikte "Mücbir Sebep”
+                        olarak anılacaktır.) dolayı sözleşmeden doğan yükümlülükler taraflarca ifa edilemez hale
+                        gelirse, taraflar bundan sorumlu değildir. Bu sürede Taraflar’ın işbu Sözleşme’den doğan hak ve
+                        yükümlülükleri askıya alınır.
+
+                        7. Sözleşmenin Bütünlüğü ve Uygulanabilirlik
+
+                        İşbu sözleşme şartlarından biri, kısmen veya tamamen geçersiz hale gelirse, sözleşmenin geri
+                        kalanı geçerliliğini korumaya devam eder.
+
+                        8. Sözleşmede Yapılacak Değişiklikler
+
+                        Firma, dilediği zaman sitede sunulan hizmetleri ve işbu sözleşme şartlarını kısmen veya tamamen
+                        değiştirebilir. Değişiklikler sitede yayınlandığı tarihten itibaren geçerli olacaktır.
+                        Değişiklikleri takip etmek Kullanıcı’nın sorumluluğundadır. Kullanıcı, sunulan hizmetlerden
+                        yararlanmaya devam etmekle bu değişiklikleri de kabul etmiş sayılır.
+
+                        9. Tebligat
+                        İşbu Sözleşme ile ilgili taraflara gönderilecek olan tüm bildirimler, Firma’nın bilinen e.posta
+                        adresi ve kullanıcının üyelik formunda belirttiği e.posta adresi vasıtasıyla yapılacaktır.
+                        Kullanıcı, üye olurken belirttiği adresin geçerli tebligat adresi olduğunu, değişmesi durumunda
+                        5 gün içinde yazılı olarak diğer tarafa bildireceğini, aksi halde bu adrese yapılacak
+                        tebligatların geçerli sayılacağını kabul eder.
+
+                        10. Delil Sözleşmesi
+                        Taraflar arasında işbu sözleşme ile ilgili işlemler için çıkabilecek her türlü uyuşmazlıklarda
+                        Taraflar’ın defter, kayıt ve belgeleri ile ve bilgisayar kayıtları ve faks kayıtları 6100 sayılı
+                        Hukuk Muhakemeleri Kanunu uyarınca delil olarak kabul edilecek olup, kullanıcı bu kayıtlara
+                        itiraz etmeyeceğini kabul eder.
+
+                        11. Uyuşmazlıkların Çözümü
+                        İşbu Sözleşme’nin uygulanmasından veya yorumlanmasından doğacak her türlü uyuşmazlığın çözümünde
+                        İstanbul (Merkez) Adliyesi Mahkemeleri ve İcra Daireleri yetkilidir.
                     </div>
-                </div>
-                <div class="col-sm-4  col-md-3  mb-3 mb-md-4">
-                    <div class="card shadow-sm">
-                        <div class="card-body">
-                            <img src="assets/img/about-2.jpg" alt="img" class=" services-1__img">
-                            <h4>Default Style</h4>
-                            <p>
-                                Some quick example text to build on the card title and make up the bulk of the card's
-                                content.
-                            </p>
-                        </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
+<!-- 
+<a href="#top" class="btn btn-primary rounded-circle btn-back-to-top" data-smooth-scroll data-aos="fade-up"
+    data-aos-offset="2000" data-aos-mirror="true" data-aos-once="false">
+    <img src="assets/img/icons/interface/icon-arrow-up.svg" alt="Icon" class="icon bg-white" data-inject-svg>
+</a> -->
 <footer class="  pb-md-4 footer ">
     <div class="container">
       <div class="row">
@@ -677,8 +897,7 @@
 <!-- Required vendor scripts (Do not remove) -->
 <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script> -->
-  <script src="libs/jquery/dist/jquery.min.js"
- ></script>
+  <script src="libs/jquery/dist/jquery.min.js"></script>
 <!-- SWIPER -->
   <!-- <script src="https://cdn.bootcss.com/Swiper/3.3.1/js/swiper.jquery.min.js"></script> -->
   <script src="assets/js/swiper.jquery.min.js"></script>
@@ -756,16 +975,36 @@
 <!-- Required theme scripts (Do not remove) -->
 <script src="assets/js/theme.js"></script>
 
-<script src="js/main/badge.js"></script>
-<script src="js/main/tooltip.js"></script>
+<script src="js/badge.js"></script>
+<script src="js/tooltip.js"></script>
 
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/jquery-ui.min.js"></script>
+<!-- <script src="assets/js/jquery-ui.min.js"></script> -->
 
-<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-<!-- <script>
-        window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
-        ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
-    </script>
-    <script src="https://www.google-analytics.com/analytics.js" async defer></script> -->
+<!--  DATEPICKER LANGUAGE  WHICH IS LAST -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.2/i18n/jquery.ui.datepicker-en-AU.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.2/i18n/jquery.ui.datepicker-ru.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.2/i18n/jquery.ui.datepicker-az.min.js"></script> -->
+
+<script src="assets/js/datepicker-en-AU.min.js"></script>
+<script src="assets/js/datepicker-ru.min.js"></script>
+<script src="assets/js/datepicker-az.min.js"></script>
+
+<!-- JQUERY MASK -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script> -->
+<script src="assets/js/jquery.mask.js"></script>
+
+<!-- AUTOCOMPLETE  -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.2.24/jquery.autocomplete.min.js"></script> -->
+<script src="assets/js/autocomplete.min.js"></script>
+ <script src="js/autocomplete-car-producer.js"></script>
+ <script src="js/autocomplete-car-model.js"></script>
+ <script src="js/autocomplete-car-release-year.js"></script>
+
+ <!-- PARSLEY -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.1/parsley.js"></script> -->
+<script src="assets/js/parsley.js"></script>
+
 </body>
 
 </html>

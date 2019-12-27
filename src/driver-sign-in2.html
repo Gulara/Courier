@@ -15,7 +15,37 @@
                 <div class="row justify-content-center mb-3 my-lg-5 ">
                     <div class="col-xl-7 col-lg-8">
                         <div class="card card-body shadow text-left driver-sign">
+                            <div class="transition__div">
+                                <div class="form-group  transition__form-group">
 
+                                    <input class="transition__input " type="radio" name="transition"
+                                        data-id="transition" id="pedestrian" checked="checked" />
+                                    <label class="transition__label" for="pedestrian">
+                                        <img src="img/pedestrian.png" alt="car" class="transition--img">
+                                        <span class="transition__label--span">Piyada</span>
+                                    </label>
+                                </div>
+
+                                <div class="form-group  car-pills__form-group">
+
+                                    <input class="car-pills__input" type="radio" name="transition"
+                                        data-id="transition" id="motorbike" />
+                                    <label class="car-pills__label1" for="motorbike">
+                                        <img src="img/motorbike.png" alt="car" class="car-pills__label1--img">
+                                        <span class="car-pills__label1--span">Motosiklet</span>
+                                    </label>
+
+                                </div>
+                                <div class="form-group  car-pills__form-group">
+                                    <input class="car-pills__input " type="radio" name="transition"
+                                        id="car" data-id="transition" required />
+                                    <label class="car-pills__label1" for="car">
+                                        <img src="img/car.png" alt="car" class="car-pills__label1--img">
+                                        <span class="car-pills__label1--span">Avtomobil</span>
+                                    </label>
+
+                                </div>
+                            </div>
                             <form id="driver-form">
                                 <h5 class="h5 text-center">Sürücü kimi qeydiyyatdan keçin</h5>
                                 <div class="form-group validation-form mt-4">
