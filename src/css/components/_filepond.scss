@@ -1,0 +1,23 @@
+.filepond {
+    &--item {
+        width: 120px;
+        height: 120px;
+
+        @include respondmax(xl) {
+            width: 100px;
+            height: 100px;
+        }
+        @include respondmax(lg) {
+            width: 120px;
+            height: 120px;
+        }
+        @include respondmax(md) {
+            width: 100px;
+            height: 100px;
+        }
+        @include respondmax(sm) {
+            width: 115px;
+            height: 115px;
+        }
+    }
+}

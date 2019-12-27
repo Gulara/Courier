@@ -1,0 +1,22 @@
+.address {
+    &__input-group {
+        display: flex;
+        flex-direction: column;
+
+        @include respondmax(md) {
+            width: 100%;
+
+        }
+
+        &--btn {
+            @include respondmax(lg) {
+               align-self: flex-end;
+    
+            }
+            @include respondmax(sm) {
+                align-self: center;
+     
+             }
+        }
+    }
+}

@@ -1,0 +1,43 @@
+.packing {
+    display: none;
+
+    &__div {
+        display: flex;
+        width: 100%;
+
+        &__label {
+            text-align: center;
+            cursor: pointer;
+            background-color: $color-secondary;
+            color: black;
+            font-weight: bold;
+            padding: 20px !important;
+            font-size: 16px;
+            width: 100%;
+
+            &--packing-yes {
+                border-bottom-left-radius: 10px;
+                border-top-left-radius: 10px;
+
+            }
+
+            &--packing-no {
+                border-bottom-right-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+
+        }
+
+        &__input[type="radio"] {
+            visibility: hidden;
+            height: 0;
+            width: 0;
+            display: none;
+
+            &:checked+label {
+                background-color: $color-primary;
+                color: #ffffff;
+            }
+        }
+    }
+}

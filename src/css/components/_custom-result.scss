@@ -1,0 +1,57 @@
+.custom-result {
+
+    width: 100%;
+    background-color: #fff;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+
+    &__icon {
+        color: #bbb;
+        padding-right: 15px;
+    }
+
+
+    &__text {
+        margin-right: 5px;
+        display: flex;
+        justify-self: start;
+        justify-content: start;
+        width: 100%;
+
+        &--all {
+            text-align: left;
+            text-justify: inter-word;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 16px;
+            display: -webkit-box;
+            line-height: 16px;
+            /* fallback */
+            max-height: 16px;
+            /* fallback */
+            -webkit-line-clamp: 1;
+            /* number of lines to show */
+            -webkit-box-orient: vertical;
+
+
+        }
+
+    }
+
+    &__map {
+
+        padding-left: 10px;
+        border-left: 1px solid rgba(187, 187, 187, 0.3);
+        cursor: pointer;
+        z-index: 999;
+        color: $color-primary;
+
+        &:hover {
+            color: red;
+        }
+
+    }
+}

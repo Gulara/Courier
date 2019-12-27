@@ -1,0 +1,59 @@
+.btn-2 {
+
+    border: none;
+    width: 100%;
+    border-radius: 10px;
+    height: 40px;
+
+    font-size: 16px !important;
+    font-weight: bold;
+
+    @include respondmax(lg) {
+        padding-left: 3rem;
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+}
+
+.btn-3 {
+    background-color: #47b475 !important;
+    color: #ffffff !important;
+    display: block;
+    outline: none !important;
+
+    &:focus {
+        background-color: #00CED1 !important;
+        outline: none !important;
+    }
+
+}
+
+.btn-4 {
+    @include respondmax(sm) {
+        width: 100%;
+    }
+}
+
+.btn-404 {
+    font-size: 1.4rem;
+}
+
+.btn-purple {
+    color: #ffffff !important;
+    background-color: $color-primary !important;
+    border-radius: 10px;
+
+    &:hover {
+        background-color: $color-primary-dark !important;
+    }
+}
+
+.use-whatsapp-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-read {
+    font-size: 1.1rem ;
+}

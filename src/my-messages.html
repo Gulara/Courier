@@ -1,0 +1,381 @@
+//= template/header.html
+//= template/head.html
+
+<div class="loader">
+    <div class="loading-animation"></div>
+</div>
+
+<div class=" p-3 p-lg-5">
+    <div class=" container">
+        <div class=" bg-white ">
+            <div class="   row mt-3 pt-5">
+                <div class="col-lg-3">
+                    <ul class="nav  flex-lg-column account__btn" id="myOrderTab-1">
+                        <li class="nav-item account__btn__item">
+                            <a class="btn  w-100 account__btn__link" href="my-orders.html">
+                                <div class="d-flex align-items-center">
+                                    <i class="fab fa-first-order mr-2"></i>
+                                    <span> Sifarişlərim</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item account__btn__item">
+                            <a class="btn  btn-primary  w-100 account__btn__link active" href="my-messages.html">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-envelope mr-2"></i>
+                                    <span> Mesajlarım</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item  account__btn__item">
+                            <a class="btn  w-100 account__btn__link" href="payment-methods.html">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-credit-card mr-2"></i>
+                                    <span> Ödəniş növləri</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item  account__btn__item">
+                            <a class="btn w-100 account__btn__link" href="my-address.html">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-map-marker-alt mr-2"></i>
+                                    <span> My Address</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item  account__btn__item">
+                            <a class="btn  w-100 account__btn__link" href="my-profile.html">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-user mr-2"></i>
+                                    <span> Profilim</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="col-lg-9" id="myMessages" class="my-messages">
+
+                    <div class=" flex-grow-1 ml-lg-4 mt-3 mt-md-0">
+
+                        <!-- MY MESSAGES -->
+                        <div class="container" id="main-container">
+                            <div class="row h-100">
+                                <div class="col-12 col-sm-6 col-md-5 d-flex flex-column" id="chat-list-area"
+                                    style="position:relative;">
+
+                                    <!-- Navbar -->
+                                    <div class="row d-flex flex-row align-items-center p-2 my-messages__navbar"
+                                        id="message-navbar">
+                                        <img alt="Profile Photo" class="img-fluid rounded-circle mr-2"
+                                            style="height:50px; cursor:pointer;" onclick="showProfileSettings()"
+                                            id="display-pic">
+                                        <div class="text-white font-weight-bold" id="username"></div>
+                                        <div class="nav-item dropdown ml-auto">
+                                            <a class="nav-link dropdown-toggle messages__navbar--dropdown" data-toggle="dropdown" href="#"
+                                                role="button" aria-haspopup="true" aria-expanded="false"><i
+                                                    class="fas fa-ellipsis-v text-white"></i></a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a class="dropdown-item" href="#">New Group</a>
+                                                <a class="dropdown-item" href="#">Archived</a>
+                                                <a class="dropdown-item" href="#">Starred</a>
+                                                <a class="dropdown-item" href="#">Settings</a>
+                                                <a class="dropdown-item" href="#">Log Out</a>
+                                            </div>
+                                        </div>
+                                        <div class="my-messages__div">
+                                            <input type="text" class="my-messages__div--input" id="searchMessages"
+                                                onkeyup="searchMessages()" placeholder="Search messages">
+                                        </div>
+                                    </div>
+
+                                    <!-- Chat List -->
+                                    <div class="row" id="chat-list"></div>
+
+                                    <!-- Profile Settings -->
+                                    <div class=" flex-column w-100 h-100" id="profile-settings">
+                                        <div
+                                            class="row d-flex flex-row align-items-center p-2 m-0 profile-settings-nav">
+                                            <i class="fas fa-arrow-left p-2 mx-3 my-1 text-white"
+                                                style="font-size: 1.5rem; cursor: pointer;"
+                                                onclick="hideProfileSettings()"></i>
+                                            <div class="text-white font-weight-bold">Profile</div>
+                                        </div>
+                                        <div class="d-flex flex-column" style="overflow:auto;">
+                                            <img alt="Profile Photo"
+                                                class="img-fluid rounded-circle my-5 justify-self-center mx-auto"
+                                                id="profile-pic">
+                                            <input type="file" id="profile-pic-input" class="d-none">
+                                            <div class="bg-white px-3 py-2">
+                                                <div class="text-muted mb-2"><label for="input-name">Your Name</label>
+                                                </div>
+                                                <input type="text" name="name" id="input-name"
+                                                    class="w-100 border-0 py-2 profile-input">
+                                            </div>
+                                            <div class="bg-white text-muted p-3 small">
+                                                This is not your username or pin. This name will be visible to your
+                                                WhatsApp contacts.
+                                            </div>
+                                            <div class="bg-white px-3 py-2">
+                                                <div class="text-muted mb-2"><label for="input-about">About</label>
+                                                </div>
+                                                <input type="text" name="name" id="input-about" value=""
+                                                    class="w-100 border-0 py-2 profile-input">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <!-- Message Area -->
+                                <div class="d-none d-sm-flex flex-column col-12 col-sm-6 col-md-7 p-0 h-100"
+                                    id="message-area">
+                                    <div class="w-100 h-100 overlay"></div>
+
+                                    <!-- Navbar -->
+                                    <div class="row d-flex flex-row align-items-center p-2 m-0 w-100 message-area__navbar"
+                                        id="message-navbar">
+                                        <div class="d-block d-sm-none">
+                                            <i class="fas fa-arrow-left p-2 mr-2 text-white"
+                                                style="font-size: 1.5rem; cursor: pointer;"
+                                                onclick="showChatList()"></i>
+                                        </div>
+                                        <a href="#"><img src="https://via.placeholder.com/400x400" alt="Profile Photo"
+                                                class="img-fluid rounded-circle mr-2" style="height:50px;" id="pic"></a>
+                                        <div class="d-flex flex-column">
+                                            <div class="text-white font-weight-bold" id="name"></div>
+                                            <div class="text-white small" id="details"></div>
+                                        </div>
+                                        <div class="d-flex flex-row align-items-center ml-auto">
+                                            <a href="#"><i
+                                                    class="fas fa-search mx-3 text-white d-none d-md-block"></i></a>
+                                            <a href="#"><i
+                                                    class="fas fa-paperclip mx-3 text-white d-none d-md-block"></i></a>
+                                            <a href="#"><i class="fas fa-ellipsis-v mr-2 mx-sm-3 text-white"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Messages -->
+                                    <div class="d-flex flex-column" id="messages"></div>
+
+                                    <!-- Input -->
+                                    <div class="d-none justify-self-end align-items-center flex-row" id="input-area">
+                                        <a href="#"><i class="far fa-smile text-muted px-3"
+                                                style="font-size:1.5rem;"></i></a>
+                                        <input type="text" name="message" id="input" placeholder="Type a message"
+                                            class="flex-grow-1 border-0 px-3 py-2 my-3 rounded shadow-sm">
+                                        <i class="fas fa-paper-plane text-muted px-3" style="cursor:pointer;"
+                                            onclick="sendMessage()"></i>
+                                    </div>
+
+                                    <!-- FORM -->
+                                    <div class="my-messages-inner__btn" id="my-messages-inner__btn">
+                                        <div class="my-messages-inner__btn--group">
+                                            <div class="my-messages-inner__btn--left"  onclick="hideMap()">
+                                                <i class="fas fa-arrow-left "></i>
+                                            </div>
+                                            <div class="my-messages-inner__name">Order</div>
+                                        </div>
+                                      
+                                    </div>
+                                    <div class="my-messages-inner__map-group " id="my-messages-inner__map-group">
+                                        <!--    MAP  START-->
+                                        <div class="map messages-map">
+                                            <div class=" divider-side divider__side d-lg-block transform-flip-y d-none">
+                                            </div>
+                                            <div id="mapCanvas"></div>
+                                        </div>
+                                        <!-- MAP END -->
+
+                                        <form class="form  messages-form"
+                                            data-parsley-validate="">
+
+                                            <div class="card card-body mb-4 shadow-sm">
+
+                                                <div class="loading-info">
+                                                    <div class="loading-info__heading">Kuryerin adı</div>
+                                                    <p class="loading-info--courier-name">Mammad Mammadov</p>
+                                                </div>
+                                                <div class="loading-info mb-0 loading-info--courier">
+                                                    <div class="loading-info__heading">Kuryerin nömrəsi</div>
+                                                    <p class="loading-info--courier-number mb-0">+994 55 444 33 22</p>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="loading-info__circle loading-info">
+                                                <div class="loading-info__circle--before">
+                                                    <i class="fas fa-circle mr-3 mt-1"></i>
+                                                    <div>
+                                                        <div class="loading-info__heading">Götürülmə ünvanı</div>
+                                                        <p class="loading-info--from">94 Təbriz küç.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="loading-info__circle--after">
+                                                    <i class="fas fa-circle mr-3 mt-1"></i>
+                                                    <div>
+                                                        <div class="loading-info__heading">Çatdırılma ünvanı</div>
+                                                        <p class="loading-info--destination">94 Nizami küç.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="loading-info__circle">
+
+                                            </div>
+
+                                            <div class="loading-info loading-info--payment-group">
+                                                <div>
+                                                    <div class="loading-info__heading">Ödəniş növü</div>
+                                                    <p class="loading-info--payment">Nəğd</p>
+                                                </div>
+                                                <p class="loading-info--money">5.20$</p>
+                                            </div>
+                                            <div class="loading-info ">
+                                                <div class="loading-info__heading">Çatdırılma növü</div>
+                                                <p class="loading-info--urgent">Təcili</p>
+                                            </div>
+                                            <div class="loading-info loading-info__urgent-time">
+                                                <div>
+                                                    <div class="loading-info__heading">Çatdırılma vaxtı</div>
+                                                    <div>Vaxt təyin edilib</div>
+                                                </div>
+
+                                                <div class="loading-info--delivery-time">
+                                                    <span> 16/12/2019 </span>
+                                                    <span>15:00</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="loading-info ">
+                                                <div class="loading-info__heading">Receiver</div>
+                                                <p class="loading-info--receiver">Mammad Mammadov</p>
+                                            </div>
+                                            <div class="loading-info ">
+                                                <div class="loading-info__heading">Receiver Number</div>
+                                                <p class="loading-info--receiver-number">+994-55-444-33-22</p>
+                                            </div>
+
+                                            <div class="loading-info ">
+                                                <div class="loading-info__heading mb-3">Daşınacaq yükün fotosu</div>
+                                                <div id="lightgallery" class="lightgallery">
+
+                                                    <div class="lightgallery__div"
+                                                        data-responsive="https://sachinchoolur.github.io/lightGallery/static/img/1-375.jpg 375, https://sachinchoolur.github.io/lightGallery/static/img/1-480.jpg 480, https://sachinchoolur.github.io/lightGallery/static/img/1.jpg 800"
+                                                        data-src="https://sachinchoolur.github.io/lightGallery/static/img/1-1600.jpg"
+                                                        data-sub-html="<h4>Fading Light</h4><p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>"
+                                                        data-pinterest-text="Pin it"
+                                                        data-tweet-text="share on twitter ">
+                                                        <a href="" class="lightgallery__link">
+                                                            <img class="img-responsive img-fluid lightgallery__link--img"
+                                                                src="https://sachinchoolur.github.io/lightGallery/static/img/thumb-1.jpg"
+                                                                alt="thumb">
+                                                            <div class="lightgallery__link--poster">
+                                                                <img src="https://sachinchoolur.github.io/lightGallery/static/img/zoom.png"
+                                                                    alt="zoom">
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="lightgallery__div"
+                                                        data-responsive="https://sachinchoolur.github.io/lightGallery/static/img/2-375.jpg 375, https://sachinchoolur.github.io/lightGallery/static/img/2-480.jpg 480, https://sachinchoolur.github.io/lightGallery/static/img/2.jpg 800"
+                                                        data-src="https://sachinchoolur.github.io/lightGallery/static/img/2-1600.jpg"
+                                                        data-sub-html="<h4>Bowness Bay</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time....</p>"
+                                                        data-pinterest-text="Pin it"
+                                                        data-tweet-text="share on twitter ">
+                                                        <a href="" class="lightgallery__link">
+                                                            <img class="img-responsive img-fluid lightgallery__link--img"
+                                                                src="https://sachinchoolur.github.io/lightGallery/static/img/thumb-2.jpg"
+                                                                alt="thumb">
+                                                            <div class="lightgallery__link--poster">
+                                                                <img src="https://sachinchoolur.github.io/lightGallery/static/img/zoom.png"
+                                                                    alt="zoom">
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="lightgallery__div"
+                                                        data-responsive="https://sachinchoolur.github.io/lightGallery/static/img/13-375.jpg 375, https://sachinchoolur.github.io/lightGallery/static/img/13-480.jpg 480, https://sachinchoolur.github.io/lightGallery/static/img/13.jpg 800"
+                                                        data-src="https://sachinchoolur.github.io/lightGallery/static/img/13-1600.jpg"
+                                                        data-sub-html="<h4>Sunset Serenity</h4><p>A gorgeous Sunset tonight captured at Coniston Water....</p>"
+                                                        data-pinterest-text="Pin it"
+                                                        data-tweet-text="share on twitter ">
+                                                        <a href="" class="lightgallery__link">
+                                                            <img class="img-responsive img-fluid lightgallery__link--img"
+                                                                src="https://sachinchoolur.github.io/lightGallery/static/img/thumb-13.jpg"
+                                                                alt="thumb">
+                                                            <div class="lightgallery__link--poster">
+                                                                <img src="https://sachinchoolur.github.io/lightGallery/static/img/zoom.png"
+                                                                    alt="zoom">
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="lightgallery__div"
+                                                        data-responsive="https://sachinchoolur.github.io/lightGallery/static/img/13-375.jpg 375, https://sachinchoolur.github.io/lightGallery/static/img/13-480.jpg 480, https://sachinchoolur.github.io/lightGallery/static/img/13.jpg 800"
+                                                        data-src="https://sachinchoolur.github.io/lightGallery/static/img/13-1600.jpg"
+                                                        data-sub-html="<h4>Sunset Serenity</h4><p>A gorgeous Sunset tonight captured at Coniston Water....</p>"
+                                                        data-pinterest-text="Pin it"
+                                                        data-tweet-text="share on twitter ">
+                                                        <a href="" class="lightgallery__link">
+                                                            <img class="img-responsive img-fluid lightgallery__link--img"
+                                                                src="https://sachinchoolur.github.io/lightGallery/static/img/thumb-13.jpg"
+                                                                alt="thumb">
+                                                            <div class="lightgallery__link--poster">
+                                                                <img src="https://sachinchoolur.github.io/lightGallery/static/img/zoom.png"
+                                                                    alt="zoom">
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="lightgallery__div"
+                                                        data-responsive="https://sachinchoolur.github.io/lightGallery/static/img/13-375.jpg 375, https://sachinchoolur.github.io/lightGallery/static/img/13-480.jpg 480, https://sachinchoolur.github.io/lightGallery/static/img/13.jpg 800"
+                                                        data-src="https://sachinchoolur.github.io/lightGallery/static/img/13-1600.jpg"
+                                                        data-sub-html="<h4>Sunset Serenity</h4><p>A gorgeous Sunset tonight captured at Coniston Water....</p>"
+                                                        data-pinterest-text="Pin it"
+                                                        data-tweet-text="share on twitter ">
+                                                        <a href="" class="lightgallery__link">
+                                                            <img class="img-responsive img-fluid lightgallery__link--img"
+                                                                src="https://sachinchoolur.github.io/lightGallery/static/img/thumb-13.jpg"
+                                                                alt="thumb">
+                                                            <div class="lightgallery__link--poster">
+                                                                <img src="https://sachinchoolur.github.io/lightGallery/static/img/zoom.png"
+                                                                    alt="zoom">
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="loading-info mb-0">
+                                                <div class="loading-info__heading">Qeydlər</div>
+                                                <p class="loading-info--note">Lorem ipsum dolor sit amet consectetur
+                                                    adipisicing elit. At animi
+                                                    soluta maxime, sequi beatae
+                                                    quod ratione alias ipsum labore totam?</p>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                    
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+
+    //= template/footer.html
+    //= template/footer-my-messages.html

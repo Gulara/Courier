@@ -1,0 +1,31 @@
+.total {
+    padding: 5px ;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    color: $color-secondary-dark;
+    margin-bottom: 10px;
+    span {
+        background-color: #fff;
+        padding: 5px;
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 0.5em;
+        border-top: 1px solid $color-secondary;
+        z-index: -1;
+    }
+
+    &__money {
+        &:after{
+            content: " AZN";
+            margin-left: 2px;
+        }
+    }
+}

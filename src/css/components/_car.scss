@@ -1,0 +1,147 @@
+.car {
+   
+    padding-bottom: 20px;
+    width: 100% !important;
+    border-bottom: 1px solid #f5f5f5;
+    padding-left: 0;
+    list-style: none;
+
+    @include respondmax(md) {
+        width: 100% !important;
+    }
+
+    &__form-group {
+        margin-bottom: 0;
+    }
+
+    &__label {
+        text-align: center;
+        cursor: pointer;
+        background-color: $color-secondary;
+        color: black;
+
+        border-radius: 3px;
+        width: 100%;
+        margin-bottom: 0;
+
+        &--img {
+            margin-left: auto;
+            margin-right: auto;
+            width: 50px !important;
+
+        }
+
+        &--span {
+            font-size: 12px;
+            text-align: center;
+
+            font-family: 'Nunito', sans-serif;
+            color: #1f1f1f;
+            font-weight: bold;
+        }
+
+        &:hover {
+            background-color: $color-primary;
+        }
+
+        &:hover .car__label--span {
+            color: #ffffff;
+        }
+    }
+
+    &__input[type="radio"] {
+        visibility: hidden;
+        height: 0;
+        width: 0;
+        display: none;
+
+        &:checked+label {
+            background-color: $color-primary;
+            color: #ffffff;
+        }
+
+        &:checked+label .car__label--span {
+            color: #ffffff !important;
+        }
+    }
+
+
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+
+    &__div {
+        display: flex;
+        flex-direction: column;
+
+        font-weight: bold;
+        width: 100% !important;
+        height: auto;
+
+
+
+        &--away-time {
+            color: $color-primary;
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        &--time,
+        &--price,
+        &--distance {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+
+            color: $color-secondary-dark;
+
+            span {
+                background-color: #fff;
+                padding: 5px;
+            }
+
+            &:after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 0.5em;
+                border-top: 1px solid $color-secondary;
+                z-index: -1;
+            }
+
+            .price{
+                &:after{
+                    content: " AZN";
+                    margin-left: 2px;
+                }
+            }
+        }
+
+        @include respondmax(xl) {
+            width: 100% !important;
+        }
+
+        span {
+            font-size: 16px !important;
+        }
+    }
+
+
+    &__p {
+        padding-top: 10px;
+        font-size: 15px;
+        width: 100% !important;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #f5f5f5;
+
+        @include respondmax(xl) {
+            width: 100% !important;
+        }
+    }
+}

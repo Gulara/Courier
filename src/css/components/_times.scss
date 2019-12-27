@@ -1,0 +1,35 @@
+.times {
+
+    &__label {
+
+        text-align: center;
+        cursor: pointer;
+        background-color: $color-secondary;
+        color: black;
+      padding: 5px 9px !important;
+        border-radius: 3px;
+        font-size: 16px;
+
+    }
+
+    &__input[type="radio"] {
+        visibility: hidden;
+        height: 0;
+        width: 0;
+        display: none;
+    
+        &:checked+label {
+            background-color: $color-primary;
+            color: #ffffff;
+        }
+    }
+}
+
+
+.disable-label {
+    background-color: #ababab;
+    color: #ffffff;
+}
+
+
+

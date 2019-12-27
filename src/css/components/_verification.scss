@@ -1,0 +1,16 @@
+#verify-number {
+    font-size: 24px;
+    padding-left: 75px;
+    @include respondmax(xl) {
+       padding-left: 44px;
+      }
+      @include respondmax(lg) {
+        padding-left: 80px;
+       }
+}
+
+.verify {
+  @include respondmax(lg){
+    min-height: 58vh !important;
+}
+}

@@ -1,0 +1,273 @@
+.header {
+    position: fixed;
+    background-color: #ffffff;
+    z-index: 999;
+    width: 100vw;
+
+
+    &__logo {
+        margin-right: 0;
+
+        &--img {
+            transform: translateY(-4px);
+        }
+    }
+
+    &__container {
+        z-index: 999;
+        background-color: #ffffff;
+    }
+
+    &__navbar {
+        z-index: 999;
+        background-color: #ffffff;
+        max-width: 100% !important;
+        width: 100% !important;
+        left: 0 !important;
+
+        @include respondmax(sm) {
+            padding: 10px 0 !important;
+        }
+    }
+
+
+
+
+    &__collapse {
+        flex-grow: 0;
+
+        @include respondmax(lg) {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            padding: 20px 0;
+            border-bottom: 1px solid #cccccc;
+            border-top: 1px solid #cccccc;
+            margin-top: 20px;
+        }
+
+        .login1 {
+
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &:hover .dropdown-menu {
+                display: block;
+
+            }
+
+            &--badge {
+                font-size: 10px;
+                padding: 3px 5px;
+                border-radius: 50%;
+                transform: translateY(-9px) translateX(6px);
+            }
+
+            &__link {
+                &::after {
+                    display: none;
+                }
+
+                &--img {
+                    position: relative;
+                }
+
+                &--badge {
+                    position: absolute;
+                    padding: 3px 6px;
+                    top: 0;
+                    right: 0;
+                    transform: translateY(-8px) translateX(10px);
+                }
+            }
+
+            &__dropdown-menu {
+
+                margin: 0;
+
+                @include respondmax(lg) {
+                    display: none !important;
+                }
+
+            }
+
+            .dropdown-item {
+                &:hover {
+                    color: $color-primary;
+                }
+            }
+        }
+    }
+
+    &__language {
+        color: rgba(0, 0, 0, .5);
+        font-size: 20px;
+
+        @include respondmax(sm) {
+            font-size: 13px;
+        }
+
+        &:hover {
+            color: rgba(0, 0, 0, .7);
+        }
+
+        .fa-globe {
+            margin-right: 5px;
+        }
+
+        &__menu {
+            min-width: 5rem !important;
+
+            @include respondmax(sm) {
+                min-width: 4rem !important;
+                margin-top: 0 !important;
+            }
+
+            &--item {
+                &:hover {
+                    color: rgba(0, 0, 0, .7);
+                }
+            }
+        }
+
+        &__grid-menu {
+            min-width: 5rem !important;
+        }
+    }
+
+    &__language2 {
+        color: rgba(255, 255, 255, .65);
+        font-size: 20px;
+
+        &:hover {
+            color: rgba(255, 255, 255, .85);
+        }
+
+        .fa-globe {
+            margin-right: 5px;
+        }
+    }
+
+    &__toggler {
+        &:focus {
+            outline: none;
+        }
+
+
+        &--badge {
+            font-size: 10px;
+            padding: 3px 5px;
+            border-radius: 50%;
+            transform: translateY(-10px) translateX(10px);
+        }
+    }
+
+    &__toggler2 {
+        &:focus {
+            outline: none;
+        }
+
+
+        &--badge {
+            font-size: 10px;
+            padding: 3px 5px;
+            border-radius: 50%;
+            transform: translateY(-10px) translateX(10px);
+        }
+    }
+}
+
+.color-purple {
+    color: $color-primary !important;
+
+    &:hover {
+        color: $color-primary-dark !important;
+    }
+}
+
+
+
+.login2 {
+    padding: 0;
+}
+
+// #myOrderTab-2 {
+//     border-bottom: 1px solid #cccccc;
+
+// }
+#navigation-menu {
+    @include respondmax(sm) {
+        border-top: 1px solid #cccccc;
+    }
+
+
+}
+
+// COLLAPSE
+
+.for-costumer {
+    &__dropdown-grid-menu {}
+
+    &--row {
+        margin-left: -30px !important;
+    }
+
+    &__list {
+        list-style: none;
+
+
+
+        &--ul {
+            padding-left: 0;
+            list-style: none;
+            margin-top: 20px;
+
+            .for-costumer-li {
+                margin-bottom: 20px;
+
+                &--link {
+                    display: flex;
+                    align-items: center;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+
+                    h6 {
+                        margin-left: 5px;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.header-scroll {
+    color: rgba(0, 0, 0, .5) !important;
+
+    &::after {
+        color: rgba(0, 0, 0, .5) !important;
+
+    }
+
+
+    &:hover {
+        color: rgba(0, 0, 0, .7) !important;
+    }
+}
+
+// SHADOW FOR INDEX.html
+.index-shadow {
+    box-shadow: 0 8px 15px #7b2bfc1f;
+
+}
+
+.my-badge{
+    padding: 4px 7px;
+    font-size: 10px;
+    margin-left: 2px;
+   
+}

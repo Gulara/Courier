@@ -1,0 +1,40 @@
+.landing-1 {
+    &__btn-group {
+        margin-top: 20px;
+        color: #ffffff;
+   
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .all-btn {
+            width: 24%;
+            @include respondmax(xl) {
+                width: 49% ;
+                margin-bottom: 10px;
+            }
+        }
+
+        .phone-btn{
+            background-image: linear-gradient(to bottom,#004f77 , #0071aa);
+            border: none;
+              color: #ffffff;
+        }
+        .whatsapp-btn {
+            background-image: linear-gradient(to bottom,#25D366 , #1ebea5);
+          border: none;
+            color: #ffffff;
+        }
+        .telegram-btn{
+            background-color: #0088cc;
+            background-image: linear-gradient(to bottom,#0088cc , #22b5ff);
+            border: none;
+            color: #ffffff;
+        }
+        .messenger-btn{
+            background-image: linear-gradient(to bottom,#00b2ff , #006aff );
+            border: none;
+            color: #ffffff;
+        }
+    }
+}

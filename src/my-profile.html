@@ -1,0 +1,175 @@
+//= template/header.html
+//= template/head.html
+<div class="loader">
+    <div class="loading-animation"></div>
+</div>
+
+<div class=" p-3 p-lg-5">
+    <div class=" container">
+        <div class=" bg-white ">
+            <div class="   row mt-3 pt-5">
+                <div class="col-lg-3">
+                    <ul class="nav  flex-lg-column account__btn" id="myOrderTab-1">
+                        <li class="nav-item account__btn__item">
+                            <a class="btn  w-100 account__btn__link" href="my-orders.html">
+                                <div class="d-flex align-items-center">
+                                    <i class="fab fa-first-order mr-2"></i>
+                                    <span> Sifarişlərim</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item account__btn__item">
+                            <a class="btn  w-100 account__btn__link"  href="my-messages.html">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-envelope mr-2"></i>
+                                    <span>Mesajlarım</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item  account__btn__item">
+                            <a class="btn  w-100 account__btn__link" href="payment-methods.html">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-credit-card mr-2"></i>
+                                    <span> Ödəniş növləri</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item  account__btn__item">
+                            <a class="btn w-100 account__btn__link" href="my-address.html">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-map-marker-alt mr-2"></i>
+                                    <span> My Address</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item  account__btn__item">
+                            <a class="btn  btn-primary  w-100 account__btn__link active" href="my-profile.html">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-user mr-2"></i>
+                                    <span> Profilim</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="col-lg-9" id="myOrderTabContent-1">
+
+                    <div class=" flex-grow-1 ml-lg-4 mt-3 mt-md-0">
+
+                        <!-- MY PROFILE -->
+                        <div id="my-profile-1">
+                            <div class="card mt-3 mt-lg-0">
+                                <div class="card-body bg-light">
+
+                                    <div class="container">
+                                        <div class="row mb-4 mb-lg-5">
+                                            <div class="col">
+                                                <h3 class="text-danger">Zəhmət olmasa profil məlumatlarını doldurun.  </h3>
+                                                <hr>
+                                                <div class=" d-flex flex-column align-items-center">
+                                                    <img src="img/user-default-img.png" alt="Avatar"
+                                                        class="avatar avatar-lg flex-shrink-0">
+                                                    <div class="mt-3">
+
+
+                                                        <div class="upload-btn-wrapper">
+                                                            <button class="btn btn-sm btn-purple">Fotonu
+                                                                dəyiş</button>
+                                                            <input type="file" name="myfile"
+                                                                class="upload-btn-wrapper--input"
+                                                                accept="image/x-png,image/jpeg" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr class="mt-lg-5">
+                                            </div>
+                                        </div>
+                                        <div class="row mb-4 mb-md-5 align-items-start">
+
+                                            <div class="col-12 border-lg-right pr-lg-5">
+                                                <div class="row mb-lg-5">
+                                                    <div class="col">
+                                                        <h3>Account Details</h3>
+                                                    </div>
+                                                </div>
+                                                <form id="my-profile-form"  data-parsley-validate="">
+                                                    <div class="row form-row">
+                                                        <div class="col-sm-12 col-lg-6">
+                                                            <div class="form-group">
+                                                                <label for="first-name">Ad</label>
+                                                                <input type="text" class="form-control" id="first-name"
+                                                                    placeholder="Mammad" required>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-12 col-lg-6">
+                                                            <div class="form-group">
+                                                                <label for="last-name">Soyad</label>
+                                                                <input type="text" class="form-control" id="last-name"
+                                                                    placeholder="Mammadov" required>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-12 col-lg-6">
+                                                            <div class="form-group">
+                                                                <label for="phone-number">Telefon
+                                                                    nömrəsi</label>
+                                                                <input type="text" id="phone-number"
+                                                                    class="form-control" placeholder="+9941234567"
+                                                                    disabled>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-12 col-lg-6">
+                                                            <div class="form-group">
+                                                                <label for="my-profile-email">Email</label>
+                                                                <input type="email" id="my-profile-email"name="email"
+                                                                    class="form-control" placeholder="mammad@gmail.com" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label class="d-block">Cinsiniz</label>
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <input class="gender-input form-control" type="radio"
+                                                                    name="gender" id="gender1" />
+                                                                <label class="gender-label " for="gender1">Kişi</label>
+
+                                                            </div>
+                                                            <div class="col">
+                                                                <input class="gender-input form-control" type="radio"
+                                                                    name="gender" id="gender2" />
+                                                                <label class="gender-label " for="gender2">Qadın</label>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="btn btn-purple btn-4" type="submit" name="submit" value="validate">Save
+                                                        changes</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- <a href="#top" class="btn btn-primary rounded-circle btn-back-to-top" data-smooth-scroll data-aos="fade-up"
+    data-aos-offset="2000" data-aos-mirror="true" data-aos-once="false">
+    <img src="assets/img/icons/interface/icon-arrow-up.svg" alt="Icon" class="icon bg-white" data-inject-svg>
+</a> -->
+
+//= template/foot.html
+//= template/footer.html
+//= template/footer-my-profile.html

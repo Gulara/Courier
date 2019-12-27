@@ -1,0 +1,62 @@
+@import "abstracts/bt5start";
+  
+@import "abstracts/function";
+@import "abstracts/mixin";
+@import "abstracts/variables";
+
+
+@import "asset/template";
+
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+@import "base/fonts";
+
+@import "components/button";
+@import "components/car";
+@import "components/car2";
+@import "components/filepond";
+@import "components/labor-spinner";
+@import "components/datepicker";
+@import "components/times";
+@import "components/delivery";
+@import "components/form";
+@import "components/urgent";
+@import "components/payment";
+@import "components/verification";
+@import "components/car-carousel";
+@import "components/scroll";
+@import "components/loading-spinner";
+@import "components/packing";
+@import "components/add-payment";
+@import "components/address";
+@import "components/custom-result";
+@import "components/swiper";
+@import "components/search-carousel";
+@import "components/intlTelInput";
+@import "components/parsley";
+@import "components/autocomplete-words";
+@import "components/lightgallery";
+@import "components/insurance";
+@import "components/total";
+
+@import "layout/footer";
+@import "layout/header";
+@import "layout/navigation";
+
+@import "pages/contact";
+@import "pages/index";
+@import "pages/404";
+@import "pages/account";
+@import "pages/account-sign-in-cover2";
+@import "pages/index-2";
+@import "pages/services-1";
+@import "pages/services-2";
+@import "pages/landing-1";
+@import "pages/loading";
+@import "pages/loading-end";
+@import "pages/my-messages";
+@import "pages/my-orders";
+
+@import "abstracts/bt5end";
+    

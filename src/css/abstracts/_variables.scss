@@ -1,0 +1,21 @@
+$aznb:jaznb;
+
+
+$color-primary: #7b2bfc;
+$color-primary-dark: #660afc;
+$color-primary-light: #E4007E;
+$color-secondary: #f5f5f5;
+$color-secondary-dark: #555a64;
+$color-secondary-light:#868c98;
+$color-invalid: red;
+$color-valid: green;
+
+@mixin field-outline($color) {
+    border: $color solid 2px;
+    border-radius: 10px;
+}
+
+@mixin message-invalid($message) {
+    color: $color-invalid;
+    content: $message;
+}

@@ -1,0 +1,54 @@
+.editor {
+    padding: 30px 20px;
+}
+
+
+
+  .tabcontainer {
+    width:100%;
+}
+.tablist {
+ 
+    margin-bottom: 20px !important;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    &__tab {
+        float: left;
+        margin: 0;
+        margin-top: 10px;
+        cursor: pointer;
+        overflow: hidden;
+        position: relative;
+        text-align: left;
+        box-sizing: border-box;
+        flex-wrap: nowrap;
+        padding-bottom: 10px;
+        top: 2px;
+       
+    }
+    .active {
+        color: $color-primary;
+        border-bottom: 2px solid $color-primary;
+    
+    }
+}
+
+
+
+
+
+.swiper2 .swiper-slide {
+  width: 100%;
+    height:auto;
+}
+.tabpanels {
+
+&__panel {
+    width: 98%;
+}
+}
+

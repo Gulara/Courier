@@ -1,0 +1,126 @@
+.form {
+
+  &__tooltip {
+    display: inline-block;
+    margin-left: 5px;
+    transform: translateY(-3px);
+
+    &--btn {
+      border: none;
+      background-color: $color-secondary-dark;
+
+      &:focus {
+        border: none;
+        outline: none;
+      }
+    }
+
+    &--circle {
+      border: none;
+      font-size: initial;
+      color: $color-secondary-dark;
+
+      &:focus {
+        border: none;
+        outline: none;
+      }
+    }
+  }
+
+  &__control {
+    background-color: #f5f5f5;
+    width: 100% !important;
+    height: 50px !important;
+    border-radius: 10px;
+    color: #555a64;
+    font-size: 16px;
+
+    @include respondmax(xl) {
+      width: 100% !important;
+    }
+
+    &::placeholder {
+      color: #818490 !important;
+
+    }
+  }
+
+  &__group {
+    margin-bottom: 1rem;
+  }
+
+  &__label {
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Nunito', sans-serif;
+    color: #555a64;
+  }
+}
+
+.tooltip.show {
+  opacity: 1 !important
+}
+
+.bg-secondary {
+  color: $color-secondary-dark;
+  background-color: rgba(245, 245, 245, 1) !important;
+  opacity: 1;
+}
+
+.bs-tooltip-auto[x-placement^=top] .arrow::before,
+.bs-tooltip-top .arrow::before {
+
+  border-top-color: $color-secondary !important;
+}
+
+.bs-tooltip-auto[x-placement^=bottom] .arrow::before,
+.bs-tooltip-bottom .arrow::before {
+  border-bottom-color: $color-secondary !important;
+}
+
+.bs-tooltip-auto[x-placement^=left] .arrow::before,
+.bs-tooltip-left .arrow::before {
+
+  border-left-color: $color-secondary !important;
+}
+
+.bs-tooltip-auto[x-placement^=right] .arrow::before,
+.bs-tooltip-right .arrow::before {
+
+  border-right-color: $color-secondary !important;
+}
+
+
+.tooltip-inner {
+  background-color: $color-secondary;
+  opacity: 1 !important;
+  box-shadow: 0 .25rem .375rem rgba(0, 0, 0, .09) !important;
+}
+
+.error {
+  color: red;
+  margin-left: 5px;
+}
+
+label.error {
+  display: inline;
+}
+
+.inputErrorBorder {
+  border: 1px solid red;
+
+  &:focus {
+    border: 1px solid red;
+  }
+}
+
+#first_form {
+  @include respondmax(md) {
+    border: 1px solid #f5f5f5;
+    border-radius: 10px;
+    transform: translateY(-20px);
+    background-color: #ffffff;
+    position: relative;
+    z-index: 99;
+  }
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://twitter.github.io/typeahead.js/css/examples.css">
+    <link rel="stylesheet" href="css/main/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+    <title>test</title>
+    <style type="text/css">
+        section {
+            min-height: 150px;
+        }
+
+        .tt-suggestion {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <section>
+        <input type="text" class="typeahead" placeholder="Enter location" />
+        <div id="container">&nbsp;</div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/0.11.1/typeahead.bundle.min.js"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6q83jcEbxloW8tYOXLgagBGJ1xrDowHc&libraries=places&language=az-AZ">
+        </script>
+
+    <script>
+
+        $(function () {
+            var searchInput = $(".typeahead");
+            var sessionToken = new google.maps.places.AutocompleteSessionToken();
+            var service = new google.maps.places.AutocompleteService();
+            var predictions, status;
+
+            $(".typeahead").typeahead({
+                highlight: true,
+                minLength: 3,
+                autoselect: true
+
+            },
+                {
+                    async: true,
+                    display: 'address',
+                    source: function (query, process, aProcess) {
+                        service.getPlacePredictions({
+                            input: query,
+                            sessionToken: sessionToken
+                        }, function (predictions, status) {
+                            aProcess(formatAddress(predictions, status));
+                        });
+
+                    },
+                    templates: {
+                        empty: [
+                            '<div class="empty-message text-center" style="">',
+                            'No address available.<br/>',
+                            '</div>',
+                        ].join('\n'),
+                        suggestion: function (data) {
+                            console.log(data);
+                            // return ['<div class="d-flex"  data-place-id="' + data.placeId + '">' + data.address + '<div class="goToMap" >MAP</div> </div>'].join('\n');
+
+                            return ['<div class="custom-result" data-place-id="' + data.placeId + '" ><div class=" custom-result__icon"><i class="fas fa-map-marker-alt "></i></div><div class="custom-result__text"><div class="custom-result__text--all"> ' + data.address + ' </div></div><div class="custom-result__map"><span>Map</span></div></div>'].join('\n');
+                        },
+                        footer: '<div style="text-align:right; padding-right: 10px;"><img src="https://cdn.doordash.com/static/img/consumer/share/powered_by_google_on_white_hdpi.png" style="height:18px;"/></div>'
+                    }
+
+                });
+
+            var formatAddress = function (predictions, status) {
+                console.log("Predictions", predictions);
+                console.log("Status", status);
+                var formatttedAddress = [];
+                var placeObj = {};
+                if (status === "OK") {
+                    predictions.forEach(function (prediction) {
+                        placeObj.address = prediction.description;
+                        placeObj.placeId = prediction.place_id;
+                        formatttedAddress.push(placeObj)
+                        placeObj = {};
+                    });
+                }
+                console.log("FormattedAddress", formatttedAddress);
+                return formatttedAddress;
+            }
+
+            $(".typeahead").on('typeahead:selected typeahead:autocompleted', function (e, datum) {
+                // this input is the input that needs the imdb_id value
+                //alert(datum.placeId);
+                var container = document.getElementById("container");
+                var service = new google.maps.places.PlacesService(container);
+                service.getDetails({
+                    placeId: datum.placeId
+                }, function (place, status) {
+                    if (status === google.maps.places.PlacesServiceStatus.OK) {
+                        // document.getElementById("container").innerHTML = "Lat :" + place.geometry.location.lat() + "<br/>" + "Lan:" + place.geometry.location.lng()
+                        console.log("Lat", place.geometry.location.lat());
+                        console.log("Lan", place.geometry.location.lng());
+                    }
+                }
+                )
+            });
+
+        });
+    </script>
+</body>
+
+</html>

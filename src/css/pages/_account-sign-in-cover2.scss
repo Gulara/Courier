@@ -1,0 +1,91 @@
+.account-sign-in-cover2 {
+
+    @include respondmax(lg){
+        min-height: 65vh !important;
+    }
+    &__label {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        
+        cursor: pointer;
+        user-select: none;
+
+        input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+
+            &:checked ~ span{
+                background-color: $color-primary;
+                border: none;
+            }
+
+            &:checked ~ span::after {
+                display: block;
+            }
+
+        }
+
+        span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background-color: #eee;
+         border: 2px solid $color-primary;
+         border-radius: 5px;
+         
+        
+
+            &::after {
+                content: "";
+                position: absolute;
+                display: none;
+            }
+
+            &::after {
+                left: 9px;
+                top: 5px;
+                width: 7px;
+                height: 13px;
+                border: solid white;
+                border-width: 0 3px 3px 0;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    &__btn-group {
+
+
+        &--btn {
+            width: 100%;
+
+            &:last-child {
+                border-radius: 10px;
+            }
+
+            .fa-whatsapp {
+                font-size: 24px;
+            }
+
+        }
+    }
+}
+
+.membership {
+    &:hover{
+        text-decoration: none;
+    }
+}
+.account-form {
+    @include respondmax(lg){
+        margin-top: 90px;
+    }
+}

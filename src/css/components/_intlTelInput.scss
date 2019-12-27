@@ -1,0 +1,23 @@
+.iti {
+    display: block;
+    border-radius: 10px;
+}
+
+.iti__country-list {
+  z-index: 99;
+    width: 270px;
+    @include respondmax(sm) {
+        width: 246px;
+      }
+  
+}
+
+#phoneNumber .parsley-success {
+  display: none;
+}
+.valid-hide{
+  display: none;
+}
+
+
+

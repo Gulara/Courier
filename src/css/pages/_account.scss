@@ -1,0 +1,278 @@
+.account {
+
+
+
+    &__btn {
+        @include respondmax(lg) {
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+
+        @include respondmax(sm) {
+            margin-bottom: 0;
+        }
+
+        &__link {
+            @include respondmax(sm) {
+                width: 100% !important;
+            }
+        }
+
+        &__item {
+            @include respondmax(sm) {
+                width: 100% !important;
+            }
+
+
+            .btn-primary:not(:disabled):not(.disabled).active {
+                color: #fff;
+                background-color: $color-primary;
+                border-color: $color-primary;
+                outline: none;
+            }
+        }
+    }
+
+    &__nav {
+        flex-wrap: nowrap;
+        border: none;
+
+        @include respondmax(md) {
+
+            border-bottom: none;
+        }
+
+        @include respondmax(sm) {
+            width: auto;
+            font-size: 13px;
+        }
+
+        &__item {
+
+            // @include respondmax(sm) {
+            //     width: 100%;
+            // }
+            &:not(:last-child) {
+                margin-right: 5px;
+            }
+
+            .active {
+                color: $color-primary !important;
+                background-color: none;
+                border-color: none;
+                border-bottom: 2px solid $color-primary;
+             
+
+                @include respondmax(md) {
+                    border-bottom: none;
+                }
+            }
+
+        }
+
+        &--link {
+            text-align: center;
+            color: $color-secondary-light;
+           
+
+            &:hover {
+                color: $color-secondary-dark;
+            
+            }
+
+            @include respondmax(sm) {
+                width: 100%;
+                text-align: left;
+            }
+
+        }
+    }
+}
+
+
+.gender-label {
+
+    text-align: center;
+    cursor: pointer;
+    background-color: #ffffff;
+    color: #555a64;
+    width: 100%;
+    padding: 10px 20px !important;
+    border-radius: 3px;
+    font-size: 16px;
+
+}
+
+.gender-input[type="radio"] {
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    display: none;
+
+    &:checked+label {
+        background-color: $color-primary;
+        color: #ffffff;
+    }
+}
+
+
+
+#mapCanvas {
+    width: 100%;
+    height: 50vh;
+    border-radius: 10px;
+    @include respondmax(sm) {
+        height: 30vh;
+     }
+}
+.my-order {
+    padding: 1rem 3rem;
+    @include respondmax(sm) {
+       padding: 1rem;
+    }
+}
+.first-form {
+    margin-top: 2rem;
+   background-color: transparent !important;
+}
+.order2 {
+    &__div {
+        display: flex;
+        flex-direction: column;
+        margin: 0 1rem;
+
+
+        &__input {
+            background-color: #fff;
+            padding: 10px;
+            padding-left: 20px;
+            width: 90%;
+            margin: 1rem auto;
+            border-radius: 20px;
+            align-items: center;
+
+            @include respondmax(sm) {
+
+                width: 100%;
+
+            }
+
+            &--note {
+                width: 100%;
+
+                &--div {
+                    border-bottom: 1px solid #cccccc;
+                    padding-bottom: 10px;
+                    margin-bottom: 10px;
+                }
+
+            }
+
+            &--span {
+                font-size: 13px;
+                color: #818490;
+            }
+        }
+
+        &__img {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            width: 90%;
+            margin: 1rem auto;
+
+
+            @include respondmax(md) {
+                margin-top: 0;
+
+            }
+
+            @include respondmax(sm) {
+                flex-wrap: wrap;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                justify-content: center;
+
+
+            }
+
+            &--div {
+                display: flex;
+
+                align-items: center;
+                justify-content: center;
+
+                width: 150px;
+                height: 150px;
+                margin: 20px auto;
+                color: #fff;
+
+                @include respondmax(md) {
+
+                    margin-top: 10px;
+                }
+
+
+                img {
+                    border-radius: 10px;
+
+                }
+            }
+        }
+
+        &__img-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+            &--img {
+                width: 100px;
+                height: 100px;
+                margin-right: 20px;
+
+                @include respondmax(sm) {
+                    width: 80px;
+                    height: 80px;
+                    margin-right: 10px;
+                }
+            }
+
+            &--span {
+                font-size: 20px;
+            }
+        }
+    }
+
+
+}
+
+.billing {
+
+    &__custom-control {
+        @include respondmax(sm) {
+            padding-left: 0 !important;
+        }
+    }
+}
+
+#myOrderTab-1 {
+    @include respondmax(lg) {
+        display: none;
+    }
+}
+
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+
+    &--input[type=file] {
+        font-size: 100px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+    }
+}

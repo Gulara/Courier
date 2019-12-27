@@ -1,0 +1,222 @@
+//= template/header.html
+//= template/head.html
+<div class="loader">
+    <div class="loading-animation"></div>
+</div>
+
+<div class=" p-3 p-lg-5">
+    <div class=" container">
+        <div class=" bg-white ">
+            <div class="   row mt-3 pt-5">
+                <div class="col-lg-3">
+                    <ul class="nav  flex-lg-column account__btn" id="myOrderTab-1">
+                        <li class="nav-item account__btn__item">
+                            <a class="btn btn-primary w-100 account__btn__link active" href="my-orders.html">
+                                <div class="d-flex align-items-center">
+                                    <i class="fab fa-first-order mr-2"></i>
+                                    <span> Sifarişlərim</span>  <span class="badge badge-danger badge-pill my-badge">?</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item account__btn__item">
+                            <a class="btn  w-100 account__btn__link"  href="my-messages.html">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-envelope mr-2"></i>
+                                    <span>Mesajlarım</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item  account__btn__item">
+                            <a class="btn  w-100 account__btn__link" href="payment-methods.html">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-credit-card mr-2"></i>
+                                    <span> Ödəniş növləri</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item  account__btn__item">
+                            <a class="btn w-100 account__btn__link" href="my-address.html">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-map-marker-alt mr-2"></i>
+                                    <span> My Address</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item  account__btn__item">
+                            <a class="btn  w-100 account__btn__link" href="my-profile.html">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-user mr-2"></i>
+                                    <span> Profilim</span>  <span class="badge badge-danger badge-pill my-badge">?</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="col-lg-9" id="myOrderTabContent-1">
+
+                    <div class="flex-grow-1 ml-lg-4 mt-3 mt-md-0">
+                        <!-- MY ORDERS -->
+                        <div id="my-order-1">
+                            <div class=" account bg-light p-1">
+
+
+                                <ul class="nav lead mb-lg-4 account__nav m-lg-3" id="myTab-2" role="tablist">
+                                    <li class="nav-item account__nav__item">
+                                        <a class="nav-link active account__nav--link" href="my-orders.html">Aktiv
+                                            sifarişlər</a>
+                                    </li>
+                                    <li class="nav-item account__nav__item">
+                                        <a class="nav-link  account__nav--link" href="pending-orders.html">Gözləmədə
+                                            olan <span class="badge badge-danger badge-pill my-badge">?</span></a>
+                                    </li>
+                                    <li class="nav-item account__nav__item">
+                                        <a class="nav-link  account__nav--link" href="finished-orders.html">Bitmiş
+                                            sifarişlər</a>
+                                    </li>
+                                </ul>
+                                <div id="myTabContent">
+                                    <div class=" active" id="active-order">
+                                        <div class=" bg-light pt-1">
+
+                                            <div class="card order-card">
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-sm-12 col-lg-8">
+                                                            <div class=" order-card__div  mb-3">
+                                                                <img src="img/user-default-img.png"  alt="Avatar"
+                                                                    class="avatar avatar-lg flex-shrink-0 order-card__img">
+                                                                <div
+                                                                    class="ml-3 d-flex flex-column justify-content-center align-self-center">
+                                                                    <div class=" text-primary">
+                                                                        Asim Ağayev</div>
+                                                                    <span class=" order-card__date d-block">
+                                                                        24.02.2019 15:00
+                                                                    </span>
+                                                                    <span
+                                                                        class=" text-light rounded-pill order-card__cancelled">Cancelled</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="order-card__circle">
+                                                                <div class="mb-2 d-flex align-items-start order-card__circle--before">
+                                                                    <i class="fas fa-circle mr-3 mt-1"></i>
+                                                                    <div class="order-card__border">
+                                                                        Baku
+                                                                        Medical Center</div>
+                                                                </div>
+                                                                <div class=" d-flex align-items-start order-card__circle--after">
+                                                                    <i
+                                                                        class="fas fa-circle mr-3 mt-1"></i>
+                                                                    <div class="order-card__border">
+                                                                        Yasamal rayonu,
+                                                                        Şərifzadə
+                                                                        küçəsi</div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-sm-12 col-lg-4 order-card__money-group">
+                                                            <div>
+                                                                <div class="mb-2 mb-sm-2">
+                                                                    <i
+                                                                        class="fas fa-dollar-sign mr-2  text-primary pl-xl-2"></i>8.50
+                                                                    qəp</div>
+                                                                <div>
+                                                                    <i class="fas fa-route mr-2  text-primary"></i>50
+                                                                    km
+                                                                </div>
+                                                            </div>
+
+                                                            <a class=" order-card__btn" href="order-card.html">
+                                                                <i class="fas fa-arrow-right "></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card order-card">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col-sm-12 col-lg-8">
+                                                                <div class=" order-card__div  mb-3">
+                                                                    <img  src="img/user-default-img.png"  alt="Avatar"
+                                                                        class="avatar avatar-lg flex-shrink-0 order-card__img">
+                                                                    <div
+                                                                        class="ml-3 d-flex flex-column justify-content-center align-self-center">
+                                                                        <div class=" text-primary">
+                                                                            Asim Ağayev</div>
+                                                                        <span class=" order-card__date d-block">
+                                                                            24.02.2019 15:00
+                                                                        </span>
+                                                                        <span class=" text-light rounded-pill order-card__finished">Tamamlanıb</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="order-card__circle">
+                                                                    <div class="mb-2 d-flex align-items-start order-card__circle--before">
+                                                                        <i class="fas fa-circle mr-3 mt-1"></i>
+                                                                        <div class="order-card__border">
+                                                                            Baku
+                                                                            Medical Center</div>
+                                                                    </div>
+                                                                    <div class=" d-flex align-items-start order-card__circle--after">
+                                                                        <i
+                                                                            class="fas fa-circle mr-3 mt-1"></i>
+                                                                        <div class="order-card__border">
+                                                                            Yasamal rayonu,
+                                                                            Şərifzadə
+                                                                            küçəsi</div>
+                                                                    </div>
+                                                                </div>
+    
+                                                            </div>
+                                                            <div class="col-sm-12 col-lg-4 order-card__money-group">
+                                                                <div>
+                                                                    <div class="mb-2 mb-sm-2">
+                                                                        <i
+                                                                            class="fas fa-dollar-sign mr-2  text-primary pl-xl-2"></i>8.50
+                                                                        qəp</div>
+                                                                    <div>
+                                                                        <i class="fas fa-route mr-2  text-primary"></i>50
+                                                                        km
+                                                                    </div>
+                                                                </div>
+    
+                                                                <a class=" order-card__btn" href="order-card.html">
+                                                                    <i class="fas fa-arrow-right "></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+                        
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- <a href="#top" class="btn btn-primary rounded-circle btn-back-to-top" data-smooth-scroll data-aos="fade-up"
+    data-aos-offset="2000" data-aos-mirror="true" data-aos-once="false">
+    <img src="assets/img/icons/interface/icon-arrow-up.svg" alt="Icon" class="icon bg-white" data-inject-svg>
+</a> -->
+
+//= template/foot.html
+//= template/footer-all.html

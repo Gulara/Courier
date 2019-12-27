@@ -1,0 +1,82 @@
+.payment {
+    &__wrap-drop {
+        cursor: pointer;
+        margin: 0 auto;
+        padding: 1rem;
+        position: relative;
+        width: 75%;
+        z-index: 3;
+
+        &::after {
+            border-color: #a2a7b0 transparent;
+            border-style: solid;
+            border-width: 7px 7px 0;
+            content: "";
+            height: 0;
+            margin-top: -4px;
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            width: 0;
+        }
+
+        span {
+            color: $color-secondary-dark;
+            font-weight: bold;
+        }
+
+        &.active::after {
+            border-width: 0 7px 7px;
+        }
+    }
+
+    &__drop {
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, .2);
+        display: none;
+        left: 0;
+        list-style: none;
+        margin-top: 0;
+        opacity: 0;
+        padding-left: 0;
+        pointer-events: none;
+        position: absolute;
+        right: 0;
+        top: 100%;
+        z-index: 2;
+        margin-top: 5px;
+
+        li {
+            color: $color-secondary-dark;
+            display: block;
+            padding: 1rem;
+            text-decoration: none;
+
+            position: relative;
+            &:not(:last-child) {
+                border-bottom: 1px solid $color-secondary;
+            }
+        }
+
+        &--checkmark {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: $color-primary ;
+
+        }
+    }
+}
+
+
+
+.payment__wrap-drop.active::after {
+    border-width: 0 7px 7px;
+}
+
+.payment__wrap-drop.active .payment__drop {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+}

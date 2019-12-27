@@ -1,0 +1,87 @@
+.delivery {
+  margin: 30px 0;
+  width: 100% !important;
+  display: none;
+
+  @include respondmax(sm) {
+    width: 100% !important;
+  }
+
+}
+
+.day {
+  margin: 10px 0 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  &__label {
+
+    text-align: center;
+    cursor: pointer;
+    background-color: $color-secondary;
+    color: black;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    justify-content: center;
+    font-weight: bold;
+
+    &--1 {
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+
+    &--2 {
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+
+    &--span {
+      font-size: 15px !important;
+    }
+
+    &:hover {
+      color: #ffffff !important;
+      background-color: $color-primary !important;
+      transition: all .3s;
+      text-decoration: none;
+    }
+
+
+    &:focus-within {
+      background-color: $color-primary !important;
+      color: #ffffff;
+    }
+  }
+
+  &__input[type="radio"] {
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    display: none;
+
+    &:checked+label {
+      background-color: $color-primary;
+      color: #ffffff;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 32%;
+    border-radius: 10px !important;
+    padding-left: 0;
+  }
+}
+
+#today-span,
+#tomorrow-span {
+  text-transform: capitalize;
+}

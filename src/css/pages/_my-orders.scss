@@ -1,0 +1,144 @@
+.order-card {
+    margin: 1rem;
+
+    @include respondmax(sm) {
+        font-size: 14px;
+    }
+
+    &__div {
+        display: flex;
+
+        @include respondmax(sm) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__btn {
+        align-self: flex-end;
+        outline: none;
+        background-color: $color-primary;
+        color: #ffffff !important;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+
+        &:active,
+        &:focus {
+            outline: none;
+            border: none;
+
+        }
+
+        &:hover {
+            text-decoration: none;
+        }
+
+        
+        .fa-arrow-right,
+        .fa-arrow-left {
+            align-self: center;
+
+            &:hover {
+                color: #ffffff !important;
+            }
+        }
+    }
+
+    &__cancelled {
+        text-align: center;
+        font-size: 13px;
+        background-color: #dc3545 !important;
+        width: 150px;
+        padding: 2px 10px;
+
+        @include respondmax(sm) {
+            width: 100px;
+        }
+    }
+
+    &__finished {
+        text-align: center;
+        font-size: 13px;
+        background-color: #28a745 !important;
+        width: 150px;
+        padding: 2px 10px;
+
+        @include respondmax(lg) {
+            width: 100px;
+        }
+    }
+
+    &__date {
+        font-size: 12px;
+    }
+
+    &__border {
+        border-bottom: 2px solid #cccccc;
+        padding-bottom: 4px;
+    }
+
+    &__money-group {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: baseline;
+
+        @include respondmax(lg) {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+
+        }
+
+        @include respondmax(md) {
+
+            margin-top: 15px;
+
+        }
+    }
+
+    &__circle {
+        position: relative;
+        height: auto;
+
+        &--before {
+            display: flex;
+
+            .fa-circle {
+                color: $color-primary-light;
+                z-index: 2;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 7px;
+                z-index: 100;
+                top: 14px;
+                height: 50%;
+                z-index: 1;
+                border-left: 2px dashed $color-secondary-dark;
+                @include respondmax(md) {
+
+                 left: 6px;
+                 top: 17px;
+                 height: 40%;
+                 
+        
+                }
+            }
+        }
+
+        &--after {
+            display: flex;
+
+            .fa-circle {
+                color: $color-primary;
+                z-index: 2;
+            }
+        }
+    }
+}

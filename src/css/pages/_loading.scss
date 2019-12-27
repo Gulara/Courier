@@ -1,0 +1,94 @@
+.loading-info {
+    margin-bottom: 20px;
+    color: $color-secondary-dark;
+    border-bottom: 1px solid #d0d2d7;
+    width: 100%;
+
+    &--courier{
+        border-bottom: none;
+    }
+
+    &__circle {
+        position: relative;
+        height: auto;
+
+        &--before {
+            display: flex;
+
+            .fa-circle {
+                color: $color-primary-light;
+                z-index: 2;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 7px;
+                z-index: 100;
+                top: 25px;
+                height: 30%;
+                z-index: 1;
+                border-left: 2px dashed $color-secondary-dark;
+            }
+        }
+
+        &--after {
+            display: flex;
+
+            .fa-circle {
+                color: $color-primary;
+                z-index: 2;
+            }
+        }
+    }
+
+    &--bottom {
+        position: relative;
+        padding-left: 20px;
+
+
+        &::before {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f111";
+            color: $color-secondary-dark;
+            position: absolute;
+            top: 0;
+            left: -8px;
+
+
+        }
+    }
+
+    &__heading {
+        opacity: .5;
+
+    }
+
+
+
+    &--img {
+        border-radius: 10px;
+    }
+
+    &--payment-group {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__urgent-time{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 16px;
+    }
+    &--delivery-time{
+        display: flex;flex-direction: column;
+        align-items: flex-end;
+    }
+
+    &--money {
+        font-size: 25px;
+    }
+}
