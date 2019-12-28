@@ -1,6 +1,3 @@
-//  NEW FOR LOADING-END.HTML
-// This is the jQuery UI widget. The configurable bits and initialization are at the bottom of this file.
-
 $(document).ready(function () {
 	(function ($) {
 		$.widget("eee.loadingSpinner", {
@@ -68,24 +65,28 @@ $(document).ready(function () {
 		});
 	}(jQuery));
 });
+
 $(document).ready(function () {
 	var myVar = setInterval(myTimer, 1000);
 	var value = 0;
 	// Initialize the spinner.
 	// Change the "size" parameter to resize the spinner.
-	var $spinner = $("div#spin").loadingSpinner({
+	var $spinner = $("div#spinner-apply-success").loadingSpinner({
 		size: 400
 	});
 	setTimeout(function () {
 		// You can set this to "failure" to see a red X instead of the checkmark
 		$spinner.loadingSpinner("success");
-	}, 2700)
+	}, 2000)
 
 	function myTimer() {
 		value = value + 1;
-		if (value == 6) {
-			document.getElementById("spin").style.display = 'none';
+		if (value == 5) {
+			document.getElementById("spinner-apply-success").style.display = 'none'
 		}
 	}
-
+    $('.driver-apply__content').delay(5000).queue(function (next) {
+        $(this).css('display', 'block');
+        next();
+    });
 });

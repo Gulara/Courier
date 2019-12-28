@@ -3866,6 +3866,11 @@ p + p {
   .driver-sign {
     margin-top: 6rem; } }
 
+.driver-sign__loading-spinner {
+  display: none;
+  margin-top: 50px;
+  margin-bottom: 50px; }
+
 .driver-sign__label {
   display: block;
   position: relative;
@@ -3915,10 +3920,21 @@ p + p {
            transform: rotate(45deg); }
 
 .driver-sign__btn {
-  width: 100%; }
+  width: 100%;
+  display: none; }
+
+.transition__div {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
 
 .transition__form-group {
-  width: 30%;
+  width: 100%;
   margin: 0 5px; }
   @media (max-width: 575px) {
     .transition__form-group {
@@ -3934,18 +3950,11 @@ p + p {
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-     -moz-box-orient: vertical;
-     -moz-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-     -moz-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-border-radius: 3px;
      -moz-border-radius: 3px;
           border-radius: 3px;
@@ -3954,19 +3963,37 @@ p + p {
   border: 2px solid transparent;
   -webkit-border-radius: 10px;
      -moz-border-radius: 10px;
-          border-radius: 10px; }
+          border-radius: 10px;
+  padding: 0 10px; }
   .transition__label--img {
-    margin-left: auto;
-    margin-right: auto;
-    width: 50px !important; }
+    width: 70px !important;
+    margin-right: 20px; }
   .transition__label--span {
-    font-size: 12px;
+    font-size: 20px;
     text-align: center;
     font-family: 'Nunito', sans-serif;
     color: #1f1f1f;
     font-weight: bold; }
   .transition__label:hover {
     border: 2px solid #7b2bfc; }
+
+.transition__input[type="radio"] {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+  display: none; }
+  .transition__input[type="radio"]:checked + div,
+  .transition__input[type="radio"]:checked + label {
+    border: 2px solid #7b2bfc; }
+
+.driver-form-for-all {
+  display: none; }
+
+.driver-form-for-with-transition {
+  display: none; }
+
+.driver-membership {
+  display: none; }
 
 @media (max-width: 991px) {
   .driver-document {
@@ -3981,6 +4008,15 @@ p + p {
 
 .driver-document__btn {
   width: 100%; }
+
+.driver-apply__content {
+  display: none;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center; }
 
 /*! WEBCODER - http://webcoder.az/ Mehemmed Memmedli  16 Aprel 2018  https://github.com/nemerki */
 /* ==========================================================================

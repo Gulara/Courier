@@ -1,81 +1,95 @@
 .driver-sign {
-    @include respondmax(lg){
-    margin-top: 4rem;
+    @include respondmax(lg) {
+        margin-top: 4rem;
     }
-    @include respondmax(md){
+
+    @include respondmax(md) {
         margin-top: 6rem;
-        }
+    }
 
-        &__label {
-            display: block;
-            position: relative;
-            padding-left: 35px;
-            
+    &__loading-spinner {
+        display: none;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    &__label {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+
+        cursor: pointer;
+        user-select: none;
+
+        input {
+            position: absolute;
+            opacity: 0;
             cursor: pointer;
-            user-select: none;
-    
-            input {
-                position: absolute;
-                opacity: 0;
-                cursor: pointer;
-                height: 0;
-                width: 0;
-    
-                &:checked ~ span{
-                    background-color: $color-primary;
-                    border: none;
-                }
-    
-                &:checked ~ span::after {
-                    display: block;
-                }
-    
+            height: 0;
+            width: 0;
+
+            &:checked~span {
+                background-color: $color-primary;
+                border: none;
             }
-    
-            span {
-                position: absolute;
-                top: 0;
-                left: 0;
-                height: 25px;
-                width: 25px;
-                background-color: #eee;
-             border: 2px solid $color-primary;
-             border-radius: 5px;
-             
-            
-    
-                &::after {
-                    content: "";
-                    position: absolute;
-                    display: none;
-                }
-    
-                &::after {
-                    left: 9px;
-                    top: 5px;
-                    width: 7px;
-                    height: 13px;
-                    border: solid white;
-                    border-width: 0 3px 3px 0;
-                    -webkit-transform: rotate(45deg);
-                    -ms-transform: rotate(45deg);
-                    transform: rotate(45deg);
-                }
+
+            &:checked~span::after {
+                display: block;
             }
+
         }
 
-        &__btn {
-            width: 100%;
+        span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background-color: #eee;
+            border: 2px solid $color-primary;
+            border-radius: 5px;
 
-            
 
+
+            &::after {
+                content: "";
+                position: absolute;
+                display: none;
+            }
+
+            &::after {
+                left: 9px;
+                top: 5px;
+                width: 7px;
+                height: 13px;
+                border: solid white;
+                border-width: 0 3px 3px 0;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
         }
+    }
+
+    &__btn {
+        width: 100%;
+        display: none;
+
+
+    }
 }
 
 
-.transition{
+.transition {
+
+
+    &__div {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
     &__form-group {
-        width: 30%;
+        width: 100%;
         margin: 0 5px;
 
         @include respondmax(sm) {
@@ -83,35 +97,40 @@
 
         }
     }
+
     &__label {
         text-align: center;
         cursor: pointer;
         background-color: $color-secondary;
         color: black;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        align-items: center;
+
         border-radius: 3px;
         width: 100%;
         height: 70px;
         border: 2px solid transparent;
         border-radius: 10px;
+        padding: 0 10px;
 
         &--img {
-            margin-left: auto;
-            margin-right: auto;
-            width: 50px !important;
+
+            width: 70px !important;
+            margin-right: 20px;
 
         }
 
 
         &--span {
-            font-size: 12px;
+            font-size: 20px;
             text-align: center;
 
             font-family: 'Nunito', sans-serif;
             color: #1f1f1f;
             font-weight: bold;
+
+
+
         }
 
 
@@ -119,4 +138,34 @@
             border: 2px solid $color-primary;
         }
     }
+
+    &__input[type="radio"] {
+        visibility: hidden;
+        height: 0;
+        width: 0;
+        display: none;
+
+        &:checked+div,
+        &:checked+label {
+            border: 2px solid $color-primary;
+
+        }
+    }
 }
+
+.driver-form-for-all {
+    display: none;
+}
+
+.driver-form-for-with-transition {
+    display: none;
+}
+
+.driver-membership {
+    display: none;
+}
+
+
+
+
+
