@@ -12,11 +12,16 @@ $(document).ready(function () {
           $('#delivery').css({
             'display': 'block'
           });
+
+          
+
     
         } else if ($(this).is(':checked') && $(this).val() == 'urgent') {
           $('#delivery').css({
             'display': 'none'
           });
+
+          
         }
       });
     

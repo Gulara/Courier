@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function () {  
     $('input[type=radio][transition=transition]').change(function () {
 
         // LOADING SPINNER
@@ -9,22 +9,25 @@ $(document).ready(function () {
             $(this).css('display', 'none');
             next();
         });
-
-
+//  TRANSITION  DOWN ICON 
+        $('.transition__icon').delay(700).queue(function (next) {
+            $(this).css('display', 'block');
+            next();
+        });
 
         if (this.id == 'transition-pedestrian') {
 
-            $('.driver-form-for-all, .driver-membership, .driver-sign__btn').delay(1000).queue(function (next) {
+            $('#driver-form-pedestrian').delay(1000).queue(function (next) {
                 $(this).css('display', 'block');
                 next();
             });
-            $('.driver-form-for-with-transition').css({
+            $('#driver-form').css({
                 'display': 'none'
             });
         } else {
 
 
-            $('.driver-form-for-all, .driver-form-for-with-transition, .driver-membership, .driver-sign__btn').delay(1000).queue(function (next) {
+            $('#driver-form').delay(1000).queue(function (next) {
                 $(this).css('display', 'block');
                 next();
             });
@@ -32,7 +35,7 @@ $(document).ready(function () {
     });
 
 
-    
+    // UNCHECKED RADIO BUTTON
 
     InitRadio('transition');
 
@@ -45,30 +48,31 @@ $(document).ready(function () {
             $(this).on("click", function (event) {
                 SetRadioButtonChkProperty($(this).val(), transition);
                 let checkedSiblings = $(this).parent().siblings();
-                checkedSiblings.toggle('slow');
+                checkedSiblings.slideToggle('slow');
+
             });
         });
     }
 
     function SetRadioButtonChkProperty(val, transition) {
         $.each($(':radio[transition="' + transition + '"]'), function () {
-           
+
             if ($(this).val() != val)
                 $(this).attr('chk', '0');
+
 
             else {
                 if ($(this).attr('chk') == '0')
                     $(this).attr('chk', '1');
+
                 else {
                     $(this).attr('chk', '0');
                     $(this).prop('checked', false);
-                    $('.driver-form-for-all, .driver-form-for-with-transition, .driver-membership, .driver-sign__btn').css({
+                    $('#driver-form-pedestrian, #driver-form, .transition__icon').css({
                         'display': 'none'
                     });
                 }
             }
         });
     }
-
-
 });

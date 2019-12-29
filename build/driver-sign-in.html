@@ -530,7 +530,7 @@
                                         <label class="transition__label" for="transition-pedestrian">
                                             <img src="img/pedestrian.png" alt="car" class="transition__label--img">
                                             <span class="transition__label--span">Piyada</span>
-                                            <i class="fas fa-angle-down ml-auto color-purple fa-2x mr-1 transtion__icon"></i>
+                                            <i class="fas fa-angle-down ml-auto color-purple fa-2x mr-2 transition__icon"></i>
                                         </label>
                                     </div>
 
@@ -541,7 +541,7 @@
                                         <label class="transition__label" for="transition-motorbike">
                                             <img src="img/motorbike.png" alt="car" class="transition__label--img">
                                             <span class="transition__label--span">Motosiklet</span>
-                                            <i class="fas fa-angle-down ml-auto color-purple fa-2x mr-1  transtion__icon"></i>
+                                            <i class="fas fa-angle-down ml-auto color-purple fa-2x mr-2  transition__icon"></i>
                                         </label>
 
                                     </div>
@@ -551,7 +551,7 @@
                                         <label class="transition__label" for="transition-car">
                                             <img src="img/car.png" alt="car" class="transition__label--img">
                                             <span class="transition__label--span">Avtomobil</span>
-                                            <i class="fas fa-angle-down ml-auto color-purple fa-2x mr-1  transtion__icon"></i>
+                                            <i class="fas fa-angle-down ml-auto color-purple fa-2x mr-2  transition__icon"></i>
                                         </label>
 
                                     </div>
@@ -561,7 +561,7 @@
                                         <label class="transition__label" for="transition-evacuator">
                                             <img src="img/evacuator.png" alt="car" class="transition__label--img">
                                             <span class="transition__label--span">Evakuator</span>
-                                            <i class="fas fa-angle-down ml-auto color-purple fa-2x mr-1 transtion__icon"></i>
+                                            <i class="fas fa-angle-down ml-auto color-purple fa-2x mr-2 transition__icon"></i>
                                         </label>
 
                                     </div>
@@ -571,7 +571,7 @@
                                         <label class="transition__label" for="transition-truck">
                                             <img src="img/transit.png" alt="car" class="transition__label--img"><span
                                                 class="transition__label--span">Yük maşını</span>
-                                                <i class="fas fa-angle-down ml-auto color-purple fa-2x mr-1 transtion__icon"></i>
+                                                <i class="fas fa-angle-down ml-auto color-purple fa-2x mr-2 transition__icon"></i>
                                         </label>
                                     </div>
                                 </div>
@@ -590,38 +590,93 @@
                                 </div>
 
                             </div>
-                            <form id="driver-form">
+                            <!-- FORM FOR PEDESTRIAN -->
+                            <form id="driver-form-pedestrian"  data-parsley-validate="">
                                 <div class="driver-form-for-all">
 
                                     <div class="form-group validation-form mt-4">
                                         <div class="form-group">
                                             <label class="form-label form__label">Adınız :</label>
                                             <input type="text" class="form-control form__control mb-3"
-                                                placeholder="Mammad">
+                                                placeholder="Mammad"  required>
                                         </div>
                                         <div class="form-group">
                                             <label class="form-label form__label">Soyadınız :</label>
                                             <input type="text" class="form-control form__control mb-3"
-                                                placeholder="Mammadov">
+                                                placeholder="Mammadov"  required>
                                         </div>
                                         <div class="form-group">
                                             <label class="form-label form__label">Doğum tarixiniz : </label>
                                             <input type="text" id="driver-birthday" autocomplete="off"
-                                                class="form-control form__control mb-3" placeholder="20/12/1990">
+                                                class="form-control form__control mb-3" placeholder="20/12/1990"  required>
                                         </div>
                                         <div class="form-group">
                                             <label class="d-block  form-label form__label">Cinsiniz :</label>
                                             <div class="row">
                                                 <div class="col">
                                                     <input class="gender-input form-control form__control " type="radio"
-                                                        name="gender" id="gender1" />
-                                                    <label class="gender--label" for="gender1">Kişi</label>
+                                                        name="gender" id="male" />
+                                                    <label class="gender--label" for="male">Kişi</label>
 
                                                 </div>
                                                 <div class="col">
                                                     <input class="gender-input form-control form__control " type="radio"
-                                                        name="gender" id="gender2" />
-                                                    <label class="gender--label " for="gender2">Qadın</label>
+                                                        name="gender" id="female" />
+                                                    <label class="gender--label " for="female">Qadın</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <label class="driver-sign__label driver-membership">
+                                    <a href="#" class="color-purple membership" data-toggle="modal"
+                                        data-target="#membership-agreement-driver"> Üzvlük müqaviləsi</a> şərtlərini
+                                    oxudum və qəbul edirəm.
+                                    <input type="checkbox" class="driver-sign__label--checkbox" checked="checked"
+                                        id="membership-checkbox" required>
+                                    <span class="driver-sign__label--checkmark membership-span"></span>
+                                </label>
+
+
+
+                                <button class="btn btn-purple text-uppercase  driver-sign__btn mb-3 mt-3" value="validate">Növbəti</button>
+
+
+
+                            </form>
+                            <!-- FORM FOR OTHER DRIVERS -->
+                            <form id="driver-form"  data-parsley-validate="">
+                                <div class="driver-form-for-all">
+
+                                    <div class="form-group validation-form mt-4">
+                                        <div class="form-group">
+                                            <label class="form-label form__label">Adınız :</label>
+                                            <input type="text" class="form-control form__control mb-3"
+                                                placeholder="Mammad"  required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label form__label">Soyadınız :</label>
+                                            <input type="text" class="form-control form__control mb-3"
+                                                placeholder="Mammadov"  required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label form__label">Doğum tarixiniz : </label>
+                                            <input type="text" id="driver-birthday" autocomplete="off"
+                                                class="form-control form__control mb-3" placeholder="20/12/1990"  required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="d-block  form-label form__label">Cinsiniz :</label>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <input class="gender-input form-control form__control " type="radio"
+                                                        name="gender" id="male" />
+                                                    <label class="gender--label" for="male">Kişi</label>
+
+                                                </div>
+                                                <div class="col">
+                                                    <input class="gender-input form-control form__control " type="radio"
+                                                        name="gender" id="female" />
+                                                    <label class="gender--label " for="female">Qadın</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -635,7 +690,7 @@
                                     <div class="form-group">
                                         <label class="form-label form__label">İstehsalçı :</label>
                                         <input id="autocomplete-car-producer" list="autocomplete-car-producer-list"
-                                            class="form-control form__control mb-3" placeholder="Hyundai" />
+                                            class="form-control form__control mb-3" placeholder="Hyundai"  required/>
                                         <datalist id="autocomplete-car-producer-list">
                                             <option value="Hyundai"></option>
                                             <option value="BMW"></option>
@@ -646,7 +701,7 @@
                                     <div class="form-group">
                                         <label class="form-label form__label">Avtomobilin modeli :</label>
                                         <input id="autocomplete-car-model" list="autocomplete-car-model-list"
-                                            class="form-control form__control mb-3" placeholder="Corolla" />
+                                            class="form-control form__control mb-3" placeholder="Corolla"  required/>
                                         <datalist id="autocomplete-car-model-list">
                                             <option value="Corolla"></option>
                                             <option value="Matrix"></option>
@@ -656,7 +711,7 @@
                                     <div class="form-group">
                                         <label class="form-label form__label">Avtomobilin buraxılış ili :</label>
                                         <input id="autocomplete-release-year" list="autocomplete-release-year-list"
-                                            class="form-control form__control mb-3" placeholder="2019" />
+                                            class="form-control form__control mb-3" placeholder="2019"  required/>
                                         <datalist id="autocomplete-release-year-list">
                                             <option value="2018"></option>
                                             <option value="2019"></option>
@@ -667,7 +722,7 @@
                                     <div class="form-group">
                                         <label class="form-label form__label">Dövlət Qeydiyyat Nişanı :</label>
                                         <input type="text" class="form-control form__control mb-3"
-                                            placeholder="90-AB-123">
+                                            placeholder="90-AB-123" required>
                                     </div>
 
                                 </div>
@@ -683,8 +738,7 @@
 
 
 
-                                <a href="driver-document.html"
-                                    class="btn btn-purple text-uppercase  driver-sign__btn mb-3 mt-3">Növbəti</a>
+                                <button class="btn btn-purple text-uppercase  driver-sign__btn mb-3 mt-3" value="validate">Növbəti</button>
 
 
 
@@ -1035,17 +1089,23 @@
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script> -->
 <script src="assets/js/jquery.mask.js"></script>
 
-<!-- AUTOCOMPLETE  -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.2.24/jquery.autocomplete.min.js"></script> -->
-<script src="assets/js/autocomplete.min.js"></script>
- <script src="js/autocomplete-car-producer.js"></script>
- <script src="js/autocomplete-car-model.js"></script>
- <script src="js/autocomplete-car-release-year.js"></script>
- <script src="js/driver-sign-in.js"></script>
 
  <!-- PARSLEY -->
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.1/parsley.js"></script> -->
 <script src="assets/js/parsley.js"></script>
+
+<!-- AUTOCOMPLETE  -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.2.24/jquery.autocomplete.min.js"></script> -->
+<script src="assets/js/autocomplete.min.js"></script>
+
+
+ <script src="js/autocomplete-car-producer.js"></script>
+ <script src="js/autocomplete-car-model.js"></script>
+ <script src="js/autocomplete-car-release-year.js"></script>
+ <script src="js/driver-sign-in.js"></script>
+ <script src="js/driver-birthday.js"></script>
+ <script src="js/parsley-driver-sign-in.js"></script>
+
 
 </body>
 

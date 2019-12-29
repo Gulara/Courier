@@ -73,7 +73,7 @@
 
     &__btn {
         width: 100%;
-        display: none;
+        // display: none;
 
 
     }
@@ -151,21 +151,29 @@
 
         }
     }
+
+    &__icon {
+        display: none;
+    }
 }
 
-.driver-form-for-all {
+// .driver-form-for-all {
+//     display: none;
+// }
+
+// .driver-form-for-with-transition {
+//     display: none;
+// }
+
+// .driver-membership {
+//     display: none;
+// }
+#driver-form {
     display: none;
 }
 
-.driver-form-for-with-transition {
+#driver-form-pedestrian{
     display: none;
 }
-
-.driver-membership {
-    display: none;
-}
-
-
-
 
 
