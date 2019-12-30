@@ -16,14 +16,17 @@
                     <div class="col-xl-7 col-lg-8">
                         <div class="card card-body shadow text-left driver-document">
 
-                            <form id="driver-document-form">
+                            <form id="driver-document-form"  data-parsley-validate="">
                                 <h5 class="h5 text-center">Sizi sürücü kimi qeydiyyatdan keçirmək üçün bəzi qanuni
                                     sənədlər lazımdır. Sənədlərin keyfiyyətli şəkilləri qəbul edilir.</h5>
                                 <div class="form-group validation-form mt-4 mb-3">
                                     <div class="form-group driver-document__form-group">
-                                        <label class="form-label form__label">Profil şəkli :</label>
+                                        <fieldset>
+                                        <label class="form-label form__label">Profil şəkli : <span class="text-danger">(vacibdir)</span></label>
                                         <input type="file" class="driver-document-profile"
-                                            accept="image/x-png,image/jpeg">
+                                            accept="image/x-png,image/jpeg" data-parsley-errors-container="#checkbox-errors"  required>
+                                            <div class="checkbox-errors"></div>
+                                            </fieldset>
                                     </div>
                                    
                                     <div class="form-group  driver-document__form-group">
@@ -39,21 +42,30 @@
                                     </div>
                                    
                                     <div class="form-group  driver-document__form-group">
-                                        <label class="form-label form__label">Sürücülük vəsiqəsi 1 : </label>
+                                        <fieldset>
+                                        <label class="form-label form__label">Sürücülük vəsiqəsi 1 : <span class="text-danger">(vacibdir)</span> </label>
                                         <input type="file" class="driver-document-driving-license-front"
-                                            accept="image/x-png,image/jpeg">
+                                            accept="image/x-png,image/jpeg" required>
+                                            <div class="checkbox-errors"></div>
+                                        </fieldset>
                                     </div>
                                   
                                     <div class="form-group  driver-document__form-group">
-                                        <label class="form-label form__label">Sürücülük vəsiqəsi 2 : </label>
+                                    <fieldset>
+                                        <label class="form-label form__label">Sürücülük vəsiqəsi 2 : <span class="text-danger">(vacibdir)</span> </label>
                                         <input type="file" class="driver-document-driving-license-back"
-                                            accept="image/x-png,image/jpeg">
+                                            accept="image/x-png,image/jpeg" required>
+                                            <div class="checkbox-errors"></div>
+                                        </fieldset>
                                     </div>
                                
                                     <div class="form-group  driver-document__form-group">
-                                        <label class="form-label form__label">Texniki Pasport : </label>
+                                    <fieldset>
+                                        <label class="form-label form__label">Texniki Pasport : <span class="text-danger">(vacibdir)</span></label>
                                         <input type="file" class="driver-document-technical-passport"
-                                            accept="image/x-png,image/jpeg">
+                                            accept="image/x-png,image/jpeg" required>
+                                            <div class="checkbox-errors"></div>
+                                        </fieldset>
                                     </div>
                                    
                                     <div class="form-group  driver-document__form-group">
@@ -69,8 +81,8 @@
                                     </div>
                                   
                                 </div>
-                                <button class="btn btn-purple text-uppercase  driver-document__btn mb-3 "
-                                    type="submit">Növbəti</button>
+                                <button  class="btn btn-purple text-uppercase  driver-document__btn mb-3 "
+                                    type="submit" value="validate">Növbəti</button>
 
 
                             </form>
