@@ -2,17 +2,21 @@
 //  FİLE YÜKLƏMƏK ÜÇÜN
 $(document).ready(function () {
 FilePond.registerPlugin(
-    FilePondPluginImageCrop,
+    FilePondPluginImageExifOrientation,
     FilePondPluginImagePreview,
+    FilePondPluginImageEdit,
+    FilePondPluginImageCrop,
     FilePondPluginImageResize,
     FilePondPluginImageTransform
 );
 
 const inputElement = document.querySelector('.add-image[type="file"]');
 const pond = FilePond.create(inputElement, {
+   
     imageCropAspectRatio: 1,
     imageResizeTargetWidth: 100,
-    imageEditInstantEdit: true,
+    imageEditInstantEdit: false,
+
     imageResizeMode: 'contain',
     imageTransformVariants: {},
     onaddfile: (err, fileItem) => {
@@ -25,7 +29,10 @@ const pond = FilePond.create(inputElement, {
             document.body.appendChild(img);
         })
     }
+   
 });
+
+
 
 //  SADƏCƏ ŞƏKİL FORMATINDA YÜKLƏMƏSİ ÜÇÜN
 FilePond.create(document.querySelector('.add-image[type="file"]'), {
