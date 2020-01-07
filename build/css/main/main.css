@@ -2222,6 +2222,11 @@ label.error {
             border-radius: 10px !important;
     padding-left: 0;
     margin: 3px; }
+  .date__day {
+    text-transform: capitalize; }
+  .date__month {
+    text-transform: capitalize;
+    font-size: 13px; }
 
 .footer {
   background-color: #EAEFF2; }

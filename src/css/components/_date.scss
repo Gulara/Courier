@@ -70,4 +70,13 @@
       padding-left: 0;
       margin: 3px;
     }
+
+    &__day {
+      text-transform: capitalize;
+    }
+
+    &__month {
+      text-transform: capitalize;
+      font-size: 13px;
+    }
   }
