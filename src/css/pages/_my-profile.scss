@@ -1,0 +1,56 @@
+.my-profile-cabinet{
+	display: block;
+    cursor: pointer;
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+
+.my-profile-file{
+// 	position: relative;
+// 	height: 100%;
+// 	width: auto;
+// 	opacity: 1;
+// 	-moz-opacity: 0;
+//   filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+//   margin-top:-30px;
+width: 120px;
+    height: 30px;
+    margin-top: 20px;
+color: transparent;
+outline: none;
+  &::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+  &::before {
+    content: 'Fotonu dəyiş';
+    font-size: 14px;
+    display: inline-block;
+    // background: linear-gradient(top, #f9f9f9, #e3e3e3);
+    color: #fff;
+    border: 1px solid #999;
+    background-color: $color-primary;
+    border-radius: 10px;
+    padding: .34375rem 1rem;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    font-weight: 700;
+    
+  }
+}
+
+#upload-demo{
+	width: 250px;
+	height: 250px;
+  padding-bottom:25px;
+}
+
+.modal-close{
+    padding: 0.5rem 1rem !important;
+}   
+
+
+
+
+

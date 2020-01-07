@@ -69,24 +69,23 @@
                                                 </h3>
                                                 <hr>
                                                 <div class=" d-flex flex-column align-items-center">
-                                                    <img src="img/user-default-img.png" alt="Avatar"
-                                                        class="avatar avatar-lg flex-shrink-0 img-avatar">
-                                                    <div class="mt-3">
-                                                        <!-- EXAMPLE START -->
-                                                        <input type="file" multiple class="add-profile-image"
-                                                            accept="image/x-png,image/jpeg">
-                                                        <!-- EXAMPLE END -->
+                                                    <!--  CROP -->
+                                                    <label class="my-profile-cabinet center-block">
+                                                        <div class="text-center">
+                                                            <img src=""
+                                                                class="gambar img-responsive avatar avatar-lg  img-avatar"
+                                                                id="item-img-output" />
 
-                                                        <div class="upload-btn-wrapper">
-                                                            <button class="btn btn-sm btn-purple">Fotonu
-                                                                dəyiş</button>
-                                                            <!-- <input type="file" name="myfile"
-                                                                class="upload-btn-wrapper--input"
-                                                                accept="image/x-png,image/jpeg" /> -->
                                                         </div>
-                                                    </div>
+
+                                                        <input type="file"
+                                                            class="item-img my-profile-file center-block crop-img"
+                                                            name="file_photo" />
+                                                    </label>
+
                                                 </div>
-                                                <hr class="mt-lg-5">
+
+                                                <hr>
                                             </div>
                                         </div>
                                         <div class="row mb-4 mb-md-5 align-items-start">
@@ -166,8 +165,36 @@
 
             </div>
         </div>
+
+
+
+    </div>
+
+
+
+</div>
+
+<!-- MODAL -->
+<div class="modal fade" id="cropImagePop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header pb-4">
+                <button type="button" class="modal-close close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">
+                    <?=multiLanguage( "Edit Foto" , "Edit Photo" )?></h4>
+            </div>
+            <div class="modal-body">
+                <div id="upload-demo" class="center-block"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" id="cropImageBtn" class="btn btn-purple">Crop</button>
+            </div>
+        </div>
     </div>
 </div>
+
 
 
 
