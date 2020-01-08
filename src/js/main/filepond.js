@@ -2,9 +2,9 @@
 //  FİLE YÜKLƏMƏK ÜÇÜN
 $(document).ready(function () {
 FilePond.registerPlugin(
-    FilePondPluginImageExifOrientation,
+    // FilePondPluginImageExifOrientation,
     FilePondPluginImagePreview,
-    FilePondPluginImageEdit,
+    // FilePondPluginImageEdit,
     FilePondPluginImageCrop,
     FilePondPluginImageResize,
     FilePondPluginImageTransform

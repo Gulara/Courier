@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* HTML5 Boilerplate v6.0.1 | MIT License | https://html5boilerplate.com/   */
 /*
  * What follows is the result of much research on cross-browser styling.
@@ -3964,6 +3965,45 @@ p + p {
       .order-card__circle--after .fa-circle {
         color: #7b2bfc;
         z-index: 2; }
+
+.my-profile-cabinet {
+  display: block;
+  cursor: pointer;
+  margin-bottom: 0;
+  margin-top: 20px; }
+
+.my-profile-file {
+  width: 120px;
+  height: 30px;
+  margin-top: 20px;
+  color: transparent;
+  outline: none; }
+  .my-profile-file::-webkit-file-upload-button {
+    visibility: hidden; }
+  .my-profile-file::before {
+    content: 'Fotonu dəyiş';
+    font-size: 14px;
+    display: inline-block;
+    color: #fff;
+    border: 1px solid #999;
+    background-color: #7b2bfc;
+    -webkit-border-radius: 10px;
+       -moz-border-radius: 10px;
+            border-radius: 10px;
+    padding: .34375rem 1rem;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    font-weight: 700; }
+
+#upload-demo {
+  width: 250px;
+  height: 250px;
+  padding-bottom: 25px; }
+
+.modal-close {
+  padding: 0.5rem 1rem !important; }
 
 @media (max-width: 991px) {
   .driver-sign {
