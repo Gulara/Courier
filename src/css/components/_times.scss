@@ -1,4 +1,22 @@
 .times {
+    width: 100%;
+    display: flex;
+
+    &__simple {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    &__form-check {
+        padding-left: 0;
+        margin: 10px 0;
+        width: 16%;
+        justify-content: center;
+        display: flex;
+
+    }
 
     &__label {
 
@@ -6,7 +24,7 @@
         cursor: pointer;
         background-color: $color-secondary;
         color: black;
-      padding: 5px 9px !important;
+        padding: 5px 9px !important;
         border-radius: 3px;
         font-size: 16px;
 
@@ -17,10 +35,33 @@
         height: 0;
         width: 0;
         display: none;
-    
+
         &:checked+label {
             background-color: $color-primary;
             color: #ffffff;
+        }
+    }
+
+    &__btn {
+        padding: 5px 9px;
+        background-color: $color-primary;
+        width: 60px;
+        height: 34px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+    align-items: center;
+
+    &--down {
+        margin: 10px 0;
+        margin-left: 15px;
+        display: none;
+    }
+   
+        &--icon {
+            color: #ffffff;
+            text-align: center;
+            font-size: 35px;
         }
     }
 }
@@ -30,6 +71,3 @@
     background-color: #ababab;
     color: #ffffff;
 }
-
-
-

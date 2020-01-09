@@ -188,7 +188,8 @@
                                             <div class="info2">
 
                                                 <span class="distance"><i class="fas fa-route mr-1"></i>5.6km</span>
-                                                <span class="transition-time"><i class="fas fa-clock mr-1"></i>15 dəq</span>
+                                                <span class="transition-time"><i class="fas fa-clock mr-1"></i>15
+                                                    dəq</span>
                                                 <span class="price-truck"><i class="fa fa-coins mr-1"></i>225</span>
                                             </div>
                                         </div>
@@ -246,7 +247,7 @@
                             <i class="fas fa-question-circle"></i>
                         </button>
                     </div>
-                   
+
                     <textarea id="contact-message" name="contact-message" rows="10"
                         class="form-control form__control textarea" data-parsley-trigger="keyup"
                         data-parsley-minlength="1" data-parsley-maxlength="1000"
@@ -306,15 +307,15 @@
                 <!--URGENT START-->
                 <div class="urgent">
                     <label class="form-label form__label  mb-2">Çatdırılma növü :</label>
-                   <!-- NEW TOOLTIP -->
-                   <div class="form__tooltip">
-                    <button type="button" class="tooltip-circle  form__tooltip--circle  " data-toggle="tooltip"
-                        data-html="true"
-                        title="<div class='p-2 d-flex align-items-center bg-secondary flex-column'> <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi dicta dolorum quibusdam possimus qui repudiandae quis, voluptatum autem aperiam fugit!</p><a href='index.html' class=' text-white p-2 color-purple text-decoration-none btn-read'>Read More</a></div>">
+                    <!-- NEW TOOLTIP -->
+                    <div class="form__tooltip">
+                        <button type="button" class="tooltip-circle  form__tooltip--circle  " data-toggle="tooltip"
+                            data-html="true"
+                            title="<div class='p-2 d-flex align-items-center bg-secondary flex-column'> <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi dicta dolorum quibusdam possimus qui repudiandae quis, voluptatum autem aperiam fugit!</p><a href='index.html' class=' text-white p-2 color-purple text-decoration-none btn-read'>Read More</a></div>">
 
-                        <i class="fas fa-question-circle"></i>
-                    </button>
-                </div>
+                            <i class="fas fa-question-circle"></i>
+                        </button>
+                    </div>
                     <div class=" urgent__list">
                         <div class="urgent__list--item form-check">
                             <input class="urgent__input form-check-input" type="radio" name="urgent"
@@ -337,16 +338,41 @@
                 </div>
                 <!-- URGENT END -->
                 <!-- DELIVERY START -->
-                <div class="delivery" id="delivery">
+                <div class="delivery delivery-position" id="delivery">
                     <label class="form-label form__label">Delivery date :</label>
+                    <div class="date__div">
+                        <div class="date">
 
-                    <div class="date">
-                        
+                        </div>
+
+                        <div class="delivery-btn delivery-btn--down"><i
+                                class="fas fa-angle-down delivery-btn--icon"></i></div>
                     </div>
-                    <span class="form-label form__label mb-1">Delivery time</span>
-                    <div id="delivery__time" class="delivery__time times times-carousel owl-carousel  owl-theme">
+
+                    <div class="day__list datepicker form-check delivery-btn--up">
+                        <input class="datepicker__input" type="text" id="datepicker" autocomplete="off"
+                            placeholder="Pick a Date">
+
+                        <input class="day__input  form-check-input calendar-input" type="radio" name="days"
+                            data-item-id="date" id="calendar" value="" />
+
+                        <label class="day__label form-check-label calendar-label" for="calendar">Pick a date</label>
+
 
                     </div>
+                    <!-- <div class="delivery-btn delivery-btn--up"><i class="fas fa-angle-up delivery-btn--icon"></i></div> -->
+                    <span class="form-label form__label mb-1 form__label--time">Delivery time</span>
+
+                    <!-- FOR TIMES CAROUSEL -->
+                    <!-- <div id="delivery__time" class="delivery__time times times-carousel owl-carousel  owl-theme">
+
+                    </div> -->
+                    <div class="times">
+                        <div id="delivery__time" class="delivery__time times__simple"> </div>
+                        <div class="times__btn times__btn--down"><i class="fas fa-angle-down times__btn--icon"></i>
+                        </div>
+                    </div>
+
 
                 </div>
                 <!-- DELIVERY END -->
@@ -384,15 +410,15 @@
                 <!--  INSURANCE START -->
                 <div class="insurance form-group ">
                     <label class="form-label form__label mb-2">Sığorta :</label>
-                  <!-- NEW TOOLTIP -->
-                  <div class="form__tooltip">
-                    <button type="button" class="tooltip-circle  form__tooltip--circle  " data-toggle="tooltip"
-                        data-html="true"
-                        title="<div class='p-2 d-flex align-items-center bg-secondary flex-column'> <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi dicta dolorum quibusdam possimus qui repudiandae quis, voluptatum autem aperiam fugit!</p><a href='index.html' class=' text-white p-2 color-purple text-decoration-none btn-read'>Read More</a></div>">
+                    <!-- NEW TOOLTIP -->
+                    <div class="form__tooltip">
+                        <button type="button" class="tooltip-circle  form__tooltip--circle  " data-toggle="tooltip"
+                            data-html="true"
+                            title="<div class='p-2 d-flex align-items-center bg-secondary flex-column'> <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi dicta dolorum quibusdam possimus qui repudiandae quis, voluptatum autem aperiam fugit!</p><a href='index.html' class=' text-white p-2 color-purple text-decoration-none btn-read'>Read More</a></div>">
 
-                        <i class="fas fa-question-circle"></i>
-                    </button>
-                </div>
+                            <i class="fas fa-question-circle"></i>
+                        </button>
+                    </div>
                     <label class="insurance__label form__control">Sığorta əlavə et
                         <input type="checkbox" class="insurance__input form-check-input" name="" disabled>
                         <span class="checkmark"></span>
