@@ -62,9 +62,9 @@ $(document).ready(function () {
             var checkedSiblings = $("input[data-item-id=date]:checked").parent().nextAll().length;
 
             var dateChildren = $('.date').children(':visible').length;
-            // console.log(dateChildren);
+           
 
-
+            $("input:radio[data-item-id='calendar-date']").attr('value', '');
             if (checkedSiblings > 3 && dateChildren > 4) {
 
                 $("input[data-item-id=date]:checked").parent().prevAll().slideUp(800);
@@ -80,6 +80,7 @@ $(document).ready(function () {
 
             } else if (checkedSiblings == 0) {
                 $("input[data-item-id=date]:checked").parent().prevAll(':gt(2)').slideUp(800);
+                // $(".date").children().slideUp(800);
 
             }
 
@@ -97,24 +98,155 @@ $(document).ready(function () {
                 });
                 next();
             });
+
+            $('.delivery__form-label').css({
+                'display': 'block',
+            });
         });
 
     $(".times__form-check:nth-child(4)").nextAll().slideUp(800);
+    $('input:radio[data-item-id="calendar-date"]').change(
+        function () {
+            $("input:radio[data-item-id='date']").prop( "checked", false );
+            $("input:radio[data-item-id='calendar-date']").prop( "checked", true);
+        
 
+                let deliveryTimeNext = '';
+                $("input:radio[data-item-id='date']:not(:checked)").attr('value', '');
+
+                for (i = 0; i < dayHours; i++) {
+                    var tomorrowHours = moment().startOf('day').add(i, 'h').format("HH:mm");
+                    deliveryTimeNext = deliveryTimeNext + '<div class="form-check  times__form-check">\n' +
+                        '<input class="times__input" type="radio" value="' + tomorrowHours + '" name="times" data-item-id="calendar-times" id="' + tomorrowHours + '" />' +
+                        ' <label class="times__label  form-check-label"  for="' + tomorrowHours + '" >' + tomorrowHours +
+                        '</label>\n' +
+                        '</div>';
+                }
+                $('#delivery__time').html(deliveryTimeNext);
+                $(document).on('click', 'input:radio[data-item-id=calendar-times]', function () {
+                    $(".times__btn--down").css({
+                        'display': 'flex'
+                    });
+
+                    var valueSelected = document.querySelector('input[data-item-id="calendar-date"]');
+                    var TimeVal = $('input[data-item-id=calendar-times]:checked').val();
+                    var dataSlash = $('input[data-item-id=calendar-date]:checked').attr('data-slash');
+
+
+                    valueSelected.value = dataSlash + " " + TimeVal;
+
+                    $("input:radio[data-item-id='date']:not(:checked)").attr('value', '');
+
+                    var checkedSiblings = $("input[data-item-id=calendar-times]:checked").parent().nextAll().length;
+
+
+                    var dateChildren = $('.delivery__time').children(':visible').length;
+                    
+
+                    if (checkedSiblings > 4 && dateChildren > 5) {
+
+                        $("input[data-item-id=calendar-times]:checked").parent().prevAll().slideUp(300);
+                        $("input[data-item-id=calendar-times]:checked").parent().nextAll(':gt(3)').slideUp(800);
+                    } else if (checkedSiblings == 4) {
+                        $("input[data-item-id=calendar-times]:checked").parent().prevAll().slideUp(800);
+
+                    } else if (checkedSiblings == 3) {
+                        $("input[data-item-id=calendar-times]:checked").parent().prevAll(':gt(0)').slideUp(800);
+
+                    } else if (checkedSiblings == 2) {
+                        $("input[data-item-id=calendar-times]:checked").parent().prevAll(':gt(1)').slideUp(800);
+
+                    } else if (checkedSiblings == 1) {
+                        $("input[data-item-id=calendar-times]:checked").parent().prevAll(':gt(2)').slideUp(800);
+
+                    } else if (checkedSiblings == 0) {
+                        $("input[data-item-id=calendar-times]:checked").parent().prevAll(':gt(3)').slideUp(800);
+
+                    }
+                });
+                //  here
+                $(document).on('change', 'input:radio[data-item-id=calendar-times]', function () {
+                    var valueSelected = document.querySelector('input[data-item-id="calendar-date"]');
+                    var TimeVal = $('input[data-item-id=calendar-times]:checked').val();
+                    var dataSlash = $('input[data-item-id=calendar-date]:checked').attr('data-slash');
+
+
+                    valueSelected.value = dataSlash + " " + TimeVal;
+
+                    $("input:radio[data-item-id='date']:not(:checked)").attr('value', '');
+
+
+
+                    $(".times__btn--down").css({
+                        'display': 'flex'
+                    });
+
+
+                    var checkedSiblings = $("input[data-item-id=calendar-times]:checked").parent().nextAll().length;
+
+
+                    var dateChildren = $('.delivery__time').children(':visible').length;
+                
+
+                    if (checkedSiblings > 4 && dateChildren > 5) {
+
+                        $("input[data-item-id=calendar-times]:checked").parent().prevAll().slideUp(300);
+                        $("input[data-item-id=calendar-times]:checked").parent().nextAll(':gt(3)').slideUp(800);
+                    } else if (checkedSiblings == 4) {
+                        $("input[data-item-id=calendar-times]:checked").parent().prevAll().slideUp(800);
+
+                    } else if (checkedSiblings == 3) {
+                        $("input[data-item-id=calendar-times]:checked").parent().prevAll(':gt(0)').slideUp(800);
+
+                    } else if (checkedSiblings == 2) {
+                        $("input[data-item-id=calendar-times]:checked").parent().prevAll(':gt(1)').slideUp(800);
+
+                    } else if (checkedSiblings == 1) {
+                        $("input[data-item-id=calendar-times]:checked").parent().prevAll(':gt(2)').slideUp(800);
+
+                    } else if (checkedSiblings == 0) {
+                        $("input[data-item-id=calendar-times]:checked").parent().prevAll(':gt(3)').slideUp(800);
+
+                    }
+
+
+                });
+
+                $(".times__btn--down").css({
+                    'display': 'none'
+                });
+    
+                $(".times__btn--down").click(function () {
+                    $('.times__btn--down').delay(0).queue(function (next) {
+                        $(this).css({
+                            'display': 'none'
+                        });
+                        next();
+                    });
+    
+                   
+    
+                    $(".times__form-check:nth-child(5)").nextAll().slideDown(800);
+                    $("input[data-item-id=times]:checked").parent().prevAll().slideDown(800);
+                });
+    
+          
+        });
 
     $('input:radio[data-item-id="date"]').change(
         function () {
 
+            $("input:radio[data-item-id='calendar-date']").prop( "checked", false );
 
             let radioId = $(this).attr("id");
 
-    
+
 
             //  TODAY TIMES  SIMPLE
             if ($(this).prop("checked") && radioId == '0') {
 
                 let deliveryTimeToday = '';
-
+                $("input:radio[data-item-id='calendar-date']").attr('value', '');
                 $("input:radio[data-item-id='date']:not(:checked)").attr('value', '');
                 $("label[for='calendar']").text('Pick a date');
 
@@ -134,13 +266,21 @@ $(document).ready(function () {
                     $(".times__btn--down").css({
                         'display': 'flex'
                     });
+                    $("input:radio[data-item-id='calendar-date']").attr('value', '');
+                    var valueSelected = document.querySelector('input[data-item-id="date"]:checked');
+                    var TimeVal = $('input[data-item-id=times]:checked').val();
+                    var dataSlash = $('input[data-item-id=date]:checked').attr('data-slash');
 
+
+                    valueSelected.value = dataSlash + " " + TimeVal;
+
+                    $("input:radio[data-item-id='date']:not(:checked)").attr('value', '');
 
                     var checkedSiblings = $("input[data-item-id=times]:checked").parent().nextAll().length;
-                  
+
 
                     var dateChildren = $('.delivery__time').children(':visible').length;
-                    // console.log(dateChildren);
+                  
 
                     if (checkedSiblings > 4 && dateChildren > 5) {
 
@@ -165,13 +305,12 @@ $(document).ready(function () {
                 });
                 //  here
                 $(document).on('change', 'input:radio[data-item-id=times]', function () {
-                    var TimeVal = $('input[data-item-id=times]:checked').val();
                     var valueSelected = document.querySelector('input[data-item-id="date"]:checked');
                     var TimeVal = $('input[data-item-id=times]:checked').val();
                     var dataSlash = $('input[data-item-id=date]:checked').attr('data-slash');
+                    $("input:radio[data-item-id='calendar-date']").attr('value', '');
 
-
-                    valueSelected.value = dataSlash + " " + TimeVal;
+                    // valueSelected.value = dataSlash + " " + TimeVal;
 
                     $("input:radio[data-item-id='date']:not(:checked)").attr('value', '');
 
@@ -183,10 +322,10 @@ $(document).ready(function () {
 
 
                     var checkedSiblings = $("input[data-item-id=times]:checked").parent().nextAll().length;
-                    
+
 
                     var dateChildren = $('.delivery__time').children(':visible').length;
-                    // console.log(dateChildren);
+                  
 
                     if (checkedSiblings > 4 && dateChildren > 5) {
 
@@ -217,6 +356,7 @@ $(document).ready(function () {
             else if ($(this).prop("checked") && radioId != '0') {
                 let deliveryTimeNext = '';
                 $("label[for='calendar']").text('Pick a date');
+                $("input:radio[data-item-id='calendar-date']").attr('value', '');
                 $("input:radio[data-item-id='date']:not(:checked)").attr('value', '');
 
                 for (i = 0; i < dayHours; i++) {
@@ -233,56 +373,17 @@ $(document).ready(function () {
                     $(".times__btn--down").css({
                         'display': 'flex'
                     });
-                    $(".times__btn--up").css({
-                        'display': 'none'
-                    });
-
-                    var checkedSiblings = $("input[data-item-id=times]:checked").parent().nextAll().length;
-                 
-
-                    var dateChildren = $('.delivery__time').children(':visible').length;
-                    // console.log(dateChildren);
-
-                    if (checkedSiblings > 4 && dateChildren > 5) {
-
-                        $("input[data-item-id=times]:checked").parent().prevAll().slideUp(300);
-                        $("input[data-item-id=times]:checked").parent().nextAll(':gt(3)').slideUp(800);
-                    } else if (checkedSiblings == 4) {
-                        $("input[data-item-id=times]:checked").parent().prevAll().slideUp(800);
-
-                    } else if (checkedSiblings == 3) {
-                        $("input[data-item-id=times]:checked").parent().prevAll(':gt(0)').slideUp(800);
-
-                    } else if (checkedSiblings == 2) {
-                        $("input[data-item-id=times]:checked").parent().prevAll(':gt(1)').slideUp(800);
-
-                    } else if (checkedSiblings == 1) {
-                        $("input[data-item-id=times]:checked").parent().prevAll(':gt(2)').slideUp(800);
-
-                    } else if (checkedSiblings == 0) {
-                        $("input[data-item-id=times]:checked").parent().prevAll(':gt(3)').slideUp(800);
-
-                    }
-                });
-                $(document).on('change', 'input:radio[data-item-id=times]', function () {
-                    var TimeVal = $('input[data-item-id=times]:checked').val();
+                    $("input:radio[data-item-id='calendar-date']").attr('value', '');
                     var valueSelected = document.querySelector('input[data-item-id="date"]:checked');
                     var TimeVal = $('input[data-item-id=times]:checked').val();
                     var dataSlash = $('input[data-item-id=date]:checked').attr('data-slash');
 
 
-                    valueSelected.value = dataSlash + " " + TimeVal;
-
-                    $("input:radio[data-item-id='date']:not(:checked)").attr('value', '');
-                    $(".times__btn--down").css({
-                        'display': 'flex'
-                    });
-                    $(".times__btn--up").css({
-                        'display': 'none'
-                    });
+                    // valueSelected.value = dataSlash + " " + TimeVal;
+                    
 
                     var checkedSiblings = $("input[data-item-id=times]:checked").parent().nextAll().length;
-                  
+
 
                     var dateChildren = $('.delivery__time').children(':visible').length;
                    
@@ -308,106 +409,52 @@ $(document).ready(function () {
 
                     }
                 });
+                $(document).on('change', 'input:radio[data-item-id=times]', function () {
+                    var valueSelected = document.querySelector('input[data-item-id="date"]:checked');
+                    var TimeVal = $('input[data-item-id=times]:checked').val();
+                    var dataSlash = $('input[data-item-id=date]:checked').attr('data-slash');
+                    $("input:radio[data-item-id='calendar-date']").attr('value', '');
 
-            }
-            else if ($('#calendar').prop("checked")) {
-                let deliveryTimeNext = '';
-                $("input:radio[data-item-id='date']:not(:checked)").attr('value', '');
+                    // valueSelected.value = dataSlash + " " + TimeVal;
 
-                for (i = 0; i < dayHours; i++) {
-                    var tomorrowHours = moment().startOf('day').add(i, 'h').format("HH:mm");
-                    deliveryTimeNext = deliveryTimeNext + '<div class="form-check  times__form-check">\n' +
-                        '<input class="times__input" type="radio" value="' + tomorrowHours + '" name="times" data-item-id="times" id="' + tomorrowHours + '" />' +
-                        ' <label class="times__label  form-check-label"  for="' + tomorrowHours + '" >' + tomorrowHours +
-                        '</label>\n' +
-                        '</div>';
-                }
-                $('#delivery__time').html(deliveryTimeNext);
-                $(document).on('click', 'input:radio[data-item-id=times]', function () {
+                    $("input:radio[data-item-id='date']:not(:checked)").attr('value', '');
                     $(".times__btn--down").css({
                         'display': 'flex'
                     });
-                    $(".times__btn--up").css({
-                        'display': 'none'
-                    });
+                  
 
                     var checkedSiblings = $("input[data-item-id=times]:checked").parent().nextAll().length;
+
+
+                    var dateChildren = $('.delivery__time').children(':visible').length;
+
+
+                    if (checkedSiblings > 4 && dateChildren > 5) {
+
+                        $("input[data-item-id=times]:checked").parent().prevAll().slideUp(300);
+                        $("input[data-item-id=times]:checked").parent().nextAll(':gt(3)').slideUp(800);
+                    } else if (checkedSiblings == 4) {
+                        $("input[data-item-id=times]:checked").parent().prevAll().slideUp(800);
+
+                    } else if (checkedSiblings == 3) {
+                        $("input[data-item-id=times]:checked").parent().prevAll(':gt(0)').slideUp(800);
+
+                    } else if (checkedSiblings == 2) {
+                        $("input[data-item-id=times]:checked").parent().prevAll(':gt(1)').slideUp(800);
+
+                    } else if (checkedSiblings == 1) {
+                        $("input[data-item-id=times]:checked").parent().prevAll(':gt(2)').slideUp(800);
+
+                    } else if (checkedSiblings == 0) {
+                        $("input[data-item-id=times]:checked").parent().prevAll(':gt(3)').slideUp(800);
+
+                    }
+                });
+
+            } 
             
 
-                    var dateChildren = $('.delivery__time').children(':visible').length;
-                  
 
-                    if (checkedSiblings > 4 && dateChildren > 5) {
-
-                        $("input[data-item-id=times]:checked").parent().prevAll().slideUp(300);
-                        $("input[data-item-id=times]:checked").parent().nextAll(':gt(3)').slideUp(800);
-                    } else if (checkedSiblings == 4) {
-                        $("input[data-item-id=times]:checked").parent().prevAll().slideUp(800);
-
-                    } else if (checkedSiblings == 3) {
-                        $("input[data-item-id=times]:checked").parent().prevAll(':gt(0)').slideUp(800);
-
-                    } else if (checkedSiblings == 2) {
-                        $("input[data-item-id=times]:checked").parent().prevAll(':gt(1)').slideUp(800);
-
-                    } else if (checkedSiblings == 1) {
-                        $("input[data-item-id=times]:checked").parent().prevAll(':gt(2)').slideUp(800);
-
-                    } else if (checkedSiblings == 0) {
-                        $("input[data-item-id=times]:checked").parent().prevAll(':gt(3)').slideUp(800);
-
-                    }
-                });
-                let calendarLabel = $(".calendar-label").text();
-                console.log(calendarLabel);
-                $(document).on('change', 'input:radio[data-item-id=times]', function () {
-                    var TimeVal = $('input[data-item-id=times]:checked').val();
-                    var valueSelected = document.querySelector('input[data-item-id="date"]:checked');
-                    var TimeVal = $('input[data-item-id=times]:checked').val();
-                    var dataSlash = $('input[data-item-id=date]:checked').attr('data-slash');
-
-
-                    valueSelected.value = dataSlash + " " + TimeVal;
-
-                   
-                    // valueSelected.value = calendarLabel + " " + TimeVal;
-
-                    $("input:radio[data-item-id='date']:not(:checked)").attr('value', '');
-                    $(".times__btn--down").css({
-                        'display': 'flex'
-                    });
-                    $(".times__btn--up").css({
-                        'display': 'none'
-                    });
-
-                    var checkedSiblings = $("input[data-item-id=times]:checked").parent().nextAll().length;
-                   
-
-                    var dateChildren = $('.delivery__time').children(':visible').length;
-                    // console.log(dateChildren);
-
-                    if (checkedSiblings > 4 && dateChildren > 5) {
-
-                        $("input[data-item-id=times]:checked").parent().prevAll().slideUp(300);
-                        $("input[data-item-id=times]:checked").parent().nextAll(':gt(3)').slideUp(800);
-                    } else if (checkedSiblings == 4) {
-                        $("input[data-item-id=times]:checked").parent().prevAll().slideUp(800);
-
-                    } else if (checkedSiblings == 3) {
-                        $("input[data-item-id=times]:checked").parent().prevAll(':gt(0)').slideUp(800);
-
-                    } else if (checkedSiblings == 2) {
-                        $("input[data-item-id=times]:checked").parent().prevAll(':gt(1)').slideUp(800);
-
-                    } else if (checkedSiblings == 1) {
-                        $("input[data-item-id=times]:checked").parent().prevAll(':gt(2)').slideUp(800);
-
-                    } else if (checkedSiblings == 0) {
-                        $("input[data-item-id=times]:checked").parent().prevAll(':gt(3)').slideUp(800);
-
-                    }
-                });
-            }
 
             $(".times__btn--down").css({
                 'display': 'none'
@@ -421,75 +468,20 @@ $(document).ready(function () {
                     next();
                 });
 
-                $('.times__btn--up').delay(500).queue(function (next) {
-                    $(this).css({
-                        'display': 'flex'
-                    });
-                    next();
-                });
+               
 
                 $(".times__form-check:nth-child(5)").nextAll().slideDown(800);
                 $("input[data-item-id=times]:checked").parent().prevAll().slideDown(800);
             });
 
 
-            $(".times__btn--up").click(function () {
-                $('.times__btn--up').delay(0).queue(function (next) {
-                    $(this).css({
-                        'display': 'none'
-                    });
-                    next();
-                });
-
-                $('.times__btn--down').delay(0).queue(function (next) {
-                    $(this).css({
-                        'display': 'flex'
-                    });
-                    next();
-                });
-
-                // $(".times__form-check:nth-child(5)").nextAll().slideUp(500);
-
-
-                var checkedSiblings = $("input[data-item-id=times]:checked").parent().nextAll().length;
-              
-
-                var dateChildren = $('.delivery__time').children(':visible').length;
-                // console.log(dateChildren);
-                if ($("input[data-item-id=times]").prop("checked") == false) {
-                    $(".times__form-check:nth-child(5)").nextAll().slideUp(800);
-                }
-
-
-                if (checkedSiblings > 4 && dateChildren > 5) {
-
-                    $("input[data-item-id=times]:checked").parent().prevAll().slideUp(300);
-                    $("input[data-item-id=times]:checked").parent().nextAll(':gt(3)').slideUp(800);
-                } else if (checkedSiblings == 4) {
-                    $("input[data-item-id=times]:checked").parent().prevAll().slideUp(800);
-
-                } else if (checkedSiblings == 3) {
-                    $("input[data-item-id=times]:checked").parent().prevAll(':gt(0)').slideUp(800);
-
-                } else if (checkedSiblings == 2) {
-                    $("input[data-item-id=times]:checked").parent().prevAll(':gt(1)').slideUp(800);
-
-                } else if (checkedSiblings == 1) {
-                    $("input[data-item-id=times]:checked").parent().prevAll(':gt(2)').slideUp(800);
-
-                } else if (checkedSiblings == 0) {
-                    $("input[data-item-id=times]:checked").parent().prevAll(':gt(3)').slideUp(800);
-
-                }
-
-            });
+           
         });
-
-
+       
     $(".date__list:nth-child(4)").nextAll().slideUp(800);
 
     $(".delivery-btn--down").click(function () {
-        
+
         $('.delivery-btn--down').delay(0).queue(function (next) {
             $(this).css({
                 'display': 'none'
@@ -497,23 +489,24 @@ $(document).ready(function () {
             next();
         });
 
-       
+
 
         $('.delivery-btn--up').delay(0).queue(function (next) {
             $(this).css({
                 'display': 'flex',
-                'position': 'static',
-                'width': '80%'
+                'position': 'inherit',
+                'width': '80%',
+                'top':'10px'
             });
             next();
         });
 
-        $(".date__list:nth-child(4)").nextAll().slideDown(800);
+        $(".date__list").slideDown(800);
         $("input[data-item-id=date]:checked").parent().prevAll().slideDown(800);
         $('.form__label--time').css({
-       
+
             'margin-top': '20px',
-            
+
         });
     });
 
@@ -521,37 +514,38 @@ $(document).ready(function () {
 
 
     $(".delivery-btn--up").click(function () {
-       
+        $('#calendar').prop("checked");
+
         $('.delivery-btn--down').css({
             'position': 'absolute',
-            'right': '0'  ,
-            'margin-top': '10px', 
+            'right': '0',
+            'margin-top': '10px',
         });
         $('.date').css({
             'position': 'relative',
-            
+
         });
         $('.times').css({
             'margin-top': '10px',
-            
+
         });
         $('.form__label--time').css({
             'display': 'block',
             'margin-top': '85px',
-            
+
         });
-       
+
 
         $('.delivery-btn--up').delay(0).queue(function (next) {
             $(this).css({
                 'display': 'block',
                 'position': 'absolute',
-                'top': '10px',
+                'top': '43px',
                 'width': '80%'
             });
             next();
         });
-       
+
 
         $('.delivery-btn--down').delay(0).queue(function (next) {
             $(this).css({
@@ -562,16 +556,15 @@ $(document).ready(function () {
 
 
         var checkedSiblings = $("input[data-item-id=date]:checked").parent().nextAll().length;
+     
 
         var dateChildren = $('.date').children(':visible').length;
-        // console.log(dateChildren);
+    
 
         if (!$("input[data-item-id=date]").is(':checked')) {
             $(".date__list").slideUp(800);
         }
 
-
-        var checkedFalse = $("input[data-item-id=date]").prop("checked");
 
 
         // else if($("input[data-item-id=date]").prop("checked") == true){
@@ -593,11 +586,16 @@ $(document).ready(function () {
 
         } else if (checkedSiblings == 0) {
             $("input[data-item-id=date]:checked").parent().prevAll(':gt(2)').slideUp(800);
+           
+           
+
 
         }
         if ($("input[data-item-id=date]").prop("checked") == false) {
             $(".date__list:nth-child(4)").nextAll().slideUp(800);
         }
+
+
     });
 
 

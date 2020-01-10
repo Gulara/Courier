@@ -847,8 +847,7 @@
                 <!-- URGENT END -->
                 <!-- DELIVERY START -->
                 <div class="delivery delivery-position" id="delivery">
-                    <label class="form-label form__label">Delivery date :</label>
-
+                    <label class="form-label form__label delivery__form-label">Delivery date :</label>
                     <div class="date__div">
                         <div class="date">
 
@@ -858,16 +857,12 @@
                                 class="fas fa-angle-down delivery-btn--icon"></i></div>
                     </div>
 
-
-                   
-
-
                     <div class="day__list datepicker form-check delivery-btn--up">
                         <input class="datepicker__input" type="text" id="datepicker" autocomplete="off"
                             placeholder="Pick a Date">
 
                         <input class="day__input  form-check-input calendar-input" type="radio" name="days"
-                            data-item-id="date" id="calendar" value="" />
+                            data-item-id="calendar-date" id="calendar" value="" />
 
                         <label class="day__label form-check-label calendar-label" for="calendar">Pick a date</label>
 
@@ -1346,7 +1341,6 @@ FilePond.registerPlugin(FilePondPluginFileValidateType);
 <script src="js/filepond.js"></script>
 <script src="js/insurance.js"></script>
 <script src="js/intlTelInput.js"></script>
-<script src="js/moment.js"></script>
 <script src="js/parsley-index.js"></script>
 <script src="js/payment-methods.js"></script>
 <script src="js/scroll.js"></script>
