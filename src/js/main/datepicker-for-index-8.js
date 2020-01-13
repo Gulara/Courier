@@ -19,16 +19,21 @@ $(document).ready(function () {
 
         // VAXTIN İNPUT NAME=DAY-DƏ  VƏ VALUE-SUNDA GÖRSƏNMƏSİ
         onSelect: function () {
-            $( "input[data-item-id=calendarTimes]" ).prop( "checked", false );
             $("label[for='calendar']").text($(this).val());
-            $("input[data-item-id=date]").attr('data-slash', ($(this).val()));
+            $("input[data-item-id=calendar-date]").attr('data-slash', ($(this).val()));
             var calendarLabel = $(".calendar-label").text();
            
             var calendarVal = document.getElementById("calendar");
             calendarVal.value = calendarLabel ;
-            
+            $(this).change();
+           
         }
-    });
+
+        
+    }).on("change", function() {
+        $( "input[data-item-id=times]" ).prop( "checked", false );
+        
+      });
     // $("#datepicker").datepicker($.datepicker.regional["az"]); 
     // $("#datepicker").datepicker($.datepicker.regional["ru"]); 
     $("#datepicker").datepicker($.datepicker.regional["en-AU"]); 
@@ -36,6 +41,13 @@ $(document).ready(function () {
 
     $("#calendar").click(function () {
         $("#datepicker").datepicker("show");
+    });
+
+    $(".ui-datepicker").css({
+        'box-shadow': '-2px 0px 17px 3px rgba(0,0,0,0.55)'
+
+       
+
     });
 });
 
