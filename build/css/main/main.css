@@ -809,6 +809,20 @@ body {
     display: -moz-box;
     display: -ms-flexbox;
     display: flex; }
+  .times__check-form {
+    padding-left: 0;
+    margin: 10px 0;
+    width: 33%;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex; }
   .times__label {
     text-align: center;
     cursor: pointer;

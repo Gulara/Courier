@@ -104,7 +104,7 @@ $(document).ready(function () {
             });
         });
 
-    $(".times__form-check:nth-child(4)").nextAll().slideUp(800);
+    $(".times__check-form:nth-child(3)").nextAll().slideUp(800);
     $('input:radio[data-item-id="calendar-date"]').change(
         function () {
             $("input:radio[data-item-id='date']").prop( "checked", false );
@@ -116,9 +116,10 @@ $(document).ready(function () {
 
                 for (i = 0; i < dayHours; i++) {
                     var tomorrowHours = moment().startOf('day').add(i, 'h').format("HH:mm");
-                    deliveryTimeNext = deliveryTimeNext + '<div class="form-check  times__form-check">\n' +
-                        '<input class="times__input" type="radio" value="' + tomorrowHours + '" name="times" data-item-id="calendar-times" id="' + tomorrowHours + '" />' +
-                        ' <label class="times__label  form-check-label"  for="' + tomorrowHours + '" >' + tomorrowHours +
+                    var tomorrowHoursPlus = moment().startOf('day').add(i + 1, 'h').format("HH:mm");
+                    deliveryTimeNext = deliveryTimeNext + '<div class="form-check  times__check-form">\n' +
+                        '<input class="times__input" type="radio" value="' + tomorrowHours + "-" + tomorrowHoursPlus + '" name="times" data-item-id="calendar-times" id="' + tomorrowHours + '" />' +
+                        ' <label class="times__label  form-check-label"  for="' + tomorrowHours + '" >' + tomorrowHours + "-" + tomorrowHoursPlus +
                         '</label>\n' +
                         '</div>';
                 }
@@ -226,7 +227,7 @@ $(document).ready(function () {
     
                    
     
-                    $(".times__form-check:nth-child(5)").nextAll().slideDown(800);
+                    $(".times__check-form:nth-child(3)").nextAll().slideDown(800);
                     $("input[data-item-id=times]:checked").parent().prevAll().slideDown(800);
                 });
     
@@ -252,9 +253,10 @@ $(document).ready(function () {
 
                 for (i = 0; i < enableHoursToday; i++) {
                     var currentTime = moment().startOf('hour').add(i + 2, 'h').format("HH:mm");
-                    deliveryTimeToday = deliveryTimeToday + '<div class="form-check times__form-check">\n' +
-                        '<input class="times__input" type="radio" value="' + currentTime + '" name="times" data-item-id="times" id="' + currentTime + '"/>' +
-                        ' <label class="times__label form-check-label "  for="' + currentTime + '" >' + currentTime +
+                    var currentTimePlus = moment().startOf('hour').add(i + 3, 'h').format("HH:mm");
+                    deliveryTimeToday = deliveryTimeToday + '<div class="form-check times__check-form">\n' +
+                        '<input class="times__input" type="radio" value="' + currentTime + "-" + currentTimePlus +'" name="times" data-item-id="times" id="' + currentTime + '"/>' +
+                        ' <label class="times__label form-check-label "  for="' + currentTime + '" >' + currentTime + "-" + currentTimePlus +
                         '</label>\n' +
                         '</div>';
                 }
@@ -361,9 +363,10 @@ $(document).ready(function () {
 
                 for (i = 0; i < dayHours; i++) {
                     var tomorrowHours = moment().startOf('day').add(i, 'h').format("HH:mm");
-                    deliveryTimeNext = deliveryTimeNext + '<div class="form-check  times__form-check">\n' +
-                        '<input class="times__input" type="radio" value="' + tomorrowHours + '" name="times" data-item-id="times" id="' + tomorrowHours + '" />' +
-                        ' <label class="times__label  form-check-label"  for="' + tomorrowHours + '" >' + tomorrowHours +
+                    var tomorrowHoursPlus = moment().startOf('day').add(i + 1, 'h').format("HH:mm");
+                    deliveryTimeNext = deliveryTimeNext + '<div class="form-check  times__check-form">\n' +
+                        '<input class="times__input" type="radio" value="' + tomorrowHours + "-" + tomorrowHoursPlus +'" name="times" data-item-id="times" id="' + tomorrowHours + '" />' +
+                        ' <label class="times__label  form-check-label"  for="' + tomorrowHours + '" >' + tomorrowHours + "-" + tomorrowHoursPlus +
                         '</label>\n' +
                         '</div>';
                 }
@@ -470,7 +473,7 @@ $(document).ready(function () {
 
                
 
-                $(".times__form-check:nth-child(5)").nextAll().slideDown(800);
+                $(".times__check-form:nth-child(3)").nextAll().slideDown(800);
                 $("input[data-item-id=times]:checked").parent().prevAll().slideDown(800);
             });
 

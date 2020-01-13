@@ -1,0 +1,572 @@
+//= template/header.html
+//= template/head.html
+<div class="index-shadow"></div>
+<div class="container index">
+
+    <div class="form-row mt-5 ">
+        <div class="col-sm-12 col-md-12 col-lg-5 order-2 order-lg-1">
+            <form class="form scrollbar1 p-3 scroll-style" id="first_form" data-parsley-validate="">
+                <!-- LOADING  START  -->
+                <div class="loading-spinner d-none">
+                    <div class="spinner-square">
+                        <div class="square-1 square"></div>
+                        <div class="square-2 square"></div>
+                        <div class="square-3 square"></div>
+                    </div>
+                    <div class="loading-spinner__text mt-2">Kuryer axtarılır</div>
+                </div>
+                <!-- LOADING END -->
+                <!--INPUTS STARTS-->
+                <div class="form-text">
+                    <div class="form-group form__group">
+                        <label for="startPlace" class="form-label form__label">From :</label>
+
+                        <input type="text" name="from" class="form-control form__control" id="startPlace"
+                            placeholder="Insert pick-up address" required>
+
+                    </div>
+                    <input type="hidden" id="startPlaceLat">
+                    <input type="hidden" id="startPlaceLng">
+                    <div class="form-group form__group">
+                        <label for="endPlace" class="form-label form__label">Destination :</label>
+
+                        <input type="text" name="destination" class="form-control form__control" id="endPlace"
+                            placeholder="Insert Delivery address" required>
+
+                    </div>
+                    <input type="hidden" id="endPlaceLat">
+                    <input type="hidden" id="endPlaceLng">
+                </div>
+
+                <div id="price_for_selected" style="width:100%;"></div>
+                <!-- INPUT END-->
+
+                <!-- CAR START-->
+                <label class="form-label form__label">Daşıma növünü seçin :</label>
+
+                <!-- SWIPE START -->
+                <div class="tabcontainer">
+
+                    <!-- swiper1 -->
+                    <div id="tabs" class="swiper-container swiper-tabs">
+                        <div class="tablist swiper-wrapper  car-pills " role="tablist">
+                            <div id="car-tab-courier" class="tablist__tab swiper-slide active"
+                                data-hash="car-tab-courier" data-rel="panel-courier" aria-selected="true"
+                                aria-controls="panel-courier" role="tab">Kuryer</div>
+                            <div id="car-tab-evacutor" class="tablist__tab swiper-slide" data-hash="car-tab-evacutor"
+                                data-rel="panel-evacuator" aria-selected="false" aria-controls="panel-evacuator"
+                                role="tab">Evakuator</div>
+                            <div id="car-tab-truck" class="tablist__tab swiper-slide" data-hash="car-tab-truck"
+                                data-rel="panel-truck" aria-selected="false" aria-controls="panel-truck" role="tab">Yük
+                                maşını</div>
+                        </div>
+                    </div>
+
+                    <!-- swiper2 -->
+                    <div id="panels" class="swiper-container swiper-tabs-panel">
+                        <div class="tabpanels swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div id="panel-courier" class="tabpanels__panel" aria-labelledby="car-tab-courier"
+                                    role="tabpanel">
+                                    <div class="pills-car-1__div">
+                                        <div class="form-group  car-pills__form-group">
+
+                                            <input class="car-pills__input car-hide " type="radio" name="transition"
+                                                data-id="transition" id="pedestrian" checked="checked" />
+                                            <label class="car-pills__label1" for="pedestrian">
+                                                <img src="img/pedestrian.png" alt="car" class="car-pills__label1--img">
+                                                <span class="car-pills__label1--span">Piyada</span>
+                                            </label>
+                                        </div>
+
+                                        <div class="form-group  car-pills__form-group">
+
+                                            <input class="car-pills__input car-hide" type="radio" name="transition"
+                                                data-id="transition" id="motorbike" />
+                                            <label class="car-pills__label1" for="motorbike">
+                                                <img src="img/motorbike.png" alt="car" class="car-pills__label1--img">
+                                                <span class="car-pills__label1--span">Motosiklet</span>
+                                            </label>
+
+                                        </div>
+                                        <div class="form-group  car-pills__form-group">
+                                            <input class="car-pills__input car-hide" type="radio" name="transition"
+                                                id="car" data-id="transition" required />
+                                            <label class="car-pills__label1" for="car">
+                                                <img src="img/car.png" alt="car" class="car-pills__label1--img">
+                                                <span class="car-pills__label1--span">Avtomobil</span>
+                                            </label>
+
+                                        </div>
+                                    </div>
+                                    <div class="info">
+                                        <div class="info__div">
+                                            <div class="info__div--away-time">
+                                                <i class="fas fa-clock mr-1"></i>
+                                                <span class="away-time">15 dəqiqə uzaqlıqda</span>
+                                            </div>
+                                            <div class="info__div--price">
+                                                <span>Məbləğ</span>
+                                                <span class="price-span">
+                                                    <i class="fa fa-coins mr-1 ml-auto"></i>
+                                                    <span class="price"> 0 </span>
+                                                </span>
+
+                                            </div>
+                                            <div class="info__div--distance">
+                                                <span>Məsafə</span>
+                                                <span class="distance-span"><i class="fas fa-route mr-1"></i>
+                                                    <span class="distance">0 km</span>
+                                                </span>
+                                            </div>
+                                            <div class="info__div--time">
+                                                <span>Çatdırılma vaxtı</span>
+                                                <span class="time-span"> <i class="fas fa-clock mr-1"></i>
+                                                    <span class="transition-time">0 dəq</span>
+                                                </span>
+                                            </div>
+
+
+                                        </div>
+                                        <p class="info__p">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                            Obcaecati
+                                            magnam, dolorum alias assumenda accusantium nemo exercitationem sint cum
+                                            aspernatur
+                                            necessitatibus.
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div id="panel-evacuator" class="tabpanels__panel" aria-labelledby="car-tab-evacutor"
+                                    role="tabpanel">
+                                    <div class="form-group">
+                                        <input class="car-pills__input car-hide" type="radio" name="transition"
+                                            data-id="transition" id="evacuator" />
+                                        <div class="car-pills__label2">
+                                            <div class="car-pills__label2__img-group">
+                                                <img src="img/evacuator.png" alt="car" class="car-pills__label2--img">
+                                                <span class="car-pills__label2--span">Evakuator</span>
+                                            </div>
+                                            <div class="info2">
+
+                                                <span class="distance-span">
+                                                    <i class="fas fa-route mr-1"></i>
+                                                    <span class="distance">5.6km</span>
+                                                </span>
+                                                <span class="time-span">
+                                                    <i class="fas fa-clock mr-1"></i>
+                                                    <span class="transition-time">10 dəq</span>
+                                                </span>
+                                                <span class="price-span">
+                                                    <i class="fa fa-coins mr-1 ml-auto"></i>
+                                                    <span class="price-evacuator">35</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="info__div--away-time">
+                                            <i class="fas fa-clock mr-1"></i>
+                                            <span class="away-time">15 dəqiqə uzaqlıqda</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div id="panel-truck" class="tabpanels__panel" aria-labelledby="car-tab-truck"
+                                    role="tabpanel">
+                                    <div class="form-group ">
+                                        <input class="car-pills__input " type="radio" name="transition" id="truck"
+                                            data-id="transition" />
+                                        <div class="car-pills__label2">
+                                            <div class="car-pills__label2__img-group"> <img src="img/transit.png"
+                                                    alt="car" class="car-pills__label2--img"><span
+                                                    class="car-pills__label2--span">Yük
+                                                    maşını</span>
+                                            </div>
+
+                                            <div class="info2">
+
+                                                <span class="distance"><i class="fas fa-route mr-1"></i>5.6km</span>
+                                                <span class="transition-time"><i class="fas fa-clock mr-1"></i>15
+                                                    dəq</span>
+                                                <span class="price-truck"><i class="fa fa-coins mr-1"></i>225</span>
+                                            </div>
+                                        </div>
+                                        <div class="info__div--away-time">
+                                            <i class="fas fa-clock mr-1"></i>
+                                            <span class="away-time">15 dəqiqə uzaqlıqda</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- SWIPE END -->
+                </div>
+
+                <!-- CAR END -->
+
+
+
+                <!-- INPUTS STARTS-->
+                <div id="receiver">
+                    <div class="form-group form__group">
+                        <label for="contact-name" class="form-label form__label">Receiver :</label>
+
+                        <input type="text" name="contact-name" class="form-control form__control " id="contact-name"
+                            placeholder="Mammad Mammadov">
+                        <div class="invalid-feedback">
+                            Please type your name.
+                        </div>
+                    </div>
+                    <div class="form-group form__group ">
+                        <label for="phoneNumber" class="d-block form-label form__label">Receiver number :</label>
+
+                        <input type="text" class="form-control form__control" id="phoneNumber">
+
+                        <span id="valid-msg" class="valid-hide text-success">✓ Valid</span>
+                        <span id="error-msg" class="valid-hide text-danger d-block"></span>
+                    </div>
+                </div>
+
+                <label class="d-block form-label form__label">Daşınacaq yükün fotosunu yükləyin :</label>
+
+                <input type="file" multiple class="add-image" accept="image/x-png,image/jpeg">
+                <!--INPUTS END-->
+                <!--TEXTAREA STARTS-->
+                <div class="form-group form__group">
+                    <label for="contact-message" class="form-label form__label">Message :</label>
+                    <!-- NEW TOOLTIP -->
+                    <div class="form__tooltip">
+                        <button type="button" class="tooltip-circle  form__tooltip--circle  " data-toggle="tooltip"
+                            data-html="true"
+                            title="<div class='p-2 d-flex align-items-center bg-secondary flex-column'> <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi dicta dolorum quibusdam possimus qui repudiandae quis, voluptatum autem aperiam fugit!</p><a href='index.html' class=' text-white p-2 color-purple text-decoration-none btn-read'>Read More</a></div>">
+
+                            <i class="fas fa-question-circle"></i>
+                        </button>
+                    </div>
+
+                    <textarea id="contact-message" name="contact-message" rows="10"
+                        class="form-control form__control textarea" data-parsley-trigger="keyup"
+                        data-parsley-minlength="1" data-parsley-maxlength="1000"
+                        data-parsley-minlength-message="Come on! You need to enter at least a 20 character comment.."
+                        data-parsley-validation-threshold="10" required></textarea>
+
+
+                </div>
+                <!-- TEXTAREA FINISH-->
+
+
+                <!-- LABOR SPINNER STARTS-->
+                <div id="labor">
+                    <label class="form-label form__label">İşçi qüvvəsi :</label>
+
+                    <div class="input-spinner form-control form__control">
+                        <i class="fa fa-user-alt-slash" id="user0"></i>
+                        <i class="fa fa-user d-none " id="user1"></i>
+                        <i class="fa fa-user-friends d-none" id="user2"></i>
+                        <i class="fa fa-users d-none" id="userMore"></i>
+                        <div class="number-spinner">
+                            <div class="ns-btn">
+                                <div>
+                                    <div class="icon-minus" id="icon-minus"></div>
+                                </div>
+                            </div>
+                            <input type="text" class="pl-ns-value" value="0" maxlength=2 id="spinner">
+                            <div class="ns-btn">
+                                <div>
+                                    <div class="icon-plus" id="icon-plus"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- LABOR SPINNER END-->
+
+                <!-- PACKING START -->
+                <div class="packing" id="packing">
+                    <span class="form-label form__label">Paketləmə lazımdırmı?</span>
+
+                    <div class="packing__div my-3">
+                        <input class="packing__div__input " type="radio" name="packing-radio" id="packing-yes"
+                            value="Bəli" checked />
+                        <label class="packing__div__label packing__div__label--packing-yes"
+                            for="packing-yes">Bəli</label>
+                        <input class="packing__div__input" type="radio" name="packing-radio" id="packing-no"
+                            value="Xeyr" />
+                        <label class="packing__div__label  packing__div__label--packing-no "
+                            for="packing-no">Xeyr</label>
+                    </div>
+
+
+                </div>
+                <!-- PACKING END -->
+
+                <!--URGENT START-->
+                <div class="urgent">
+                    <label class="form-label form__label  mb-2">Çatdırılma növü :</label>
+                    <!-- NEW TOOLTIP -->
+                    <div class="form__tooltip">
+                        <button type="button" class="tooltip-circle  form__tooltip--circle  " data-toggle="tooltip"
+                            data-html="true"
+                            title="<div class='p-2 d-flex align-items-center bg-secondary flex-column'> <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi dicta dolorum quibusdam possimus qui repudiandae quis, voluptatum autem aperiam fugit!</p><a href='index.html' class=' text-white p-2 color-purple text-decoration-none btn-read'>Read More</a></div>">
+
+                            <i class="fas fa-question-circle"></i>
+                        </button>
+                    </div>
+                    <div class=" urgent__list">
+                        <div class="urgent__list--item form-check">
+                            <input class="urgent__input form-check-input" type="radio" name="urgent"
+                                data-item-id="urgent" id="non-urgent-tab" value="urgent" />
+                            <label class="urgent__label urgent__label--1 form-check-label" for="non-urgent-tab">Delivery
+                                now
+                                <span class="d-block">(ASAP)</span>
+                            </label>
+                        </div>
+                        <div class="urgent__list--item form-check">
+                            <input class="urgent__input form-check-input" type="radio" name="urgent"
+                                data-item-id="urgent" id="urgent-tab" value="non-urgent" />
+                            <label class="urgent__label urgent__label--2 form-check-label" for="urgent-tab">Scheduled
+                                <span class="d-block">(non-urgent)</span>
+                            </label>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- URGENT END -->
+                <!-- DELIVERY START -->
+                <div class="delivery delivery-position" id="delivery">
+                    <label class="form-label form__label delivery__form-label">Delivery date :</label>
+                    <div class="date__div">
+                        <div class="date">
+
+                        </div>
+
+                        <div class="delivery-btn delivery-btn--down"><i
+                                class="fas fa-angle-down delivery-btn--icon"></i></div>
+                    </div>
+
+                    <div class="day__list datepicker form-check delivery-btn--up">
+                        <input class="datepicker__input" type="text" id="datepicker" autocomplete="off"
+                            placeholder="Pick a Date">
+
+                        <input class="day__input  form-check-input calendar-input" type="radio" name="days"
+                            data-item-id="calendar-date" id="calendar" value="" />
+
+                        <label class="day__label form-check-label calendar-label" for="calendar">Pick a date</label>
+
+
+                    </div>
+                    <!-- <div class="delivery-btn delivery-btn--up"><i class="fas fa-angle-up delivery-btn--icon"></i></div> -->
+                    <span class="form-label form__label mb-1 form__label--time">Delivery time</span>
+
+                    <!-- FOR TIMES CAROUSEL -->
+                    <!-- <div id="delivery__time" class="delivery__time times times-carousel owl-carousel  owl-theme">
+
+                    </div> -->
+                    <div class="times">
+                        <div id="delivery__time" class="delivery__time times__simple"> </div>
+                        <div class="times__btn times__btn--down"><i class="fas fa-angle-down times__btn--icon"></i>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- DELIVERY END -->
+
+                <!-- PAYMENT START -->
+                <div class="form-text payment">
+                    <div class="form-group form__group">
+                        <label class="form-label form__label mt-3 mb-2">Ödəniş növü :</label>
+
+                        <div class="payment__wrap-drop form__control " id="paymentMethod">
+
+                            <div><i class="far fa-money-bill-alt color-purple mr-1"></i>
+                                <span>Nəğd ödəniş</span>
+                            </div>
+                            <ul class="payment__drop">
+                                <li class="selected" data-id="paymentWithCash">
+
+                                    <i class="far fa-money-bill-alt color-purple mr-1"></i>
+                                    <span>Nəğd ödəniş</span>
+                                    <i class="fas fa-check payment__drop--checkmark"></i>
+
+                                </li>
+                                <li data-id="paymentWithCard">
+
+                                    <i class="fas fa-credit-card color-purple mr-1"></i>
+                                    <span data-id="kartla-odenis">Kartla ödəniş</span>
+                                    <i></i>
+                                </li>
+                            </ul>
+                        </div>
+                        <input type="hidden" id="payment-hidden">
+                    </div>
+                </div>
+                <!-- PAYMENT END -->
+                <!--  INSURANCE START -->
+                <div class="insurance form-group ">
+                    <label class="form-label form__label mb-2">Sığorta :</label>
+                    <!-- NEW TOOLTIP -->
+                    <div class="form__tooltip">
+                        <button type="button" class="tooltip-circle  form__tooltip--circle  " data-toggle="tooltip"
+                            data-html="true"
+                            title="<div class='p-2 d-flex align-items-center bg-secondary flex-column'> <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi dicta dolorum quibusdam possimus qui repudiandae quis, voluptatum autem aperiam fugit!</p><a href='index.html' class=' text-white p-2 color-purple text-decoration-none btn-read'>Read More</a></div>">
+
+                            <i class="fas fa-question-circle"></i>
+                        </button>
+                    </div>
+                    <label class="insurance__label form__control">Sığorta əlavə et
+                        <input type="checkbox" class="insurance__input form-check-input" name="" disabled>
+                        <span class="checkmark"></span>
+                        <div class="insurance__percent">3%</div>
+                    </label>
+                    <div class="insurance__div">
+
+                    </div>
+
+
+                </div>
+
+                <!-- INSURANCE END -->
+                <!-- TOTAL MONEY START -->
+                <div class="total">
+                    <span>Ödəniləcək Məbləğ</span>
+                    <span class="total__money"> </span>
+
+                </div>
+
+                <!-- TOTAL MONEY END -->
+
+                <!--SUBMIT BUTTON-->
+                <button class="btn btn-2 btn-purple form-submit" type="submit" name="submit" value="validate">
+                    <span>Order Now</span>
+                </button>
+
+            </form>
+
+
+
+        </div>
+
+        <!--    MAP -->
+        <div class="col-sm-12 col-md-12 col-lg-7 col-xl-7 map order-1 order-lg-2">
+            <div class=" divider-side divider__side d-lg-block transform-flip-y"></div>
+            <div id="map_canvas"></div>
+
+
+        </div>
+
+
+    </div>
+    <div class="container">
+        <div class="index__content mt-2">
+            <div class="index__content--h1-group p-3">
+                <div class="mr-2">Axtarış sözü :</div>
+                <h1 class="index__content--h1-group--h1">Gucci</h1>
+            </div>
+        </div>
+        <div class="index__content__div">
+            <div class="index__content__div--img"><img src="img/dh.png" alt="" class="img-fluid"></div>
+            <!-- <img src="img/dh.png" alt="" class="img-fluid index__content__div--img"> -->
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo unde sit sapiente magni esse aperiam ea minus
+            expedita alias perferendis omnis id, eum dolorem laboriosam nam quas sint molestiae iure architecto velit!
+            Perspiciatis repellat ipsa enim quis itaque dolor, sit beatae aspernatur sint laboriosam reiciendis, facere
+            rerum veritatis in cum molestias illo quia quas quidem. Laborum incidunt quod ipsam mollitia quo atque
+            facilis aperiam odio? Est omnis magni accusamus quisquam nam quis perferendis ipsam inventore. Quis
+            doloribus aut assumenda veniam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde quo provident velit natus magni at ut sit ab
+            incidunt fugit eaque, ex ad! Minus quis soluta tempore voluptatibus odit iure distinctio non fugiat a. Magni
+            praesentium dolores pariatur animi quasi ab accusantium cum, numquam nisi dolorum illum quos eius fugit
+            officia ad repellat? Veniam soluta dolore sequi saepe, iste delectus. Id animi quam necessitatibus odit
+            architecto ipsam inventore modi eaque quos recusandae at cumque perspiciatis sunt, nesciunt exercitationem
+            possimus quod? Adipisci perferendis culpa dignissimos! Quae cupiditate nesciunt molestias quasi est,
+            dignissimos voluptatum dolore amet tempora ipsum voluptates dolor rerum consequuntur!
+        </div>
+    </div>
+
+    <div class="index__search mt-2">
+        <div class=" p-3">
+            <div class="mr-2">Populyar axtarışlar :</div>
+            <div class="index__search__content">
+                <div class="index__search__content__1">
+                    <a href="#" class="index__search__content__1--item">
+                        Lorem, ipsum 1.
+                    </a>
+                    <a href="#" class="index__search__content__1--item">
+                        Loremipsum 2.
+                    </a>
+                    <a href="#" class="index__search__content__1--item">
+                        Lorem, ipsum dolar 3.
+                    </a>
+                    <a href="#" class="index__search__content__1--item">
+                        Lorem, ipsum 4.
+                    </a>
+                    <a href="#" class="index__search__content__1--item">
+                        Lorem ipsum dolor sit amet.
+                    </a>
+                    <a href="#" class="index__search__content__1--item">
+                        Lorem, ipsum 6.
+                    </a>
+                    <a href="#" class="index__search__content__1--item">
+                        Lorem, ipsum 7.
+                    </a>
+                    <a href="#" class="index__search__content__1--item">
+                        Lorem, ipsum 8.
+                    </a>
+                    <a href="#" class="index__search__content__1--item">
+                        Lorem, ipsum 9.
+                    </a>
+                    <a href="#" class="index__search__content__1--item">
+                        Lorem, ipsum 10.
+                    </a>
+
+                </div>
+                <div class=" search-carousel owl-carousel  owl-theme">
+                    <a href="#" class="search-carousel__item">
+                        Lorem, ipsum 1.
+                    </a>
+                    <a href="#" class="search-carousel__item">
+                        Loremipsum 2.
+                    </a>
+                    <a href="#" class="search-carousel__item">
+                        Lorem, ipsum dolar 3.
+                    </a>
+                    <a href="#" class="search-carousel__item">
+                        Lorem, ipsum 4.
+                    </a>
+                    <a href="#" class="search-carousel__item">
+                        Lorem ipsum dolor sit amet.
+                    </a>
+                    <a href="#" class="search-carousel__item">
+                        Lorem, ipsum 6.
+                    </a>
+                    <a href="#" class="search-carousel__item">
+                        Lorem, ipsum 7.
+                    </a>
+                    <a href="#" class="search-carousel__item">
+                        Lorem, ipsum 8.
+                    </a>
+                    <a href="#" class="search-carousel__item">
+                        Lorem, ipsum 9.
+                    </a>
+                    <a href="#" class="search-carousel__item">
+                        Lorem, ipsum 10.
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+//= template/foot.html
+//= template/footer.html
+//= template/footer-index-9.html
