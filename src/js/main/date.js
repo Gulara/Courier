@@ -18,7 +18,7 @@ $(document).ready(function () {
             ' "  value="' + tomorrowSlash +
             ' " name="days" data-item-id="date" id="' + i + '"/>' +
             ' <label class="date__label form-check-label "  for="' + i + '" >' +
-            '<span class="date__day">' + todayWeekDayName + '</span>' +
+            // '<span class="date__day">' + todayWeekDayName + '</span>' +
             '<span class="date__date">' + todayDate + '</span>' +
             '<span class="date__month">' + tomorrowMonth + '</span>' +
             '</label>\n' +
@@ -502,7 +502,7 @@ $(document).ready(function () {
         });
 
         $(".date__list").slideDown(800);
-        $("input[data-item-id=date]:checked").parent().prevAll().slideDown(800);
+        $("input[data-item-id=date]:checked").parent().prevAll().slideDown(200);
         $('.form__label--time').css({
 
             'margin-top': '20px',
