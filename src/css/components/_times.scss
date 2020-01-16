@@ -29,6 +29,18 @@
         width: 33%;
         justify-content: center;
         display: flex;
+        @include respondmax(xl) {
+            width: 41%;
+          }
+          @include respondmax(lg) {
+            width: 20%;
+          }
+          @include respondmax(md) {
+            width: 28%;
+          }
+          @include respondmax(sm) {
+            width: 50%;
+          }
 
     }
 
