@@ -523,10 +523,14 @@
                         <div class="inpBtn__fields">From:</div>
                         <div id="fromAdress" class="inpBtn__text">Enter start location</div>
                     </div>
+                    <input type="hidden" id="fromAdressLat">
+                    <input type="hidden" id="fromAdressLng">
                     <div class="inpBtn getToEndLocation">
                         <div class="inpBtn__fields">To:</div>
                         <div id="toAdress" class="inpBtn__text">Enter end location</div>
                     </div>
+                    <input type="hidden" id="toAdressLat">
+                    <input type="hidden" id="toAdressLng">
                 </div>
                 <div class="d-none formBox">
                     <div class="formBox-div">
@@ -578,7 +582,7 @@
 
                 <!-- INPUT END-->
 
-                <div class="form__down-div">
+                <div class="form__down-div mt-4">
                     <a href="#" class="scroll-down"></a>
                     <!-- CAR START-->
                     <label class="form-label form__label">Daşıma növünü seçin :</label>
@@ -1008,7 +1012,7 @@
 
             <div class="d-none" id="map_canvas"></div>
             <div>
-                <img class="img-fluid" src="assets/img/blog/large-2.jpg" alt="">
+                <img class="img-fluid map-img" src="assets/img/blog/large-2.jpg" alt="">
             </div>
 
         </div>
@@ -1379,7 +1383,7 @@ FilePond.registerPlugin(FilePondPluginFileValidateType);
 // ... FilePond initialisation code here
 </script>
 
-<script src="js/map.js"></script>
+<script src="js/map-index-2.js"></script>
 <script src="js/datepicker-for-index-8.js"></script>
 <script src="js/delivery-date.js"></script>
 <script src="js/filepond.js"></script>
