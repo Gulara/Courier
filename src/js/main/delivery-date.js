@@ -9,19 +9,68 @@ $(document).ready(function () {
       function () {
     
         if ($(this).is(':checked') && $(this).val() == 'non-urgent') {
+          //  SHOWING DELIVERY DATE
           $('#delivery').css({
             'display': 'block'
           });
 
-          
 
+
+          //  WAVE ANIMATION
+          // $('.wave-left').removeClass('wave-up-left');
+          // $('.wave-right').removeClass('wave-down-right');
+          // $('.wave-left').addClass('wave-down-left');
+          // $('.wave-right').addClass('wave-up-right');
+          // $('.wave-down-left').delay(1000).queue(function (next) {
+          //     $('.wave-left').removeClass('wave-down-left');
+          //     next();
+          // });
+          // $('.wave-up-right').delay(1000).queue(function (next) {
+          //     $('.wave-right').removeClass('wave-up-right');
+          //     next();
+          // });
+          $('.wave-left').addClass('wave-down-left');
+          $('.wave-right').addClass('wave-up-left');
+            $('.wave-down-left').delay(1000).queue(function (next) {
+              $('.wave-left').removeClass('wave-down-left');
+              next();
+          });
+          $('.wave-up-left').delay(1000).queue(function (next) {
+              $('.wave-right').removeClass('wave-up-left');
+              next();
+          });
+          
     
         } else if ($(this).is(':checked') && $(this).val() == 'urgent') {
+          // HIDING DELIVERY DATE
           $('#delivery').css({
             'display': 'none'
           });
 
-          
+          //  WAVE ANIMATION
+          // $('.wave-left').addClass('wave-up-left');
+          // $('.wave-right').addClass('wave-down-right');
+          // $('.wave-left').removeClass('wave-down-left');
+          // $('.wave-right').removeClass('wave-up-right');
+         
+          // $('.wave-up-left').delay(1000).queue(function (next) {
+          //     $('.wave-left').removeClass('wave-up-left');
+          //     next();
+          // });
+          // $('.wave-down-right').delay(1000).queue(function (next) {
+          //     $('.wave-right').removeClass('wave-down-right');
+          //     next();
+          // });
+           $('.wave-left').addClass('wave-up-right');
+          $('.wave-right').addClass('wave-down-right');
+           $('.wave-up-right').delay(1000).queue(function (next) {
+              $('.wave-left').removeClass('wave-up-right');
+              next();
+          });
+          $('.wave-down-right').delay(1000).queue(function (next) {
+              $('.wave-right').removeClass('wave-down-right');
+              next();
+          });
         }
       });
     

@@ -6,6 +6,8 @@
     flex-wrap: wrap;
     // width: 100%;
 
+  
+
     &__div {
         width: 100%;
         display: flex;
@@ -76,10 +78,19 @@
       border-radius: 10px !important;
       padding-left: 0;
       margin: 3px;
+
+      @include respondmax(xl) {
+  
+        width: 25%;
+      }
+      @include respondmax(lg) {
+  
+        width: 14%;
+      }
    
       @include respondmax(sm) {
   
-        width: 30%;
+        width: 23%;
       }
     }
   
