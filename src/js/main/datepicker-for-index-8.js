@@ -31,7 +31,7 @@ $(document).ready(function () {
 
         
     }).on("change", function() {
-        $( "input[data-item-id=times]" ).prop( "checked", false );
+        $( "input[data-item-id=calendar-times]" ).prop( "checked", false );
         
       });
     // $("#datepicker").datepicker($.datepicker.regional["az"]); 
