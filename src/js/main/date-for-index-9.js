@@ -36,15 +36,15 @@ $(document).ready(function () {
         if (checkedSiblings > 2 && dateChildren > 3) {
 
             $("input[data-item-id=times]:checked").parent().prevAll().slideUp(300);
-            $("input[data-item-id=times]:checked").parent().nextAll(':gt(1)').slideUp(800);
+            $("input[data-item-id=times]:checked").parent().nextAll(':gt(1)').slideUp(300);
         } else if (checkedSiblings == 2) {
-            $("input[data-item-id=times]:checked").parent().prevAll().slideUp(800);
+            $("input[data-item-id=times]:checked").parent().prevAll().slideUp(300);
 
         } else if (checkedSiblings == 1) {
-            $("input[data-item-id=times]:checked").parent().prevAll(':gt(0)').slideUp(800);
+            $("input[data-item-id=times]:checked").parent().prevAll(':gt(0)').slideUp(300);
 
         } else if (checkedSiblings == 0) {
-            $("input[data-item-id=times]:checked").parent().prevAll(':gt(1)').slideUp(800);
+            $("input[data-item-id=times]:checked").parent().prevAll(':gt(1)').slideUp(300);
 
         }
     };
@@ -59,15 +59,15 @@ $(document).ready(function () {
         if (checkedSiblings > 2 && dateChildren > 3) {
 
             $("input[data-item-id=calendar-times]:checked").parent().prevAll().slideUp(300);
-            $("input[data-item-id=calendar-times]:checked").parent().nextAll(':gt(1)').slideUp(800);
+            $("input[data-item-id=calendar-times]:checked").parent().nextAll(':gt(1)').slideUp(300);
         } else if (checkedSiblings == 2) {
-            $("input[data-item-id=calendar-times]:checked").parent().prevAll().slideUp(800);
+            $("input[data-item-id=calendar-times]:checked").parent().prevAll().slideUp(300);
 
         } else if (checkedSiblings == 1) {
-            $("input[data-item-id=calendar-times]:checked").parent().prevAll(':gt(0)').slideUp(800);
+            $("input[data-item-id=calendar-times]:checked").parent().prevAll(':gt(0)').slideUp(300);
 
         } else if (checkedSiblings == 0) {
-            $("input[data-item-id=calendar-times]:checked").parent().prevAll(':gt(1)').slideUp(800);
+            $("input[data-item-id=calendar-times]:checked").parent().prevAll(':gt(1)').slideUp(300);
 
         }
     };
@@ -78,7 +78,7 @@ $(document).ready(function () {
 
         var dateChildren = $('.date').children(':visible').length;
         if (checkedSiblings > 3 && dateChildren > 4) {
-
+            $("input[data-item-id=date]:checked").parent().prevAll().slideUp(800);
             $("input[data-item-id=date]:checked").parent().nextAll(':gt(2)').slideUp(800);
         } else if (checkedSiblings == 3) {
             $("input[data-item-id=date]:checked").parent().prevAll().slideUp(800);
@@ -92,37 +92,14 @@ $(document).ready(function () {
         } else if (checkedSiblings == 0) {
             $("input[data-item-id=date]:checked").parent().prevAll(':gt(2)').slideUp(800);
         }
-        if ($("input[data-item-id=date]").prop("checked") == false) {
-            $(".date__list:nth-child(4)").nextAll().slideUp(800);
-        }
+        
     }
-
-    function timesValueSelected() {
-        var valueSelected = document.querySelector('input[data-item-id="date"]:checked');
-        var TimeVal = $('input[data-item-id=times]:checked').val();
-        var dataSlash = $('input[data-item-id=date]:checked').attr('data-slash');
-
-
-
-    };
-
-    function calendarValueSelected() {
-        var valueSelected = document.querySelector('input[data-item-id="calendar-date"]');
-        var TimeVal = $('input[data-item-id=calendar-times]:checked').val();
-        var dataSlash = $('input[data-item-id=calendar-date]:checked').attr('data-slash');
-
-
-
-    };
 
     function calendarRemoveText() {
         $("label[for='calendar']").text('Pick a date');
         $("input:radio[data-item-id='calendar-date']").attr('value', '');
         $("input:radio[data-item-id='date']:not(:checked)").attr('value', '');
     };
-
-  
-
    
     $('input:radio[data-item-id="urgent"]').change(function () {
 
@@ -137,13 +114,10 @@ $(document).ready(function () {
         }
     });
 
-
-
     var currentHour = moment().startOf('hour').add(1, 'h').format("HH");
     var dayHours = 24;
     var allHours = 25;
     var enableHoursToday = allHours - currentHour;
-
     $('input:radio[data-item-id="date"]').click(function () {
         $("input:radio[data-item-id='calendar-date']").attr('value', '');
 
@@ -167,9 +141,6 @@ $(document).ready(function () {
             'display': 'block',
         });
     });
-
-    $(".times__form-check:nth-child(4)").nextAll().slideUp(800);
-
     $('input:radio[data-item-id="date"]').change(function () {
 
         $("input:radio[data-item-id='calendar-date']").prop("checked", false);
@@ -268,16 +239,21 @@ $(document).ready(function () {
 
 
          
-            $(".times__check-form:nth-child(2)").nextAll().slideDown(800);
-            $("input[data-item-id=times]:checked").parent().prevAll().slideDown(800);
-            $(".times__check-form:nth-child(2)").nextAll().slideDown(800);
-            $("input[data-item-id=calendar-times]:checked").parent().prevAll().slideDown(800);
+            $(".times__check-form:nth-child(2)").nextAll().slideDown(300);
+            $("input[data-item-id=times]:checked").parent().prevAll().slideDown(300);
+            $(".times__check-form:nth-child(2)").nextAll().slideDown(300);
+            $("input[data-item-id=calendar-times]:checked").parent().prevAll().slideDown(300);
         });
 
 
 
     });
+   
 
+    $(".times__form-check:nth-child(4)").nextAll().slideUp(800);
+
+  
+//  CALENDAR tIME
     $('input:radio[data-item-id="calendar-date"]').change(function () {
         $("input:radio[data-item-id='date']").prop("checked", false);
         // $("input:radio[data-item-id='calendar-date']").prop( "checked", true);
@@ -327,10 +303,10 @@ $(document).ready(function () {
 
 
 
-            $(".times__form-check:nth-child(5)").nextAll().slideDown(800);
-            $("input[data-item-id=times]:checked").parent().prevAll().slideDown(800);
+            $(".times__form-check:nth-child(5)").nextAll().slideDown(300);
+            $("input[data-item-id=times]:checked").parent().prevAll().slideDown(300);
             // $(".times__form-check:nth-child(5)").nextAll().slideDown(800);
-            $("input[data-item-id=calendar-times]:checked").parent().prevAll().slideDown(800);
+            $("input[data-item-id=calendar-times]:checked").parent().prevAll().slideDown(300);
         });
     });
 
@@ -378,10 +354,10 @@ $(document).ready(function () {
 
 
        
-        $(".times__check-form:nth-child(2)").nextAll().slideDown(800);
-        $("input[data-item-id=times]:checked").parent().prevAll().slideDown(800);
-        $(".times__check-form:nth-child(2)").nextAll().slideDown(800);
-        $("input[data-item-id=calendar-times]:checked").parent().prevAll().slideDown(800);
+        $(".times__check-form:nth-child(2)").nextAll().slideDown(300);
+        $("input[data-item-id=times]:checked").parent().prevAll().slideDown(300);
+        $(".times__check-form:nth-child(2)").nextAll().slideDown(300);
+        $("input[data-item-id=calendar-times]:checked").parent().prevAll().slideDown(300);
        
     });
     $(".delivery-btn--up").click(function () {

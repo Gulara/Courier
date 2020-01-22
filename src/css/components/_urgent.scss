@@ -48,7 +48,10 @@
         }
     }
 }
-
+.urgent-bg{
+    background-color: $color-primary;
+    color: #ffffff;
+}
 @keyframes changeColor {
     from {
         background-color: $color-secondary;
