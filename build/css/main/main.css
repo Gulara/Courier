@@ -5285,7 +5285,7 @@ p + p {
   width: 200px; }
 
 .profile-input {
-  border-bottom: 2px solid transparent  !important;
+  border-bottom: 2px solid transparent !important;
   outline: none; }
 
 .profile-input:focus {
@@ -5339,6 +5339,23 @@ p + p {
       -webkit-border-top-left-radius: 10px;
          -moz-border-radius-topleft: 10px;
               border-top-left-radius: 10px; } }
+
+.message-area__btn {
+  outline: none;
+  border: none; }
+  .message-area__btn:active {
+    outline: none;
+    border: none; }
+  .message-area__btn:focus {
+    outline: 0;
+    border: none; }
+
+#reportFormControlSelect {
+  outline: none; }
+  #reportFormControlSelect:active {
+    outline: none; }
+  #reportFormControlSelect:focus {
+    outline: 0; }
 
 .my-messages-inner {
   height: 500px; }

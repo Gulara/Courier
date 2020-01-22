@@ -575,11 +575,12 @@
                                     <!-- Navbar -->
                                     <div class="row d-flex flex-row align-items-center p-2 my-messages__navbar"
                                         id="message-navbar">
-                                        <img alt="Profile Photo" class="img-fluid rounded-circle mr-2"
-                                            style="height:50px; cursor:pointer;" onclick="showProfileSettings()"
+                                        <img alt="Profile Photo" class="img-fluid rounded-circle mr-2 d-none"
+                                            style="height:50px; cursor:pointer; " onclick="showProfileSettings()"
                                             id="display-pic">
-                                        <div class="text-white font-weight-bold" id="username"></div>
-                                        <div class="nav-item dropdown ml-auto">
+                                        <div class="text-white font-weight-bold d-none" id="username"></div>
+                                        <!-- BURA -->
+                                        <!-- <div class="nav-item dropdown ml-auto">
                                             <a class="nav-link dropdown-toggle messages__navbar--dropdown" data-toggle="dropdown" href="#"
                                                 role="button" aria-haspopup="true" aria-expanded="false"><i
                                                     class="fas fa-ellipsis-v text-white"></i></a>
@@ -590,7 +591,7 @@
                                                 <a class="dropdown-item" href="#">Settings</a>
                                                 <a class="dropdown-item" href="#">Log Out</a>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <div class="my-messages__div">
                                             <input type="text" class="my-messages__div--input" id="searchMessages"
                                                 onkeyup="searchMessages()" placeholder="Search messages">
@@ -636,7 +637,7 @@
                                 </div>
 
                                 <!-- Message Area -->
-                                <div class="d-none d-sm-flex flex-column col-12 col-sm-6 col-md-7 p-0 h-100"
+                                <div class="d-none d-sm-flex flex-column col-12 col-sm-6 col-md-7 p-0 h-100 message-area"
                                     id="message-area">
                                     <div class="w-100 h-100 overlay"></div>
 
@@ -659,7 +660,19 @@
                                                     class="fas fa-search mx-3 text-white d-none d-md-block"></i></a>
                                             <a href="#"><i
                                                     class="fas fa-paperclip mx-3 text-white d-none d-md-block"></i></a>
-                                            <a href="#"><i class="fas fa-ellipsis-v mr-2 mx-sm-3 text-white"></i></a>
+                                            <!-- <i href="#"><i class="fas fa-question mr-2 mx-sm-3 text-white"></i></a> -->
+                                            <a class="nav-link dropdown-toggle messages__navbar--dropdown"
+                                                data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                                                aria-expanded="false"><i class="fas fa-question text-white"></i></a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <!-- <a class="dropdown-item" href="#">Report Order</a> -->
+                                                <!-- Button trigger modal -->
+                                                <button type="button" class="btn message-area__btn" data-toggle="modal"
+                                                    data-target="#reportModal">
+                                                    Report Order
+                                                </button>
+
+                                            </div>
                                         </div>
                                     </div>
 
@@ -679,12 +692,12 @@
                                     <!-- FORM -->
                                     <div class="my-messages-inner__btn" id="my-messages-inner__btn">
                                         <div class="my-messages-inner__btn--group">
-                                            <div class="my-messages-inner__btn--left"  onclick="hideMap()">
+                                            <div class="my-messages-inner__btn--left" onclick="hideMap()">
                                                 <i class="fas fa-arrow-left "></i>
                                             </div>
                                             <div class="my-messages-inner__name">Order</div>
                                         </div>
-                                      
+
                                     </div>
                                     <div class="my-messages-inner__map-group " id="my-messages-inner__map-group">
                                         <!--    MAP  START-->
@@ -695,8 +708,7 @@
                                         </div>
                                         <!-- MAP END -->
 
-                                        <form class="form  messages-form"
-                                            data-parsley-validate="">
+                                        <form class="form  messages-form" data-parsley-validate="">
 
                                             <div class="card card-body mb-4 shadow-sm">
 
@@ -862,7 +874,7 @@
 
                                         </form>
                                     </div>
-                                    
+
 
 
 
@@ -875,6 +887,43 @@
             </div>
 
         </div>
+
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="reportModal" tabindex="-1" role="dialog" aria-labelledby="reportModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reportModalLabel">Report</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="reportModalForm">
+                    <div class="modal-body">
+
+                        <div class="form-group">
+                            <label for="reportFormControlSelect">Report Select</label>
+                            <select class="form-control" id="reportFormControlSelect">
+                                <option>Sifariş gecikir</option>
+                                <option>Sifariş 1</option>
+                                <option>Sifariş 2</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="reportTextarea">Report Textarea</label>
+                            <textarea class="form-control" id="reportTextarea" rows="3"></textarea>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer ">
+
+                        <button type="button" class="btn btn-purple">Göndər</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 </div>
@@ -885,146 +934,146 @@
 
 
 
-    
-    
-    
-    
-    <!-- Required vendor scripts (Do not remove) -->
-    <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script> -->
-      <script src="libs/jquery/dist/jquery.min.js"></script>
-    <!-- SWIPER -->
-      <!-- <script src="https://cdn.bootcss.com/Swiper/3.3.1/js/swiper.jquery.min.js"></script> -->
-      <script src="assets/js/swiper.jquery.min.js"></script>
-    
-      
-      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/0.11.1/typeahead.bundle.min.js"></script> -->
-      <script src="assets/js/typeahead.min.js"></script>
-    <script>
-      window.jQuery || document.write('<script src="libs/jquery/dist/jquery.min.js"><\/script>')
+
+
+
+
+<!-- Required vendor scripts (Do not remove) -->
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script> -->
+  <script src="libs/jquery/dist/jquery.min.js"></script>
+<!-- SWIPER -->
+  <!-- <script src="https://cdn.bootcss.com/Swiper/3.3.1/js/swiper.jquery.min.js"></script> -->
+  <script src="assets/js/swiper.jquery.min.js"></script>
+
+  
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/0.11.1/typeahead.bundle.min.js"></script> -->
+  <script src="assets/js/typeahead.min.js"></script>
+<script>
+  window.jQuery || document.write('<script src="libs/jquery/dist/jquery.min.js"><\/script>')
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
+<!-- <script src="libs/bootstrap/dist/js/bootstrap.js" type="text/javascript" charset="utf-8" async defer></script> -->
+<!-- <script type="text/javascript" src="assets/js/jquery.min.js"></script> -->
+<script type="text/javascript" src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+
+<!-- 
+             This appears in the demo only.  This script ensures our demo countdowns are always showing a date in the future 
+             by altering the date before the countdown is initialized 
+        -->
+<!-- <script type="text/javascript">
+      (($) => {
+            var now             = new Date;
+            var day             = 864e5;
+            var weeksToAdd      = 2;
+            var tenWeeksFromNow = new Date(+now + day * 7 * weeksToAdd).toISOString().slice(0,10).replace(/\-/g, 'index.html');
+            $('[data-countdown-date].add-countdown-time').attr('data-countdown-date', tenWeeksFromNow);
+          })(jQuery);
+    </script> -->
+
+<!-- Optional Vendor Scripts (Remove the plugin script here and comment initializer script out of index.js if site does not use that feature) -->
+
+<!-- AOS (Animate On Scroll - animates elements into view while scrolling down) -->
+<script  src="assets/js/aos.js"></script>
+<!-- Clipboard (copies content from browser into OS clipboard) -->
+<script  src="assets/js/clipboard.min.js"></script>
+<!-- Fancybox (handles image and video lightbox and galleries) -->
+<script  src="assets/js/jquery.fancybox.min.js"></script>
+<!-- Flatpickr (calendar/date/time picker UI) -->
+<script  src="assets/js/flatpickr.min.js"></script>
+<!-- Flickity (handles touch enabled carousels and sliders) -->
+<script src="assets/js/flickity.pkgd.min.js"></script>
+<!-- Ion rangeSlider (flexible and pretty range slider elements) -->
+<script src="assets/js/ion.rangeSlider.min.js"></script>
+<!-- Isotope (masonry layouts and filtering) -->
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<!-- jarallax (parallax effect and video backgrounds) -->
+<script src="assets/js/jarallax.min.js"></script>
+<script src="assets/js/jarallax-video.min.js"></script>
+<script src="assets/js/jarallax-element.min.js"></script>
+<!-- jQuery Countdown (displays countdown text to a specified date) -->
+<script src="assets/js/jquery.countdown.min.js"></script>
+<!-- jQuery smartWizard facilitates steppable wizard content -->
+<script src="assets/js/jquery.smartWizard.min.js"></script>
+<!-- Plyr (unified player for Video, Audio, Vimeo and Youtube) -->
+<script src="assets/js/plyr.polyfilled.min.js"></script>
+<!-- Prism (displays formatted code boxes) -->
+<script src="assets/js/prism.js"></script>
+<!-- ScrollMonitor (manages events for elements scrolling in and out of view) -->
+<script src="assets/js/scrollMonitor.js"></script>
+<!-- Smooth scroll (animation to links in-page)-->
+<script src="assets/js/smooth-scroll.polyfills.min.js"></script>
+<!-- SVGInjector (replaces img tags with SVG code to allow easy inclusion of SVGs with the benefit of inheriting colors and styles)-->
+<script src="assets/js/svg-injector.umd.production.js"></script>
+<!-- TwitterFetcher (displays a feed of tweets from a specified account)-->
+<script src="assets/js/twitterFetcher_min.js"></script>
+<!-- Typed text (animated typing effect)-->
+<script src="assets/js/typed.min.js"></script>
+
+
+
+
+
+<!-- Required theme scripts (Do not remove) -->
+<script src="assets/js/theme.js"></script>
+
+<script src="js/badge.js"></script>
+<script src="js/tooltip.js"></script>
+
+<!-- OUR FOOTER -->
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6q83jcEbxloW8tYOXLgagBGJ1xrDowHc&libraries=places&language=az-AZ">
+</script>
+<!-- FILEPOND -->
+
+<script src="assets/js/filepond-plugin-file-validate-type.js"></script>
+<script src="assets/js/filepond-plugin-image-preview.js"></script>
+<script src="assets/js/filepond-plugin-image-resize.js"></script>
+<script src="assets/js/filepond-plugin-image-transform.js"></script>
+<script src="assets/js/filepond-plugin-image-crop.js"></script>
+<script src="assets/js/filepond.js"></script>
+
+<!-- <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/jquery-ui.min.js"></script> -->
+<script src="assets/js/jquery-ui.min.js"></script>
+
+
+
+<!--  LIGHTGALLERY-->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/js/lightgallery.min.js"></script> -->
+<script src="assets/js/lightgallery.min.js"></script>
+
+<!-- A jQuery plugin that adds cross-browser mouse wheel support. (Optional) -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script> -->
+<script src="assets/js/jquery.mousewheel.min.js"></script>
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lg-thumbnail/1.1.0/lg-thumbnail.min.js"></script> -->
+<script src="assets/js/lg-thumbnail.min.js"></script>
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lg-fullscreen/1.1.0/lg-fullscreen.min.js"></script> -->
+<script src="assets/js/lg-fullscreen.min.js"></script>
+
+
+<script>
+// Register the plugin
+FilePond.registerPlugin(FilePondPluginFileValidateType);
+
+// ... FilePond initialisation code here
+</script>
+
+<script src="js/datautils.js"></script>
+<script src="js/datastore.js"></script>
+<script src="js/script.js"></script>
+<script src="js/filepond.js"></script>
+<script src="js/lightGallery.js"></script>
+<script src="js/map-my-messages.js"></script>
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<!-- <script>
+        window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+        ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
     </script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
-    <!-- <script src="libs/bootstrap/dist/js/bootstrap.js" type="text/javascript" charset="utf-8" async defer></script> -->
-    <!-- <script type="text/javascript" src="assets/js/jquery.min.js"></script> -->
-    <script type="text/javascript" src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.js"></script>
-    
-    <!-- 
-                 This appears in the demo only.  This script ensures our demo countdowns are always showing a date in the future 
-                 by altering the date before the countdown is initialized 
-            -->
-    <!-- <script type="text/javascript">
-          (($) => {
-                var now             = new Date;
-                var day             = 864e5;
-                var weeksToAdd      = 2;
-                var tenWeeksFromNow = new Date(+now + day * 7 * weeksToAdd).toISOString().slice(0,10).replace(/\-/g, 'index.html');
-                $('[data-countdown-date].add-countdown-time').attr('data-countdown-date', tenWeeksFromNow);
-              })(jQuery);
-        </script> -->
-    
-    <!-- Optional Vendor Scripts (Remove the plugin script here and comment initializer script out of index.js if site does not use that feature) -->
-    
-    <!-- AOS (Animate On Scroll - animates elements into view while scrolling down) -->
-    <script  src="assets/js/aos.js"></script>
-    <!-- Clipboard (copies content from browser into OS clipboard) -->
-    <script  src="assets/js/clipboard.min.js"></script>
-    <!-- Fancybox (handles image and video lightbox and galleries) -->
-    <script  src="assets/js/jquery.fancybox.min.js"></script>
-    <!-- Flatpickr (calendar/date/time picker UI) -->
-    <script  src="assets/js/flatpickr.min.js"></script>
-    <!-- Flickity (handles touch enabled carousels and sliders) -->
-    <script src="assets/js/flickity.pkgd.min.js"></script>
-    <!-- Ion rangeSlider (flexible and pretty range slider elements) -->
-    <script src="assets/js/ion.rangeSlider.min.js"></script>
-    <!-- Isotope (masonry layouts and filtering) -->
-    <script src="assets/js/isotope.pkgd.min.js"></script>
-    <!-- jarallax (parallax effect and video backgrounds) -->
-    <script src="assets/js/jarallax.min.js"></script>
-    <script src="assets/js/jarallax-video.min.js"></script>
-    <script src="assets/js/jarallax-element.min.js"></script>
-    <!-- jQuery Countdown (displays countdown text to a specified date) -->
-    <script src="assets/js/jquery.countdown.min.js"></script>
-    <!-- jQuery smartWizard facilitates steppable wizard content -->
-    <script src="assets/js/jquery.smartWizard.min.js"></script>
-    <!-- Plyr (unified player for Video, Audio, Vimeo and Youtube) -->
-    <script src="assets/js/plyr.polyfilled.min.js"></script>
-    <!-- Prism (displays formatted code boxes) -->
-    <script src="assets/js/prism.js"></script>
-    <!-- ScrollMonitor (manages events for elements scrolling in and out of view) -->
-    <script src="assets/js/scrollMonitor.js"></script>
-    <!-- Smooth scroll (animation to links in-page)-->
-    <script src="assets/js/smooth-scroll.polyfills.min.js"></script>
-    <!-- SVGInjector (replaces img tags with SVG code to allow easy inclusion of SVGs with the benefit of inheriting colors and styles)-->
-    <script src="assets/js/svg-injector.umd.production.js"></script>
-    <!-- TwitterFetcher (displays a feed of tweets from a specified account)-->
-    <script src="assets/js/twitterFetcher_min.js"></script>
-    <!-- Typed text (animated typing effect)-->
-    <script src="assets/js/typed.min.js"></script>
-    
-    
-    
-    
-    
-    <!-- Required theme scripts (Do not remove) -->
-    <script src="assets/js/theme.js"></script>
-    
-    <script src="js/badge.js"></script>
-    <script src="js/tooltip.js"></script>
-    
-    <!-- OUR FOOTER -->
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6q83jcEbxloW8tYOXLgagBGJ1xrDowHc&libraries=places&language=az-AZ">
-    </script>
-    <!-- FILEPOND -->
-    
-    <script src="assets/js/filepond-plugin-file-validate-type.js"></script>
-    <script src="assets/js/filepond-plugin-image-preview.js"></script>
-    <script src="assets/js/filepond-plugin-image-resize.js"></script>
-    <script src="assets/js/filepond-plugin-image-transform.js"></script>
-    <script src="assets/js/filepond-plugin-image-crop.js"></script>
-    <script src="assets/js/filepond.js"></script>
-    
-    <!-- <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/jquery-ui.min.js"></script> -->
-    <script src="assets/js/jquery-ui.min.js"></script>
-    
-    
-    
-    <!--  LIGHTGALLERY-->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/js/lightgallery.min.js"></script> -->
-    <script src="assets/js/lightgallery.min.js"></script>
-    
-    <!-- A jQuery plugin that adds cross-browser mouse wheel support. (Optional) -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script> -->
-    <script src="assets/js/jquery.mousewheel.min.js"></script>
-    
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lg-thumbnail/1.1.0/lg-thumbnail.min.js"></script> -->
-    <script src="assets/js/lg-thumbnail.min.js"></script>
-    
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lg-fullscreen/1.1.0/lg-fullscreen.min.js"></script> -->
-    <script src="assets/js/lg-fullscreen.min.js"></script>
-    
-    
-    <script>
-    // Register the plugin
-    FilePond.registerPlugin(FilePondPluginFileValidateType);
-    
-    // ... FilePond initialisation code here
-    </script>
-    
-    <script src="js/datautils.js"></script>
-    <script src="js/datastore.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/filepond.js"></script>
-    <script src="js/lightGallery.js"></script>
-    <script src="js/map-my-messages.js"></script>
-    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-    <!-- <script>
-            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
-            ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
-        </script>
-        <script src="https://www.google-analytics.com/analytics.js" async defer></script> -->
-    </body>
-    
-    </html>
+    <script src="https://www.google-analytics.com/analytics.js" async defer></script> -->
+</body>
+
+</html>
