@@ -5,6 +5,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
     // width: 100%;
+    position: relative;
 
   
 
@@ -134,6 +135,11 @@
           margin-bottom: 20px;
           width: 80%;
           top:10px;
+
+          @include respondmax(sm) {
+  
+            width: 65% !important;
+          }
       }
       &--icon {
           color: #ffffff;
