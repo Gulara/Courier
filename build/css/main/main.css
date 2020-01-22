@@ -1183,6 +1183,10 @@ label.error {
          -o-animation-fill-mode: forwards;
             animation-fill-mode: forwards; }
 
+.urgent-bg {
+  background-color: #7b2bfc;
+  color: #ffffff; }
+
 @-webkit-keyframes changeColor {
   from {
     background-color: #f5f5f5;
