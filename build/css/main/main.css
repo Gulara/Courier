@@ -5779,6 +5779,123 @@ p + p {
           justify-content: center;
   text-align: center; }
 
+.my-coupons {
+  width: 500px;
+  height: 300px;
+  margin: 0 auto;
+  overflow: hidden;
+  -webkit-border-radius: 1.5rem/2rem;
+     -moz-border-radius: 1.5rem/2rem;
+          border-radius: 1.5rem/2rem;
+  -webkit-box-shadow: 8px 10px 16px rgba(0, 0, 0, 0.1);
+     -moz-box-shadow: 8px 10px 16px rgba(0, 0, 0, 0.1);
+          box-shadow: 8px 10px 16px rgba(0, 0, 0, 0.1);
+  -webkit-transform: translateZ(0);
+     -moz-transform: translateZ(0);
+          transform: translateZ(0); }
+  @media (max-width: 991px) {
+    .my-coupons {
+      width: 400px;
+      height: 200px; } }
+  @media (max-width: 575px) {
+    .my-coupons {
+      width: 260px;
+      height: 150px; } }
+  .my-coupons__cover {
+    background: -webkit-gradient(linear, left top, right top, from(#59004b), color-stop(50%, #6d0096), to(#7d00d4));
+    background: -webkit-linear-gradient(left, #59004b 0%, #6d0096 50%, #7d00d4 100%);
+    background: -moz-linear-gradient(left, #59004b 0%, #6d0096 50%, #7d00d4 100%);
+    background: -o-linear-gradient(left, #59004b 0%, #6d0096 50%, #7d00d4 100%);
+    background: linear-gradient(90deg, #59004b 0%, #6d0096 50%, #7d00d4 100%);
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%; }
+    .my-coupons__cover > .fa-gift {
+      color: white;
+      font-size: 8rem;
+      -webkit-transform: translateY(-17px);
+         -moz-transform: translateY(-17px);
+          -ms-transform: translateY(-17px);
+           -o-transform: translateY(-17px);
+              transform: translateY(-17px);
+      z-index: 4; }
+      @media (max-width: 991px) {
+        .my-coupons__cover > .fa-gift {
+          font-size: 5rem;
+          -webkit-transform: translateY(-13px);
+             -moz-transform: translateY(-13px);
+              -ms-transform: translateY(-13px);
+               -o-transform: translateY(-13px);
+                  transform: translateY(-13px); } }
+      @media (max-width: 575px) {
+        .my-coupons__cover > .fa-gift {
+          -webkit-transform: translateY(-7px);
+             -moz-transform: translateY(-7px);
+              -ms-transform: translateY(-7px);
+               -o-transform: translateY(-7px);
+                  transform: translateY(-7px);
+          font-size: 4rem; } }
+  .my-coupons__text {
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    font-size: 1.8rem;
+    color: #fff; }
+  .my-coupons__code {
+    position: absolute;
+    bottom: 5%;
+    background: white;
+    padding: 2px 4px;
+    margin-top: 20px;
+    font-size: 16px;
+    border: 1px solid #e3e3e3;
+    -webkit-border-radius: 10px;
+       -moz-border-radius: 10px;
+            border-radius: 10px;
+    z-index: 2; }
+    .my-coupons__code--border {
+      padding: 5px 7px;
+      border: 1px dashed #555a64;
+      -webkit-border-radius: 10px;
+         -moz-border-radius: 10px;
+              border-radius: 10px; }
+  .my-coupons__horizontal {
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    height: 20px;
+    z-index: 1; }
+    @media (max-width: 575px) {
+      .my-coupons__horizontal {
+        height: 10px; } }
+  .my-coupons__vertical {
+    position: absolute;
+    background-color: #fff;
+    width: 20px;
+    height: 100%;
+    z-index: 1; }
+    @media (max-width: 575px) {
+      .my-coupons__vertical {
+        width: 10px; } }
+
 /*! WEBCODER - http://webcoder.az/ Mehemmed Memmedli  16 Aprel 2018  https://github.com/nemerki */
 /* ==========================================================================
    Helper classes
