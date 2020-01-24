@@ -24,7 +24,7 @@
   &__div {
     @include layers(245px, 180px, $color-primary);
     background: rgb(89,0,75);
-    background: linear-gradient(90deg, rgba(89,0,75,1) 45%, rgba(109,0,150,1) 70%, rgba(125,0,212,1) 100%);
+    background: linear-gradient(90deg, $color-1 45%, $color-2 70%, $color-3 100%);
     //transform-origin: top right;
     // box-shadow: 0px 0px 20px $color-primary;
    
