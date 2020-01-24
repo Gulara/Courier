@@ -66,34 +66,70 @@
                     <div class="flex-grow-1 ml-lg-4 mt-3 mt-md-0">
 
                         <!-- MY Coupons -->
-                        <div id="my-coupons">
+                        <div id="my-coupons-container">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="row justify-content-center align-items-center mb-4">
                                         <div class="col-auto text-center">
-                                            <h3 class="mb-sm-0">Your gift card</h3>
-                                            <h3 class="mb-sm-0">You don't have any coupon</h3>
+                                            <h3 class="mb-sm-0 " id="have-coupon">Your gift card</h3>
+                                            <h3 class="mb-sm-0 " id="dont-have-coupon">You don't have any coupon</h3>
                                         </div>
 
                                     </div>
-                                    
-                                        <div class="my-coupons">
-                                            <div class="my-coupons__cover">
-                                                <i class="fas fa-gift"></i>
-                                                <div class="my-coupons__text">
-                                                  
-                                                    <div>$25.00</div>
-                                                </div>
-                                                <div class="my-coupons__code">
-                                                    <div class="my-coupons__code--border">345D 4353 </div>
-                                                </div>
 
-                                                <div class="my-coupons__horizontal"></div>
-                                                <div class="my-coupons__vertical"></div>
+                                    <div class="my-coupons">
+                                        <div class="my-coupons__cover">
+                                            
+
+                                            <div class="my-coupons__circle my-coupons__circle--left"></div>
+                                            <div class="my-coupons__circle my-coupons__circle--right"></div>
+                                            <div class="my-coupons__ribbon my-coupons__ribbon--left"></div>
+                                            <div class="my-coupons__ribbon my-coupons__ribbon--right"></div>
+                                            <div class="my-coupons__text">
+
+                                                <div>$25.00</div>
                                             </div>
-                                           
+                                            <div class="my-coupons__code--container">
+                                                <div class="my-coupons__code">35gwq44 </div>
+
+                                                <button class="my-coupons__code--btn"><i
+                                                        class="far fa-copy"></i></button>
+                                            </div>
+                                            <div class="my-coupons__tooltip"></div>
+
+
+                                            <div class="my-coupons__horizontal"></div>
+                                            <div class="my-coupons__vertical"></div>
                                         </div>
-                                
+
+                                    </div>
+
+
+                                    <div class="mt-5 my-coupons__social">
+                                        <p>Share with your friends</p>
+                                        <ul class="list-unstyled my-2 d-flex mb-0">
+
+                                            <li class="mr-3">
+                                                <a href="#"
+                                                    class="hover-fade-out  my-coupons__social-link my-coupons__social-link--twitter ">
+                                                    <i class="fab fa-twitter text-white"></i>
+                                                </a>
+                                            </li>
+
+                                            <li class="mx-3">
+                                                <a href="#"
+                                                    class="hover-fade-out my-coupons__social-link my-coupons__social-link--facebook ">
+                                                    <i class="fab fa-facebook-f text-white"></i>
+                                                </a>
+                                            </li>
+                                            <li class="mx-3">
+                                                <a href="#"
+                                                    class="hover-fade-out my-coupons__social-link my-coupons__social-link--instagram ">
+                                                    <i class="fab fa-instagram text-white"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -114,4 +150,5 @@
     <img src="assets/img/icons/interface/icon-arrow-up.svg" alt="Icon" class="icon bg-white" data-inject-svg>
 </a> -->
 //= template/foot.html
-//= template/footer-all.html
+//= template/footer.html
+//= template/footer-my-coupons.html

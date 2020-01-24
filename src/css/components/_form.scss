@@ -35,6 +35,10 @@
     color: #555a64;
     font-size: 16px;
 
+    // &:focus{
+    //   border: 2px solid $color-primary;
+    // }
+
     @include respondmax(xl) {
       width: 100% !important;
     }
@@ -137,3 +141,31 @@ label.error {
   background-color: #f5f5f5;
 
 }
+
+.error-x {
+ 
+  position: absolute;
+  top: 5px;
+  right: 0;
+  border-radius: 10em;
+  padding: 1px 4px;
+  text-decoration: none;
+  font: 700 18px/17px sans-serif;
+  background: red;
+  color: #FFF;
+  display: none;
+  }
+
+  .true-check {
+ 
+    position: absolute;
+    top: 5px;
+    right: 0;
+    border-radius: 10em;
+    padding: 1px 4px;
+    text-decoration: none;
+    font: 700 15px/18px sans-serif;
+    background: green;
+    color: #FFF;
+    display: none;
+    }

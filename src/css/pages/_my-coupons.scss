@@ -1,13 +1,21 @@
+#my-coupons-container {
+  @include respondmax(lg) {
+    margin-top: 20px;
+  }
+
+  @include respondmax(sm) {
+    margin-top: 0;
+  }
+}
 
 
-
-.my-coupons { 
-    width: 500px;
+.my-coupons {
+  width: 500px;
   height: 300px;
   margin: 0 auto;
   overflow: hidden;
   border-radius: 1.5rem/2rem;
-  box-shadow: 8px 10px 16px rgba(0,0,0,0.1);
+  box-shadow: 8px 10px 16px rgba(0, 0, 0, 0.1);
   transform: translateZ(0);
 
 
@@ -15,88 +23,289 @@
     width: 400px;
     height: 200px;
   }
+
   @include respondmax(sm) {
     width: 260px;
     height: 150px;
-  }
-  &__cover {
-    background: linear-gradient(90deg, rgba(89,0,75,1) 0%, rgba(109,0,150,1) 50%, rgba(125,0,212,1) 100%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2;position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  
-  
-  > .fa-gift {
-    color: white;
-    font-size: 8rem;
-    transform: translateY(-17px);
-    z-index: 4;
 
-    @include respondmax(lg) {
-      font-size: 5rem;
-      transform: translateY(-13px);
+  }
+
+  &__cover {
+    background: linear-gradient(90deg, $color-1 0%, $color-2 50%, $color-3 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+
+    >.fa-gift {
+      color: white;
+      font-size: 8rem;
+      transform: translateY(-17px);
+      z-index: 4;
+
+      @include respondmax(lg) {
+        font-size: 5rem;
+        transform: translateY(-13px);
 
       }
+
       @include respondmax(sm) {
         transform: translateY(-7px);
-        font-size: 4rem;
+        font-size: 3rem;
       }
+    }
   }
-}
+
   &__text {
 
- 
+
     position: absolute;
-    top:5%;
-    right:10%;
+    top: 5%;
+    right: 10%;
     font-size: 1.8rem;
     color: #fff;
-   
+
+    @include respondmax(sm) {
+      right: 7%;
+    }
   }
+
   &__code {
-    position: absolute;
-    bottom: 5%;
+    padding: 5px 7px;
+    border: 1px dashed $color-secondary-dark;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-right: none;
+    cursor: pointer;
+
+    
+
+    &--container {
+      position: absolute;
+      bottom: 5%;
       background: white;
       padding: 2px 4px;
-      
+  
       margin-top: 20px;
       font-size: 16px;
       border: 1px solid #e3e3e3;
       border-radius: 10px;
       z-index: 2;
+      display: flex;
 
-      &--border{
-        padding: 5px 7px;
-        border: 1px dashed $color-secondary-dark;
-        border-radius: 10px;
+      &:hover .my-coupons__tooltip{
+        display: block;
       }
     }
 
-    &__horizontal{
-        position: absolute;
-        background-color: #fff;
-        width: 100%;
-        height: 20px;z-index: 1;
-        @include respondmax(sm) {
-            height: 10px;
-          }
-    }
-    &__vertical{
-        position: absolute;
-        background-color: #fff;
-        width: 20px;
-        height: 100%;z-index: 1;
+    &--btn {
+    
+      background-color: #fff;
+    
 
-        @include respondmax(sm) {
-            width: 10px;
-          }
+      border: 1px dashed $color-secondary-dark;
+      border-left: none;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+
+      &:focus{
+        outline: none;
+      }
+      .fa-copy {
+        font-size: 1.5rem;
+        color: $color-primary;
+        
+      }
     }
+  }
+
+  &__tooltip{
+    background-color: rgba(0,0,0,.8);
+    color: #fff;
+padding: 3px 5px;
+border-radius:5px;
+bottom: 17%;
+    right: 29%;
+position: absolute;
+z-index: 999;
+display: none;
+
+@include respondmax(lg) {
+  bottom: 22%;
+  right: 23%;
+
+}
+@include respondmax(sm) {
+
+  right: 10%;
+
 }
 
+  }
 
+
+  &__horizontal {
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    height: 20px;
+    z-index: 1;
+
+    @include respondmax(sm) {
+      height: 10px;
+    }
+  }
+
+  &__vertical {
+    position: absolute;
+    background-color: #fff;
+    width: 20px;
+    height: 100%;
+    z-index: 1;
+
+    @include respondmax(sm) {
+      width: 10px;
+    }
+  }
+
+  &__circle {
+    border: 20px solid #ffff;
+    border-radius: 50%;
+    opacity: 1;
+    position: absolute;
+    top: 25%;
+    width: 80px;
+    height: 80px;
+    z-index: 86;
+
+
+
+    @include respondmax(lg) {
+      top: 25%;
+      width: 60px;
+      height: 60px;
+    }
+    @include respondmax(sm) {
+      border: 10px solid #ffff;
+      width: 40px;
+      height: 40px;
+      top: 26%;
+
+    }
+
+    &--left {
+
+      left: 35%;
+    }
+
+    &--right {
+
+      right: 35%;
+    }
+
+
+  }
+
+  &__ribbon {
+    width: 20px;
+    height: 60px;
+    padding: 10px 0;
+    position: absolute;
+    top: 48%;
+
+    text-align: center;
+    border-top-left-radius: 3px;
+    background: #fff;
+
+    @include respondmax(lg) {
+      top: 40%;
+
+    }
+
+    @include respondmax(sm) {
+      width: 10px;
+height: 40px;
+    }
+
+    &--left {
+      transform: rotate(45deg);
+      left: 42%;
+    }
+
+    &--right {
+      right: 42%;
+      transform: rotate(-45deg);
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      height: 0;
+      width: 0;
+      bottom: -7.5px;
+      left: 0;
+      border-left: 10px solid #fff;
+      border-right: 10px solid #fff;
+      border-bottom: 10px solid transparent;
+
+      @include respondmax(sm) {
+        border-left: 5px solid #fff;
+        border-right: 5px solid #fff;
+        border-bottom: 5px solid transparent;
+        bottom: -3.5px;
+       }
+    }
+  }
+
+&__social{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+  &__social-link {
+
+  width: 35px;
+    height: 35px;
+    background-color: #383B44;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+
+    &:hover{
+      text-decoration: none;
+    }
+    &--twitter{
+background-color: #00acee;
+    }
+    &--facebook{
+      background-color: #3b5998;
+    }
+   
+    &--instagram {
+      background: linear-gradient(45deg, rgb(254,218,117) 0%, rgb(250,126,30) 26%, rgb(214,41,118) 51%, rgb(150,47,191) 71%, rgb(79,91,213) 100%);
+    }
+}
+}
 
