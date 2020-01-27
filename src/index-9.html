@@ -219,17 +219,53 @@
 
                         <input type="text" name="contact-name" class="form-control form__control " id="contact-name"
                             placeholder="Mammad Mammadov">
-                        <div class="invalid-feedback">
-                            Please type your name.
-                        </div>
+                        <span id="error-receiver"></span>
+
                     </div>
                     <div class="form-group form__group ">
                         <label for="phoneNumber" class="d-block form-label form__label">Receiver number :</label>
+                        
+                        <div class="form-group__phone-div">
+                            <!-- <div class="valid-check valid-hide ">&#10004;</div>
+                            <span id="error-receiver-number " ></span>
+                            <span id="error-msg" class="valid-hide text-danger d-block"></span>
+                            <div class="form__phone-group">
+                                <input type="text" class="form-control form__control " id="phoneNumber">
+                                <div class=" check-wp">
+                                    <input type="checkbox" id="check-wp-1" class="check-wp__input">
+                                    <label for="check-wp-1" class="check-wp__label">
+                                        <i class="fab fa-whatsapp "></i>
+                                    </label>
+                                   
+                                </div>
+                                <button class="add-phone btn btn-purple">
+    
+                                    <i class="fas fa-plus "></i>
+                                </button>
+                            </div>
+    
+                            <button class="btn btn-purple add-wp">Do you have Whatsapp?</button> -->
+                        </div>
+                       
+                      
+                       
+                        <!-- <div class="form__phone-group">
+                            <input type="text" class="form-control form__control "
+                                id="addPhoneNumber">
+                            <div class=" check-wp"><i class="fab fa-whatsapp fa-2x "></i></div>
+                            <div class="remove-phone">
+                                <i class="fas fa-minus "></i>
+                            </div>
 
-                        <input type="text" class="form-control form__control" id="phoneNumber">
+                        </div> -->
+                        <!-- <input type="text" class="form-control form__control form__phone" id="phoneNumber"> 
+                        <div class=" check-wp"><i class="fab fa-whatsapp fa-2x "></i></div>
+                        <div class="add-phone">
+                            <i class="fas fa-plus fa-2x"></i>
+                        </div> 
+                        <span id="error-receiver-number d-block"></span>
+                        <span id="error-msg" class="valid-hide text-danger d-block"></span> -->
 
-                        <span id="valid-msg" class="valid-hide text-success">✓ Valid</span>
-                        <span id="error-msg" class="valid-hide text-danger d-block"></span>
                     </div>
                 </div>
 
@@ -255,7 +291,7 @@
                         data-parsley-minlength="1" data-parsley-maxlength="1000"
                         data-parsley-minlength-message="Come on! You need to enter at least a 20 character comment.."
                         data-parsley-validation-threshold="10" required></textarea>
-
+                    <span id="error-textarea"></span>
 
                 </div>
                 <!-- TEXTAREA FINISH-->
