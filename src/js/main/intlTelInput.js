@@ -48,9 +48,7 @@ $(document).ready(function () {
     validCheck.classList.add("valid-hide");
   };
 
-  input.addEventListener('click', function () {
-    $(".add-wp").slideDown();
-  });
+ 
 
   //   // on blur: validate
   input.addEventListener('blur', function () {
