@@ -2,19 +2,19 @@
 {
 
 	float: left;
-	height:80vh;
+	// height:80vh;
 	width: 100%;
 	overflow-y: scroll;
 
 }
 .scrollbar1
 {
-
-	float: left;
+	// float: left;
 	height:80vh;
 	width: 100%;
 	overflow-y: scroll;
 
+	
 	@include respondmax(md) {
 	  overflow-y: auto;
 	  height: auto;
@@ -26,7 +26,7 @@
 {
 	box-shadow: inset 0 0 6px #cbcbcb;
 	border-radius: 10px;
-	
+
 }
 
 .scroll-style::-webkit-scrollbar
@@ -38,6 +38,11 @@
 .scroll-style::-webkit-scrollbar-thumb
 {
 	border-radius: 5px;
-	box-shadow: inset 0 0 10px #dcdcdc;
-	background-color: #dcdcdc;
+	box-shadow: inset 0 0 6px #cbcbcb;
+	background-color: #cbcbcb;
+	// visibility: hidden;
+}
+
+.hide-scrollbar ::-webkit-scrollbar-thumb{
+    visibility : hidden;
 }

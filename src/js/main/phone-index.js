@@ -1,4 +1,7 @@
 $(document).ready(function () {
+   
+
+
   for (num = 0; num < 3; num++) {
     $(document).on("focus", `.form__phone-${num}`, function (e) {
       e.preventDefault();
@@ -97,107 +100,36 @@ $(document).on("click", ".add-phone", function (e) {
 
   row++;
 
-  // for (num = 1; num < 3; num++) {
-  //   var input = document.querySelector(`#phoneNumber-${num}`),
+  for (num = 1; num < 3; num++) {
+    var input = document.querySelector(`#phoneNumber-${num}`),
 
-  //     errorMsg = document.querySelector(`.error-msg-${num}`),
-  //     validMsg = document.querySelector("#valid-msg");
-  //   validCheck = document.querySelector(`.valid-check-${num}`);
-  //   //   // initialise plugin
-  //   var iti = window.intlTelInput(input, {
-  //     utilsScript: "libs/intl-tel-input/build/js/utils.js"
-  //   });
+      errorMsg = document.querySelector(`.error-msg-${num}`),
+      validMsg = document.querySelector("#valid-msg");
+    validCheck = document.querySelector(`.valid-check-${num}`);
+    //   // initialise plugin
+    var iti = window.intlTelInput(input, {
+      utilsScript: "libs/intl-tel-input/build/js/utils.js"
+    });
 
-  //   //   // here, the index maps to the error code returned from getValidationError - see readme
-  //   var errorMap = ["Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"];
+    //   // here, the index maps to the error code returned from getValidationError - see readme
+    var errorMap = ["Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"];
 
-  //   // //   // FOR ACCOUNT-SIGN-IN-COVER2.HTML
-  //   $(`#phoneNumber-${num}`).intlTelInput({
-  //     // preferredCountries: ["us", "ca"],
-  //     separateDialCode: false,
-  //     initialCountry: "az",
-  //     autoPlaceholder: "polite",
-  //     // allowDropdown: false,
+    // //   // FOR ACCOUNT-SIGN-IN-COVER2.HTML
+    $(`#phoneNumber-${num}`).intlTelInput({
+      // preferredCountries: ["us", "ca"],
+      separateDialCode: false,
+      initialCountry: "az",
+      autoPlaceholder: "polite",
+      // allowDropdown: false,
 
-  //     // separateDialCode: true,
+      // separateDialCode: true,
 
-  //   });
+    });
 
-  //   countryDialCode = $(`#phoneNumber-${num}`).intlTelInput("getSelectedCountryData").dialCode;
-
-
-  //   $(`#phoneNumber-${num}`).val('+' + countryDialCode);
-  //   input.addEventListener('countrychange', function () {
-
-  //     var countryDialCode = $(`#phoneNumber-${num}`).intlTelInput("getSelectedCountryData").dialCode;
-  //     console.log(countryDialCode);
-  //     $(`#phoneNumber-${num}`).val('+' + countryDialCode);
-
-  //   });
-
-  //   let reset = function () {
-  //     input.classList.remove("error");
-  //     errorMsg.innerHTML = "";
-  //     errorMsg.classList.add("valid-hide");
-  //     // validMsg.classList.add("valid-hide");
-  //     validCheck.classList.add("valid-hide");
-  //   };
+    countryDialCode = $(`#phoneNumber-${num}`).intlTelInput("getSelectedCountryData").dialCode;
 
 
-
-  //   //   // on blur: validate
-  //   input.addEventListener('blur', function () {
-  //     reset();
-  //     if (input.value.trim()) {
-  //       if (iti.isValidNumber()) {
-  //         // validMsg.classList.remove("valid-hide");
-  //         validCheck.classList.remove("valid-hide");
-  //       } else {
-  //         input.classList.add("error");
-  //         let errorCode = iti.getValidationError();
-  //         errorMsg.innerHTML = errorMap[errorCode];
-  //         errorMsg.classList.remove("valid-hide");
-  //       }
-  //     }
-  //   });
-
-
-  //   // on keyup / change flag: reset
-  //   input.addEventListener('change', reset);
-  //   input.addEventListener('keyup', reset);
-  // }
-
-
-
-
-  //  EXAMPLE START
-
-  let ary = Array.prototype.slice.call(document.querySelectorAll(".form__phone"));
-	
-	ary.forEach(function(el) {
-		PhoneDisplay(el);
-	})	
-	
-    function PhoneDisplay(input){		
-	 var errorMsg = document.querySelector("#error-msg"),
-	     validMsg = document.querySelector("#valid-msg");
-
-	 var errorMap = [ "Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"];	
-	      
-      var iti = window.intlTelInput(input, {
-		  hiddenInput: "full",
-		  initialCountry: "auto",
-		  geoIpLookup: function(callback) {
-			$.get('proxy.php', function() {}).always(function(resp) {
-			  var countryCode = (resp && resp.country) ? resp.country : "";
-			  callback(countryCode);
-			});
-		  },			  
-		  utilsScript: "intlTelInput/js/utils.js"
-      });
-    
-      
-          $(`#phoneNumber-${num}`).val('+' + countryDialCode);
+    $(`#phoneNumber-${num}`).val('+' + countryDialCode);
     input.addEventListener('countrychange', function () {
 
       var countryDialCode = $(`#phoneNumber-${num}`).intlTelInput("getSelectedCountryData").dialCode;
@@ -205,31 +137,43 @@ $(document).on("click", ".add-phone", function (e) {
       $(`#phoneNumber-${num}`).val('+' + countryDialCode);
 
     });
-		var reset = function() {
-		  input.classList.remove("error");
-		  errorMsg.innerHTML = "";
-		  errorMsg.classList.add("valid-hide");
-		  validMsg.classList.add("valid-hide");
-		};
 
-		input.addEventListener('blur', function() {
-		  reset();
-		  if (input.value.trim()) {
-			if (iti.isValidNumber()) {
-			  validMsg.classList.remove("valid-hide");
-			} else {
-			  input.classList.add("error");
-			  var errorCode = iti.getValidationError();
-			  errorMsg.innerHTML = errorMap[errorCode];
-			  errorMsg.classList.remove("valid-hide");
-			}
-		  }
-		});
+    let reset = function () {
+      input.classList.remove("error");
+      errorMsg.innerHTML = "";
+      errorMsg.classList.add("valid-hide");
+      // validMsg.classList.add("valid-hide");
+      validCheck.classList.add("valid-hide");
+    };
 
-		input.addEventListener('change', reset);
-		input.addEventListener('keyup', reset);	  	  	  
-    }
-  // EXAMPLE END
+
+
+    //   // on blur: validate
+    input.addEventListener('blur', function () {
+      reset();
+      if (input.value.trim()) {
+        if (iti.isValidNumber()) {
+          // validMsg.classList.remove("valid-hide");
+          validCheck.classList.remove("valid-hide");
+        } else {
+          input.classList.add("error");
+          let errorCode = iti.getValidationError();
+          errorMsg.innerHTML = errorMap[errorCode];
+          errorMsg.classList.remove("valid-hide");
+        }
+      }
+    });
+
+
+    // on keyup / change flag: reset
+    input.addEventListener('change', reset);
+    input.addEventListener('keyup', reset);
+  }
+
+
+
+
+  
 
   return false;
 

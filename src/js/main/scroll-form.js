@@ -16,3 +16,18 @@ $("#first_form").on("scroll", function () {
         });
     }
 });
+
+
+$( ".index" )
+.mouseenter(function() {
+  $( ".scroll-style::-webkit-scrollbar-thumb" ).css({
+    'visibility: ': 'visible',
+    
+  });
+$( 'html ').removeClass('hide-scrollbar');
+  
+
+})
+.mouseleave(function() {
+    $( 'html ').addClass('hide-scrollbar');
+});
