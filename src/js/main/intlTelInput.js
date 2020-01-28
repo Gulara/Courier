@@ -34,7 +34,7 @@ $(document).ready(function () {
   input.addEventListener('countrychange', function () {
 
     var countryDialCode = $("#phoneNumber").intlTelInput("getSelectedCountryData").dialCode;
-    console.log(countryDialCode);
+    // console.log(countryDialCode);
     $('#phoneNumber').val('+' + countryDialCode);
     
 
