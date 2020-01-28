@@ -1,103 +1,247 @@
 $(document).ready(function () {
-    
-      
-    
+  for (num = 0; num < 3; num++) {
+    $(document).on("focus", `.form__phone-${num}`, function (e) {
+      e.preventDefault();
+      $(this).parents('.form__phone-group').find(".check-wp").css({
+        'background': '#fff',
+        'borderColor': '#2568ef'
+      })
 
-      $("#phoneNumber").click(function (e) {
+      if ($(this).parents('.form__phone-group').find(".check-wp").css('display') === 'none') {
+        $(this).parents('.form__phone-group').next().slideDown();
+      } else {
 
-        console.log($(this).parentsUntil(".form-group__phone-div").find('add-wp'));
+      }
 
-        $(".add-wp").parentsUntil(".form-group__phone").slideDown()
+
     });
-    $(".add-wp").click(function (e) {
-        e.preventDefault();
-        $(".check-wp").css({
-            "display": "flex"
-        });
-        $(".check-wp__input").prop("checked", true);
-        $("#phoneNumber").addClass('form__phone--input');
+    $(document).on("blur", `.form__phone-${num}`, function (e) {
+      e.preventDefault();
+      $(this).parents('.form__phone-group').next().slideUp();
+      $(this).parents('.form__phone-group').find(".check-wp").css({
+        'background': '#f5f5f5',
+        'borderColor': '#eaedf2'
 
-        if ($(".check-wp__input").prop("checked") == false) {
-            $(".add-wp").slideDown();
-            $(".check-wp").css({
-                "display": "none"
-            });
-            $("#phoneNumber").removeClass('form__phone--input');
-        } else {
-            $(".add-wp").slideUp();
-        }
-    })
-
-    $('.check-wp__input[type="checkbox"]').click(function () {
-        if ($(this).prop("checked") == false) {
-            $(".check-wp").css({
-                "display": "none"
-            });
-            $("#phoneNumber").removeClass('form__phone--input');
-        } else {
-            $(this).slideUp();
-        }
+      })
     });
+
+    $(document).on("click", `.add-wp-${num}`, function (e) {
+      e.preventDefault();
+      $(this).siblings('.form__phone-group').find(".check-wp").css({
+        "display": "flex"
+      });
+      $(this).siblings('.form__phone-group').find(".check-wp__input").prop("checked", true);
+      $(this).siblings('.form__phone-group').find(".form__phone").addClass('form__phone--input');
+      $(this).slideUp();
+    });
+    $(document).on("click", `.check-wp__input-${num}`, function () {
+
+      $(this).prop("checked", false);
+      $(this).parent().css({
+        "display": "none"
+      });
+      $(this).parents('.form__phone-group').find(".form__phone").removeClass('form__phone--input');
+    });
+  }
 
 });
 
 
 // Add row
 var row = 1;
-max = 2;
-
 var remaining = 2;
 
+
 function UpdateRemaining(isAdd) {
-    if (isAdd) {
-        remaining = remaining - 1;
-    } else {
-        remaining = remaining + 1;
-    }
+  if (isAdd) {
+    remaining = remaining - 1;
+  } else {
+    remaining = remaining + 1;
+  }
 
-    $('#remaining').text(remaining);
-    if (remaining == 0) {
-        $('.add-phone').prop("disabled", true);
-    } else {
-        $('.add-phone').prop("disabled", false);
-    }
+  $('#remaining').text(remaining);
+  if (remaining == 0) {
+    $('.add-phone').prop("disabled", true);
+  } else {
+    $('.add-phone').prop("disabled", false);
+  }
 }
-$(document).on("click", ".add-phone", function () {
-    var new_row = '<div class="form-group__phone" id="row' + row + '">' +
-        '<div class="valid-check valid-hide ">&#10004;</div>' +
-        '  <span id="error-receiver-number " ></span>' +
-        '<span id="error-msg" class="valid-hide text-danger d-block"></span>' +
-        '  <div class="form__phone-group">' +
-        ' <input type="text" class="form-control form__control form__phone-' + row + '" id="phoneNumber">' +
-        '<div class=" check-wp">' +
-        '<input type="checkbox" id="check-wp-' + row + '" class="check-wp__input check-wp-' + row + '">' +
-        '<label for="check-wp-' + row + '" class="check-wp__label">' +
-        '<i class="fab fa-whatsapp "></i>' +
-        '       </label>' +
-        '</div>' +
-        '<button class="remove-phone btn btn-purple delete-row" id="add-phone-' + row + '">' +
-        '<i class="fas fa-minus "></i>' +
-        '    </button>' +
-        ' </div>' +
-        ' <button class="btn btn-purple add-wp add-wp-' + row + '">Do you have Whatsapp?</button>' +
-        '</div>'
+$(document).on("click", ".add-phone", function (e) {
+  e.preventDefault();
+  var new_row = '<div class="form-group__phone" id="row' + row + '">' +
+    '<div class="valid-check valid-hide  valid-check-' + row + '">&#10004;</div>' +
+    '  <span id="error-receiver-number " ></span>' +
+    '<span id="error-msg" class="valid-hide text-danger d-block  text-right error-msg-' + row + '"></span>' +
+    '  <div class="form__phone-group">' +
+    ' <input type="text" class="form-control form__control form__phone form__phone-' + row + '" id="phoneNumber-' + row + '">' +
+    '<div class=" check-wp">' +
+    '<input type="checkbox" id="check-wp__input-' + row + '" class="check-wp__input check-wp__input-' + row + '">' +
+    '<label for="check-wp__input-' + row + '" class="check-wp__label">' +
+    '<i class="fab fa-whatsapp "></i>' +
+    '       </label>' +
+    '</div>' +
+    '<button class="remove-phone btn btn-purple delete-row" id="add-phone-' + row + '">' +
+    '<i class="fas fa-minus "></i>' +
+    '    </button>' +
+    ' </div>' +
+    ' <button class="btn btn-purple add-wp add-wp-' + row + '"> <div class="add-wp--square"></div>   Has Whatsapp?</button>' +
+    '</div>'
 
 
 
 
-    $('.form-group__phone-div').append(new_row);
-    UpdateRemaining(true);
-    row++;
-    return false;
+  $('.form-group__phone-div').append(new_row);
+
+  UpdateRemaining(true);
+
+
+  row++;
+
+  // for (num = 1; num < 3; num++) {
+  //   var input = document.querySelector(`#phoneNumber-${num}`),
+
+  //     errorMsg = document.querySelector(`.error-msg-${num}`),
+  //     validMsg = document.querySelector("#valid-msg");
+  //   validCheck = document.querySelector(`.valid-check-${num}`);
+  //   //   // initialise plugin
+  //   var iti = window.intlTelInput(input, {
+  //     utilsScript: "libs/intl-tel-input/build/js/utils.js"
+  //   });
+
+  //   //   // here, the index maps to the error code returned from getValidationError - see readme
+  //   var errorMap = ["Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"];
+
+  //   // //   // FOR ACCOUNT-SIGN-IN-COVER2.HTML
+  //   $(`#phoneNumber-${num}`).intlTelInput({
+  //     // preferredCountries: ["us", "ca"],
+  //     separateDialCode: false,
+  //     initialCountry: "az",
+  //     autoPlaceholder: "polite",
+  //     // allowDropdown: false,
+
+  //     // separateDialCode: true,
+
+  //   });
+
+  //   countryDialCode = $(`#phoneNumber-${num}`).intlTelInput("getSelectedCountryData").dialCode;
+
+
+  //   $(`#phoneNumber-${num}`).val('+' + countryDialCode);
+  //   input.addEventListener('countrychange', function () {
+
+  //     var countryDialCode = $(`#phoneNumber-${num}`).intlTelInput("getSelectedCountryData").dialCode;
+  //     console.log(countryDialCode);
+  //     $(`#phoneNumber-${num}`).val('+' + countryDialCode);
+
+  //   });
+
+  //   let reset = function () {
+  //     input.classList.remove("error");
+  //     errorMsg.innerHTML = "";
+  //     errorMsg.classList.add("valid-hide");
+  //     // validMsg.classList.add("valid-hide");
+  //     validCheck.classList.add("valid-hide");
+  //   };
+
+
+
+  //   //   // on blur: validate
+  //   input.addEventListener('blur', function () {
+  //     reset();
+  //     if (input.value.trim()) {
+  //       if (iti.isValidNumber()) {
+  //         // validMsg.classList.remove("valid-hide");
+  //         validCheck.classList.remove("valid-hide");
+  //       } else {
+  //         input.classList.add("error");
+  //         let errorCode = iti.getValidationError();
+  //         errorMsg.innerHTML = errorMap[errorCode];
+  //         errorMsg.classList.remove("valid-hide");
+  //       }
+  //     }
+  //   });
+
+
+  //   // on keyup / change flag: reset
+  //   input.addEventListener('change', reset);
+  //   input.addEventListener('keyup', reset);
+  // }
+
+
+
+
+  //  EXAMPLE START
+
+  let ary = Array.prototype.slice.call(document.querySelectorAll(".form__phone"));
+	
+	ary.forEach(function(el) {
+		PhoneDisplay(el);
+	})	
+	
+    function PhoneDisplay(input){		
+	 var errorMsg = document.querySelector("#error-msg"),
+	     validMsg = document.querySelector("#valid-msg");
+
+	 var errorMap = [ "Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"];	
+	      
+      var iti = window.intlTelInput(input, {
+		  hiddenInput: "full",
+		  initialCountry: "auto",
+		  geoIpLookup: function(callback) {
+			$.get('proxy.php', function() {}).always(function(resp) {
+			  var countryCode = (resp && resp.country) ? resp.country : "";
+			  callback(countryCode);
+			});
+		  },			  
+		  utilsScript: "intlTelInput/js/utils.js"
+      });
+    
+      
+          $(`#phoneNumber-${num}`).val('+' + countryDialCode);
+    input.addEventListener('countrychange', function () {
+
+      var countryDialCode = $(`#phoneNumber-${num}`).intlTelInput("getSelectedCountryData").dialCode;
+      console.log(countryDialCode);
+      $(`#phoneNumber-${num}`).val('+' + countryDialCode);
+
+    });
+		var reset = function() {
+		  input.classList.remove("error");
+		  errorMsg.innerHTML = "";
+		  errorMsg.classList.add("valid-hide");
+		  validMsg.classList.add("valid-hide");
+		};
+
+		input.addEventListener('blur', function() {
+		  reset();
+		  if (input.value.trim()) {
+			if (iti.isValidNumber()) {
+			  validMsg.classList.remove("valid-hide");
+			} else {
+			  input.classList.add("error");
+			  var errorCode = iti.getValidationError();
+			  errorMsg.innerHTML = errorMap[errorCode];
+			  errorMsg.classList.remove("valid-hide");
+			}
+		  }
+		});
+
+		input.addEventListener('change', reset);
+		input.addEventListener('keyup', reset);	  	  	  
+    }
+  // EXAMPLE END
+
+  return false;
+
 });
 
 // Remove criterion
 $(document).on("click", ".delete-row", function () {
-    //  alert("deleting row#"+row);
-    if (row > 1) {
-        $(this).closest('.form-group__phone').remove();
-        row--;
-    }
-    UpdateRemaining(false);
-    return false;
+  //  alert("deleting row#"+row);
+  if (row > 1) {
+    $(this).closest('.form-group__phone').remove();
+    row--;
+  }
+  UpdateRemaining(false);
+  return false;
 });
