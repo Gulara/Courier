@@ -1865,12 +1865,10 @@ label.error {
 
 .scrollbar {
   float: left;
-  height: 80vh;
   width: 100%;
   overflow-y: scroll; }
 
 .scrollbar1 {
-  float: left;
   height: 80vh;
   width: 100%;
   overflow-y: scroll; }
@@ -1891,9 +1889,12 @@ label.error {
 .scroll-style::-webkit-scrollbar-thumb {
   -webkit-border-radius: 5px;
           border-radius: 5px;
-  -webkit-box-shadow: inset 0 0 10px #dcdcdc;
-          box-shadow: inset 0 0 10px #dcdcdc;
-  background-color: #dcdcdc; }
+  -webkit-box-shadow: inset 0 0 6px #cbcbcb;
+          box-shadow: inset 0 0 6px #cbcbcb;
+  background-color: #cbcbcb; }
+
+.hide-scrollbar ::-webkit-scrollbar-thumb {
+  visibility: hidden; }
 
 .loading-spinner {
   display: -webkit-box;
