@@ -5,12 +5,12 @@ $(document).ready(function () {
 
     errorMsg = document.querySelector("#error-msg"),
     validMsg = document.querySelector("#valid-msg");
-    validCheck = document.querySelector(".valid-check");
-      //   // initialise plugin
+  validCheckDefault = document.querySelector(".valid-check-0");
+  //   // initialise plugin
   var iti = window.intlTelInput(input, {
     utilsScript: "libs/intl-tel-input/build/js/utils.js"
   });
-  
+
   //   // here, the index maps to the error code returned from getValidationError - see readme
   var errorMap = ["Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"];
 
@@ -26,35 +26,37 @@ $(document).ready(function () {
 
   });
 
-   countryDialCode = $("#phoneNumber-0").intlTelInput("getSelectedCountryData").dialCode;
-  
- 
+  countryDialCode = $("#phoneNumber-0").intlTelInput("getSelectedCountryData").dialCode;
+
+
   $("#phoneNumber-0").val('+' + countryDialCode);
   input.addEventListener('countrychange', function () {
 
     var countryDialCode = $("#phoneNumber-0").intlTelInput("getSelectedCountryData").dialCode;
     console.log(countryDialCode);
     $("#phoneNumber-0").val('+' + countryDialCode);
-   
+
   });
- 
+
   let reset = function () {
     input.classList.remove("error");
     errorMsg.innerHTML = "";
     errorMsg.classList.add("valid-hide");
     // validMsg.classList.add("valid-hide");
-    validCheck.classList.add("valid-hide");
+    validCheckDefault.classList.add("valid-hide");
   };
 
- 
+
 
   //   // on blur: validate
   input.addEventListener('blur', function () {
+    console.log(validCheckDefault)
     reset();
     if (input.value.trim()) {
+
       if (iti.isValidNumber()) {
         // validMsg.classList.remove("valid-hide");
-        validCheck.classList.remove("valid-hide");
+        validCheckDefault.classList.remove("valid-hide");
       } else {
         input.classList.add("error");
         let errorCode = iti.getValidationError();

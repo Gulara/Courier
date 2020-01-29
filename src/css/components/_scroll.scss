@@ -40,9 +40,74 @@
 	border-radius: 5px;
 	box-shadow: inset 0 0 6px #cbcbcb;
 	background-color: #cbcbcb;
+	opacity: 0;
 	// visibility: hidden;
 }
 
 .hide-scrollbar ::-webkit-scrollbar-thumb{
     visibility : hidden;
 }
+
+.c-virtual_list--scrollbar {
+	overflow: hidden;
+	position: relative;
+  }
+  
+  .c-scrollbar__hider {
+	overflow-y: scroll;
+	overflow-x: hidden;
+	outline: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: -50px;
+	bottom: 0;
+	height: 100%;
+	transform: translateZ(0);
+  }
+  
+  .c-scrollbar__track {
+	position: absolute;
+	right: 4px;
+	top: 4px;
+	bottom: 4px;
+	width: 10px;
+	box-shadow: inset 0 0 6px #cbcbcb;
+	border-radius: 10px;
+	opacity: 0;
+	opacity: 1;
+  
+	&:before {
+	  content: "";
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  bottom: 0;
+	  right: 0;
+	  background: none;
+	}
+  }
+  .c-scrollbar__bar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	border-radius: 4px;
+	// background: rgba(var(--sk_primary_foreground,29,28,29),.52);
+	opacity: 0;
+	opacity: 1;
+	cursor: default;
+	outline: none;
+	z-index: 1;
+	will-change: transform;
+	box-shadow: inset 0 0 6px #cbcbcb;
+	background: #cbcbcb;
+	height: 85px;
+	transform: translateY(0px)
+  }
+  
+  .c-scrollbar:hover .c-scrollbar__bar, .c-scrollbar__bar:active {
+	opacity: 1;
+  }
+
+  
