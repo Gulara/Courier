@@ -50,7 +50,7 @@ $(document).ready(function () {
 // Add row
 var row = 1;
 var remaining = 2;
-
+ 
 
 function UpdateRemaining(isAdd) {
   if (isAdd) {
@@ -66,37 +66,9 @@ function UpdateRemaining(isAdd) {
     $('.add-phone').prop("disabled", false);
   }
 }
-$(document).on("click", ".add-phone", function (e) {
-  e.preventDefault();
 
-  var new_row = '<div class="form-group__phone" id="row' + row + '">' +
-    '<div class="valid-check valid-hide  valid-check-' + row + '">&#10004;</div>' +
-    '  <span id="error-receiver-number " ></span>' +
-    '<span id="error-msg" class="valid-hide text-danger d-block  text-right error-msg-' + row + '"></span>' +
-    '  <div class="form__phone-group">' +
-    ' <input type="text" class="form-control form__control form__phone form__phone-' + row + '" id="phoneNumber-' + row + '">' +
-    '<div class=" check-wp">' +
-    '<input type="checkbox" id="check-wp__input-' + row + '" class="check-wp__input check-wp__input-' + row + '">' +
-    '<label for="check-wp__input-' + row + '" class="check-wp__label">' +
-    '<i class="fab fa-whatsapp "></i>' +
-    '       </label>' +
-    '</div>' +
-    '<button class="remove-phone btn btn-purple delete-row" id="add-phone-' + row + '">' +
-    '<i class="fas fa-minus "></i>' +
-    '    </button>' +
-    ' </div>' +
-    ' <button class="btn btn-purple add-wp add-wp-' + row + '"> <div class="add-wp--square"></div>   Has Whatsapp?</button>' +
-    '</div>'
-
-
-
-
-  $('.form-group__phone-div').append(new_row);
-
-  UpdateRemaining(true);
-
-
-  let num = row;
+function intlInput(){
+  let num = row;row++;
   console.log(num)
   var input = document.querySelector(`#phoneNumber-${num}`),
 
@@ -168,8 +140,32 @@ $(document).on("click", ".add-phone", function (e) {
   // on keyup / change flag: reset
   input.addEventListener('change', reset);
   input.addEventListener('keyup', reset);
+}
+$(document).on("click", ".add-phone", function (e) {
+  e.preventDefault();
 
-  row++;
+  var newRow = '<div class="form-group__phone" id="row' + row + '">' +
+    '<div class="valid-check valid-hide  valid-check-' + row + '">&#10004;</div>' +
+    '  <span id="error-receiver-number " ></span>' +
+    '<span id="error-msg" class="valid-hide text-danger d-block  text-right error-msg-' + row + '"></span>' +
+    '  <div class="form__phone-group">' +
+    ' <input type="text" class="form-control form__control form__phone form__phone-' + row + '" id="phoneNumber-' + row + '">' +
+    '<div class=" check-wp">' +
+    '<input type="checkbox" id="check-wp__input-' + row + '" class="check-wp__input check-wp__input-' + row + '">' +
+    '<label for="check-wp__input-' + row + '" class="check-wp__label">' +
+    '<i class="fab fa-whatsapp "></i>' +
+    '       </label>' +
+    '</div>' +
+    '<button class="remove-phone btn btn-purple delete-row" id="add-phone-' + row + '">' +
+    '<i class="fas fa-minus "></i>' +
+    '    </button>' +
+    ' </div>' +
+    ' <button class="btn btn-purple add-wp add-wp-' + row + '"> <div class="add-wp--square"></div>   Has Whatsapp?</button>' +
+    '</div>'
+  $('.form-group__phone-div').append(newRow);
+
+  UpdateRemaining(true);
+  intlInput();
 
   return false;
 
@@ -177,11 +173,11 @@ $(document).on("click", ".add-phone", function (e) {
 
 // Remove criterion
 $(document).on("click", ".delete-row", function () {
-  //  alert("deleting row#"+row);
   if (row > 1) {
     $(this).closest('.form-group__phone').remove();
     row--;
   }
   UpdateRemaining(false);
+  intlInput();
   return false;
 });
