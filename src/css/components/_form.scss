@@ -257,7 +257,7 @@ label.error {
 
 .check-wp {
   // display: flex;
-  height: 50px;
+ 
   justify-content: center;
   align-items: center;
   width: 50px;
@@ -267,7 +267,8 @@ label.error {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   border-left: none;
-
+  width: 17%;
+  height: 50px;
   display: none;
 
   &__label {

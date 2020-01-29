@@ -1,109 +1,45 @@
-// $('.scroll-down').click(function () {
-
-
-
-//     $("#first_form").animate({
-//         "scrollTop": "+=400px"
-//     }, 1500)
-
-// });
-// $("#first_form").on("scroll", function () {
-//     if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) {
-//         $(".scroll-down").css({
-//             'display': 'none'
-//         });
-//     } else {
-//         $(".scroll-down").css({
-//             'display': 'block'
-//         });
-//     }
-// });
-
-// $(".index")
-//     .mouseenter(function () {
-//         $(".scroll-style::-webkit-scrollbar-thumb").css({
-//             'visibility: ': 'visible',
-
-//         });
-//         $('html ').removeClass('hide-scrollbar');
-
-
-//     })
-//     .mouseleave(function () {
-//         $('html ').addClass('hide-scrollbar');
-//     });
-
-
-
-
 $(document).ready(function () {
-    $(this).mousemove(function () {
+    // Create array for setTimeouts
+    var timeouts = [];
 
-        $(".c-scrollbar__bar").css({
-            "opacity": "1"
-        });
-        $(".c-scrollbar__track").css({
-            "opacity": "1"
-        });
+    $(window).mousemove(function () {
 
+        // Add class that enables scroll
+        $("#first_form").addClass("show-scroll");
 
-        var onmousestop = function () {
-                $(".c-scrollbar__bar").css({
-                    "opacity": "0"
-                });
-                $(".c-scrollbar__track").css({
-                    "opacity": "0"
-                });
-            },
-            thread;
+        // Clear all setTimeouts
+        for (var i = 0; i < timeouts.length; i++) {
+            clearTimeout(timeouts[i]);
+        }
 
-        return function () {
-        clearTimeout(thread);
-        thread = setTimeout(onmousestop, 3000);
-        };
+        // Start a new setTimeout to disable scoll after 2 seconds
+        timeouts.push(setTimeout(hideScroll, 1500));
+
     });
 
-    
-    $('.scroll-down').click(function () {
-        $(".c-scrollbar__hider").animate({
+
+    function hideScroll() {
+
+        // Disable scroll in ALL divs with .hover-scroll
+        $("#first_form").removeClass("show-scroll");
+
+    }
+
+    $('.scroll-down').click(function (e) {
+
+e.preventDefault();
+
+        $("#first_form").animate({
             "scrollTop": "+=400px"
         }, 1500)
+
     });
-    
-    
-    $(".c-scrollbar__hider").on("scroll", function () {
-        $(".c-scrollbar__bar").css({
-            "opacity": "1"
-        });
-        // let a = $(this).offsetTop();
-        let scrollTop = $(this).scrollTop();
-    
-        var scrollbarTrack =$(".c-scrollbar__track").height();
-    
-        // height: calc(100% * 0.8);
-        let scrollingHeight = scrollTop * 50 / 100;
-        console.log(scrollbarTrack);
-    
-        if(scrollingHeight > scrollbarTrack){
-         
-    
-            $(".c-scrollbar__bar").css({
-                transform: 'translateY(' + 65 + 'vh)'
-            });
-        }else{
-            $(".c-scrollbar__bar").css({
-                transform: 'translateY(' + scrollingHeight + '%)'
-            
-            });
-            
-        }
-   
-    
-        if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) {
+    $("#first_form").on("scroll", function () {
+        console.log($(this).scrollTop());
+        if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
             $(".scroll-down").css({
                 'display': 'none'
             });
-           
         } else {
             $(".scroll-down").css({
                 'display': 'block'
@@ -114,23 +50,8 @@ $(document).ready(function () {
 
 
 
-     
-    $(".c-virtual_list--scrollbar")
-        .mouseenter(function () {
-            $(".c-scrollbar__bar").css({
-                "opacity": "1"
-            });
-            $(".c-scrollbar__track").css({
-                "opacity": "1"
-            });
-        })
-        .mouseleave(function () {
-            $(".c-scrollbar__bar").css({
-                "opacity": "0"
-            });
-            $(".c-scrollbar__track").css({
-                "opacity": "0"
-            });
-        });
+
+
+
 
 });
