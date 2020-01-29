@@ -13,8 +13,8 @@
 
 
 .d-anim {
-    margin-top: 200px;
-    padding-top: 150px;
+  
+    padding-top: 300px;
   position: absolute;
   left: 45%;
   top: 50%;
@@ -29,7 +29,7 @@
     // box-shadow: 0px 0px 20px $color-primary;
    
    
-   
+    // margin-top: 200px;
   }
   &__list-group {
     margin: 0;
@@ -131,32 +131,7 @@
 
 
 
-@keyframes eye-blink {
-  0% {
-    transform: scaleY(1);
-  }
-  18% {
-    transform: scaleY(1);
-  }
-  20% {
-    transform: scaleY(0);
-  }
-  25% {
-    transform: scaleY(1);
-  }
-  38% {
-    transform: scaleY(1);
-  }
-  40% {
-    transform: scaleY(0);
-  }
-  45% {
-    transform: scaleY(1);
-  }
-  80% {
-    transform: scaleY(1);
-  }
-}
+
 @keyframes trail1 {
   50% {
     right: 50px;
@@ -257,7 +232,7 @@
 }
 .stars {
   width: 100%;
-  height: 100%;
+  height: 10%;
   background: transparent;
   .star {
     display: block;
@@ -268,7 +243,7 @@
     animation: moving-star 2s ease infinite;
   }
   .star:nth-child(1) {
-    @include star-template(20px, 100px, 0);
+    @include star-template(20px, 0px, 0);
     background: linear-gradient(to left, $color-primary, $color-2);
   }
   .star:nth-child(2) {
@@ -280,9 +255,10 @@
     background: linear-gradient(to left, $color-2 20%, transparent);
   }
   .star:nth-child(4) {
-    @include star-template(5px, 450px, 1.5s);
+    @include star-template(5px, 250px, 1.5s);
     background: linear-gradient(to left, $color-2 20%, $color-1);
   }
+
   // .star:nth-child(5) {
   //   @include star-template(5px, 300px, 1.2s);
   //   background: linear-gradient(to left, $thirdTrail 20%, transparent);
@@ -296,11 +272,11 @@
   //   background: linear-gradient(to left, $fourthTrail 20%, $thirdTrail);
   // }
   .star:nth-child(8) {
-    @include star-template(1px, 350px, 0.7s);
+    @include star-template(1px, 20px, 0.7s);
     background: linear-gradient(to left, $color-3 70%, $color-1);
   }
   .star:nth-child(9) {
-    @include star-template(10px, 510px, 0.2s);
+    @include star-template(10px, 70px, 0.2s);
     background: linear-gradient(to left, $color-primary, $color-1);
   }
   // .star:nth-child(10) {
@@ -347,7 +323,7 @@
   //   background: linear-gradient(to left, $thirdTrail, $firstTrail);
   // }
   .star:nth-child(20) {
-    @include star-template(5px, 370px, 0.3s);
+    @include star-template(5px, 280px, 0.3s);
     background: linear-gradient(to left, $color-3, $color-1);
     animation: shooting-star 2.5s ease infinite;
   }

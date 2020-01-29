@@ -160,7 +160,7 @@ label.error {
 }
 
 #first_form {
-  
+
 
 
   @include respondmax(md) {
@@ -217,8 +217,8 @@ label.error {
 .valid-check {
 
   position: absolute;
-  top: -20px;
-  right: 0;
+  top: -25px;
+  right: 65px;
   border-radius: 10em;
   padding: 1px 4px;
   text-decoration: none;
@@ -226,7 +226,11 @@ label.error {
   background: green;
   color: #FFF;
 }
-
+#error-msg {
+  position: absolute;
+  top: -25px;
+  right: 65px;
+}
 
 .add-wp {
   display: none;
@@ -282,6 +286,7 @@ label.error {
       justify-content: center;
       align-items: center;
       font-size: 1.6em;
+      transform: translateY(3px);
     }
   }
 
@@ -300,6 +305,7 @@ label.error {
 }
 
 .form-group__phone {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   position: relative;
 }
+
