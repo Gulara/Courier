@@ -1,4 +1,4 @@
-// // // FOR  INDEX.HTML  INDEX-3.HTML İNTERNATİONAL TELEPHONE İNPUT
+//
 $(document).ready(function () {
 
     var input = document.querySelector("#phoneNumber"),
