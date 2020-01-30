@@ -43,7 +43,7 @@
         display: none;
 
         &:checked+label {
-            background: linear-gradient(-45deg, $color-primary, $color-primary-dark, $color-2, $color-3);
+            background: linear-gradient(-45deg, $color-primary, $color-primary-light-1, $color-2, $color-3);
             animation: gradientBtn 16s linear  infinite;
             background-size: 600%;
             // background-color: $color-primary;
