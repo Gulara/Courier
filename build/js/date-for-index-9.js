@@ -8,7 +8,7 @@ $(document).ready(function () {
         var todayDate = moment().add(i, 'd').format("DD");
         //  GET THE WEEKDAY'S NAME OF TODAY
         var todayWeekDayName = moment().add(i, 'd').format("dd");
-        var tomorrowMonth = moment().add(i + 1, 'd').format("MMM");
+        var thisMonth = moment().add(i , 'd').format("MMM");
 
         var tomorrowSlash = moment().add(i, 'days').format('DD/MM/YYYY');
         response = response + '<div class="date__list form-check">\n' +
@@ -18,7 +18,7 @@ $(document).ready(function () {
             ' <label class="date__label form-check-label "  for="' + i + '" >' +
             // '<span class="date__day">' + todayWeekDayName + '</span>' +
             '<span class="date__date">' + todayDate + '</span>' +
-            '<span class="date__month">' + tomorrowMonth + '</span>' +
+            '<span class="date__month">' + thisMonth + '</span>' +
             '</label>\n' +
             '</div>';
 

@@ -21,6 +21,11 @@
   transform: translate(-50%, -50%);
   animation: speed-up 3s ease-in-out infinite;
   background-color: #fff;
+
+  &--text {
+      font-size: 18px;
+      margin-top: 300px;
+  }
   &__div {
     @include layers(245px, 180px, $color-primary);
     background: rgb(89,0,75);

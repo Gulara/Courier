@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
   for (num = 0; num < 3; num++) {
     $(document).on("focus", `.form__phone-${num}`, function (e) {
       e.preventDefault();
@@ -68,20 +69,21 @@ function UpdateRemaining(isAdd) {
 }
 
 function intlInput(){
-  let num = row;row++;
+  let num = row;
+  row++;
   console.log(num)
-  var input = document.querySelector(`#phoneNumber-${num}`),
+  var input = document.querySelector(`#phoneNumber-${num}`);
 
-    errorMsg = document.querySelector(`.error-msg-${num}`),
-    validMsg = document.querySelector("#valid-msg");
-  validCheck = document.querySelector(`.valid-check-${num}`);
-  //   // initialise plugin
-  var iti = window.intlTelInput(input, {
-    utilsScript: "libs/intl-tel-input/build/js/utils.js"
-  });
+  //   errorMsg = document.querySelector(`.error-msg-${num}`),
+  //   validMsg = document.querySelector("#valid-msg");
+  // validCheck = document.querySelector(`.valid-check-${num}`);
+  // //   // initialise plugin
+  // var iti = window.intlTelInput(input, {
+  //   utilsScript: "libs/intl-tel-input/build/js/utils.js"
+  // });
 
-  //   // here, the index maps to the error code returned from getValidationError - see readme
-  var errorMap = ["Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"];
+  // //   // here, the index maps to the error code returned from getValidationError - see readme
+  // var errorMap = ["Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"];
 
   // //   // FOR ACCOUNT-SIGN-IN-COVER2.HTML
   $(`#phoneNumber-${num}`).intlTelInput({
@@ -93,53 +95,74 @@ function intlInput(){
 
   });
 
-  countryDialCode = $(`#phoneNumber-${num}`).intlTelInput("getSelectedCountryData").dialCode;
+  // countryDialCode = $(`#phoneNumber-${num}`).intlTelInput("getSelectedCountryData").dialCode;
 
 
-  $(`#phoneNumber-${num}`).val('+' + countryDialCode);
-  input.addEventListener('countrychange', function () {
+  // $(`#phoneNumber-${num}`).val('+' + countryDialCode);
+  // input.addEventListener('countrychange', function () {
 
-    var countryDialCode = $(`#phoneNumber-${num}`).intlTelInput("getSelectedCountryData").dialCode;
-    console.log(countryDialCode);
-    $(`#phoneNumber-${num}`).val('+' + countryDialCode);
+  //   var countryDialCode = $(`#phoneNumber-${num}`).intlTelInput("getSelectedCountryData").dialCode;
+  //   console.log(countryDialCode);
+  //   $(`#phoneNumber-${num}`).val('+' + countryDialCode);
 
-  });
+  // });
 
-  let reset = function () {
-    input.classList.remove("error");
-    errorMsg.innerHTML = "";
-    errorMsg.classList.add("valid-hide");
+  // let reset = function () {
+  //   input.classList.remove("error");
+  //   errorMsg.innerHTML = "";
+  //   errorMsg.classList.add("valid-hide");
   
-    validCheck.classList.add("valid-hide");
-  };
+  //   validCheck.classList.add("valid-hide");
+  // };
 
-
-
-  //   // on blur: validate
-  input.addEventListener('blur', function () {
-    console.log(validCheck)
-    reset();
-    if (input.value.trim()) {
-      if (iti.isValidNumber()) {
-       
-        validCheckPhone = document.querySelector(`.valid-check-${num}`);
-        validCheckPhone.classList.remove("valid-hide");
-      } else {
-        input.classList.add("error");
-        let errorCode = iti.getValidationError();
-        
-        errorMsg.innerHTML = errorMap[errorCode];
-        validCheckPhone = document.querySelector(`.valid-check-${num}`);
-        validCheckPhone.classList.add("valid-hide");
-        errorMsg.classList.remove("valid-hide");
-      }
+  var minLength = 6;
+  $(`#phoneNumber-${num}`).val('+994' );
+  $(`#phoneNumber-${num}`).on('keydown keyup change', function(evt){
+    var charLength = $(this).val().length;
+    if(charLength < minLength){
+        $(`.error-msg-${num}`).text('Minimum '+minLength+' required.');
+        $(`.valid-check-${num}`).addClass("valid-hide");
+    }else if(charLength > minLength){
+       $(`.valid-check-${num}`).removeClass("valid-hide");
+        $(`.error-msg-${num}`).text('');
     }
+
+   
+  });
+  $(`#phoneNumber-${num}`).on('keypress', function(evt){
+    var charCode = (evt.which) ? evt.which : event.keyCode
+    if (charCode != 43 && charCode > 31 && (charCode < 48 || charCode > 57))
+       return false;
+
+    return true;
+   
   });
 
+  // //   // on blur: validate
+  // input.addEventListener('blur', function () {
+  //   console.log(validCheck)
+  //   reset();
+  //   if (input.value.trim()) {
+  //     if (iti.isValidNumber()) {
+       
+  //       validCheckPhone = document.querySelector(`.valid-check-${num}`);
+  //       validCheckPhone.classList.remove("valid-hide");
+  //     } else {
+  //       input.classList.add("error");
+  //       let errorCode = iti.getValidationError();
+        
+  //       errorMsg.innerHTML = errorMap[errorCode];
+  //       validCheckPhone = document.querySelector(`.valid-check-${num}`);
+  //       validCheckPhone.classList.add("valid-hide");
+  //       errorMsg.classList.remove("valid-hide");
+  //     }
+  //   }
+  // });
 
-  // on keyup / change flag: reset
-  input.addEventListener('change', reset);
-  input.addEventListener('keyup', reset);
+
+  // // on keyup / change flag: reset
+  // input.addEventListener('change', reset);
+  // input.addEventListener('keyup', reset);
 }
 $(document).on("click", ".add-phone", function (e) {
   e.preventDefault();
