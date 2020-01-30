@@ -40,7 +40,9 @@
 
 .btn-purple {
     color: #ffffff !important;
-    background-color: $color-primary !important;
+    background: linear-gradient(-45deg, $color-primary, $color-primary-light-1, $color-2, $color-3);
+    animation: gradientBtn 16s linear  infinite;
+    background-size: 600%;
     border-radius: 10px;
 
     &:hover {
