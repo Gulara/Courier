@@ -330,43 +330,43 @@
     }
   }
   
-  @keyframes moving-star {
-    0% {
-      right: 0;
-      opacity: 1;
-    }
-    50% {
-      right: 100%;
-      opacity: 1;
-    }
-    70% {
-      right: 100%;
-      opacity: 0;
-    }
-    100% {
-      right: 0;
-      opacity: 0;
-    }
-  }
+  // @keyframes moving-star {
+  //   0% {
+  //     right: 0;
+  //     opacity: 1;
+  //   }
+  //   50% {
+  //     right: 100%;
+  //     opacity: 1;
+  //   }
+  //   70% {
+  //     right: 100%;
+  //     opacity: 0;
+  //   }
+  //   100% {
+  //     right: 0;
+  //     opacity: 0;
+  //   }
+  // }
   
-  @keyframes shooting-star {
-    0% {
-      right: 0;
-      opacity: 1;
-    }
-    50% {
-      right: 100%;
-      opacity: 1;
-      width: 300px;
-    }
-    70% {
-      right: 100%;
-      opacity: 0;
-      width: 0px;
-    }
-    100% {
-      right: 0;
-      opacity: 0;
-    }
-  }
+  // @keyframes shooting-star {
+  //   0% {
+  //     right: 0;
+  //     opacity: 1;
+  //   }
+  //   50% {
+  //     right: 100%;
+  //     opacity: 1;
+  //     width: 300px;
+  //   }
+  //   70% {
+  //     right: 100%;
+  //     opacity: 0;
+  //     width: 0px;
+  //   }
+  //   100% {
+  //     right: 0;
+  //     opacity: 0;
+  //   }
+  // }
   
