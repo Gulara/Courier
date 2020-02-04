@@ -1,0 +1,173 @@
+.mail-coupon {
+
+    &__link {
+        color: $color-primary;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    &__img-container {
+        width: 200px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    &__code {
+        padding: 12px 7px;
+        color: $color-secondary-dark;
+        background-color: #fff;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-right: none;
+        width: auto;
+
+
+        &--container {
+
+            font-size: 16px;
+            width: 160px;
+            border-radius: 10px;
+            z-index: 2;
+            display: flex;
+
+            &:hover .my-coupons__tooltip {
+                display: block;
+            }
+        }
+
+        &--btn {
+
+            background-color: #fff;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+
+            &:focus {
+                outline: none;
+            }
+
+            .fa-copy {
+                font-size: 1.5rem;
+                color: $color-primary;
+
+            }
+        }
+    }
+
+    &__tooltip {
+        background-color: rgba(0, 0, 0, .8);
+        color: #fff;
+        padding: 3px 5px;
+        border-radius: 5px;
+        bottom: 32%;
+        left: 36%;
+        position: absolute;
+        z-index: 999;
+        display: none;
+
+        @include respondmax(lg) {
+            bottom: 22%;
+            right: 23%;
+
+        }
+
+        @include respondmax(sm) {
+
+            right: 10%;
+
+        }
+
+    }
+
+    &__footer {
+        background-color: $color-secondary;
+        padding: 10px 0 75px;
+    }
+
+    &__confirmation {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: rgba($color-primary, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        i {
+            color: $color-primary;
+
+        }
+    }
+
+    &__social {
+        &-div {
+            position: relative;
+        }
+        &-list {
+            min-width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 50%;
+            left: 40%;
+            transform: translate(0, -110%);
+            transfrom-origin: 0 50%;
+            -webkit-transform: translate(0, -110%);
+            -webkit-transform-origin: 0 50%;
+            list-style-type: none;
+            background-color: #fff;
+            border-radius: 20px;
+            padding: 0;
+            margin-bottom: 0;
+        }
+
+        &-li {
+            width: 40px;
+            height: 40px;
+            margin: 0 5px;
+            float: left;
+            line-height: 40px;
+            color: $color-primary;
+            overflow: hidden;
+            cursor: pointer;
+    
+            &:hover {
+                color: rgba($color-primary, 0.5);
+            }
+    
+            &:first-of-type {
+                width: 40px;
+                height: 40px;
+                margin: 0px;
+            }
+    
+            &:first-of-type i {
+                font-size: 30px;
+            }
+
+            a {
+                text-decoration: none;
+                color: $color-primary;
+    
+                &:hover {
+                    color: rgba($color-primary, 0.5);
+                }
+    
+                &:visited {
+                    text-decoration: underline;
+                }
+            }
+    
+    
+            i {
+                font-size: 25px;
+                vertical-align: middle;
+                margin: 0 5px;
+            }
+        }
+       
+    }
+}
