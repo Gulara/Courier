@@ -5178,7 +5178,8 @@ p + p {
   margin-bottom: 20px;
   color: #555a64;
   border-bottom: 1px solid #d0d2d7;
-  width: 100%; }
+  width: 100%;
+  position: relative; }
   .loading-info--mt {
     margin-top: 30px; }
   .loading-info--courier {
@@ -5200,7 +5201,7 @@ p + p {
         position: absolute;
         left: 7px;
         z-index: 100;
-        top: 25px;
+        top: 45px;
         height: 30%;
         z-index: 1;
         border-left: 2px dashed #555a64; }
@@ -5231,38 +5232,43 @@ p + p {
        -moz-border-radius: 10px;
             border-radius: 10px; }
   .loading-info--payment-group {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-       -moz-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-       -moz-box-align: center;
-        -ms-flex-align: center;
-            align-items: center; }
+    position: relative; }
+    .loading-info--payment-group-div {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+         -moz-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+         -moz-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      margin-top: 10px; }
   .loading-info__urgent-time {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-       -moz-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-       -moz-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     padding-bottom: 16px; }
+    .loading-info__urgent-time-div {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+         -moz-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+         -moz-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      margin-top: 15px; }
   .loading-info--delivery-time {
     display: -webkit-box;
     display: -webkit-flex;
@@ -5502,6 +5508,78 @@ p + p {
   top: 0;
   left: 0;
   z-index: 10; }
+
+.ios-switch {
+  position: absolute;
+  opacity: 0; }
+  .ios-switch-div {
+    cursor: pointer; }
+  .ios-switch + div {
+    vertical-align: middle;
+    width: 40px;
+    height: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    -webkit-border-radius: 999px;
+       -moz-border-radius: 999px;
+            border-radius: 999px;
+    background-color: rgba(0, 0, 0, 0.1);
+    -webkit-transition-duration: .4s;
+    -webkit-transition-property: background-color, box-shadow;
+    -webkit-box-shadow: inset 0 0 0 0px rgba(0, 0, 0, 0.4);
+       -moz-box-shadow: inset 0 0 0 0px rgba(0, 0, 0, 0.4);
+            box-shadow: inset 0 0 0 0px rgba(0, 0, 0, 0.4);
+    margin: 15px 1.2em 15px 2.5em; }
+    .ios-switch + div > div {
+      float: left;
+      width: 18px;
+      height: 18px;
+      -webkit-border-radius: inherit;
+         -moz-border-radius: inherit;
+              border-radius: inherit;
+      background: #ffffff;
+      -webkit-transition-timing-function: cubic-bezier(0.54, 1.85, 0.5, 1);
+      -webkit-transition-duration: 0.4s;
+      -webkit-transition-property: transform, background-color, box-shadow;
+      -moz-transition-timing-function: cubic-bezier(0.54, 1.85, 0.5, 1);
+      -moz-transition-duration: 0.4s;
+      -moz-transition-property: transform, background-color;
+      -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3), 0px 0px 0 1px rgba(0, 0, 0, 0.4);
+         -moz-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3), 0px 0px 0 1px rgba(0, 0, 0, 0.4);
+              box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3), 0px 0px 0 1px rgba(0, 0, 0, 0.4);
+      pointer-events: none;
+      margin-left: -1px; }
+  .ios-switch:checked + div {
+    width: 40px;
+    background-position: 0 0;
+    background-color: #7b2bfc;
+    border: 1px solid #7b2bfc;
+    -webkit-box-shadow: inset 0 0 0 10px #7b2bfc;
+       -moz-box-shadow: inset 0 0 0 10px #7b2bfc;
+            box-shadow: inset 0 0 0 10px #7b2bfc; }
+    .ios-switch:checked + div > div {
+      -webkit-transform: translate3d(20px, 0, 0);
+      -moz-transform: translate3d(20px, 0, 0);
+      background-color: #ffffff;
+      -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3), 0px 0px 0 1px #7b2bfc;
+         -moz-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3), 0px 0px 0 1px #7b2bfc;
+              box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3), 0px 0px 0 1px #7b2bfc; }
+
+.tinyswitch.ios-switch + div {
+  width: 34px;
+  height: 18px;
+  position: absolute;
+  top: 0;
+  right: 0; }
+  .tinyswitch.ios-switch + div > div {
+    width: 16px;
+    height: 16px; }
+
+.ios-switch-disable {
+  background-color: #ccc;
+  opacity: 0.3;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px; }
 
 ::-webkit-scrollbar {
   width: 10px; }
@@ -6664,6 +6742,9 @@ p + p {
      -moz-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center; }
+  @media (max-width: 575px) {
+    .mail-coupon__confirmation {
+      margin: 0 auto; } }
   .mail-coupon__confirmation i {
     color: #7b2bfc; }
 
@@ -6708,13 +6789,13 @@ p + p {
   @media (max-width: 380px) {
     .mail-coupon__social-list {
       top: 50%;
-      left: 45%;
-      -webkit-transform: translate(-50%, 10%);
-         -moz-transform: translate(-50%, 10%);
-          -ms-transform: translate(-50%, 10%);
-           -o-transform: translate(-50%, 10%);
-              transform: translate(-50%, 10%);
-      transfrom-origin: 45% 50%; } }
+      left: 28%;
+      -webkit-transform: translate(-10%, 20%);
+         -moz-transform: translate(-10%, 20%);
+          -ms-transform: translate(-10%, 20%);
+           -o-transform: translate(-10%, 20%);
+              transform: translate(-10%, 20%);
+      transfrom-origin: 0 50%; } }
 
 .mail-coupon__social-li {
   width: 40px;

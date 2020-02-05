@@ -3,7 +3,7 @@ $(document).ready(function () {
     // Get the number of days in the current month.
     var daysInMonth = moment().daysInMonth(); // 29
     let response = '';
-    for (i = 0; i < daysInMonth; i++) {
+    for (i = 0; i < 30; i++) {
         //  GET THE DATE OF TODAY
         var todayDate = moment().add(i, 'd').format("DD");
         //  GET THE WEEKDAY'S NAME OF TODAY
@@ -169,7 +169,7 @@ $(document).ready(function () {
             }
 
             $('#delivery__time').html(deliveryTimeToday);
-            $(".datepicker").removeClass('parsley-error');
+
 
             $(document).on('click change', 'input:radio[data-item-id=times]', function () {
                 $(".times__btn--down").css({
@@ -205,8 +205,7 @@ $(document).ready(function () {
                     '</div>';
             }
             $('#delivery__time').html(deliveryTimeNext);
-            $(".datepicker").removeClass('parsley-error');
-            // $(".datepicker").after('.parsley-errors-list ').remove();
+
             
 
             $(document).on('click change', 'input:radio[data-item-id=times]', function () {

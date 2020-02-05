@@ -3,7 +3,7 @@
     color: $color-secondary-dark;
     border-bottom: 1px solid #d0d2d7;
     width: 100%;
-
+position: relative;
     &--mt {
         margin-top: 30px;
     }
@@ -15,6 +15,7 @@
     &__circle {
         position: relative;
         height: auto;
+        // margin-bottom: 0;
 
         &--before {
             display: flex;
@@ -29,7 +30,7 @@
                 position: absolute;
                 left: 7px;
                 z-index: 100;
-                top: 25px;
+                top: 45px;
                 height: 30%;
                 z-index: 1;
                 border-left: 2px dashed $color-secondary-dark;
@@ -76,16 +77,30 @@
     }
 
     &--payment-group {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+       
+        position: relative;
+        // margin-bottom: 0;
 
+        &-div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+    }
+    &__urgent-type {
+        // margin-bottom: 0;
+    }
     &__urgent-time {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+       
         padding-bottom: 16px;
+
+        &-div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
     }
 
     &--delivery-time {
