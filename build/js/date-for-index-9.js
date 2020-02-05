@@ -8,11 +8,11 @@ $(document).ready(function () {
         var todayDate = moment().add(i, 'd').format("DD");
         //  GET THE WEEKDAY'S NAME OF TODAY
         var todayWeekDayName = moment().add(i, 'd').format("dd");
-        var thisMonth = moment().add(i , 'd').format("MMM");
+        var thisMonth = moment().add(i, 'd').format("MMM");
 
         var tomorrowSlash = moment().add(i, 'days').format('DD/MM/YYYY');
         response = response + '<div class="date__list form-check">\n' +
-            '<input class="date__input form-check-input" type="radio" data-slash="' + tomorrowSlash +
+            '<input class="date__input form-check-input" type="radio" required data-slash="' + tomorrowSlash +
             ' "  value="' + tomorrowSlash +
             ' " name="days" data-item-id="date" id="' + i + '"/>' +
             ' <label class="date__label form-check-label "  for="' + i + '" >' +
@@ -22,9 +22,12 @@ $(document).ready(function () {
             '</label>\n' +
             '</div>';
 
+        // $(".date__input:first-child").prop("checked", true);
 
     }
     $('.date').html(response);
+
+   
 
     function timesChecked() {
         var checkedSiblings = $("input[data-item-id=times]:checked").parent().nextAll().length;
@@ -92,7 +95,7 @@ $(document).ready(function () {
         } else if (checkedSiblings == 0) {
             $("input[data-item-id=date]:checked").parent().prevAll(':gt(2)').slideUp(800);
         }
-        
+
     }
 
     function calendarRemoveText() {
@@ -100,7 +103,7 @@ $(document).ready(function () {
         $("input:radio[data-item-id='calendar-date']").attr('value', '');
         $("input:radio[data-item-id='date']:not(:checked)").attr('value', '');
     };
-   
+
     $('input:radio[data-item-id="urgent"]').change(function () {
 
         if ($(this).is(':checked') && $(this).val() == 'non-urgent') {
@@ -147,7 +150,7 @@ $(document).ready(function () {
         $("#calendar").prop("checked", false);
         let radioId = $(this).attr("id");
 
-
+       
 
         //  TODAY TIMES  SIMPLE
         if ($(this).prop("checked") && radioId == '0') {
@@ -159,14 +162,14 @@ $(document).ready(function () {
                 var currentTime = moment().startOf('hour').add(i, 'h').format("HH:mm");
                 var currentTimePlusOne = moment().startOf('hour').add(i + 1, 'h').format("HH:mm");
                 deliveryTimeToday = deliveryTimeToday + '<div class="form-check times__check-form">\n' +
-                    '<input class="times__input" type="radio" value="' + currentTime + "-" + currentTimePlusOne + '" name="times" data-item-id="times" id="' + currentTime + '"/>' +
+                    '<input class="times__input" type="radio" required value="' + currentTime + "-" + currentTimePlusOne + '" name="times" data-item-id="times" id="' + currentTime + '"/>' +
                     ' <label class="times__label form-check-label "  for="' + currentTime + '" >' + currentTime + "-" + currentTimePlusOne +
                     '</label>\n' +
                     '</div>';
             }
 
             $('#delivery__time').html(deliveryTimeToday);
-
+            $(".datepicker").removeClass('parsley-error');
 
             $(document).on('click change', 'input:radio[data-item-id=times]', function () {
                 $(".times__btn--down").css({
@@ -176,11 +179,11 @@ $(document).ready(function () {
                 var TimeVal = $('input[data-item-id=times]:checked').val();
                 var dataSlash = $('input[data-item-id=date]:checked').attr('data-slash');
                 $("input:radio[data-item-id='calendar-date']").attr('value', '');
-        
+
                 $("input:radio[data-item-id='date']:not(:checked)").attr('value', '');
-        
-        
-        
+
+
+
                 timesChecked();
                 valueSelected.value = dataSlash + " " + TimeVal;
             });
@@ -196,14 +199,15 @@ $(document).ready(function () {
                 var tomorrowHours = moment().startOf('day').add(i, 'h').format("HH:mm");
                 var tomorrowHoursPlusOne = moment().startOf('day').add(i + 1, 'h').format("HH:mm");
                 deliveryTimeNext = deliveryTimeNext + '<div class="form-check  times__check-form">\n' +
-                    '<input class="times__input" type="radio" value="' + tomorrowHours + "-" + tomorrowHoursPlusOne + '" name="times" data-item-id="times" id="' + tomorrowHours + '" />' +
+                    '<input class="times__input" type="radio" required value="' + tomorrowHours + "-" + tomorrowHoursPlusOne + '" name="times" data-item-id="times" id="' + tomorrowHours + '" />' +
                     ' <label class="times__label  form-check-label"  for="' + tomorrowHours + '" >' + tomorrowHours + "-" + tomorrowHoursPlusOne +
                     '</label>\n' +
                     '</div>';
             }
             $('#delivery__time').html(deliveryTimeNext);
-
-
+            $(".datepicker").removeClass('parsley-error');
+            // $(".datepicker").after('.parsley-errors-list ').remove();
+            
 
             $(document).on('click change', 'input:radio[data-item-id=times]', function () {
                 $(".times__btn--down").css({
@@ -213,11 +217,11 @@ $(document).ready(function () {
                 var TimeVal = $('input[data-item-id=times]:checked').val();
                 var dataSlash = $('input[data-item-id=date]:checked').attr('data-slash');
                 $("input:radio[data-item-id='calendar-date']").attr('value', '');
-        
+
                 $("input:radio[data-item-id='date']:not(:checked)").attr('value', '');
-        
-        
-        
+
+
+
                 timesChecked();
                 valueSelected.value = dataSlash + " " + TimeVal;
 
@@ -238,7 +242,7 @@ $(document).ready(function () {
             });
 
 
-         
+
             $(".times__check-form:nth-child(2)").nextAll().slideDown(300);
             $("input[data-item-id=times]:checked").parent().prevAll().slideDown(300);
             $(".times__check-form:nth-child(2)").nextAll().slideDown(300);
@@ -248,12 +252,12 @@ $(document).ready(function () {
 
 
     });
-   
+
 
     $(".times__form-check:nth-child(4)").nextAll().slideUp(800);
 
-  
-//  CALENDAR tIME
+
+    //  CALENDAR tIME
     $('input:radio[data-item-id="calendar-date"]').change(function () {
         $("input:radio[data-item-id='date']").prop("checked", false);
         // $("input:radio[data-item-id='calendar-date']").prop( "checked", true);
@@ -266,25 +270,26 @@ $(document).ready(function () {
             var tomorrowHours = moment().startOf('day').add(i, 'h').format("HH:mm");
             var tomorrowHoursPlusOne = moment().startOf('day').add(i + 1, 'h').format("HH:mm");
             deliveryTimeNext = deliveryTimeNext + '<div class="form-check  times__check-form">\n' +
-                '<input class="times__input" type="radio" value="' + tomorrowHours + "-" + tomorrowHoursPlusOne + '" name="times" data-item-id="calendar-times" id="' + tomorrowHours + '" />' +
+                '<input class="times__input" type="radio" required value="' + tomorrowHours + "-" + tomorrowHoursPlusOne + '" name="times" data-item-id="calendar-times" id="' + tomorrowHours + '" />' +
                 ' <label class="times__label  form-check-label"  for="' + tomorrowHours + '" >' + tomorrowHours + "-" + tomorrowHoursPlusOne +
                 '</label>\n' +
                 '</div>';
         }
         $('#delivery__time').html(deliveryTimeNext);
 
-
+        
+     
         $(document).on('click change', 'input:radio[data-item-id=calendar-times]', function () {
             $(".times__btn--down").css({
                 'display': 'flex'
             });
-    
-    
+
+
             var valueSelected = document.querySelector('input[data-item-id="calendar-date"]');
             var TimeVal = $('input[data-item-id=calendar-times]:checked').val();
             var dataSlash = $('input[data-item-id=calendar-date]:checked').attr('data-slash');
             $("input:radio[data-item-id='date']:not(:checked)").attr('value', '');
-    
+
             calendarTimesChecked();
             valueSelected.value = dataSlash + " " + TimeVal;
 
@@ -353,12 +358,12 @@ $(document).ready(function () {
         });
 
 
-       
+
         $(".times__check-form:nth-child(2)").nextAll().slideDown(300);
         $("input[data-item-id=times]:checked").parent().prevAll().slideDown(300);
         $(".times__check-form:nth-child(2)").nextAll().slideDown(300);
         $("input[data-item-id=calendar-times]:checked").parent().prevAll().slideDown(300);
-       
+
     });
     $(".delivery-btn--up").click(function () {
         $('#calendar').prop("checked");
@@ -416,4 +421,7 @@ $(document).ready(function () {
 
         dateChecked();
     });
+
+
+
 });

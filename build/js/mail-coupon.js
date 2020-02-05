@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     // COPY CODE 
-    $(".mail-coupon__code--container ")
+    $(".mail-coupon__code--div ")
         .mouseenter(function () {
             $(".mail-coupon__tooltip").css({
                 'display': "block"

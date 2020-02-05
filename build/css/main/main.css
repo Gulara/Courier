@@ -6539,6 +6539,15 @@ p + p {
      -moz-box-align: center;
       -ms-flex-align: center;
           align-items: center; }
+  @media (max-width: 575px) {
+    .mail-coupon__img-container {
+      margin: 20px auto;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+         -moz-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      width: auto; } }
 
 .mail-coupon__code {
   padding: 12px 7px;
@@ -6553,6 +6562,26 @@ p + p {
   border-right: none;
   width: auto; }
   .mail-coupon__code--container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    @media (max-width: 575px) {
+      .mail-coupon__code--container {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+           -moz-box-orient: vertical;
+           -moz-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column; } }
+  .mail-coupon__code--div {
     font-size: 16px;
     width: 160px;
     -webkit-border-radius: 10px;
@@ -6564,7 +6593,10 @@ p + p {
     display: -moz-box;
     display: -ms-flexbox;
     display: flex; }
-    .mail-coupon__code--container:hover .my-coupons__tooltip {
+    @media (max-width: 575px) {
+      .mail-coupon__code--div {
+        margin-bottom: 10px; } }
+    .mail-coupon__code--div:hover .my-coupons__tooltip {
       display: block; }
   .mail-coupon__code--btn {
     background-color: #fff;
@@ -6644,13 +6676,12 @@ p + p {
   position: absolute;
   top: 50%;
   left: 40%;
-  -moz-transform: translate(0, -110%);
-   -ms-transform: translate(0, -110%);
-    -o-transform: translate(0, -110%);
-       transform: translate(0, -110%);
-  transfrom-origin: 0 50%;
   -webkit-transform: translate(0, -110%);
-  -webkit-transform-origin: 0 50%;
+     -moz-transform: translate(0, -110%);
+      -ms-transform: translate(0, -110%);
+       -o-transform: translate(0, -110%);
+          transform: translate(0, -110%);
+  transfrom-origin: 0 50%;
   list-style-type: none;
   background-color: #fff;
   -webkit-border-radius: 20px;
@@ -6658,6 +6689,32 @@ p + p {
           border-radius: 20px;
   padding: 0;
   margin-bottom: 0; }
+  @media (max-width: 1199px) {
+    .mail-coupon__social-list {
+      left: 48%; } }
+  @media (max-width: 767px) {
+    .mail-coupon__social-list {
+      left: 42%; } }
+  @media (max-width: 575px) {
+    .mail-coupon__social-list {
+      top: 50%;
+      left: 51%;
+      -webkit-transform: translate(-50%, 10%);
+         -moz-transform: translate(-50%, 10%);
+          -ms-transform: translate(-50%, 10%);
+           -o-transform: translate(-50%, 10%);
+              transform: translate(-50%, 10%);
+      transfrom-origin: 50% 50%; } }
+  @media (max-width: 380px) {
+    .mail-coupon__social-list {
+      top: 50%;
+      left: 45%;
+      -webkit-transform: translate(-50%, 10%);
+         -moz-transform: translate(-50%, 10%);
+          -ms-transform: translate(-50%, 10%);
+           -o-transform: translate(-50%, 10%);
+              transform: translate(-50%, 10%);
+      transfrom-origin: 45% 50%; } }
 
 .mail-coupon__social-li {
   width: 40px;
@@ -6687,6 +6744,57 @@ p + p {
     font-size: 25px;
     vertical-align: middle;
     margin: 0 5px; }
+
+.mail-coupon__app {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+     -moz-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end; }
+  @media (max-width: 575px) {
+    .mail-coupon__app {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+         -moz-box-orient: vertical;
+         -moz-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+         -moz-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+         -moz-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      margin-top: 30px; } }
+  .mail-coupon__app a:first-child {
+    margin-right: 20px; }
+    @media (max-width: 575px) {
+      .mail-coupon__app a:first-child {
+        margin-bottom: 10px;
+        margin-right: 0; } }
+
+#webSocialIcon .fa-share-alt {
+  color: #7b2bfc;
+  font-size: 25px; }
+  #webSocialIcon .fa-share-alt:hover {
+    color: rgba(123, 43, 252, 0.5); }
 
 /*! WEBCODER - http://webcoder.az/ Mehemmed Memmedli  16 Aprel 2018  https://github.com/nemerki */
 /* ==========================================================================

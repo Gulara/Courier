@@ -35,7 +35,7 @@ e.preventDefault();
 
     });
     $("#first_form").on("scroll", function () {
-        console.log($(this).scrollTop());
+        // console.log($(this).scrollTop());
         if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
             $(".scroll-down").css({
                 'display': 'none'

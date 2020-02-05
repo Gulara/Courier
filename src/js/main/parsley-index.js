@@ -11,6 +11,28 @@ $(document).ready(function () {
                 'width': '100%'
             });
 
+            $(".delivery__time").find('.parsley-errors-list').css({
+                'order': '-1',
+            'flexWrap': 'wrap',
+                'width': '100%'
+            });
+
+            $(".delivery").find('.parsley-errors-list').css({
+                'order': '2',
+            'flexWrap': 'wrap',
+                'width': '100%',
+               
+            });
+
+            $(".delivery__form-label").css({
+                'order': '1',
+          
+               
+            });
+            if($('input:radio[data-item-id="date"]').prop("checked")){
+                $(".datepicker").removeClass('parsley-error')
+            }
+           
         })
 
         .on('form:submit', function () {
