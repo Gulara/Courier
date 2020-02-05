@@ -13,6 +13,13 @@
         height: 100%;
         display: flex;
         align-items: center;
+
+        @include respondmax(sm) {
+           
+            margin: 20px auto;
+            justify-content: center;
+            width: auto;
+        }
     }
 
     &__code {
@@ -24,14 +31,26 @@
         border-right: none;
         width: auto;
 
-
         &--container {
+            display: flex;
+            align-items: center;
+
+            @include respondmax(sm) {
+                flex-direction: column;
+            }
+        }
+
+        &--div {
 
             font-size: 16px;
             width: 160px;
             border-radius: 10px;
             z-index: 2;
             display: flex;
+
+            @include respondmax(sm) {
+                margin-bottom: 10px;
+            }
 
             &:hover .my-coupons__tooltip {
                 display: block;
@@ -107,6 +126,7 @@
         &-div {
             position: relative;
         }
+
         &-list {
             min-width: 40px;
             height: 40px;
@@ -115,13 +135,37 @@
             left: 40%;
             transform: translate(0, -110%);
             transfrom-origin: 0 50%;
-            -webkit-transform: translate(0, -110%);
-            -webkit-transform-origin: 0 50%;
+
             list-style-type: none;
             background-color: #fff;
             border-radius: 20px;
             padding: 0;
             margin-bottom: 0;
+
+            @include respondmax(xl) {
+                left: 48%;
+            }
+
+            @include respondmax(md) {
+                left: 42%;
+            }
+
+            @include respondmax(sm) {
+
+                top: 50%;
+                left: 51%;
+                transform: translate(-50%, 10%);
+                transfrom-origin: 50% 50%;
+
+            }
+            @include respondmax(xs) {
+
+                top: 50%;
+                left: 45%;
+                transform: translate(-50%, 10%);
+                transfrom-origin: 45% 50%;
+
+            }
         }
 
         &-li {
@@ -133,17 +177,17 @@
             color: $color-primary;
             overflow: hidden;
             cursor: pointer;
-    
+
             &:hover {
                 color: rgba($color-primary, 0.5);
             }
-    
+
             &:first-of-type {
                 width: 40px;
                 height: 40px;
                 margin: 0px;
             }
-    
+
             &:first-of-type i {
                 font-size: 30px;
             }
@@ -151,23 +195,61 @@
             a {
                 text-decoration: none;
                 color: $color-primary;
-    
+
                 &:hover {
                     color: rgba($color-primary, 0.5);
                 }
-    
+
                 &:visited {
                     text-decoration: underline;
                 }
             }
-    
-    
+
+
             i {
                 font-size: 25px;
                 vertical-align: middle;
                 margin: 0 5px;
             }
         }
-       
+
     }
+
+    &__app {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+
+        @include respondmax(sm) {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        a {
+
+            &:first-child {
+                margin-right: 20px;
+
+                @include respondmax(sm) {
+                    margin-bottom: 10px;
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+#webSocialIcon {
+
+    .fa-share-alt {
+        color: $color-primary;
+        font-size: 25px;
+
+        &:hover {
+            color: rgba($color-primary, 0.5);
+        }
+    }
+
 }

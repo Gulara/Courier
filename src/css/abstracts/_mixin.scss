@@ -47,6 +47,9 @@
 
 
 @mixin respondmax($breakpoint){
+	@if $breakpoint == xs {
+		@media (max-width: 380px) {@content};
+	}
 	@if $breakpoint == sm {
 		@media (max-width: 575px) {@content};
 	}
