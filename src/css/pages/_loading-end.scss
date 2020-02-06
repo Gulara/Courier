@@ -1,13 +1,13 @@
 .spinner-explainer {
-	margin:30px auto;
-	width:600px;
-	font-family: Arial, sans-serif;
+    margin: 30px auto;
+    width: 600px;
+    font-family: Arial, sans-serif;
 }
 
 .spinner-container {
     width: 140px !important;
     height: auto !important;
-    margin: 10px auto ;
+    margin: 10px auto;
 }
 
 .path {
@@ -21,7 +21,8 @@
     -ms-transform-origin: 50% 50%;
     -o-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
-    -moz-transform-origin: 50px 50px; /* There is a percentage bug in Firefox that requires a special over-definition using the vendor prefix, see https://bugzilla.mozilla.org/show_bug.cgi?id=923193 */
+    -moz-transform-origin: 50px 50px;
+    /* There is a percentage bug in Firefox that requires a special over-definition using the vendor prefix, see https://bugzilla.mozilla.org/show_bug.cgi?id=923193 */
     /* It may seem counter-intuitive (because it is :P), but the fixed offset for transform-origin in Firefox *does* in fact scale with the svg element. */
     /* NOTE: Anything that you want to perform a transform on MUST be inside of an svg <g> tag, since this seems to reset things for Firefox and allow the pixel origin offset to work its magic. */
 }
@@ -38,8 +39,9 @@
     -moz-transform-origin: 50px 50px;
 }
 
-.spinner-complete, .path-complete {
-   
+.spinner-complete,
+.path-complete {
+
     animation-play-state: paused;
 }
 
@@ -50,18 +52,19 @@
     -o-transition: all 2.75s ease-out;
     -webkit-transition: all 2.75s ease-out;
     transition: all 2.75s ease-out;
-   
+
     animation-fill-mode: backwards;
 }
 
-.check, .cross
-{
-	stroke-dasharray: 110;
-	stroke-dashoffset: 110;
-	stroke-width: 0;
+.check,
+.cross {
+    stroke-dasharray: 110;
+    stroke-dashoffset: 110;
+    stroke-width: 0;
 }
 
-.check-complete, .cross-complete {
+.check-complete,
+.cross-complete {
     -webkit-animation: check 1s ease-in forwards;
     -moz-animation: check 1s ease-in forwards;
     -o-animation: check 1s ease-in forwards;
@@ -75,36 +78,43 @@
     0% {
         stroke-dashoffset: 273;
     }
+
     50% {
         stroke-dashoffset: 68.25;
         -webkit-transform: rotate(135deg);
         transform: rotate(135deg);
     }
+
     100% {
         stroke-dashoffset: 273;
         -webkit-transform: rotate(450deg);
         transform: rotate(450deg);
     }
 }
+
 @-moz-keyframes load {
     0% {
         stroke-dashoffset: 273;
     }
+
     50% {
         stroke-dashoffset: 68.25;
         -moz-transform: rotate(135deg);
         transform: rotate(135deg);
     }
+
     100% {
         stroke-dashoffset: 273;
         -moz-transform: rotate(450deg);
         transform: rotate(450deg);
     }
 }
+
 @keyframes load {
     0% {
         stroke-dashoffset: 273;
     }
+
     50% {
         stroke-dashoffset: 68.25;
         -moz-transform: rotate(135deg);
@@ -113,6 +123,7 @@
         -webkit-transform: rotate(135deg);
         transform: rotate(135deg);
     }
+
     100% {
         stroke-dashoffset: 273;
         -moz-transform: rotate(450deg);
@@ -122,6 +133,7 @@
         transform: rotate(450deg);
     }
 }
+
 /*#endregion*/
 
 /*#region keyframes check*/
@@ -129,26 +141,32 @@
     0% {
         stroke-dashoffset: -110;
     }
+
     100% {
         stroke-dashoffset: 0;
     }
 }
+
 @-moz-keyframes check {
     0% {
         stroke-dashoffset: -110;
     }
+
     100% {
         stroke-dashoffset: 0;
     }
 }
+
 @keyframes check {
     0% {
         stroke-dashoffset: -110;
     }
+
     100% {
         stroke-dashoffset: 0;
     }
 }
+
 /*#endregion*/
 
 /*#region keyframes spin */
@@ -193,13 +211,15 @@
 
 /*#endregion */
 
-.success, .danger {
+.success,
+.danger {
     stroke: #009900;
     -moz-transition: stroke .6s;
     -o-transition: stroke .6s;
     -webkit-transition: stroke .6s;
     transition: stroke .6s;
 }
+
 .danger {
     stroke: #B00;
 }
@@ -217,33 +237,53 @@
 }
 
 
-.ios-switch { 
-	position: absolute;
+.ios-switch {
+    position: absolute;
     opacity: 0;
+    display: none;
+
+    &__btn-group {
+        display: flex;
+        margin-bottom: 15px;
+    }
+
+    &--display-off {
+        display: none;
+        border-radius: 10px;
+    }
+
+    &--modal-btn {
+        display: none;
+        margin-right: 10px;
+    }
 
     &-div {
         cursor: pointer;
+        display: none;
     }
-    & + div {
+
+    &+div {
         vertical-align: middle;
-        width: 40px;	height: 20px;
-        border: 1px solid rgba(0,0,0,.4);
+        width: 40px;
+        height: 20px;
+        border: 1px solid rgba(0, 0, 0, .4);
         border-radius: 999px;
         background-color: rgba(0, 0, 0, 0.1);
         -webkit-transition-duration: .4s;
         -webkit-transition-property: background-color, box-shadow;
-        box-shadow: inset 0 0 0 0px rgba(0,0,0,0.4);
-        margin: 15px 1.2em 15px 2.5em;
+        box-shadow: inset 0 0 0 0px rgba(0, 0, 0, 0.4);
+        margin: 10px 1.2em 15px 2.5em;
 
-        & > div {
+        &>div {
             float: left;
-            width: 18px; height: 18px;
+            width: 18px;
+            height: 18px;
             border-radius: inherit;
             background: #ffffff;
-            -webkit-transition-timing-function: cubic-bezier(.54,1.85,.5,1);
+            -webkit-transition-timing-function: cubic-bezier(.54, 1.85, .5, 1);
             -webkit-transition-duration: 0.4s;
             -webkit-transition-property: transform, background-color, box-shadow;
-            -moz-transition-timing-function: cubic-bezier(.54,1.85,.5,1);
+            -moz-transition-timing-function: cubic-bezier(.54, 1.85, .5, 1);
             -moz-transition-duration: 0.4s;
             -moz-transition-property: transform, background-color;
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3), 0px 0px 0 1px rgba(0, 0, 0, 0.4);
@@ -253,33 +293,34 @@
         }
     }
 
-    &:checked + div {
+    &:checked+div {
         width: 40px;
         background-position: 0 0;
         background-color: $color-primary;
         border: 1px solid $color-primary;
         box-shadow: inset 0 0 0 10px $color-primary;
 
-        & > div {
+        &>div {
             -webkit-transform: translate3d(20px, 0, 0);
             -moz-transform: translate3d(20px, 0, 0);
             background-color: #ffffff;
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3), 0px 0px 0 1px $color-primary;
-           
+
         }
     }
 }
 
 
-.tinyswitch.ios-switch + div {
+.tinyswitch.ios-switch+div {
     width: 34px;
-        height: 18px;
-        position: absolute;
+    height: 18px;
+    position: absolute;
     top: 0;
     right: 0;
 
-    & > div {
-        width: 16px; height: 16px;
+    &>div {
+        width: 16px;
+        height: 16px;
         // margin-top: 1px;
     }
 }
@@ -290,7 +331,8 @@
     border-radius: 10px;
 }
 
-
-
-
-
+.loading-end {
+    &__modal-header {
+        padding-bottom: 35px;
+    }
+}

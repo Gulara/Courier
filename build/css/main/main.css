@@ -5179,11 +5179,110 @@ p + p {
   color: #555a64;
   border-bottom: 1px solid #d0d2d7;
   width: 100%;
-  position: relative; }
+  position: relative;
+  padding: 1rem; }
+  .loading-info-modal {
+    margin-bottom: 20px;
+    color: #555a64;
+    border-bottom: 1px solid #d0d2d7;
+    width: 100%;
+    padding-top: 10px;
+    padding-left: 10px;
+    position: relative; }
+  .loading-info-border {
+    border-bottom: 1px solid #d0d2d7; }
+  .loading-info__code {
+    padding: 12px 7px;
+    color: #555a64;
+    background-color: #fff;
+    -webkit-border-top-left-radius: 10px;
+       -moz-border-radius-topleft: 10px;
+            border-top-left-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+       -moz-border-radius-bottomleft: 10px;
+            border-bottom-left-radius: 10px;
+    border-right: none;
+    width: auto; }
+    .loading-info__code--container {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+         -moz-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      @media (max-width: 575px) {
+        .loading-info__code--container {
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -webkit-flex-direction: column;
+             -moz-box-orient: vertical;
+             -moz-box-direction: normal;
+              -ms-flex-direction: column;
+                  flex-direction: column; } }
+    .loading-info__code--div {
+      font-size: 16px;
+      width: 160px;
+      -webkit-border-radius: 10px;
+         -moz-border-radius: 10px;
+              border-radius: 10px;
+      z-index: 2;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: flex; }
+      @media (max-width: 575px) {
+        .loading-info__code--div {
+          margin-bottom: 10px; } }
+      .loading-info__code--div:hover .my-coupons__tooltip {
+        display: block; }
+    .loading-info__code--btn {
+      background-color: #fff;
+      -webkit-border-top-right-radius: 10px;
+         -moz-border-radius-topright: 10px;
+              border-top-right-radius: 10px;
+      -webkit-border-bottom-right-radius: 10px;
+         -moz-border-radius-bottomright: 10px;
+              border-bottom-right-radius: 10px;
+      -webkit-border-top-left-radius: 0;
+         -moz-border-radius-topleft: 0;
+              border-top-left-radius: 0;
+      -webkit-border-bottom-left-radius: 0;
+         -moz-border-radius-bottomleft: 0;
+              border-bottom-left-radius: 0; }
+      .loading-info__code--btn:focus {
+        outline: none; }
+      .loading-info__code--btn .fa-copy {
+        font-size: 1.5rem;
+        color: #7b2bfc; }
+  .loading-info__tooltip {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 3px 5px;
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
+    bottom: 8%;
+    left: 34%;
+    position: absolute;
+    z-index: 999;
+    display: none; }
+    @media (max-width: 991px) {
+      .loading-info__tooltip {
+        bottom: 22%;
+        right: 23%; } }
+    @media (max-width: 575px) {
+      .loading-info__tooltip {
+        right: 10%; } }
   .loading-info--mt {
     margin-top: 30px; }
   .loading-info--courier {
-    border-bottom: none; }
+    border-bottom: none;
+    margin-top: 10px; }
   .loading-info__circle {
     position: relative;
     height: auto; }
@@ -5199,9 +5298,9 @@ p + p {
       .loading-info__circle--before::before {
         content: "";
         position: absolute;
-        left: 7px;
+        left: 23px;
         z-index: 100;
-        top: 45px;
+        top: 52px;
         height: 30%;
         z-index: 1;
         border-left: 2px dashed #555a64; }
@@ -5327,7 +5426,8 @@ p + p {
   transform-origin: 50% 50%;
   -moz-transform-origin: 50px 50px; }
 
-.spinner-complete, .path-complete {
+.spinner-complete,
+.path-complete {
   -webkit-animation-play-state: paused;
      -moz-animation-play-state: paused;
        -o-animation-play-state: paused;
@@ -5345,12 +5445,14 @@ p + p {
        -o-animation-fill-mode: backwards;
           animation-fill-mode: backwards; }
 
-.check, .cross {
+.check,
+.cross {
   stroke-dasharray: 110;
   stroke-dashoffset: 110;
   stroke-width: 0; }
 
-.check-complete, .cross-complete {
+.check-complete,
+.cross-complete {
   -webkit-animation: check 1s ease-in forwards;
   -moz-animation: check 1s ease-in forwards;
   -o-animation: check 1s ease-in forwards;
@@ -5488,7 +5590,8 @@ p + p {
     transform: rotate(270deg); } }
 
 /*#endregion */
-.success, .danger {
+.success,
+.danger {
   stroke: #009900;
   -moz-transition: stroke .6s;
   -o-transition: stroke .6s;
@@ -5511,9 +5614,26 @@ p + p {
 
 .ios-switch {
   position: absolute;
-  opacity: 0; }
+  opacity: 0;
+  display: none; }
+  .ios-switch__btn-group {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 15px; }
+  .ios-switch--display-off {
+    display: none;
+    -webkit-border-radius: 10px;
+       -moz-border-radius: 10px;
+            border-radius: 10px; }
+  .ios-switch--modal-btn {
+    display: none;
+    margin-right: 10px; }
   .ios-switch-div {
-    cursor: pointer; }
+    cursor: pointer;
+    display: none; }
   .ios-switch + div {
     vertical-align: middle;
     width: 40px;
@@ -5528,7 +5648,7 @@ p + p {
     -webkit-box-shadow: inset 0 0 0 0px rgba(0, 0, 0, 0.4);
        -moz-box-shadow: inset 0 0 0 0px rgba(0, 0, 0, 0.4);
             box-shadow: inset 0 0 0 0px rgba(0, 0, 0, 0.4);
-    margin: 15px 1.2em 15px 2.5em; }
+    margin: 10px 1.2em 15px 2.5em; }
     .ios-switch + div > div {
       float: left;
       width: 18px;
@@ -5580,6 +5700,9 @@ p + p {
   -webkit-border-radius: 10px;
      -moz-border-radius: 10px;
           border-radius: 10px; }
+
+.loading-end__modal-header {
+  padding-bottom: 35px; }
 
 ::-webkit-scrollbar {
   width: 10px; }
@@ -6703,8 +6826,8 @@ p + p {
   -webkit-border-radius: 5px;
      -moz-border-radius: 5px;
           border-radius: 5px;
-  bottom: 32%;
-  left: 36%;
+  bottom: 12%;
+  left: 29%;
   position: absolute;
   z-index: 999;
   display: none; }
