@@ -24,14 +24,8 @@ $(document).ready(function () {
                
             });
 
-            $(".delivery__form-label").css({
-                'order': '1',
-          
-               
-            });
-            if($('input:radio[data-item-id="date"]').prop("checked")){
-                $(".datepicker").removeClass('parsley-error')
-            }
+           
+           
            
         })
 

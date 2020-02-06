@@ -116,6 +116,10 @@
         align-items: center;
         justify-content: center;
 
+        @include respondmax(sm) {
+margin: 0 auto;
+        }
+
         i {
             color: $color-primary;
 
@@ -161,9 +165,9 @@
             @include respondmax(xs) {
 
                 top: 50%;
-                left: 45%;
-                transform: translate(-50%, 10%);
-                transfrom-origin: 45% 50%;
+                left: 28%;
+                transform: translate(-10%, 20%);
+                transfrom-origin: 0 50%;
 
             }
         }
