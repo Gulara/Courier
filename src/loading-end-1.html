@@ -1,0 +1,502 @@
+//= template/header.html
+//= template/head.html
+<div class="index-shadow"></div>
+<div class="container index">
+
+    <div class="form-row mt-5 ">
+        <div class="col-sm-12 col-md-12 col-lg-5 order-2 order-lg-1">
+            <form class="form scrollbar1 p-3 scroll-style" id="first_form" data-parsley-validate="">
+                <div class="ios-switch__btn-group">
+                    <a href="#" class="btn btn-purple ios-switch--display-on">İzlə və paylaş</a> 
+                    <a href="#"  data-toggle="modal" data-target="#loadingEndModal" class="btn btn-purple ios-switch--modal-btn">Paylaş</button> 
+                    <a href="#" class="btn btn-danger ios-switch--display-off">İmtina</a>
+                </div>
+                <!-- LOADING  START  -->
+                <!-- <div id="spin"></div>
+
+                <div id="spinner-template" style="display:none;">
+                    <div class="spinner-container">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            xml:space="preserve" x="0px" y="0px" viewBox="0, 0, 100, 100">
+                            <g>
+                                <g class="spinner-g">
+                                    <circle class="path" fill="none" stroke="#7b2bfc" stroke-width="7"
+                                        stroke-miterlimit="10" stroke-linecap="round" cx="50" cy="50" r="44" />
+                                </g>
+                                <polyline class="check" fill="none" stroke="#7b2bfc" stroke-width="8"
+                                    stroke-linecap="round" stroke-miterlimit="10" stroke-linejoin="round"
+                                    points="70,35 45,65 30,52" />
+                                <path class="cross" fill="none" stroke="#7b2bfc" stroke-width="16"
+                                    stroke-linecap="round" stroke-miterlimit="10" d="M70,30 l-40,40 M70,70 l-40,-40" />
+                            </g>
+                        </svg>
+
+                    </div>
+                    <div class="loading-spinner__text mt-1 mb-2 text-center">Sizə kuryer təyin olundu</div>
+                </div> -->
+                <!-- LOADING END -->
+                <div class="card card-body mb-4 shadow-sm">
+                    <label class="ios-switch-label">
+                        <input type="checkbox" class="ios-switch tinyswitch" checked />
+                        <div class="ios-switch-div">
+                            <div></div>
+                        </div>
+                    </label>
+                    <div class="loading-info-border">
+                        <div class="loading-info__heading">Kuryerin adı</div>
+                        <p class="loading-info--courier-name">Mammad Mammadov</p>
+                    </div>
+                    <div class="loading-info-border mb-0 loading-info--courier">
+                        <div class="loading-info__heading">Kuryerin nömrəsi</div>
+                        <p class="loading-info--courier-number mb-0">+994 55 444 33 22</p>
+                    </div>
+
+                </div>
+
+                <div class="loading-info__circle loading-info">
+                    <label class="ios-switch-label">
+                        <input type="checkbox" class="ios-switch tinyswitch" checked />
+                        <div class="ios-switch-div">
+                            <div></div>
+                        </div>
+                    </label>
+                    <div class="loading-info__circle--before">
+                        <i class="fas fa-circle mr-3 mt-1"></i>
+                        <div class="">
+                            <div class="loading-info__heading">Götürülmə ünvanı</div>
+                            <p class="loading-info--from">94 Təbriz küç.</p>
+                        </div>
+                    </div>
+                    <div class="loading-info__circle--after">
+                        <i class="fas fa-circle mr-3 mt-1"></i>
+                        <div class=" ">
+                            <div class="loading-info__heading">Çatdırılma ünvanı</div>
+                            <p class="loading-info--destination">94 Nizami küç.</p>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                <div class="loading-info loading-info--payment-group">
+                    <label class="ios-switch-label">
+                        <input type="checkbox" class="ios-switch tinyswitch" checked />
+                        <div class="ios-switch-div">
+                            <div></div>
+                        </div>
+                    </label>
+                    <div class="loading-info--payment-group-div">
+                        <div>
+                            <div class="loading-info__heading">Ödəniş növü</div>
+                            <p class="loading-info--payment">Nəğd</p>
+                        </div>
+                        <p class="loading-info--money">5.20 AZN</p>
+                    </div>
+                    
+                </div>
+                <div class="loading-info loading-info__urgent-type">
+                    <label class="ios-switch-label">
+                        <input type="checkbox" class="ios-switch tinyswitch" checked />
+                        <div class="ios-switch-div">
+                            <div></div>
+                        </div>
+                    </label>
+                    <div class="loading-info__heading">Çatdırılma növü</div>
+                    <p class="loading-info--urgent">Təcili</p>
+                </div>
+                <div class="loading-info loading-info__urgent-time">
+                    <label class="ios-switch-label">
+                        <input type="checkbox" class="ios-switch tinyswitch" checked />
+                        <div class="ios-switch-div">
+                            <div></div>
+                        </div>
+                    </label>
+                    <div class=" loading-info__urgent-time-div">
+                        <div>
+                            <div class="loading-info__heading">Çatdırılma vaxtı</div>
+                            <div>Vaxt təyin edilib</div>
+                        </div>
+    
+                        <div class="loading-info--delivery-time">
+                            <span> 16/12/2019 </span>
+                            <span>15:00</span>
+                        </div>
+                    </div>
+                   
+                </div>
+
+                <div class="loading-info ">
+                    <label class="ios-switch-label">
+                        <input type="checkbox" class="ios-switch tinyswitch" checked />
+                        <div class="ios-switch-div">
+                            <div></div>
+                        </div>
+                    </label>
+                    <div class="loading-info__heading">Receiver</div>
+                    <p class="loading-info--receiver">Mammad Mammadov</p>
+                </div>
+                <div class="loading-info ">
+                    <label class="ios-switch-label">
+                        <input type="checkbox" class="ios-switch tinyswitch" checked />
+                        <div class="ios-switch-div">
+                            <div></div>
+                        </div>
+                    </label>
+                    <div class="loading-info__heading">Receiver Number</div>
+                    <p class="loading-info--receiver-number">+994-55-444-33-22</p>
+                </div>
+
+                <div class="loading-info ">
+                    <label class="ios-switch-label">
+                        <input type="checkbox" class="ios-switch tinyswitch" checked />
+                        <div class="ios-switch-div">
+                            <div></div>
+                        </div>
+                    </label>
+                    <div class="loading-info__heading mb-3">Daşınacaq yükün fotosu</div>
+                    <div id="lightgallery" class="lightgallery">
+
+                        <div class="lightgallery__div"
+                            data-responsive="https://sachinchoolur.github.io/lightGallery/static/img/1-375.jpg 375, https://sachinchoolur.github.io/lightGallery/static/img/1-480.jpg 480, https://sachinchoolur.github.io/lightGallery/static/img/1.jpg 800"
+                            data-src="https://sachinchoolur.github.io/lightGallery/static/img/1-1600.jpg"
+                            data-sub-html="<h4>Fading Light</h4><p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>"
+                            data-pinterest-text="Pin it" data-tweet-text="share on twitter ">
+                            <a href="" class="lightgallery__link">
+                                <img class="img-responsive img-fluid lightgallery__link--img"
+                                    src="https://sachinchoolur.github.io/lightGallery/static/img/thumb-1.jpg"
+                                    alt="thumb">
+                                <div class="lightgallery__link--poster">
+                                    <img src="https://sachinchoolur.github.io/lightGallery/static/img/zoom.png"
+                                        alt="zoom">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="lightgallery__div"
+                            data-responsive="https://sachinchoolur.github.io/lightGallery/static/img/2-375.jpg 375, https://sachinchoolur.github.io/lightGallery/static/img/2-480.jpg 480, https://sachinchoolur.github.io/lightGallery/static/img/2.jpg 800"
+                            data-src="https://sachinchoolur.github.io/lightGallery/static/img/2-1600.jpg"
+                            data-sub-html="<h4>Bowness Bay</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time....</p>"
+                            data-pinterest-text="Pin it" data-tweet-text="share on twitter ">
+                            <a href="" class="lightgallery__link">
+                                <img class="img-responsive img-fluid lightgallery__link--img"
+                                    src="https://sachinchoolur.github.io/lightGallery/static/img/thumb-2.jpg"
+                                    alt="thumb">
+                                <div class="lightgallery__link--poster">
+                                    <img src="https://sachinchoolur.github.io/lightGallery/static/img/zoom.png"
+                                        alt="zoom">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="lightgallery__div"
+                            data-responsive="https://sachinchoolur.github.io/lightGallery/static/img/13-375.jpg 375, https://sachinchoolur.github.io/lightGallery/static/img/13-480.jpg 480, https://sachinchoolur.github.io/lightGallery/static/img/13.jpg 800"
+                            data-src="https://sachinchoolur.github.io/lightGallery/static/img/13-1600.jpg"
+                            data-sub-html="<h4>Sunset Serenity</h4><p>A gorgeous Sunset tonight captured at Coniston Water....</p>"
+                            data-pinterest-text="Pin it" data-tweet-text="share on twitter ">
+                            <a href="" class="lightgallery__link">
+                                <img class="img-responsive img-fluid lightgallery__link--img"
+                                    src="https://sachinchoolur.github.io/lightGallery/static/img/thumb-13.jpg"
+                                    alt="thumb">
+                                <div class="lightgallery__link--poster">
+                                    <img src="https://sachinchoolur.github.io/lightGallery/static/img/zoom.png"
+                                        alt="zoom">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="lightgallery__div"
+                            data-responsive="https://sachinchoolur.github.io/lightGallery/static/img/13-375.jpg 375, https://sachinchoolur.github.io/lightGallery/static/img/13-480.jpg 480, https://sachinchoolur.github.io/lightGallery/static/img/13.jpg 800"
+                            data-src="https://sachinchoolur.github.io/lightGallery/static/img/13-1600.jpg"
+                            data-sub-html="<h4>Sunset Serenity</h4><p>A gorgeous Sunset tonight captured at Coniston Water....</p>"
+                            data-pinterest-text="Pin it" data-tweet-text="share on twitter ">
+                            <a href="" class="lightgallery__link">
+                                <img class="img-responsive img-fluid lightgallery__link--img"
+                                    src="https://sachinchoolur.github.io/lightGallery/static/img/thumb-13.jpg"
+                                    alt="thumb">
+                                <div class="lightgallery__link--poster">
+                                    <img src="https://sachinchoolur.github.io/lightGallery/static/img/zoom.png"
+                                        alt="zoom">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="lightgallery__div"
+                            data-responsive="https://sachinchoolur.github.io/lightGallery/static/img/13-375.jpg 375, https://sachinchoolur.github.io/lightGallery/static/img/13-480.jpg 480, https://sachinchoolur.github.io/lightGallery/static/img/13.jpg 800"
+                            data-src="https://sachinchoolur.github.io/lightGallery/static/img/13-1600.jpg"
+                            data-sub-html="<h4>Sunset Serenity</h4><p>A gorgeous Sunset tonight captured at Coniston Water....</p>"
+                            data-pinterest-text="Pin it" data-tweet-text="share on twitter ">
+                            <a href="" class="lightgallery__link">
+                                <img class="img-responsive img-fluid lightgallery__link--img"
+                                    src="https://sachinchoolur.github.io/lightGallery/static/img/thumb-13.jpg"
+                                    alt="thumb">
+                                <div class="lightgallery__link--poster">
+                                    <img src="https://sachinchoolur.github.io/lightGallery/static/img/zoom.png"
+                                        alt="zoom">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="loading-info ">
+                    <label class="ios-switch-label">
+                        <input type="checkbox" class="ios-switch tinyswitch" checked />
+                        <div class="ios-switch-div">
+                            <div></div>
+                        </div>
+                    </label>
+                    <div class="loading-info__heading">Qeydlər</div>
+                    <p class="loading-info--note">Lorem ipsum dolor sit amet consectetur adipisicing elit. At animi
+                        soluta maxime, sequi beatae
+                        quod ratione alias ipsum labore totam?</p>
+                </div>
+
+            </form>
+            <!-- EXAMPLE BUTTON -->
+            <!-- <button class="btn btn-2 btn-purple  btn-submit" type="submit" name="submit">
+                        <span>Button</span>
+                    </button> -->
+
+
+        </div>
+
+        <!--    MAP -->
+        <div class="col-sm-12 col-md-12 col-lg-7 col-xl-7 map order-1 order-lg-2">
+            <div class=" divider-side divider__side d-lg-block transform-flip-y d-none"></div>
+            <div id="map_canvas"></div>
+
+
+        </div>
+
+
+    </div>
+    <div class="container">
+        <div class="index__content mt-2">
+            <div class="index__content--h1-group p-3">
+                <div class="mr-2">Axtarış sözü :</div>
+                <h1 class="index__content--h1-group--h1">Gucci</h1>
+            </div>
+        </div>
+        <div class="index__content__div">
+            <div class="index__content__div--img"><img src="assets/img/about-2.jpg" alt="about" class="img-fluid"></div>
+            <p>
+                Lorem
+                ipsum dolor sit amet, consectetur adipisicing elit. Molestias distinctio est magni molestiae id error
+                explicabo, expedita itaque saepe corrupti, alias laudantium? Saepe laborum quasi corporis atque autem
+                ipsam
+
+            </p>
+
+        </div>
+    </div>
+
+    <div class="index__search mt-2">
+        <div class=" p-3">
+            <div class="mr-2">Populyar axtarışlar :</div>
+            <div class="index__search__content">
+                <div class="index__search__content__1">
+                    <a href="#" class="index__search__content__1--item">
+                        Lorem, ipsum 1.
+                    </a>
+                    <a href="#" class="index__search__content__1--item">
+                        Loremipsum 2.
+                    </a>
+                    <a href="#" class="index__search__content__1--item">
+                        Lorem, ipsum dolar 3.
+                    </a>
+                    <a href="#" class="index__search__content__1--item">
+                        Lorem, ipsum 4.
+                    </a>
+                    <a href="#" class="index__search__content__1--item">
+                        Lorem ipsum dolor sit amet.
+                    </a>
+                    <a href="#" class="index__search__content__1--item">
+                        Lorem, ipsum 6.
+                    </a>
+                    <a href="#" class="index__search__content__1--item">
+                        Lorem, ipsum 7.
+                    </a>
+                    <a href="#" class="index__search__content__1--item">
+                        Lorem, ipsum 8.
+                    </a>
+                    <a href="#" class="index__search__content__1--item">
+                        Lorem, ipsum 9.
+                    </a>
+                    <a href="#" class="index__search__content__1--item">
+                        Lorem, ipsum 10.
+                    </a>
+
+                </div>
+                <div class=" search-carousel owl-carousel  owl-theme">
+                    <a href="#" class="search-carousel__item">
+                        Lorem, ipsum 1.
+                    </a>
+                    <a href="#" class="search-carousel__item">
+                        Loremipsum 2.
+                    </a>
+                    <a href="#" class="search-carousel__item">
+                        Lorem, ipsum dolar 3.
+                    </a>
+                    <a href="#" class="search-carousel__item">
+                        Lorem, ipsum 4.
+                    </a>
+                    <a href="#" class="search-carousel__item">
+                        Lorem ipsum dolor sit amet.
+                    </a>
+                    <a href="#" class="search-carousel__item">
+                        Lorem, ipsum 6.
+                    </a>
+                    <a href="#" class="search-carousel__item">
+                        Lorem, ipsum 7.
+                    </a>
+                    <a href="#" class="search-carousel__item">
+                        Lorem, ipsum 8.
+                    </a>
+                    <a href="#" class="search-carousel__item">
+                        Lorem, ipsum 9.
+                    </a>
+                    <a href="#" class="search-carousel__item">
+                        Lorem, ipsum 10.
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+<!-- Modal -->
+<div class="modal fade" id="loadingEndModal" tabindex="-1" role="dialog" aria-labelledby="loadingEndModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header loading-end__modal-header">
+          <!-- <h5 class="modal-title" id="loadingEndModalLabel"></h5> -->
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="loading-info-modal">
+                <div class="loading-info__heading">Kuryer məlumatları</div>
+                <label class="ios-switch-label">
+                    <input type="checkbox" class="ios-switch tinyswitch" checked />
+                    <div class="ios-switch-div">
+                        <div></div>
+                    </div>
+                </label>
+            </div>
+            <div class="loading-info-modal">
+                <div class="loading-info__heading">Ünvanlar</div>
+                <label class="ios-switch-label">
+                    <input type="checkbox" class="ios-switch tinyswitch" checked />
+                    <div class="ios-switch-div">
+                        <div></div>
+                    </div>
+                </label>
+            </div>
+            <div class="loading-info-modal">
+                <div class="loading-info__heading">Ödəniş növü</div>
+                <label class="ios-switch-label">
+                    <input type="checkbox" class="ios-switch tinyswitch" checked />
+                    <div class="ios-switch-div">
+                        <div></div>
+                    </div>
+                </label>
+            </div>
+            <div class="loading-info-modal">
+                <div class="loading-info__heading">Çatdırılma növü</div>
+                <label class="ios-switch-label">
+                    <input type="checkbox" class="ios-switch tinyswitch" checked />
+                    <div class="ios-switch-div">
+                        <div></div>
+                    </div>
+                </label>
+            </div>
+            <div class="loading-info-modal">
+                <div class="loading-info__heading">Çatdırılma vaxtı</div>
+                <label class="ios-switch-label">
+                    <input type="checkbox" class="ios-switch tinyswitch" checked />
+                    <div class="ios-switch-div">
+                        <div></div>
+                    </div>
+                </label>
+            </div>
+            <div class="loading-info-modal">
+                <div class="loading-info__heading">Receiver</div>
+                <label class="ios-switch-label">
+                    <input type="checkbox" class="ios-switch tinyswitch" checked />
+                    <div class="ios-switch-div">
+                        <div></div>
+                    </div>
+                </label>
+            </div>
+            <div class="loading-info-modal">
+                <div class="loading-info__heading">Receiver Number</div>
+                <label class="ios-switch-label">
+                    <input type="checkbox" class="ios-switch tinyswitch" checked />
+                    <div class="ios-switch-div">
+                        <div></div>
+                    </div>
+                </label>
+            </div>
+            <div class="loading-info-modal">
+                <div class="loading-info__heading">Daşınacaq yükün fotosu</div>
+                <label class="ios-switch-label">
+                    <input type="checkbox" class="ios-switch tinyswitch" checked />
+                    <div class="ios-switch-div">
+                        <div></div>
+                    </div>
+                </label>
+            </div>
+            <div class="loading-info-modal">
+                <div class="loading-info__heading">Qeydlər</div>
+                <label class="ios-switch-label">
+                    <input type="checkbox" class="ios-switch tinyswitch" checked />
+                    <div class="ios-switch-div">
+                        <div></div>
+                    </div>
+                </label>
+            </div>
+
+            <div class="loading-info__code--container">
+                <div class="loading-info__code--div">
+                    <div class="loading-info__code">353635</div>
+
+                    <button class="loading-info__code--btn btn btn-purple">Copy</button>
+                </div>
+                <div class="loading-info__tooltip"></div>
+
+               
+
+            </div>
+            <div class=" ml-2">Və ya </div>
+            <div class="mail-coupon__social-div">
+                <ul id="webSocialList"  class="mail-coupon__social-list">
+                    <li id="webSocialIcon" class="mail-coupon__social-li">
+                        <i class="fa fa-share-alt"></i>
+                    </li>
+                    <li id="webSocialTwitter" class="mail-coupon__social-li"><a href="#"
+                            target="_blank"><i class="fab fa-twitter"></i></a></li>
+                    <li id="webSocialGoogle" class="mail-coupon__social-li">
+                        
+                        <a href="#" target="_blank">
+                            <i class="fab fa-google-plus"></i>
+                        </a></li>
+                    <li id="webSocialLinkedin" class="mail-coupon__social-li">
+                        <a
+                            href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </li>
+                    
+                </ul>
+            </div>
+           
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+
+
+//= template/foot.html
+//= template/footer.html
+//= template/footer-loading-end-1.html
