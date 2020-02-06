@@ -15,6 +15,8 @@ $(document).ready(function () {
         $('.ios-switch--display-on').css({
             'display': 'block'
         });
+        $('.ios-switch').parent().parent().removeClass('ios-switch-disable');
+        $('.ios-switch').prop("checked", "true")
     });
 
     // $(document).on({
@@ -44,37 +46,37 @@ $(document).ready(function () {
     //         $tempElement.remove();
     //     }
     // }, '.loading-info__code--div');
- 
+
 
     $('#loadingEndModal').on('shown.bs.modal', function (e) {
-       $(document).on({
-        mouseenter: function () {
-            mouse_is_inside = true;
-            $(".loading-info__tooltip").css({
-                'display': "block"
-            });
-            $(".loading-info__tooltip").html("Copy");
-        },
+        $(document).on({
+            mouseenter: function () {
+                mouse_is_inside = true;
+                $(".loading-info__tooltip").css({
+                    'display': "block"
+                });
+                $(".loading-info__tooltip").html("Copy");
+            },
 
-        mouseleave: function () {
-            mouse_is_inside = false;
-            $(".loading-info__tooltip").css({
-                'display': "none"
-            });
-        },
-        click: function () {
-            $(".loading-info__tooltip").css({
-                'display': "block"
-            });
-            $(".loading-info__tooltip").html("Copied!");
-            var $tempElement = $("<input>");
-            $("body").append($tempElement);
-            $tempElement.val($(this).find(".loading-info__code").text()).select();
-            document.execCommand("Copy");
-            $tempElement.remove();
-        }
-    }, '.loading-info__code--div');
-      })
+            mouseleave: function () {
+                mouse_is_inside = false;
+                $(".loading-info__tooltip").css({
+                    'display': "none"
+                });
+            },
+            click: function () {
+                $(".loading-info__tooltip").css({
+                    'display': "block"
+                });
+                $(".loading-info__tooltip").html("Copied!");
+                var $tempElement = $("<input>");
+                $("body").append($tempElement);
+                $tempElement.val($(this).find(".loading-info__code").text()).select();
+                document.execCommand("Copy");
+                $tempElement.remove();
+            }
+        }, '.loading-info__code--div');
+    })
 
     // COPY CODE 
     // $(".loading-info__code--div ")

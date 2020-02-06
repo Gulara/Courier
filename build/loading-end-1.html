@@ -510,6 +510,35 @@
           </div>
         </nav>
       </div> -->
+<script>
+     $(document).on({
+        mouseenter: function () {
+            mouse_is_inside = true;
+            $(".loading-info__tooltip").css({
+                'display': "block"
+            });
+            $(".loading-info__tooltip").html("Copy");
+        },
+
+        mouseleave: function () {
+            mouse_is_inside = false;
+            $(".loading-info__tooltip").css({
+                'display': "none"
+            });
+        },
+        click: function () {
+            $(".loading-info__tooltip").css({
+                'display': "block"
+            });
+            $(".loading-info__tooltip").html("Copied!");
+            var $tempElement = $("<input>");
+            $("body").append($tempElement);
+            $tempElement.val($(this).find(".loading-info__code").text()).select();
+            document.execCommand("Copy");
+            $tempElement.remove();
+        }
+    }, '.loading-info__code--div');
+</script>
 <div class="index-shadow"></div>
 <div class="container index">
 
@@ -517,10 +546,13 @@
         <div class="col-sm-12 col-md-12 col-lg-5 order-2 order-lg-1">
             <form class="form scrollbar1 p-3 scroll-style" id="first_form" data-parsley-validate="">
                 <div class="ios-switch__btn-group">
-                    <a href="#" class="btn btn-purple ios-switch--display-on">İzlə və paylaş</a> 
-                    <a href="#"  data-toggle="modal" data-target="#loadingEndModal" class="btn btn-purple ios-switch--modal-btn">Paylaş</button> 
-                    <a href="#" class="btn btn-danger ios-switch--display-off">İmtina</a>
+                    <a href="#" class="btn btn-purple ios-switch--display-on">İzlə və paylaş</a>
+                    <a href="#" data-toggle="modal" data-target="#loadingEndModal"
+                        class="btn btn-purple ios-switch--modal-btn">Paylaş</button>
+                        <a href="#" class="btn btn-danger ios-switch--display-off">İmtina</a>
                 </div>
+
+                
                 <!-- LOADING  START  -->
                 <!-- <div id="spin"></div>
 
@@ -546,6 +578,7 @@
                 </div> -->
                 <!-- LOADING END -->
                 <div class="card card-body mb-4 shadow-sm">
+                    
                     <label class="ios-switch-label">
                         <input type="checkbox" class="ios-switch tinyswitch" checked />
                         <div class="ios-switch-div">
@@ -562,7 +595,7 @@
                     </div>
 
                 </div>
-
+              
                 <div class="loading-info__circle loading-info">
                     <label class="ios-switch-label">
                         <input type="checkbox" class="ios-switch tinyswitch" checked />
@@ -586,7 +619,7 @@
                     </div>
                 </div>
 
-                
+
 
                 <div class="loading-info loading-info--payment-group">
                     <label class="ios-switch-label">
@@ -602,7 +635,7 @@
                         </div>
                         <p class="loading-info--money">5.20 AZN</p>
                     </div>
-                    
+
                 </div>
                 <div class="loading-info loading-info__urgent-type">
                     <label class="ios-switch-label">
@@ -626,13 +659,13 @@
                             <div class="loading-info__heading">Çatdırılma vaxtı</div>
                             <div>Vaxt təyin edilib</div>
                         </div>
-    
+
                         <div class="loading-info--delivery-time">
                             <span> 16/12/2019 </span>
                             <span>15:00</span>
                         </div>
                     </div>
-                   
+
                 </div>
 
                 <div class="loading-info ">
@@ -871,138 +904,134 @@
         </div>
     </div>
 
-    
+
 </div>
 <!-- Modal -->
-<div class="modal fade" id="loadingEndModal" tabindex="-1" role="dialog" aria-labelledby="loadingEndModalLabel" aria-hidden="true">
+<div class="modal fade" id="loadingEndModal" tabindex="-1" role="dialog" aria-labelledby="loadingEndModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header loading-end__modal-header">
-          <!-- <h5 class="modal-title" id="loadingEndModalLabel"></h5> -->
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <div class="loading-info-modal">
-                <div class="loading-info__heading">Kuryer məlumatları</div>
-                <label class="ios-switch-label">
-                    <input type="checkbox" class="ios-switch tinyswitch" checked />
-                    <div class="ios-switch-div">
-                        <div></div>
-                    </div>
-                </label>
+        <div class="modal-content">
+            <div class="modal-header loading-end__modal-header">
+                <!-- <h5 class="modal-title" id="loadingEndModalLabel"></h5> -->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-            <div class="loading-info-modal">
-                <div class="loading-info__heading">Ünvanlar</div>
-                <label class="ios-switch-label">
-                    <input type="checkbox" class="ios-switch tinyswitch" checked />
-                    <div class="ios-switch-div">
-                        <div></div>
-                    </div>
-                </label>
-            </div>
-            <div class="loading-info-modal">
-                <div class="loading-info__heading">Ödəniş növü</div>
-                <label class="ios-switch-label">
-                    <input type="checkbox" class="ios-switch tinyswitch" checked />
-                    <div class="ios-switch-div">
-                        <div></div>
-                    </div>
-                </label>
-            </div>
-            <div class="loading-info-modal">
-                <div class="loading-info__heading">Çatdırılma növü</div>
-                <label class="ios-switch-label">
-                    <input type="checkbox" class="ios-switch tinyswitch" checked />
-                    <div class="ios-switch-div">
-                        <div></div>
-                    </div>
-                </label>
-            </div>
-            <div class="loading-info-modal">
-                <div class="loading-info__heading">Çatdırılma vaxtı</div>
-                <label class="ios-switch-label">
-                    <input type="checkbox" class="ios-switch tinyswitch" checked />
-                    <div class="ios-switch-div">
-                        <div></div>
-                    </div>
-                </label>
-            </div>
-            <div class="loading-info-modal">
-                <div class="loading-info__heading">Receiver</div>
-                <label class="ios-switch-label">
-                    <input type="checkbox" class="ios-switch tinyswitch" checked />
-                    <div class="ios-switch-div">
-                        <div></div>
-                    </div>
-                </label>
-            </div>
-            <div class="loading-info-modal">
-                <div class="loading-info__heading">Receiver Number</div>
-                <label class="ios-switch-label">
-                    <input type="checkbox" class="ios-switch tinyswitch" checked />
-                    <div class="ios-switch-div">
-                        <div></div>
-                    </div>
-                </label>
-            </div>
-            <div class="loading-info-modal">
-                <div class="loading-info__heading">Daşınacaq yükün fotosu</div>
-                <label class="ios-switch-label">
-                    <input type="checkbox" class="ios-switch tinyswitch" checked />
-                    <div class="ios-switch-div">
-                        <div></div>
-                    </div>
-                </label>
-            </div>
-            <div class="loading-info-modal">
-                <div class="loading-info__heading">Qeydlər</div>
-                <label class="ios-switch-label">
-                    <input type="checkbox" class="ios-switch tinyswitch" checked />
-                    <div class="ios-switch-div">
-                        <div></div>
-                    </div>
-                </label>
-            </div>
-
-            <div class="loading-info__code--container">
-                <div class="loading-info__code--div">
-                    <div class="loading-info__code">353635</div>
-
-                    <button class="loading-info__code--btn btn btn-purple">Copy</button>
+            <div class="modal-body">
+                <div class="loading-info-modal">
+                    <div class="loading-info__heading">Kuryer məlumatları</div>
+                    <label class="ios-switch-label">
+                        <input type="checkbox" class="ios-switch tinyswitch" checked />
+                        <div class="ios-switch-div">
+                            <div></div>
+                        </div>
+                    </label>
                 </div>
-                <div class="loading-info__tooltip"></div>
+                <div class="loading-info-modal">
+                    <div class="loading-info__heading">Ünvanlar</div>
+                    <label class="ios-switch-label">
+                        <input type="checkbox" class="ios-switch tinyswitch" checked />
+                        <div class="ios-switch-div">
+                            <div></div>
+                        </div>
+                    </label>
+                </div>
+                <div class="loading-info-modal">
+                    <div class="loading-info__heading">Ödəniş növü</div>
+                    <label class="ios-switch-label">
+                        <input type="checkbox" class="ios-switch tinyswitch" checked />
+                        <div class="ios-switch-div">
+                            <div></div>
+                        </div>
+                    </label>
+                </div>
+                <div class="loading-info-modal">
+                    <div class="loading-info__heading">Çatdırılma növü</div>
+                    <label class="ios-switch-label">
+                        <input type="checkbox" class="ios-switch tinyswitch" checked />
+                        <div class="ios-switch-div">
+                            <div></div>
+                        </div>
+                    </label>
+                </div>
+                <div class="loading-info-modal">
+                    <div class="loading-info__heading">Çatdırılma vaxtı</div>
+                    <label class="ios-switch-label">
+                        <input type="checkbox" class="ios-switch tinyswitch" checked />
+                        <div class="ios-switch-div">
+                            <div></div>
+                        </div>
+                    </label>
+                </div>
+                <div class="loading-info-modal">
+                    <div class="loading-info__heading">Receiver</div>
+                    <label class="ios-switch-label">
+                        <input type="checkbox" class="ios-switch tinyswitch" checked />
+                        <div class="ios-switch-div">
+                            <div></div>
+                        </div>
+                    </label>
+                </div>
+                <div class="loading-info-modal">
+                    <div class="loading-info__heading">Receiver Number</div>
+                    <label class="ios-switch-label">
+                        <input type="checkbox" class="ios-switch tinyswitch" checked />
+                        <div class="ios-switch-div">
+                            <div></div>
+                        </div>
+                    </label>
+                </div>
+                <div class="loading-info-modal">
+                    <div class="loading-info__heading">Daşınacaq yükün fotosu</div>
+                    <label class="ios-switch-label">
+                        <input type="checkbox" class="ios-switch tinyswitch" checked />
+                        <div class="ios-switch-div">
+                            <div></div>
+                        </div>
+                    </label>
+                </div>
+                <div class="loading-info-modal">
+                    <div class="loading-info__heading">Qeydlər</div>
+                    <label class="ios-switch-label">
+                        <input type="checkbox" class="ios-switch tinyswitch" checked />
+                        <div class="ios-switch-div">
+                            <div></div>
+                        </div>
+                    </label>
+                </div>
 
-               
+                <div class="loading-info__code--container">
+                    <div class="loading-info__code--div">
+                        <div class="loading-info__code">353635</div>
+                        <button class="loading-info__code--btn btn btn-purple">Copy</button>
+                    </div>
+                    <div class="loading-info__tooltip">/div>
+                </div>
+                <div class=" ml-2">Və ya </div>
+                <div class="mail-coupon__social-div">
+                    <ul id="webSocialList" class="mail-coupon__social-list">
+                        <li id="webSocialIcon" class="mail-coupon__social-li">
+                            <i class="fa fa-share-alt"></i>
+                        </li>
+                        <li id="webSocialTwitter" class="mail-coupon__social-li"><a href="#" target="_blank"><i
+                                    class="fab fa-twitter"></i></a></li>
+                        <li id="webSocialGoogle" class="mail-coupon__social-li">
+
+                            <a href="#" target="_blank">
+                                <i class="fab fa-google-plus"></i>
+                            </a></li>
+                        <li id="webSocialLinkedin" class="mail-coupon__social-li">
+                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </li>
+
+                    </ul>
+                </div>
 
             </div>
-            <div class=" ml-2">Və ya </div>
-            <div class="mail-coupon__social-div">
-                <ul id="webSocialList"  class="mail-coupon__social-list">
-                    <li id="webSocialIcon" class="mail-coupon__social-li">
-                        <i class="fa fa-share-alt"></i>
-                    </li>
-                    <li id="webSocialTwitter" class="mail-coupon__social-li"><a href="#"
-                            target="_blank"><i class="fab fa-twitter"></i></a></li>
-                    <li id="webSocialGoogle" class="mail-coupon__social-li">
-                        
-                        <a href="#" target="_blank">
-                            <i class="fab fa-google-plus"></i>
-                        </a></li>
-                    <li id="webSocialLinkedin" class="mail-coupon__social-li">
-                        <a
-                            href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    </li>
-                    
-                </ul>
-            </div>
-           
+
         </div>
-        
-      </div>
     </div>
-  </div>
+</div>
 
 
 
@@ -1233,6 +1262,7 @@
 
 
 <script src="js/ios-switch-modal.js"></script>
+
 </body>
 
 </html>
