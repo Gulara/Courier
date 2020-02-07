@@ -8,7 +8,7 @@ $(document).ready(function () {
         if ($(this)[0].checked) {
             iosSwitch = "true";
             $(this).parent().parent().removeClass('ios-switch-disable');
-
+         
         } else {
             iosSwitch = "false";
             $(this).parent().parent().addClass('ios-switch-disable');
