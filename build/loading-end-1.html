@@ -510,35 +510,7 @@
           </div>
         </nav>
       </div> -->
-<script>
-     $(document).on({
-        mouseenter: function () {
-            mouse_is_inside = true;
-            $(".loading-info__tooltip").css({
-                'display': "block"
-            });
-            $(".loading-info__tooltip").html("Copy");
-        },
 
-        mouseleave: function () {
-            mouse_is_inside = false;
-            $(".loading-info__tooltip").css({
-                'display': "none"
-            });
-        },
-        click: function () {
-            $(".loading-info__tooltip").css({
-                'display': "block"
-            });
-            $(".loading-info__tooltip").html("Copied!");
-            var $tempElement = $("<input>");
-            $("body").append($tempElement);
-            $tempElement.val($(this).find(".loading-info__code").text()).select();
-            document.execCommand("Copy");
-            $tempElement.remove();
-        }
-    }, '.loading-info__code--div');
-</script>
 <div class="index-shadow"></div>
 <div class="container index">
 
@@ -580,7 +552,7 @@
                 <div class="card card-body mb-4 shadow-sm">
                     
                     <label class="ios-switch-label">
-                        <input type="checkbox" class="ios-switch tinyswitch" checked />
+                        <input type="checkbox" class="ios-switch tinyswitch"  data-check="ios-switch-1" checked />
                         <div class="ios-switch-div">
                             <div></div>
                         </div>
@@ -598,7 +570,7 @@
               
                 <div class="loading-info__circle loading-info">
                     <label class="ios-switch-label">
-                        <input type="checkbox" class="ios-switch tinyswitch" checked />
+                        <input type="checkbox" class="ios-switch tinyswitch" data-check="ios-switch-2" checked />
                         <div class="ios-switch-div">
                             <div></div>
                         </div>
@@ -623,7 +595,7 @@
 
                 <div class="loading-info loading-info--payment-group">
                     <label class="ios-switch-label">
-                        <input type="checkbox" class="ios-switch tinyswitch" checked />
+                        <input type="checkbox" class="ios-switch tinyswitch"  data-check="ios-switch-3" checked />
                         <div class="ios-switch-div">
                             <div></div>
                         </div>
@@ -639,7 +611,7 @@
                 </div>
                 <div class="loading-info loading-info__urgent-type">
                     <label class="ios-switch-label">
-                        <input type="checkbox" class="ios-switch tinyswitch" checked />
+                        <input type="checkbox" class="ios-switch tinyswitch" data-check="ios-switch-4" checked />
                         <div class="ios-switch-div">
                             <div></div>
                         </div>
@@ -649,7 +621,7 @@
                 </div>
                 <div class="loading-info loading-info__urgent-time">
                     <label class="ios-switch-label">
-                        <input type="checkbox" class="ios-switch tinyswitch" checked />
+                        <input type="checkbox" class="ios-switch tinyswitch" data-check="ios-switch-5"  checked />
                         <div class="ios-switch-div">
                             <div></div>
                         </div>
@@ -670,7 +642,7 @@
 
                 <div class="loading-info ">
                     <label class="ios-switch-label">
-                        <input type="checkbox" class="ios-switch tinyswitch" checked />
+                        <input type="checkbox" class="ios-switch tinyswitch" data-check="ios-switch-6"  checked />
                         <div class="ios-switch-div">
                             <div></div>
                         </div>
@@ -680,7 +652,7 @@
                 </div>
                 <div class="loading-info ">
                     <label class="ios-switch-label">
-                        <input type="checkbox" class="ios-switch tinyswitch" checked />
+                        <input type="checkbox" class="ios-switch tinyswitch"  data-check="ios-switch-7" checked />
                         <div class="ios-switch-div">
                             <div></div>
                         </div>
@@ -691,7 +663,7 @@
 
                 <div class="loading-info ">
                     <label class="ios-switch-label">
-                        <input type="checkbox" class="ios-switch tinyswitch" checked />
+                        <input type="checkbox" class="ios-switch tinyswitch"  data-check="ios-switch-8" checked />
                         <div class="ios-switch-div">
                             <div></div>
                         </div>
@@ -780,7 +752,7 @@
 
                 <div class="loading-info ">
                     <label class="ios-switch-label">
-                        <input type="checkbox" class="ios-switch tinyswitch" checked />
+                        <input type="checkbox" class="ios-switch tinyswitch"  data-check="ios-switch-9" checked />
                         <div class="ios-switch-div">
                             <div></div>
                         </div>
@@ -792,12 +764,6 @@
                 </div>
 
             </form>
-            <!-- EXAMPLE BUTTON -->
-            <!-- <button class="btn btn-2 btn-purple  btn-submit" type="submit" name="submit">
-                        <span>Button</span>
-                    </button> -->
-
-
         </div>
 
         <!--    MAP -->
@@ -911,89 +877,89 @@
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header loading-end__modal-header">
+            <div class="modal-header">
                 <!-- <h5 class="modal-title" id="loadingEndModalLabel"></h5> -->
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close pt-1" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body  pt-1">
                 <div class="loading-info-modal">
-                    <div class="loading-info__heading">Kuryer məlumatları</div>
+                    <div class="loading-info__heading mt-1">Kuryer məlumatları</div>
                     <label class="ios-switch-label">
-                        <input type="checkbox" class="ios-switch tinyswitch" checked />
+                        <input type="checkbox" class="ios-switch tinyswitch" data-check-modal="ios-switch-1"  checked />
                         <div class="ios-switch-div">
                             <div></div>
                         </div>
                     </label>
                 </div>
                 <div class="loading-info-modal">
-                    <div class="loading-info__heading">Ünvanlar</div>
+                    <div class="loading-info__heading mt-1">Ünvanlar</div>
                     <label class="ios-switch-label">
-                        <input type="checkbox" class="ios-switch tinyswitch" checked />
+                        <input type="checkbox" class="ios-switch tinyswitch" data-check-modal="ios-switch-2" checked />
                         <div class="ios-switch-div">
                             <div></div>
                         </div>
                     </label>
                 </div>
                 <div class="loading-info-modal">
-                    <div class="loading-info__heading">Ödəniş növü</div>
+                    <div class="loading-info__heading mt-1">Ödəniş növü</div>
                     <label class="ios-switch-label">
-                        <input type="checkbox" class="ios-switch tinyswitch" checked />
+                        <input type="checkbox" class="ios-switch tinyswitch" data-check-modal="ios-switch-3" checked />
                         <div class="ios-switch-div">
                             <div></div>
                         </div>
                     </label>
                 </div>
                 <div class="loading-info-modal">
-                    <div class="loading-info__heading">Çatdırılma növü</div>
+                    <div class="loading-info__heading mt-1">Çatdırılma növü</div>
                     <label class="ios-switch-label">
-                        <input type="checkbox" class="ios-switch tinyswitch" checked />
+                        <input type="checkbox" class="ios-switch tinyswitch" data-check-modal="ios-switch-4" checked />
                         <div class="ios-switch-div">
                             <div></div>
                         </div>
                     </label>
                 </div>
                 <div class="loading-info-modal">
-                    <div class="loading-info__heading">Çatdırılma vaxtı</div>
+                    <div class="loading-info__heading mt-1">Çatdırılma vaxtı</div>
                     <label class="ios-switch-label">
-                        <input type="checkbox" class="ios-switch tinyswitch" checked />
+                        <input type="checkbox" class="ios-switch tinyswitch" data-check-modal="ios-switch-5" checked />
                         <div class="ios-switch-div">
                             <div></div>
                         </div>
                     </label>
                 </div>
                 <div class="loading-info-modal">
-                    <div class="loading-info__heading">Receiver</div>
+                    <div class="loading-info__heading mt-1">Receiver</div>
                     <label class="ios-switch-label">
-                        <input type="checkbox" class="ios-switch tinyswitch" checked />
+                        <input type="checkbox" class="ios-switch tinyswitch" data-check-modal="ios-switch-6" checked />
                         <div class="ios-switch-div">
                             <div></div>
                         </div>
                     </label>
                 </div>
                 <div class="loading-info-modal">
-                    <div class="loading-info__heading">Receiver Number</div>
+                    <div class="loading-info__heading mt-1">Receiver Number</div>
                     <label class="ios-switch-label">
-                        <input type="checkbox" class="ios-switch tinyswitch" checked />
+                        <input type="checkbox" class="ios-switch tinyswitch" data-check-modal="ios-switch-7" checked />
                         <div class="ios-switch-div">
                             <div></div>
                         </div>
                     </label>
                 </div>
                 <div class="loading-info-modal">
-                    <div class="loading-info__heading">Daşınacaq yükün fotosu</div>
+                    <div class="loading-info__heading mt-1">Daşınacaq yükün fotosu</div>
                     <label class="ios-switch-label">
-                        <input type="checkbox" class="ios-switch tinyswitch" checked />
+                        <input type="checkbox" class="ios-switch tinyswitch" data-check-modal="ios-switch-8" checked />
                         <div class="ios-switch-div">
                             <div></div>
                         </div>
                     </label>
                 </div>
                 <div class="loading-info-modal">
-                    <div class="loading-info__heading">Qeydlər</div>
+                    <div class="loading-info__heading mt-1">Qeydlər</div>
                     <label class="ios-switch-label">
-                        <input type="checkbox" class="ios-switch tinyswitch" checked />
+                        <input type="checkbox" class="ios-switch tinyswitch" data-check-modal="ios-switch-9" checked />
                         <div class="ios-switch-div">
                             <div></div>
                         </div>
@@ -1002,30 +968,33 @@
 
                 <div class="loading-info__code--container">
                     <div class="loading-info__code--div">
-                        <div class="loading-info__code">353635</div>
+                        <div class="loading-info__code">ab2435</div>
                         <button class="loading-info__code--btn btn btn-purple">Copy</button>
                     </div>
-                    <div class="loading-info__tooltip">/div>
-                </div>
-                <div class=" ml-2">Və ya </div>
-                <div class="mail-coupon__social-div">
-                    <ul id="webSocialList" class="mail-coupon__social-list">
-                        <li id="webSocialIcon" class="mail-coupon__social-li">
-                            <i class="fa fa-share-alt"></i>
-                        </li>
-                        <li id="webSocialTwitter" class="mail-coupon__social-li"><a href="#" target="_blank"><i
-                                    class="fab fa-twitter"></i></a></li>
-                        <li id="webSocialGoogle" class="mail-coupon__social-li">
+                    <div class="loading-info__tooltip"></div>
 
-                            <a href="#" target="_blank">
-                                <i class="fab fa-google-plus"></i>
-                            </a></li>
-                        <li id="webSocialLinkedin" class="mail-coupon__social-li">
-                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        </li>
-
-                    </ul>
+                    
                 </div>
+                <div class="mx-auto d-block loading-info__or">Və ya </div>
+                <ul class="list-unstyled mt-2 d-flex mb-0 d-flex justify-content-center">
+                   
+                    <li class="mx-3">
+                      <a href="#" class="hover-fade-out  footer__social-link">
+                        <i class="fab fa-twitter text-white"></i>
+                      </a>
+                    </li>
+                  
+                    <li class="mx-3">
+                      <a href="#" class="hover-fade-out footer__social-link">
+                        <i class="fab fa-facebook-f text-white"></i>
+                      </a>
+                    </li>
+                    <li class="mx-3">
+                      <a href="#" class="hover-fade-out footer__social-link">
+                        <i class="fab fa-instagram text-white"></i>
+                      </a>
+                    </li>
+                  </ul>
 
             </div>
 
@@ -1257,7 +1226,7 @@
 
 <script src="js/lightGallery.js"></script>
 <script src="js/map-loading-end.js"></script>
-<script src="js/spinner-loading-end.js"></script>
+<!-- <script src="js/spinner-loading-end.js"></script> -->
 <script src="js/ios-switch.js"></script>
 
 

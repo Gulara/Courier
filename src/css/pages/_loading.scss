@@ -5,32 +5,44 @@
     width: 100%;
     position: relative;
     padding: 1rem;
+
     &-modal {
-        margin-bottom: 20px;
-    color: $color-secondary-dark;
-    border-bottom: 1px solid #d0d2d7;
-    width: 100%;
-    padding-top: 10px;
-    padding-left: 10px;
-    position: relative;
+        margin-bottom: 3px;
+        color: #555a64;
+        border-bottom: 1px solid #d0d2d7;
+        height: 36px;
+        width: 100%;
+        padding-bottom: 3px;
+        padding-top: 3px;
+        padding-left: 10px;
+        position: relative;
     }
 
     &-border {
         border-bottom: 1px solid #d0d2d7;
     }
 
+    &__or {
+        display: block;
+        margin: 10px 0;
+        text-align: center;
+    }
+
     &__code {
-        padding: 12px 7px;
+        padding: 7px;
         color: $color-secondary-dark;
         background-color: #fff;
         border-top-left-radius: 10px;
         border-bottom-left-radius: 10px;
+        border: 1px solid $color-primary;
         border-right: none;
         width: auto;
 
         &--container {
             display: flex;
             align-items: center;
+            justify-content: center;
+            margin-top: 10px;
 
             @include respondmax(sm) {
                 flex-direction: column;
@@ -44,10 +56,8 @@
             border-radius: 10px;
             z-index: 2;
             display: flex;
-
-            @include respondmax(sm) {
-                margin-bottom: 10px;
-            }
+height: 40px;
+           
 
             &:hover .my-coupons__tooltip {
                 display: block;
@@ -61,6 +71,9 @@
             border-bottom-right-radius: 10px;
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
+            padding: 7px 10px;
+            
+
 
             &:focus {
                 outline: none;
@@ -73,13 +86,14 @@
             }
         }
     }
+
     &__tooltip {
         background-color: rgba(0, 0, 0, .8);
         color: #fff;
         padding: 3px 5px;
         border-radius: 5px;
-        bottom: 8%;
-        left: 34%;
+        bottom: 26%;
+        left: 59%;
         position: absolute;
         z-index: 999;
         display: none;
@@ -97,6 +111,7 @@
         }
 
     }
+
     &--mt {
         margin-top: 30px;
     }
