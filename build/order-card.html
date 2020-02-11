@@ -514,7 +514,7 @@
     <div class="loading-animation"></div>
 </div>
 
-<div class=" p-3 p-lg-5">
+<div class="order-card__container">
     <div class=" container">
         <div class=" bg-white ">
             <div class="   row mt-3 pt-5">
@@ -569,10 +569,38 @@
                         <!-- MY ORDERS -->
                         <div id="my-order-1">
 
-                            <div class=" account my-order bg-light mb-3">
-                                <a class=" order-card__btn mb-3" href="my-orders.html">
-                                    <i class="fas fa-arrow-left "></i>
-                                </a>
+                            <div class=" account my-order bg-light">
+                                <div class="d-flex justify-content-between">
+                                    <a class=" order-card__btn mb-3" href="my-orders.html">
+                                        <i class="fas fa-arrow-left "></i>
+                                    </a>
+                                    <!-- RATING BUTTON START -->
+                                    <!-- <button type="button" class="btn btn-purple mb-3" data-toggle="modal"
+                                        data-target="#starRatingModal">
+                                        Sifarişi qiymətləndir
+                                    </button> -->
+                                    <!-- RATING BUTTON END -->
+                                    <!--  STAR RATING START -->
+                                    <div class="rated-widget">
+                                        <div class="rated-star-input-label" for="1">1
+                                            <i class="fa fa-star orange"></i>
+                                        </div>
+                                        <div class="rated-star-input-label" for="2">2
+                                            <i class="fa fa-star orange"></i>
+                                        </div>
+                                        <div class="rated-star-input-label" for="3">3
+                                            <i class="fa fa-star orange"></i>
+                                        </div>
+                                        <div class="rated-star-input-label" for="4">4
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <div class="rated-star-input-label" for="5">5
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <!-- STAR RATING END -->
+                                </div>
+
                                 <!--    MAP  START-->
                                 <div class="map">
                                     <div class=" divider-side divider__side d-lg-block transform-flip-y d-none"></div>
@@ -617,26 +645,32 @@
                                     </div>
 
                                     <div class="loading-info loading-info--payment-group">
-                                        <div>
-                                            <div class="loading-info__heading">Ödəniş növü</div>
-                                            <p class="loading-info--payment">Nəğd</p>
+                                        <div class="loading-info--payment-group-div">
+                                            <div>
+                                                <div class="loading-info__heading">Ödəniş növü</div>
+                                                <p class="loading-info--payment">Nəğd</p>
+                                            </div>
+                                            <p class="loading-info--money">5.20$</p>
                                         </div>
-                                        <p class="loading-info--money">5.20$</p>
+                                       
                                     </div>
                                     <div class="loading-info ">
                                         <div class="loading-info__heading">Çatdırılma növü</div>
                                         <p class="loading-info--urgent">Təcili</p>
                                     </div>
                                     <div class="loading-info loading-info__urgent-time">
-                                        <div>
-                                            <div class="loading-info__heading">Çatdırılma vaxtı</div>
-                                            <div>Vaxt təyin edilib</div>
+                                        <div class=" loading-info__urgent-time-div">
+                                            <div>
+                                                <div class="loading-info__heading">Çatdırılma vaxtı</div>
+                                                <div>Vaxt təyin edilib</div>
+                                            </div>
+    
+                                            <div class="loading-info--delivery-time">
+                                                <span> 16/12/2019 </span>
+                                                <span>15:00</span>
+                                            </div>
                                         </div>
-
-                                        <div class="loading-info--delivery-time">
-                                            <span> 16/12/2019 </span>
-                                            <span>15:00</span>
-                                        </div>
+                                      
                                     </div>
 
                                     <div class="loading-info ">
@@ -752,7 +786,62 @@
         </div>
     </div>
 </div>
+<!-- Modal -->
+<div class="modal fade" id="starRatingModal" tabindex="-1" role="dialog" aria-labelledby="starRatingModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="starRatingModalLabel">Qiymətləndirmə</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!--  STAR RATING START -->
+                <form class="rating-widget mx-auto">
+                    <input type="checkbox" class="star-input" id="1" />
+                    <label class="star-input-label" for="1">1
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star orange"></i>
+                    </label>
+                    <input type="checkbox" class="star-input" id="2" />
+                    <label class="star-input-label" for="2">2
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star orange"></i>
+                    </label>
+                    <input type="checkbox" class="star-input" id="3" />
+                    <label class="star-input-label" for="3">3
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star orange"></i>
+                    </label>
+                    <input type="checkbox" class="star-input" id="4" />
+                    <label class="star-input-label" for="4">4
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star orange"></i>
+                    </label>
+                    <input type="checkbox" class="star-input" id="5" />
+                    <label class="star-input-label" for="5">5
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star orange"></i>
+                    </label>
 
+                </form>
+                <form>
+                    <div class="form-group mt-2">
+                        <label for="ratingTextarea">Sifarişçi haqqında şərh əlavə et :</label>
+                        <textarea class="form-control form__control textarea" id="ratingTextarea" rows="3"></textarea>
+                    </div>
+                </form>
+                <!-- STAR RATING END -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-purple">Qiymətləndir</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <footer class="  pb-md-4 footer ">
     <div class="container">
@@ -974,6 +1063,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6q83jcEbxloW8tYOXLgagBGJ
 <script src="js/lightGallery.js"></script>
 
 <script src="js/map-order-card.js"></script>
+<script src="js/star-rating.js"></script>
 </body>
 
 </html>
