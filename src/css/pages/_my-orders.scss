@@ -3,14 +3,33 @@
 
     @include respondmax(sm) {
         font-size: 14px;
+        margin: .5rem;
+    }
+
+    &__first-col {
+        @include respondmax(lg) {
+            display: flex;
+            flex-direction: column-reverse;
+        }
     }
 
     &__div {
         display: flex;
+        margin-bottom: 1rem;
 
-        @include respondmax(sm) {
+        @include respondmax(lg) {
             flex-direction: column;
             align-items: center;
+            margin-top: 20px;
+            margin-bottom: 0;
+        }
+    }
+
+    &__img {
+        margin-right: 20px;
+
+        @include respondmax(lg) {
+            display: none;
         }
     }
 
@@ -25,6 +44,14 @@
         display: flex;
         justify-content: center;
 
+        &-right {
+            @include respondmax(lg) {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+            }
+        }
+
         &:active,
         &:focus {
             outline: none;
@@ -36,7 +63,7 @@
             text-decoration: none;
         }
 
-        
+
         .fa-arrow-right,
         .fa-arrow-left {
             align-self: center;
@@ -75,6 +102,29 @@
         font-size: 12px;
     }
 
+    &__name-group {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-self: center;
+
+        @include respondmax(lg) {
+            align-self: flex-start;
+        }
+    }
+
+    &__name {
+        @include respondmax(lg) {
+            display: none;
+        }
+    }
+
+    &__money-dist {
+        @include respondmax(lg) {
+            display: none;
+        }
+    }
+
     &__border {
         border-bottom: 2px solid #cccccc;
         padding-bottom: 4px;
@@ -86,18 +136,7 @@
         justify-content: space-between;
         align-items: baseline;
 
-        @include respondmax(lg) {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 10px;
 
-        }
-
-        @include respondmax(md) {
-
-            margin-top: 15px;
-
-        }
     }
 
     &__circle {
@@ -121,13 +160,14 @@
                 height: 50%;
                 z-index: 1;
                 border-left: 2px dashed $color-secondary-dark;
+
                 @include respondmax(md) {
 
-                 left: 6px;
-                 top: 17px;
-                 height: 40%;
-                 
-        
+                    left: 6px;
+                    top: 17px;
+                    height: 40%;
+
+
                 }
             }
         }
@@ -140,5 +180,35 @@
                 z-index: 2;
             }
         }
+    }
+}
+
+#myOrderTabContent-1 {
+    padding-left: 0;
+    padding-right: 0;
+}
+.my-order {
+    padding: 1rem 3rem;
+    border-radius: 10px;
+    @include respondmax(sm) {
+       padding: 1rem;
+       border-radius: 0;
+    }
+    &__container {
+        padding: 3rem;
+    
+        @include respondmax(sm) {
+            padding: 0;
+        }
+    }
+}
+
+
+
+.order-card__container{
+    padding: 3rem;
+
+    @include respondmax(sm) {
+        padding: 0;
     }
 }

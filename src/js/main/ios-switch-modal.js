@@ -1,12 +1,13 @@
 $(document).ready(function () {
 
 
+
     $('.ios-switch--display-on').click(function (e) {
         e.preventDefault();
         $('.ios-switch, .ios-switch-div, .ios-switch--display-off, .ios-switch--modal-btn').css({
             'display': 'block'
         });
-        $(this).css({
+        $('.ios-switch--display-on').css({
             'display': 'none'
         });
 
@@ -79,46 +80,178 @@ $(document).ready(function () {
         //         });
         //     }
         // })
-        .on('change', 'input[data-check-modal]', function () {
+        .on('change', 'input[data-check=ios-switch-1]', function () {
+            // $(".ios-switch[data-check-modal]").attr("data-check-modal", function (arr) {
+            //         return "ios-switch-" + arr;
+            //     })
+            //     .each(function () {
+            //         let modalCheck = $(this).attr("data-check-modal");
+            //         console.log($("data-check-modal", this));
+            //     });
+
+            // $(".ios-switch[data-check]").attr("data-check", function (arr) {
+            //         return "ios-switch-" + arr;
+
+            //     })
+            //     .each(function () {
+
+            //         const dataCheck = $('input').attr("data-check");
+            //         // console.log(dataCheck);
+            //         console.log($("data-check", this).attr());
+            //     });
+
             var checked = $(this).is(':checked');
-            var modalCheck = $(this).attr("data-check-modal");
-            const dataCheck = $('input').attr("data-check");
-          
-            $('input[data-check]').each(function () {
-                var term = $('.ios-switch').attr('data-check');
-                console.log(term);
-            });
-
-
             if (checked) {
-                $(this).each(function () {
+                $('input[data-check=ios-switch-1]').each(function () {
                     $(this).prop("checked", true);
                     $(this).parent().parent().removeClass('ios-switch-disable');
-                   
                 });
             } else {
-                $(this).each(function () {
+                $('input[data-check=ios-switch-1]').each(function () {
                     $(this).prop("checked", false);
                     $(this).parent().parent().addClass('ios-switch-disable');
                 });
             }
+
+        }).on('change', 'input[data-check=ios-switch-2]', function () {
+            var checked = $(this).is(':checked');
+
+            if (checked) {
+                $('input[data-check=ios-switch-2]').each(function () {
+                    $(this).prop("checked", true);
+                    $(this).parent().parent().removeClass('ios-switch-disable');
+                });
+            } else {
+                $('input[data-check=ios-switch-2]').each(function () {
+                    $(this).prop("checked", false);
+                    $(this).parent().parent().addClass('ios-switch-disable');
+                });
+            }
+
+        }).on('change', 'input[data-check=ios-switch-3]', function () {
+            var checked = $(this).is(':checked');
+
+            if (checked) {
+                $('input[data-check=ios-switch-3]').each(function () {
+                    $(this).prop("checked", true);
+                    $(this).parent().parent().removeClass('ios-switch-disable');
+                });
+            } else {
+                $('input[data-check=ios-switch-3]').each(function () {
+                    $(this).prop("checked", false);
+                    $(this).parent().parent().addClass('ios-switch-disable');
+                });
+            }
+
+        }).on('change', 'input[data-check=ios-switch-4]', function () {
+            var checked = $(this).is(':checked');
+
+            if (checked) {
+                $('input[data-check=ios-switch-4]').each(function () {
+                    $(this).prop("checked", true);
+                    $(this).parent().parent().removeClass('ios-switch-disable');
+                });
+            } else {
+                $('input[data-check=ios-switch-4]').each(function () {
+                    $(this).prop("checked", false);
+                    $(this).parent().parent().addClass('ios-switch-disable');
+                });
+            }
+
+        }).on('change', 'input[data-check=ios-switch-5]', function () {
+            var checked = $(this).is(':checked');
+
+            if (checked) {
+                $('input[data-check=ios-switch-5').each(function () {
+                    $(this).prop("checked", true);
+                    $(this).parent().parent().removeClass('ios-switch-disable');
+                });
+            } else {
+                $('input[data-check=ios-switch-5]').each(function () {
+                    $(this).prop("checked", false);
+                    $(this).parent().parent().addClass('ios-switch-disable');
+                });
+            }
+
+        }).on('change', 'input[data-check=ios-switch-6]', function () {
+            var checked = $(this).is(':checked');
+
+            if (checked) {
+                $('input[data-check=ios-switch-6]').each(function () {
+                    $(this).prop("checked", true);
+                    $(this).parent().parent().removeClass('ios-switch-disable');
+                });
+            } else {
+                $('input[data-check=ios-switch-6]').each(function () {
+                    $(this).prop("checked", false);
+                    $(this).parent().parent().addClass('ios-switch-disable');
+                });
+            }
+
+        }).on('change', 'input[data-check=ios-switch-7]', function () {
+            var checked = $(this).is(':checked');
+
+            if (checked) {
+                $('input[data-check=ios-switch-7]').each(function () {
+                    $(this).prop("checked", true);
+                    $(this).parent().parent().removeClass('ios-switch-disable');
+                });
+            } else {
+                $('input[data-check=ios-switch-7]').each(function () {
+                    $(this).prop("checked", false);
+                    $(this).parent().parent().addClass('ios-switch-disable');
+                });
+            }
+
+        }).on('change', 'input[data-check=ios-switch-8]', function () {
+            var checked = $(this).is(':checked');
+
+            if (checked) {
+                $('input[data-check=ios-switch-8]').each(function () {
+                    $(this).prop("checked", true);
+                    $(this).parent().parent().removeClass('ios-switch-disable');
+                });
+            } else {
+                $('input[data-check=ios-switch-8]').each(function () {
+                    $(this).prop("checked", false);
+                    $(this).parent().parent().addClass('ios-switch-disable');
+                });
+            }
+
+        }).on('change', 'input[data-check=ios-switch-9]', function () {
+            var checked = $(this).is(':checked');
+
+            if (checked) {
+                $('input[data-check=ios-switch-9]').each(function () {
+                    $(this).prop("checked", true);
+                    $(this).parent().parent().removeClass('ios-switch-disable');
+                });
+            } else {
+                $('input[data-check=ios-switch-9]').each(function () {
+                    $(this).prop("checked", false);
+                    $(this).parent().parent().addClass('ios-switch-disable');
+                });
+            }
+
+        })
+        .on('change', 'input[data-check]', function () {
+            // var checked = $(this).is(':checked');
+console.log($('input[data-check]:checked').length);
+            if ($('input[data-check]:checked').length == 0) {
+                $('.ios-switch--modal-btn, .loading-info__code--container, .loading-info__or, .loading-info__social').css({
+                    'display': 'none'
+                })
+
+             }else {
+       
+               
+                    $('.ios-switch--modal-btn, .loading-info__code--container, .loading-info__or').css({
+                        'display': 'block'
+                    });
+                    $('.loading-info__social').css({
+                        'display': 'flex'
+                    })
+             
+            }
         });
-
-
-
-    // $(`input[data-check=ios-switch-${num}]`).change(function () {
-    //     var checked = $(this).is(':checked');
-    //     if (checked) {
-    //         $(`input[data-check=ios-switch-${num}]`).each(function () {
-    //             $(this).prop("checked", true);
-    //             $(this).parent().parent().removeClass('ios-switch-disable');
-    //         });
-    //     } else {
-    //         $(`input[data-check=ios-switch-${num}]`).each(function () {
-    //             $(this).prop("checked", false);
-    //             $(this).parent().parent().addClass('ios-switch-disable');
-    //         });
-    //     }
-    // });
-
 });

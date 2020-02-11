@@ -125,12 +125,7 @@
         height: 30vh;
      }
 }
-.my-order {
-    padding: 1rem 3rem;
-    @include respondmax(sm) {
-       padding: 1rem;
-    }
-}
+
 .first-form {
     margin-top: 2rem;
    background-color: transparent !important;
