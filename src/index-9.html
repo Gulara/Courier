@@ -339,14 +339,12 @@
                     <div class=" urgent__list">
                         <div class="urgent__list--item form-check">
                             <input class="urgent__input form-check-input" type="radio" name="urgent"
-                                data-item-id="urgent" id="non-urgent-tab" value="urgent" />
+                                data-item-id="urgent" id="non-urgent-tab" value="urgent"  checked/>
                             <label class="urgent__label urgent__label--1 form-check-label "
                                 for="non-urgent-tab">Delivery
                                 now
                                 <span class="d-block">(ASAP)</span>
-                                <div class='wave-left '>
-                                    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-                                </div>
+                               
                             </label>
                         </div>
                         <div class="urgent__list--item form-check">
@@ -354,9 +352,7 @@
                                 data-item-id="urgent" id="urgent-tab" value="non-urgent" />
                             <label class="urgent__label urgent__label--2 form-check-label" for="urgent-tab">Scheduled
                                 <span class="d-block">(non-urgent)</span>
-                                <div class='wave-right'>
-                                    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-                                </div>
+                                
                             </label>
                         </div>
 
@@ -367,6 +363,7 @@
                 <!-- DELIVERY START -->
                 <div class="delivery delivery-position" id="delivery">
                     <label class="form-label form__label delivery__form-label">Delivery date :</label>
+                    <div id="day-errors"></div>
                     <div class="date__div">
                         <div class="date">
 
@@ -377,13 +374,13 @@
                     </div>
 
                     <div class="day__list datepicker form-check delivery-btn--up">
-                        <input class="datepicker__input" type="text" id="datepicker" autocomplete="off"
+                        <!-- <input class="datepicker__input" type="text" id="datepicker" autocomplete="off"
                             placeholder="Pick a Date">
 
                         <input class="day__input  form-check-input calendar-input" type="radio" name="days"
-                            data-item-id="calendar-date" id="calendar" value="" />
+                            data-item-id="calendar-date" id="calendar" value=""/>
 
-                        <label class="day__label form-check-label calendar-label" for="calendar">Pick a date</label>
+                        <label class="day__label form-check-label calendar-label" for="calendar">Pick a date</label> -->
 
 
                     </div>
@@ -394,6 +391,7 @@
                     <!-- <div id="delivery__time" class="delivery__time times times-carousel owl-carousel  owl-theme">
 
                     </div> -->
+                   <div id="time-errors"></div>
                     <div class="times">
                         <div id="delivery__time" class="delivery__time times__simple"> </div>
                         <div class="times__btn times__btn--down"><i class="fas fa-angle-down times__btn--icon"></i>

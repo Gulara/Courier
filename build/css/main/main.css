@@ -1330,6 +1330,33 @@ label.error {
   margin-bottom: 30px;
   position: relative; }
 
+.date > .parsley-errors-list {
+  position: absolute;
+  top: -21%;
+  left: 0; }
+
+.date > .date__list {
+  -webkit-box-ordinal-group: 3;
+  -webkit-order: 2;
+     -moz-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2; }
+
+.delivery__time > .parsley-errors-list {
+  -webkit-box-ordinal-group: 2;
+  -webkit-order: 1;
+     -moz-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  width: 100%; }
+
+.delivery__time > .times__check-form {
+  -webkit-box-ordinal-group: 3;
+  -webkit-order: 2;
+     -moz-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2; }
+
 .urgent__list {
   width: 100%;
   display: -webkit-box;
