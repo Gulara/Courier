@@ -310,3 +310,24 @@ label.error {
   position: relative;
 }
 
+// .date > .parsley-errors-list  {
+//   // order: 1;
+//   // width: 100%;
+//   position: absolute;
+//     top: -21%;
+//     left: 0;
+// }
+// .date > .date__list  {
+//   order: 2;
+// }
+.delivery__time >  .parsley-errors-list  {
+  order: 1;
+  width: 100%;
+  // position: absolute;
+  //   top: -21%;
+  //   left: 0;
+}
+
+.delivery__time >  .times__check-form {
+  order:2 ;
+}
