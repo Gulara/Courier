@@ -3,7 +3,7 @@ $(document).ready(function () {
 
     var priceText = parseInt($(".price").text());
     totalPrice = $('.total__money').text(priceText);
-    console.log(totalPrice, 'this');
+    // console.log(totalPrice, 'this');
     
 
     $(document).on('keyup keypress blur', '.insurance__div--input', function (event) {
