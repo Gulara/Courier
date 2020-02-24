@@ -78,7 +78,6 @@ $(document).ready(function () {
     function InitRadio(payment) {
         val = 0;
         $.each($(':radio[payment="' + payment + '"]'), function () {
-            console.log(1);
             $(this).val(val++);
             $(this).attr('chk', '0');
             $(this).on("click", function (event) {
