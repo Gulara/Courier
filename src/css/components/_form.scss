@@ -270,11 +270,15 @@ label.error {
   width: 17%;
   height: 50px;
   display: none;
-
+  position: relative;
   &__label {
 
     text-align: center;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
 
     width: 100%;
     font-size: 16px;
@@ -287,7 +291,12 @@ label.error {
       justify-content: center;
       align-items: center;
       font-size: 1.6em;
-      transform: translateY(3px);
+    }
+    .fa-times-circle{
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      color: #dc3545;
     }
   }
 

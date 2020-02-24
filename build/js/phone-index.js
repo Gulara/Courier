@@ -32,6 +32,7 @@ $(document).ready(function () {
         "display": "flex"
       });
       $(this).siblings('.form__phone-group').find(".check-wp__input").prop("checked", true);
+      console.log($(this).siblings('.form__phone-group').find(".check-wp__input").prop("checked", true));
       $(this).siblings('.form__phone-group').find(".form__phone").addClass('form__phone--input');
       $(this).slideUp();
     });
@@ -174,9 +175,10 @@ $(document).on("click", ".add-phone", function (e) {
     '  <div class="form__phone-group">' +
     ' <input type="text" name="add-phone-' + row + '" value="add-phone-' + row + '" class="form-control form__control form__phone form__phone-' + row + '" id="phoneNumber-' + row + '">' +
     '<div class=" check-wp">' +
-    '<input type="checkbox" id="check-wp__input-' + row + '" class="check-wp__input check-wp__input-' + row + '">' +
+    '<input type="checkbox" name="check-wp__input-' + row + '" id="check-wp__input-' + row + '" class="check-wp__input check-wp__input-' + row + '">' +
     '<label for="check-wp__input-' + row + '" class="check-wp__label">' +
     '<i class="fab fa-whatsapp "></i>' +
+    '  <i class="fas fa-times-circle"></i>' +
     '       </label>' +
     '</div>' +
     '<button class="remove-phone btn btn-purple delete-row" id="add-phone-' + row + '">' +

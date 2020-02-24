@@ -11,3 +11,18 @@ $(document).ready(function () {
 			maxDate: today 
 	});
   });
+
+
+  
+$(document).ready(function () {
+	// MASK JQUERY
+	$('#driver-birthday-all').mask('00/00/0000');
+
+	var today = new Date();
+	// DATEPICKER
+	$( "#driver-birthday-all" ).datepicker({
+        dateFormat: "dd/mm/yy",
+			duration: "fast",
+			maxDate: today 
+	});
+  });

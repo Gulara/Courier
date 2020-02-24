@@ -26,7 +26,6 @@ $(document).ready(function () {
             });
         } else {
 
-
             $('#driver-form').delay(1000).queue(function (next) {
                 $(this).css('display', 'block');
                 next();

@@ -1290,10 +1290,27 @@ label.error {
   border-left: none;
   width: 17%;
   height: 50px;
-  display: none; }
+  display: none;
+  position: relative; }
   .check-wp__label {
     text-align: center;
     cursor: pointer;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 0;
     width: 100%;
     font-size: 16px; }
     .check-wp__label .fa-whatsapp {
@@ -1314,12 +1331,12 @@ label.error {
          -moz-box-align: center;
           -ms-flex-align: center;
               align-items: center;
-      font-size: 1.6em;
-      -webkit-transform: translateY(3px);
-         -moz-transform: translateY(3px);
-          -ms-transform: translateY(3px);
-           -o-transform: translateY(3px);
-              transform: translateY(3px); }
+      font-size: 1.6em; }
+    .check-wp__label .fa-times-circle {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      color: #dc3545; }
   .check-wp__input[type="checkbox"] {
     visibility: hidden;
     height: 0;
@@ -1493,6 +1510,69 @@ label.error {
     position: absolute;
     top: 20px;
     right: 20px;
+    color: #7b2bfc; }
+
+.payment__div {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+
+.payment__form-group {
+  width: 100%; }
+  @media (max-width: 575px) {
+    .payment__form-group {
+      margin: 0 3px; } }
+
+.payment__icon-left {
+  font-size: 20px; }
+
+.payment__label {
+  text-align: center;
+  cursor: pointer;
+  background-color: #f5f5f5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+  width: 100%;
+  height: 50px;
+  border: 2px solid transparent;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
+  padding: 0 10px; }
+  .payment__label--span {
+    font-size: 16px;
+    text-align: center;
+    color: #555a64;
+    font-weight: bold;
+    font-weight: bold; }
+  .payment__label:hover {
+    border: 2px solid #7b2bfc; }
+
+.payment__input[type="radio"] {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+  display: none; }
+
+.payment__icon {
+  display: none; }
+  .payment__icon-left {
     color: #7b2bfc; }
 
 .payment__wrap-drop.active::after {

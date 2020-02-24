@@ -233,9 +233,10 @@
                                 <div class="form__phone-group">
                                     <input type="text" class="form-control form__control form__phone form__phone-0" value="add-phone-0" name="add-phone-0" id="phoneNumber-0">
                                     <div class=" check-wp">
-                                        <input type="checkbox" id="check-wp__input-0" class="check-wp__input check-wp__input-0" name="">
+                                        <input type="checkbox" id="check-wp__input-0" class="check-wp__input check-wp__input-0" name="check-wp__input-0">
                                         <label for="check-wp__input-0" class="check-wp__label">
                                             <i class="fab fa-whatsapp "></i>
+                                            <i class="fas fa-times-circle"></i>
                                         </label>
                                     </div>
                                     <button class="add-phone btn btn-purple">
@@ -407,7 +408,7 @@
                     <div class="form-group form__group">
                         <label class="form-label form__label mt-3 mb-2">Ödəniş növü :</label>
 
-                        <div class="payment__wrap-drop form__control " id="paymentMethod">
+                        <!-- <div class="payment__wrap-drop form__control " id="paymentMethod">
 
                             <div><i class="far fa-money-bill-alt color-purple mr-1"></i>
                                 <span>Nəğd ödəniş</span>
@@ -427,11 +428,45 @@
                                     <i></i>
                                 </li>
                             </ul>
-                        </div>
+                        </div> -->
+                        <!-- NEW PAYMENT START-->
+                <div class="payment__div">
+                    <div class="form-group  payment__form-group" data-id="payment-div">
+                        <input class="payment__input " type="radio" name="payment-div"
+                            id="payment-cash"  payment="payment"/>
+                        <label class="payment__label" for="payment-cash">
+                            <i class="fas fa-money-check-alt mr-2 payment__icon-left"></i>
+                            <span class="payment__label--span">Nağd</span>
+                            <i
+                                class="fas fa-angle-down ml-auto color-purple fa-2x mr-2 payment__icon"></i>
+                        </label>
+                    </div>
+                    <div class="form-group  payment__form-group" data-id="payment-div">
+                        <input class="payment__input " type="radio" name="payment-div"
+                            id="payment-bank" payment="payment" />
+                        <label class="payment__label " for="payment-bank">
+                            <i class="fas fa-credit-card mr-2 payment__icon-left" ></i>
+                            <span class="payment__label--span">Bank kartı</span>
+                            <i class="fas fa-angle-down ml-auto color-purple fa-2x mr-2 payment__icon"></i>
+                        </label>
+                    </div>
+                    <div class="form-group  payment__form-group" data-id="payment-div">
+                        <input class="payment__input " type="radio" name="payment-div"
+                            id="payment-apple"  payment="payment"/>
+                        <label class="payment__label" for="payment-apple">
+                            <i class="fab fa-apple-pay mr-2 payment__icon-left"  ></i>
+                            <span class="payment__label--span">Apple Pay</span>
+                            <i class="fas fa-angle-down ml-auto color-purple fa-2x mr-2 payment__icon"></i>
+                        </label>
+                    </div>
+                </div>
+                  <!-- NEW PAYMENT END -->
                         <input type="hidden" id="payment-hidden">
                     </div>
                 </div>
                 <!-- PAYMENT END -->
+
+                
                 <!--  INSURANCE START -->
                 <div class="insurance form-group ">
                     <label class="form-label form__label mb-2">Sığorta :</label>
