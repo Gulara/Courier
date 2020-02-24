@@ -55,3 +55,60 @@ $(function () {
 });
 
 // PAYMENT METHODS END
+
+// NEW PAYMENT METHODS WITH RADIO BUTTON
+$(document).ready(function () {  
+    $('input[type=radio][payment=payment]').change(function () {
+
+      
+// PAYMENT DOWN ICON 
+        $('.payment__icon').delay(400).queue(function (next) {
+            $(this).css('display', 'block');
+            next();
+        });
+
+    
+    });
+
+
+    // UNCHECKED RADIO BUTTON
+
+    InitRadio('payment');
+
+    function InitRadio(payment) {
+        val = 0;
+        $.each($(':radio[payment="' + payment + '"]'), function () {
+            console.log(1);
+            $(this).val(val++);
+            $(this).attr('chk', '0');
+            $(this).on("click", function (event) {
+                SetRadioButtonChkProperty($(this).val(), payment);
+                let checkedSiblings = $(this).parent().siblings();
+                checkedSiblings.slideToggle('slow');
+
+            });
+        });
+    }
+
+    function SetRadioButtonChkProperty(val, payment) {
+        $.each($(':radio[payment="' + payment + '"]'), function () {
+
+            if ($(this).val() != val)
+                $(this).attr('chk', '0');
+
+
+            else {
+                if ($(this).attr('chk') == '0')
+                    $(this).attr('chk', '1');
+
+                else {
+                    $(this).attr('chk', '0');
+                    $(this).prop('checked', false);
+                    $('.payment__icon').css({
+                        'display': 'none'
+                    });
+                }
+            }
+        });
+    }
+});
