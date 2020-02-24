@@ -172,7 +172,7 @@ $(document).on("click", ".add-phone", function (e) {
     '  <span id="error-receiver-number " ></span>' +
     '<span id="error-msg" class="valid-hide text-danger d-block  text-right error-msg-' + row + '"></span>' +
     '  <div class="form__phone-group">' +
-    ' <input type="text" class="form-control form__control form__phone form__phone-' + row + '" id="phoneNumber-' + row + '">' +
+    ' <input type="text" name="add-phone-' + row + '" value="add-phone-' + row + '" class="form-control form__control form__phone form__phone-' + row + '" id="phoneNumber-' + row + '">' +
     '<div class=" check-wp">' +
     '<input type="checkbox" id="check-wp__input-' + row + '" class="check-wp__input check-wp__input-' + row + '">' +
     '<label for="check-wp__input-' + row + '" class="check-wp__label">' +
