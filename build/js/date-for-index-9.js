@@ -456,7 +456,7 @@ $(document).ready(function () {
                     $(this).css({
                         'display': 'block',
                         'position': 'absolute',
-                        'top': '55px',
+                        'top': '43px',
                         'width': '80%'
                     });
                     next();
