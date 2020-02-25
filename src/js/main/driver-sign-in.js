@@ -41,7 +41,7 @@ $(document).ready(function () {
     function InitRadio(transition) {
         val = 0;
         $.each($(':radio[transition="' + transition + '"]'), function () {
-            console.log(1);
+       
             $(this).val(val++);
             $(this).attr('chk', '0');
             $(this).on("click", function (event) {

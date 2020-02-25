@@ -200,12 +200,13 @@
                                                 <input id="autocomplete-car-producer"
                                                     list="autocomplete-car-producer-list"
                                                     class="form-control form__control mb-3" placeholder="Hyundai"
-                                                    required />
+                                                    required  value=""/>
                                                 <datalist id="autocomplete-car-producer-list">
-                                                    <option value="Hyundai"></option>
-                                                    <option value="BMW"></option>
-                                                    <option value="Toyota"></option>
+                                                    <option value="Hyundai" data-customvalue="1">Hyundai</option>
+                                                    <option value="BMW"  data-customvalue="2">BMW</option>
+                                                    <option value="Toyota"  data-customvalue="3">Toyota</option>
                                                 </datalist>
+                                                <input type="hidden" name="autocomplete-car-producer" id="autocomplete-car-producer-hidden" value="">
                                             </div>
 
                                             <div class="form-group">
@@ -214,10 +215,11 @@
                                                     class="form-control form__control mb-3" placeholder="Corolla"
                                                     required />
                                                 <datalist id="autocomplete-car-model-list">
-                                                    <option value="Corolla"></option>
-                                                    <option value="Matrix"></option>
+                                                    <option value="Corolla" data-customvalue="1"></option>
+                                                    <option value="Matrix" data-customvalue="1"></option>
                                                     <option value="Camry"></option>
                                                 </datalist>
+                                                <input type="hidden" name="autocomplete-car-producer" id="autocomplete-car-model-hidden" value="">
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label form__label">Avtomobilin buraxılış ili
@@ -227,10 +229,11 @@
                                                     class="form-control form__control mb-3" placeholder="2019"
                                                     required />
                                                 <datalist id="autocomplete-release-year-list">
-                                                    <option value="2018"></option>
+                                                    <option value="2018" data-customvalue="1"></option>
                                                     <option value="2019"></option>
                                                     <option value="2020"></option>
                                                 </datalist>
+                                                <input type="hidden" name="autocomplete-car-producer" id="autocomplete-release-year-hidden" value="">
                                             </div>
 
                                             <div class="form-group">
