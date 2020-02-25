@@ -27,7 +27,7 @@ $(document).ready(function () {
 
                 var tomorrowSlash = moment().add(i, 'days').format('DD/MM/YYYY');
                 response = response + '<div class="date__list form-check">\n' +
-                    '<input class="date__input form-check-input" type="radio" data-parsley-errors-container="#day-errors" required data-slash="' + tomorrowSlash +
+                    '<input class="date__input form-check-input" type="radio" data-parsley-required-message="Date is required" data-parsley-errors-container="#day-errors" required data-slash="' + tomorrowSlash +
                     ' "  value="' + tomorrowSlash +
                     ' " name="days" data-item-id="date" id="' + i + '"/>' +
                     ' <label class="date__label form-check-label "  for="' + i + '" >' +
@@ -222,7 +222,7 @@ $(document).ready(function () {
                         var currentTime = moment().startOf('hour').add(i, 'h').format("HH:mm");
                         var currentTimePlusOne = moment().startOf('hour').add(i + 1, 'h').format("HH:mm");
                         deliveryTimeToday = deliveryTimeToday + '<div class="form-check times__check-form">\n' +
-                            '<input class="times__input" type="radio"  required  data-parsley-errors-container="#time-errors" value="' + currentTime + "-" + currentTimePlusOne + '" name="times" data-item-id="times" id="' + currentTime + '"/>' +
+                            '<input class="times__input" type="radio" data-parsley-required-message="Time  is required"  required  data-parsley-errors-container="#time-errors" value="' + currentTime + "-" + currentTimePlusOne + '" name="times" data-item-id="times" id="' + currentTime + '"/>' +
                             ' <label class="times__label form-check-label "  for="' + currentTime + '" >' + currentTime + "-" + currentTimePlusOne +
                             '</label>\n' +
                             '</div>';

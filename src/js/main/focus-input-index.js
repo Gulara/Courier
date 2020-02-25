@@ -1,7 +1,9 @@
 $(document).ready(function () {    
     let errorReceiver = document.getElementById("error-receiver");
     let errorReceiverNumber = document.getElementById("error-receiver-number");
-    let errorTextarea = document.getElementById("error-textarea");
+    let errorTextarea = document.getElementById("error-textarea"); 
+    // let errorDays = document.getElementById("day-errors");
+    // let errorTimes = document.getElementById("time-errors");
 
       $(document).on("focus", "#contact-name", function(){
         errorReceiver.innerHTML = " Please type your name.";
