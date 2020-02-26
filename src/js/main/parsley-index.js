@@ -44,6 +44,28 @@ $(document).ready(function () {
             //     return alert("No radio button is checked");
             // alert("Radio Button " + (i + 1) + " is checked.");
 
+            
+            if ($("#day-errors").find('.parsley-errors-list').hasClass("filled")) {
+                $("#date-error").removeClass('d-none');
+              } else{
+                $("#date-error").addClass('d-none');
+              }
+
+              if ($("#time-errors").find('.parsley-errors-list').hasClass("filled")) {
+                $("#time-error").removeClass('d-none');
+              } else{
+                $("#time-error").addClass('d-none');
+              }
+
+            //   if ( $(".parsley-errors-list").parents("#day-errors").length == 1 ) { 
+            //     $("#date-time-error").removeClass('d-block');
+             
+            //  } else {
+              
+            //     // NO, it is not inside
+             
+            //  }
+
         })
 
         .on('#first_form:submit', function () {
