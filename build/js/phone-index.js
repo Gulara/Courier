@@ -1,6 +1,48 @@
 $(document).ready(function () {
 
+  $(document).on("focus", ".form__phone-0", function (e) {
+    e.preventDefault();
+    $(this).parents('.form__phone-group').find(".check-wp").css({
+      'background': '#fff',
+      'borderColor': '#2568ef'
+    })
 
+    if ($(this).parents('.form__phone-group').find(".check-wp").css('display') === 'none') {
+      $(this).parents('.form__phone-group').next().slideDown();
+    } else {
+
+    }
+
+
+  });
+  $(document).on("blur", ".form__phone-0", function (e) {
+    e.preventDefault();
+    $(this).parents('.form__phone-group').next().slideUp();
+    $(this).parents('.form__phone-group').find(".check-wp").css({
+      'background': '#f5f5f5',
+      'borderColor': '#eaedf2'
+
+    })
+  });
+
+  $(document).on("click", ".add-wp-0", function (e) {
+    e.preventDefault();
+    $(this).siblings('.form__phone-group').find(".check-wp").css({
+      "display": "flex"
+    });
+    $(this).siblings('.form__phone-group').find(".check-wp__input").prop("checked", true);
+    console.log($(this).siblings('.form__phone-group').find(".check-wp__input").prop("checked", true));
+    $(this).siblings('.form__phone-group').find(".form__phone").addClass('form__phone--input');
+    $(this).slideUp();
+  });
+  $(document).on("click", ".check-wp__input-0", function () {
+
+    $(this).prop("checked", false);
+    $(this).parent().css({
+      "display": "none"
+    });
+    $(this).parents('.form__phone-group').find(".form__phone").removeClass('form__phone--input');
+  });
 
 });
 
@@ -171,10 +213,10 @@ $(document).on("click", ".delete-row", function () {
     $('#remaining').text(remaining);
     if (remaining == 0) {
       $('.add-phone').prop("disabled", true);
-      // $('#add-phone-1').prop("disabled", true);
+      $('#add-phone-1').prop("disabled", true);
     } else {
       $('.add-phone').prop("disabled", false);
-      // $('#add-phone-1').prop("disabled", false);
+      $('#add-phone-1').prop("disabled", false);
     }
   }
   UpdateRemaining(false);
