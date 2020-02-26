@@ -8,7 +8,12 @@ $(document).ready(function () {
 	$( "#driver-birthday" ).datepicker({
         dateFormat: "dd/mm/yy",
 			duration: "fast",
-			maxDate: today 
+			maxDate: today ,
+
+
+			onSelect: function () {
+				var birthdayHidden = $(".driver-birthday-hidden").val($("#driver-birthday").val());
+			}
 	});
   });
 
@@ -23,6 +28,10 @@ $(document).ready(function () {
 	$( "#driver-birthday-all" ).datepicker({
         dateFormat: "dd/mm/yy",
 			duration: "fast",
-			maxDate: today 
+			maxDate: today ,
+			onSelect: function () {
+				var allBirthdayHidden = $(".driver-birthday-all-hidden").val($("#driver-birthday-all").val());
+			}
+			
 	});
   });
