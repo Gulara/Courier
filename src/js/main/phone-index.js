@@ -31,6 +31,7 @@ $(document).ready(function () {
       "display": "flex"
     });
     $(this).siblings('.form__phone-group').find(".check-wp__input").prop("checked", true);
+    $('.check-wp__input-0').val('checked-true');
     console.log($(this).siblings('.form__phone-group').find(".check-wp__input").prop("checked", true));
     $(this).siblings('.form__phone-group').find(".form__phone").addClass('form__phone--input');
     $(this).slideUp();
@@ -38,6 +39,7 @@ $(document).ready(function () {
   $(document).on("click", ".check-wp__input-0", function () {
 
     $(this).prop("checked", false);
+    $('.check-wp__input-0').val('');
     $(this).parent().css({
       "display": "none"
     });
@@ -111,6 +113,7 @@ $(document).on("click", ".add-phone", function (e) {
         "display": "flex"
       });
       $(this).siblings('.form__phone-group').find(".check-wp__input").prop("checked", true);
+      $(this).siblings('.form__phone-group').find(".check-wp__input").val('checked-true');
       console.log($(this).siblings('.form__phone-group').find(".check-wp__input").prop("checked", true));
       $(this).siblings('.form__phone-group').find(".form__phone").addClass('form__phone--input');
       $(this).slideUp();
@@ -118,6 +121,7 @@ $(document).on("click", ".add-phone", function (e) {
     $(document).on("click", `.check-wp__input-${num}`, function () {
 
       $(this).prop("checked", false);
+      $(this).val('');
       $(this).parent().css({
         "display": "none"
       });
