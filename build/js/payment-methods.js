@@ -56,6 +56,10 @@ $(function () {
 
 // PAYMENT METHODS END
 
+
+
+
+
 // NEW PAYMENT METHODS WITH RADIO BUTTON
 $(document).ready(function () {  
     $('input[type=radio][payment=payment]').change(function () {

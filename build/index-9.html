@@ -532,18 +532,21 @@
                 <div class="form-text">
                     <div class="form-group form__group">
                         <label for="startPlace" class="form-label form__label">From :</label>
-<div id="from-errors"></div>
+                        <div id="from-errors"></div>
                         <input type="text" name="from" class="form-control form__control" id="startPlace"
-                            placeholder="Insert pick-up address" data-parsley-required-message="From is required" required data-parsley-errors-container="#from-errors">
+                            placeholder="Insert pick-up address" data-parsley-required-message="From is required"
+                            required data-parsley-errors-container="#from-errors">
 
                     </div>
                     <input type="hidden" id="startPlaceLat">
                     <input type="hidden" id="startPlaceLng">
                     <div class="form-group form__group">
                         <label for="endPlace" class="form-label form__label">Destination :</label>
-<div id="destination-errors"></div>
+                        <div id="destination-errors"></div>
                         <input type="text" name="destination" class="form-control form__control" id="endPlace"
-                            placeholder="Insert Delivery address"  data-parsley-required-message="Destination is required" data-parsley-errors-container="#destination-errors"  required>
+                            placeholder="Insert Delivery address"
+                            data-parsley-required-message="Destination is required"
+                            data-parsley-errors-container="#destination-errors" required>
 
                     </div>
                     <input type="hidden" id="endPlaceLat">
@@ -721,48 +724,127 @@
 
 
 
-                <!-- INPUTS STARTS-->
-                <div id="receiver">
-                    <div class="form-group form__group">
-                        <label for="contact-name" class="form-label form__label">Receiver :</label>
+              
 
-                        <input type="text" name="contact-name" class="form-control form__control " id="contact-name"
-                            placeholder="Mammad Mammadov">
-                        <span id="error-receiver"></span>
 
-                    </div>
-                    <div class="form-group form__group ">
-                        <label for="phoneNumber" class="d-block form-label form__label">Receiver number :</label>
+                <!-- FORM RECEIVER START-->
+                <div class="form__receiver">
+                    <!-- <div id="payment-errors"></div> -->
+                    <div class="form-group  form__receiver__form-group" data-id="form__receiver">
+                        <input class="form__receiver__input " type="radio" name="form__receiver"
+                            id="form-receiver-first" receiver="receiver"
+                            data-parsley-required-message="Payment's method is required" required
+                            data-parsley-errors-container="#payment-errors" />
+                        <label class="form__receiver__label" for="form-receiver-first">
+                            <div class="card shadow-sm form__receiver--card">
 
-                        <div class="form-group__phone-div">
-                            <div class="form-group__phone">
-                                <div class="valid-check valid-hide  valid-check-0">&#10004;</div>
-                                <span id="error-receiver-number "></span>
-                                <span id="error-msg" class="valid-hide text-danger d-block text-right error-msg-0"></span>
-                                <div class="form__phone-group">
-                                    <input type="text" class="form-control form__control form__phone form__phone-0" value="add-phone-0" name="add-phone-0" id="phoneNumber-0">
-                                    <div class=" check-wp">
-                                        <input type="checkbox" id="check-wp__input-0" class="check-wp__input check-wp__input-0" name="check-wp__input-0">
-                                        <label for="check-wp__input-0" class="check-wp__label">
-                                            <i class="fab fa-whatsapp "></i>
-                                            <i class="fas fa-times-circle"></i>
-                                        </label>
-                                    </div>
-                                    <button class="add-phone btn btn-purple">
+                                <div class="form__receiver__heading">Receiver name</div>
+                                <p class=" form__receiver--name">Mammad Mammadov</p>
 
-                                        <i class="fas fa-plus "></i>
-                                    </button>
-                                </div>
-                                <button class="btn btn-purple add-wp add-wp-0">
-                                    <div class="add-wp--square"></div> 
-                                    <div class="add-wp--text"> Has Whatsapp?</div>
-                                </button>
+                                <div class=" form__receiver__heading">Receiver number</div>
+                                <p class=" form__receiver--number mb-0">+994 55 444 33 22</p>
+
+
                             </div>
-                        </div>
-
-
+                            <i
+                                class="fas fa-angle-down ml-auto color-purple fa-2x form__receiver__icon form__receiver__icon--default"></i>
+                        </label>
                     </div>
+                    <div class="form-group  form__receiver__form-group form__receiver__form-group--other"
+                        data-id="form__receiver">
+                        <input class="form__receiver__input " type="radio" name="form__receiver"
+                            id="form-receiver-second" receiver="receiver"
+                            data-parsley-required-message="Payment's method is required" required
+                            data-parsley-errors-container="#payment-errors" />
+                        <label class="form__receiver__label" for="form-receiver-second">
+                            <div class="card shadow-sm form__receiver--card">
+
+                                <div class="form__receiver__heading">Receiver name</div>
+                                <p class=" form__receiver--name">Ali Aliyev</p>
+
+                                <div class=" form__receiver__heading">Receiver number</div>
+                                <p class=" form__receiver--number mb-0">+994 55 444 33 22</p>
+
+
+                            </div>
+                            <i class="fas fa-angle-down ml-auto color-purple fa-2x form__receiver__icon"></i>
+                        </label>
+                    </div>
+                    <div class="form-group  form__receiver__form-group  form__receiver__form-group--other"
+                        data-id="form__receiver">
+                        <input class="form__receiver__input " type="radio" name="form__receiver"
+                            id="form-receiver-third" receiver="receiver"
+                            data-parsley-required-message="Payment's method is required" required
+                            data-parsley-errors-container="#payment-errors" />
+                        <label class="form__receiver__label" for="form-receiver-third">
+                            <div class="card shadow-sm form__receiver--card">
+
+                                <div class="form__receiver__heading">Receiver name</div>
+                                <p class=" form__receiver--name">Hasan Hasanov</p>
+
+                                <div class=" form__receiver__heading">Receiver number</div>
+                                <p class=" form__receiver--number mb-0">+994 55 444 33 22</p>
+
+
+                            </div>
+                            <i class="fas fa-angle-down ml-auto color-purple fa-2x form__receiver__icon"></i>
+                        </label>
+                    </div>
+                    <div class="form__receiver__btn-group">
+                        <button class="btn btn-purple form__receiver__add-btn">Add New Receiver</button>
+                        <button class="btn btn-danger form__receiver__cancel-btn">Cancel</button>
+                    </div>
+                  
                 </div>
+              
+
+  <!-- INPUTS STARTS-->
+  <div id="receiver">
+    <div class="form-group form__group">
+        <label for="contact-name" class="form-label form__label">Receiver :</label>
+
+        <input type="text" name="contact-name" class="form-control form__control " id="contact-name"
+            placeholder="Mammad Mammadov">
+        <span id="error-receiver"></span>
+
+    </div>
+    <div class="form-group form__group ">
+        <label for="phoneNumber" class="d-block form-label form__label">Receiver number :</label>
+
+        <div class="form-group__phone-div">
+            <div class="form-group__phone">
+                <div class="valid-check valid-hide  valid-check-0">&#10004;</div>
+                <span id="error-receiver-number "></span>
+                <span id="error-msg"
+                    class="valid-hide text-danger d-block text-right error-msg-0"></span>
+                <div class="form__phone-group">
+                    <input type="text" class="form-control form__control form__phone form__phone-0"
+                        value="add-phone-0" name="add-phone-0" id="phoneNumber-0">
+                    <div class=" check-wp">
+                        <input type="checkbox" id="check-wp__input-0"
+                            class="check-wp__input check-wp__input-0" name="check-wp__input-0">
+                        <label for="check-wp__input-0" class="check-wp__label">
+                            <i class="fab fa-whatsapp "></i>
+                            <i class="fas fa-times-circle"></i>
+                        </label>
+                    </div>
+                    <button class="add-phone btn btn-purple">
+
+                        <i class="fas fa-plus "></i>
+                    </button>
+                </div>
+                <button class="btn btn-purple add-wp add-wp-0">
+                    <div class="add-wp--square"></div>
+                    <div class="add-wp--text"> Has Whatsapp?</div>
+                </button>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
 
                 <label class="d-block form-label form__label">Daşınacaq yükün fotosunu yükləyin :</label>
 
@@ -782,12 +864,13 @@
                             <i class="fas fa-question-circle"></i>
                         </button>
                     </div>
-<div id="textarea-errors"></div>
+                    <div id="textarea-errors"></div>
                     <textarea id="contact-message" name="contact-message" rows="10"
                         class="form-control form__control textarea" data-parsley-trigger="keyup"
                         data-parsley-minlength="1" data-parsley-maxlength="1000"
                         data-parsley-minlength-message="Come on! You need to enter at least a 20 character comment.."
-                        data-parsley-validation-threshold="10" data-parsley-required-message="Message is required" required data-parsley-errors-container="#textarea-errors" ></textarea>
+                        data-parsley-validation-threshold="10" data-parsley-required-message="Message is required"
+                        required data-parsley-errors-container="#textarea-errors"></textarea>
                     <span id="error-textarea"></span>
 
                 </div>
@@ -854,12 +937,12 @@
                     <div class=" urgent__list">
                         <div class="urgent__list--item form-check">
                             <input class="urgent__input form-check-input" type="radio" name="urgent"
-                                data-item-id="urgent" id="non-urgent-tab" value="urgent"  checked/>
+                                data-item-id="urgent" id="non-urgent-tab" value="urgent" checked />
                             <label class="urgent__label urgent__label--1 form-check-label "
                                 for="non-urgent-tab">Delivery
                                 now
                                 <span class="d-block">(ASAP)</span>
-                               
+
                             </label>
                         </div>
                         <div class="urgent__list--item form-check">
@@ -867,7 +950,7 @@
                                 data-item-id="urgent" id="urgent-tab" value="non-urgent" />
                             <label class="urgent__label urgent__label--2 form-check-label" for="urgent-tab">Scheduled
                                 <span class="d-block">(non-urgent)</span>
-                                
+
                             </label>
                         </div>
 
@@ -906,7 +989,7 @@
                     <!-- <div id="delivery__time" class="delivery__time times times-carousel owl-carousel  owl-theme">
 
                     </div> -->
-                   <div id="time-errors"></div>
+                    <div id="time-errors"></div>
                     <div class="times">
                         <div id="delivery__time" class="delivery__time times__simple"> </div>
                         <div class="times__btn times__btn--down"><i class="fas fa-angle-down times__btn--icon"></i>
@@ -944,45 +1027,45 @@
                             </ul>
                         </div> -->
                         <!-- NEW PAYMENT START-->
-                <div class="payment__div">
-                    <div id="payment-errors"></div>
-                    <div class="form-group  payment__form-group" data-id="payment-div">
-                        <input class="payment__input " type="radio" name="payment-div"
-                            id="payment-cash"  payment="payment"  data-parsley-required-message="Payment's method is required" required data-parsley-errors-container="#payment-errors"/>
-                        <label class="payment__label" for="payment-cash">
-                            <i class="fas fa-money-check-alt mr-2 payment__icon-left"></i>
-                            <span class="payment__label--span">Nağd</span>
-                            <i
-                                class="fas fa-angle-down ml-auto color-purple fa-2x mr-2 payment__icon"></i>
-                        </label>
-                    </div>
-                    <div class="form-group  payment__form-group" data-id="payment-div">
-                        <input class="payment__input " type="radio" name="payment-div"
-                            id="payment-bank" payment="payment" />
-                        <label class="payment__label " for="payment-bank">
-                            <i class="fas fa-credit-card mr-2 payment__icon-left" ></i>
-                            <span class="payment__label--span">Bank kartı</span>
-                            <i class="fas fa-angle-down ml-auto color-purple fa-2x mr-2 payment__icon"></i>
-                        </label>
-                    </div>
-                    <div class="form-group  payment__form-group" data-id="payment-div">
-                        <input class="payment__input " type="radio" name="payment-div"
-                            id="payment-apple"  payment="payment"/>
-                        <label class="payment__label" for="payment-apple">
-                            <i class="fab fa-apple-pay mr-2 payment__icon-left"  ></i>
-                            <span class="payment__label--span">Apple Pay</span>
-                            <i class="fas fa-angle-down ml-auto color-purple fa-2x mr-2 payment__icon"></i>
-                        </label>
-                    </div>
-                 
-                </div>
-                  <!-- NEW PAYMENT END -->
+                        <div class="payment__div">
+                            <div id="payment-errors"></div>
+                            <div class="form-group  payment__form-group" data-id="payment-div">
+                                <input class="payment__input " type="radio" name="payment-div" id="payment-cash"
+                                    payment="payment" data-parsley-required-message="Payment's method is required"
+                                    required data-parsley-errors-container="#payment-errors" />
+                                <label class="payment__label" for="payment-cash">
+                                    <i class="fas fa-money-check-alt mr-2 payment__icon-left"></i>
+                                    <span class="payment__label--span">Nağd</span>
+                                    <i class="fas fa-angle-down ml-auto color-purple fa-2x mr-2 payment__icon"></i>
+                                </label>
+                            </div>
+                            <div class="form-group  payment__form-group" data-id="payment-div">
+                                <input class="payment__input " type="radio" name="payment-div" id="payment-bank"
+                                    payment="payment" />
+                                <label class="payment__label " for="payment-bank">
+                                    <i class="fas fa-credit-card mr-2 payment__icon-left"></i>
+                                    <span class="payment__label--span">Bank kartı</span>
+                                    <i class="fas fa-angle-down ml-auto color-purple fa-2x mr-2 payment__icon"></i>
+                                </label>
+                            </div>
+                            <div class="form-group  payment__form-group" data-id="payment-div">
+                                <input class="payment__input " type="radio" name="payment-div" id="payment-apple"
+                                    payment="payment" />
+                                <label class="payment__label" for="payment-apple">
+                                    <i class="fab fa-apple-pay mr-2 payment__icon-left"></i>
+                                    <span class="payment__label--span">Apple Pay</span>
+                                    <i class="fas fa-angle-down ml-auto color-purple fa-2x mr-2 payment__icon"></i>
+                                </label>
+                            </div>
+
+                        </div>
+                        <!-- NEW PAYMENT END -->
                         <input type="hidden" id="payment-hidden">
                     </div>
                 </div>
                 <!-- PAYMENT END -->
 
-                
+
                 <!--  INSURANCE START -->
                 <div class="insurance form-group ">
                     <label class="form-label form__label mb-2">Sığorta :</label>
@@ -1016,8 +1099,10 @@
                 </div>
 
                 <!-- TOTAL MONEY END -->
-<div id="date-error" class="d-none text-danger"> <i class="fas fa-question-circle mr-2"></i>Please select date</div>
-<div id="time-error" class="d-none text-danger"> <i class="fas fa-question-circle mr-2"></i>Please select time</div>
+                <div id="date-error" class="d-none text-danger"> <i class="fas fa-question-circle mr-2"></i>Please
+                    select date</div>
+                <div id="time-error" class="d-none text-danger"> <i class="fas fa-question-circle mr-2"></i>Please
+                    select time</div>
                 <!--SUBMIT BUTTON-->
                 <button class="btn btn-2 btn-purple form-submit" type="submit" name="submit" value="validate">
                     <span>Order Now</span>
@@ -1429,6 +1514,8 @@ FilePond.registerPlugin(FilePondPluginFileValidateType);
 <script src="js/focus-input-index.js"></script>
 <script src="js/date-for-index-9.js"></script>
 <script src="js/scroll-form.js"></script>
+
+<script src="js/courier-index.js"></script>
 </body>
 
 </html>
