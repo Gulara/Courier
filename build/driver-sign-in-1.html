@@ -530,177 +530,119 @@
                                 <li></li>
                                 <li></li>
                             </ul>
-                           
-                                <fieldset class="card card-body shadow text-left driver-sign driver-fieldset driver-fieldset-first">
-                                    <h5 class="h5 text-center">Sürücü kimi qeydiyyatdan keçin</h5>
-                                    <div class="transition__div ">
 
-                                        <div class="form-group  transition__form-group" data-id="transition-div">
-                                            <input class="transition__input " type="radio" name="transition"
-                                                transition="transition" id="transition-pedestrian" />
-                                            <label class="transition__label" for="transition-pedestrian">
-                                                <img src="img/pedestrian.png" alt="car" class="transition__label--img">
-                                                <span class="transition__label--span">Piyada</span>
-                                                <i
-                                                    class="fas fa-angle-down ml-auto color-purple fa-2x mr-2 transition__icon"></i>
-                                            </label>
-                                        </div>
+                            <fieldset
+                                class="card card-body shadow text-left driver-sign driver-fieldset driver-fieldset-first">
+                                <h5 class="h5 text-center">Sürücü kimi qeydiyyatdan keçin</h5>
+                                <div class="transition__div ">
 
-                                        <div class="form-group  transition__form-group" data-id="transition-div">
-
-                                            <input class="transition__input" type="radio" name="transition"
-                                                transition="transition" id="transition-motorbike" />
-                                            <label class="transition__label" for="transition-motorbike">
-                                                <img src="img/motorbike.png" alt="car" class="transition__label--img">
-                                                <span class="transition__label--span">Motosiklet</span>
-                                                <i
-                                                    class="fas fa-angle-down ml-auto color-purple fa-2x mr-2  transition__icon"></i>
-                                            </label>
-
-                                        </div>
-                                        <div class="form-group  transition__form-group" data-id="transition-div">
-                                            <input class="transition__input " type="radio" name="transition"
-                                                id="transition-car" transition="transition" required />
-                                            <label class="transition__label" for="transition-car">
-                                                <img src="img/car.png" alt="car" class="transition__label--img">
-                                                <span class="transition__label--span">Avtomobil</span>
-                                                <i
-                                                    class="fas fa-angle-down ml-auto color-purple fa-2x mr-2  transition__icon"></i>
-                                            </label>
-
-                                        </div>
-                                        <div class="form-group transition__form-group" data-id="transition-div">
-                                            <input class="transition__input" type="radio" name="transition"
-                                                id="transition-evacuator" transition="transition" />
-                                            <label class="transition__label" for="transition-evacuator">
-                                                <img src="img/evacuator.png" alt="car" class="transition__label--img">
-                                                <span class="transition__label--span">Evakuator</span>
-                                                <i
-                                                    class="fas fa-angle-down ml-auto color-purple fa-2x mr-2 transition__icon"></i>
-                                            </label>
-
-                                        </div>
-                                        <div class="form-group transition__form-group" data-id="transition-div">
-                                            <input class="transition__input" type="radio" name="transition"
-                                                id="transition-truck" transition="transition" />
-                                            <label class="transition__label" for="transition-truck">
-                                                <img src="img/transit.png" alt="car"
-                                                    class="transition__label--img"><span
-                                                    class="transition__label--span">Yük maşını</span>
-                                                <i
-                                                    class="fas fa-angle-down ml-auto color-purple fa-2x mr-2 transition__icon"></i>
-                                            </label>
-                                        </div>
+                                    <div class="form-group  transition__form-group" data-id="transition-div">
+                                        <input class="transition__input " type="radio" name="transition"
+                                            transition="transition" id="transition-pedestrian" />
+                                        <label class="transition__label" for="transition-pedestrian">
+                                            <img src="img/pedestrian.png" alt="car" class="transition__label--img">
+                                            <span class="transition__label--span">Piyada</span>
+                                            <i
+                                                class="fas fa-angle-down ml-auto color-purple fa-2x mr-2 transition__icon"></i>
+                                        </label>
                                     </div>
-                                    <!-- LOADING  START  -->
-                                    <div class="loading-spinner driver-sign__loading-spinner">
-                                        <div class="spinner-square mx-auto">
-                                            <div class="square-1 square"></div>
-                                            <div class="square-2 square"></div>
-                                            <div class="square-3 square"></div>
-                                        </div>
 
-                                    </div>
-                                    <!-- FORM FOR PEDESTRIAN -->
-                                    <div id="driver-form-pedestrian" data-parsley-validate="">
-                                        <div class="driver-form-for-all">
+                                    <div class="form-group  transition__form-group" data-id="transition-div">
 
-                                            <div class="form-group validation-form mt-4">
-                                                <div class="form-group">
-                                                    <label class="form-label form__label">Adınız :</label>
-                                                    <input type="text" class="form-control form__control mb-3" 
-                                                        placeholder="Mammad" name="name" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="form-label form__label">Soyadınız :</label>
-                                                    <input type="text" class="form-control form__control mb-3"
-                                                        placeholder="Mammadov" name="surname" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="form-label form__label">Doğum tarixiniz : </label>
-                                                    <input type="text" id="driver-birthday" autocomplete="off" 
-                                                        class="form-control form__control mb-3 " placeholder="20/12/1990" required>
-                                                        <input class="driver-birthday-hidden" type="hidden" name="" value="">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="d-block  form-label form__label">Cinsiniz :</label>
-                                                    <div class="row">
-                                                        <div class="col">
-                                                            <input class="gender-input form-control form__control "
-                                                                type="radio" name="gender" id="male" />
-                                                            <label class="gender--label" for="male">Kişi</label>
-
-                                                        </div>
-                                                        <div class="col">
-                                                            <input class="gender-input form-control form__control "
-                                                                type="radio" name="gender" id="female" />
-                                                            <label class="gender--label " for="female">Qadın</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <label class="driver-sign__label driver-membership">
-                                            <a href="#" class="color-purple membership" data-toggle="modal"
-                                                data-target="#membership-agreement-driver"> Üzvlük müqaviləsi</a>
-                                            şərtlərini
-                                            oxudum və qəbul edirəm.
-                                            <input type="checkbox" class="driver-sign__label--checkbox"
-                                                checked="checked" id="membership-checkbox" required>
-                                            <span class="driver-sign__label--checkmark membership-span"></span>
+                                        <input class="transition__input" type="radio" name="transition"
+                                            transition="transition" id="transition-motorbike" />
+                                        <label class="transition__label" for="transition-motorbike">
+                                            <img src="img/motorbike.png" alt="car" class="transition__label--img">
+                                            <span class="transition__label--span">Motosiklet</span>
+                                            <i
+                                                class="fas fa-angle-down ml-auto color-purple fa-2x mr-2  transition__icon"></i>
                                         </label>
 
-
-                                        <input type="button" name="next"
-                                            class="btn btn-purple  text-uppercase  driver-sign__btn mb-3 mt-3 next action-button"
-                                            value="Next 1" />
-                                        <!-- <button class="btn btn-purple text-uppercase  driver-sign__btn mb-3 mt-3"
-                                        value="validate">Növbəti</button> -->
-
-
+                                    </div>
+                                    <div class="form-group  transition__form-group" data-id="transition-div">
+                                        <input class="transition__input " type="radio" name="transition"
+                                            id="transition-car" transition="transition" required />
+                                        <label class="transition__label" for="transition-car">
+                                            <img src="img/car.png" alt="car" class="transition__label--img">
+                                            <span class="transition__label--span">Avtomobil</span>
+                                            <i
+                                                class="fas fa-angle-down ml-auto color-purple fa-2x mr-2  transition__icon"></i>
+                                        </label>
 
                                     </div>
-                                    <!-- FORM FOR OTHER DRIVERS -->
-                                    <div id="driver-form" data-parsley-validate="">
-                                        <div class="driver-form-for-all">
+                                    <div class="form-group transition__form-group" data-id="transition-div">
+                                        <input class="transition__input" type="radio" name="transition"
+                                            id="transition-evacuator" transition="transition" />
+                                        <label class="transition__label" for="transition-evacuator">
+                                            <img src="img/evacuator.png" alt="car" class="transition__label--img">
+                                            <span class="transition__label--span">Evakuator</span>
+                                            <i
+                                                class="fas fa-angle-down ml-auto color-purple fa-2x mr-2 transition__icon"></i>
+                                        </label>
 
-                                            <div class="form-group validation-form mt-4">
-                                                <div class="form-group">
-                                                    <label class="form-label form__label">Adınız :</label>
-                                                    <input type="text" class="form-control form__control mb-3" name="name"
-                                                        placeholder="Mammad" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="form-label form__label">Soyadınız :</label>
-                                                    <input type="text" class="form-control form__control mb-3" name="surname"
-                                                        placeholder="Mammadov" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="form-label form__label">Doğum tarixiniz : </label>
-                                                    <input type="text" id="driver-birthday-all" autocomplete="off"
-                                                        class="form-control form__control mb-3" placeholder="20/12/1990"
-                                                        required>
-                                                        <input type="hidden" name="" class="driver-birthday-all-hidden" >
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="d-block  form-label form__label">Cinsiniz :</label>
-                                                    <div class="row">
-                                                        <div class="col">
-                                                            <input class="gender-input form-control form__control "
-                                                                type="radio" name="gender" id="male-all" />
-                                                            <label class="gender--label" for="male-all">Kişi</label>
+                                    </div>
+                                    <div class="form-group transition__form-group" data-id="transition-div">
+                                        <input class="transition__input" type="radio" name="transition"
+                                            id="transition-truck" transition="transition" />
+                                        <label class="transition__label" for="transition-truck">
+                                            <img src="img/transit.png" alt="car" class="transition__label--img"><span
+                                                class="transition__label--span">Yük maşını</span>
+                                            <i
+                                                class="fas fa-angle-down ml-auto color-purple fa-2x mr-2 transition__icon"></i>
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- LOADING  START  -->
+                                <div class="loading-spinner driver-sign__loading-spinner">
+                                    <div class="spinner-square mx-auto">
+                                        <div class="square-1 square"></div>
+                                        <div class="square-2 square"></div>
+                                        <div class="square-3 square"></div>
+                                    </div>
 
-                                                        </div>
-                                                        <div class="col">
-                                                            <input class="gender-input form-control form__control "
-                                                                type="radio" name="gender" id="female-all" />
-                                                            <label class="gender--label " for="female-all">Qadın</label>
-                                                        </div>
+                                </div>
+                                <!-- FORM FOR PEDESTRIAN -->
+                                <div id="driver-form-pedestrian" data-parsley-validate="">
+                                    <div class="driver-form-for-all">
+
+                                        <div class="form-group validation-form mt-4">
+                                            <div class="form-group">
+                                                <label class="form-label form__label">Adınız :</label>
+                                                <input type="text" class="form-control form__control mb-3"
+                                                    placeholder="Mammad" name="name" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="form-label form__label">Soyadınız :</label>
+                                                <input type="text" class="form-control form__control mb-3"
+                                                    placeholder="Mammadov" name="surname" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="form-label form__label">Doğum tarixiniz : </label>
+                                                <input type="text" id="driver-birthday" autocomplete="off"
+                                                    class="form-control form__control mb-3 " placeholder="20/12/1990"
+                                                    required>
+                                                <input class="driver-birthday-hidden" type="hidden" name="" value="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="d-block  form-label form__label">Cinsiniz :</label>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <input class="gender-input form-control form__control "
+                                                            type="radio" name="gender" id="male" />
+                                                        <label class="gender--label" for="male">Kişi</label>
+
+                                                    </div>
+                                                    <div class="col">
+                                                        <input class="gender-input form-control form__control "
+                                                            type="radio" name="gender" id="female" />
+                                                        <label class="gender--label " for="female">Qadın</label>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-
+                                    </div>
+                                    <!-- FORM FOR OTHER DRIVERS -->
+                                    <div id="driver-form" data-parsley-validate="" class="driver-all-from">
                                         <div class="driver-form-for-with-transition">
                                             <h5 class="h5 text-center">Nəqliyyat vasitəniz haqqında olan məlumatları
                                                 əlavə
@@ -711,13 +653,14 @@
                                                 <input id="autocomplete-car-producer"
                                                     list="autocomplete-car-producer-list"
                                                     class="form-control form__control mb-3" placeholder="Hyundai"
-                                                    required  value=""/>
+                                                    required value="" />
                                                 <datalist id="autocomplete-car-producer-list">
                                                     <option value="Hyundai" data-customvalue="1">Hyundai</option>
-                                                    <option value="BMW"  data-customvalue="2">BMW</option>
-                                                    <option value="Toyota"  data-customvalue="3">Toyota</option>
+                                                    <option value="BMW" data-customvalue="2">BMW</option>
+                                                    <option value="Toyota" data-customvalue="3">Toyota</option>
                                                 </datalist>
-                                                <input type="hidden" name="autocomplete-car-producer" id="autocomplete-car-producer-hidden" value="">
+                                                <input type="hidden" name="autocomplete-car-producer"
+                                                    id="autocomplete-car-producer-hidden" value="">
                                             </div>
 
                                             <div class="form-group">
@@ -730,7 +673,8 @@
                                                     <option value="Matrix" data-customvalue="1"></option>
                                                     <option value="Camry"></option>
                                                 </datalist>
-                                                <input type="hidden" name="autocomplete-car-producer" id="autocomplete-car-model-hidden" value="">
+                                                <input type="hidden" name="autocomplete-car-producer"
+                                                    id="autocomplete-car-model-hidden" value="">
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label form__label">Avtomobilin buraxılış ili
@@ -744,7 +688,8 @@
                                                     <option value="2019"></option>
                                                     <option value="2020"></option>
                                                 </datalist>
-                                                <input type="hidden" name="autocomplete-car-producer" id="autocomplete-release-year-hidden" value="">
+                                                <input type="hidden" name="autocomplete-car-producer"
+                                                    id="autocomplete-release-year-hidden" value="">
                                             </div>
 
                                             <div class="form-group">
@@ -754,113 +699,126 @@
                                             </div>
 
                                         </div>
-
-                                        <label class="driver-sign__label driver-membership">
-                                            <a href="#" class="color-purple membership" data-toggle="modal"
-                                                data-target="#membership-agreement-driver"> Üzvlük müqaviləsi</a>
-                                            şərtlərini
-                                            oxudum və qəbul edirəm.
-                                            <input type="checkbox" class="driver-sign__label--checkbox"
-                                                checked="checked" id="membership-checkbox" required>
-                                            <span class="driver-sign__label--checkmark membership-span"></span>
-                                        </label>
-
-
-                                        <input type="button" name="next "
-                                            class="btn btn-purple  text-uppercase  driver-sign__btn mb-3 mt-3 next action-button"
-                                            value="Next 1" />
                                     </div>
-                                </fieldset>
-                          
+                                    <label class="driver-sign__label driver-membership">
+                                        <a href="#" class="color-purple membership" data-toggle="modal"
+                                            data-target="#membership-agreement-driver"> Üzvlük müqaviləsi</a>
+                                        şərtlərini
+                                        oxudum və qəbul edirəm.
+                                        <input type="checkbox" class="driver-sign__label--checkbox" checked="checked"
+                                            id="membership-checkbox" required>
+                                        <span class="driver-sign__label--checkmark membership-span"></span>
+                                    </label>
 
-                            
-                                <fieldset class="card card-body shadow text-left driver-document  driver-fieldset driver-fieldset-second">
 
-                                    <div id="driver-document-form" data-parsley-validate="">
-                                        <h5 class="h5 text-center">Sizi sürücü kimi qeydiyyatdan keçirmək üçün bəzi
-                                            qanuni
-                                            sənədlər lazımdır. Sənədlərin keyfiyyətli şəkilləri qəbul edilir.</h5>
-                                        <div class="form-group validation-form mt-4 mb-3">
-                                            <div class="form-group driver-document__form-group">
-                                                <fieldset>
-                                                    <label class="form-label form__label">Profil şəkli : <span
-                                                            class="text-danger">(vacibdir)</span></label>
-                                                    <input type="file" class="driver-document-profile"
-                                                        accept="image/x-png,image/jpeg"
-                                                        data-parsley-errors-container="#checkbox-errors" required>
-                                                    <div class="checkbox-errors"></div>
-                                                </fieldset>
-                                            </div>
+                                    <input type="button" name="next"
+                                        class="btn btn-purple  text-uppercase  driver-sign__btn mb-3 mt-3 next action-button"
+                                        value="Next 1" />
+                               
 
-                                            <div class="form-group  driver-document__form-group">
-                                                <label class="form-label form__label">VÖEN 1-ci üz:</label>
-                                                <input type="file" class="driver-document-voen-front"
-                                                    accept="image/x-png,image/jpeg">
-                                            </div>
 
-                                            <div class="form-group  driver-document__form-group">
-                                                <label class="form-label form__label">VÖEN 2-ci üz:</label>
-                                                <input type="file" class="driver-document-voen-back"
-                                                    accept="image/x-png,image/jpeg">
-                                            </div>
 
-                                            <div class="form-group  driver-document__form-group">
-                                                <fieldset>
-                                                    <label class="form-label form__label">Sürücülük vəsiqəsi 1 : <span
-                                                            class="text-danger">(vacibdir)</span> </label>
-                                                    <input type="file" class="driver-document-driving-license-front"
-                                                        accept="image/x-png,image/jpeg" required>
-                                                    <div class="checkbox-errors"></div>
-                                                </fieldset>
-                                            </div>
+                                </div>
 
-                                            <div class="form-group  driver-document__form-group">
-                                                <fieldset>
-                                                    <label class="form-label form__label">Sürücülük vəsiqəsi 2 : <span
-                                                            class="text-danger">(vacibdir)</span> </label>
-                                                    <input type="file" class="driver-document-driving-license-back"
-                                                        accept="image/x-png,image/jpeg" required>
-                                                    <div class="checkbox-errors"></div>
-                                                </fieldset>
-                                            </div>
 
-                                            <div class="form-group  driver-document__form-group">
-                                                <fieldset>
-                                                    <label class="form-label form__label">Texniki Pasport : <span
-                                                            class="text-danger">(vacibdir)</span></label>
-                                                    <input type="file" class="driver-document-technical-passport"
-                                                        accept="image/x-png,image/jpeg" required>
-                                                    <div class="checkbox-errors"></div>
-                                                </fieldset>
-                                            </div>
 
-                                            <div class="form-group  driver-document__form-group">
-                                                <label class="form-label form__label">Nəqliyyatın İcbari Sığortası :
-                                                </label>
-                                                <input type="file" class="driver-document-compulsory-insurance"
-                                                    accept="image/x-png,image/jpeg">
-                                            </div>
+           
+                            </fieldset>
 
-                                            <div class="form-group  driver-document__form-group">
-                                                <label class="form-label form__label">Məhkumluq haqqında arayış :
-                                                </label>
-                                                <input type="file" multiple class="driver-document-reference-conviction"
-                                                    accept="image/x-png,image/jpeg">
-                                            </div>
 
+
+                            <fieldset
+                                class="card card-body shadow text-left driver-document  driver-fieldset driver-fieldset-second">
+
+                                <div id="driver-document-form" data-parsley-validate="">
+                                    <h5 class="h5 text-center">Sizi sürücü kimi qeydiyyatdan keçirmək üçün bəzi
+                                        qanuni
+                                        sənədlər lazımdır. Sənədlərin keyfiyyətli şəkilləri qəbul edilir.</h5>
+                                    <div class="form-group validation-form mt-4 mb-3">
+                                        <div class="form-group driver-document__form-group">
+                                            <fieldset>
+                                                <label class="form-label form__label">Profil şəkli : <span
+                                                        class="text-danger">(vacibdir)</span></label>
+                                                <input type="file" class="driver-document-profile"
+                                                    accept="image/x-png,image/jpeg"
+                                                    data-parsley-errors-container="#checkbox-errors" required>
+                                                <div class="checkbox-errors"></div>
+                                            </fieldset>
                                         </div>
-<div class="d-flex justify-content-between">
-    <input type="button" name="previous" class="previous action-button btn btn-purple text-uppercase  mb-3 " value="Previous" />
-    <input type="submit" name="submit" class="submit action-button btn btn-purple text-uppercase  mb-3 " value="Submit" />
-</div>
-                                       
-                                        <!-- <button class="btn btn-purple text-uppercase  driver-document__btn mb-3 "
+
+                                        <div class="form-group  driver-document__form-group">
+                                            <label class="form-label form__label">VÖEN 1-ci üz:</label>
+                                            <input type="file" class="driver-document-voen-front"
+                                                accept="image/x-png,image/jpeg">
+                                        </div>
+
+                                        <div class="form-group  driver-document__form-group">
+                                            <label class="form-label form__label">VÖEN 2-ci üz:</label>
+                                            <input type="file" class="driver-document-voen-back"
+                                                accept="image/x-png,image/jpeg">
+                                        </div>
+
+                                        <div class="form-group  driver-document__form-group">
+                                            <fieldset>
+                                                <label class="form-label form__label">Sürücülük vəsiqəsi 1 : <span
+                                                        class="text-danger">(vacibdir)</span> </label>
+                                                <input type="file" class="driver-document-driving-license-front"
+                                                    accept="image/x-png,image/jpeg" required>
+                                                <div class="checkbox-errors"></div>
+                                            </fieldset>
+                                        </div>
+
+                                        <div class="form-group  driver-document__form-group">
+                                            <fieldset>
+                                                <label class="form-label form__label">Sürücülük vəsiqəsi 2 : <span
+                                                        class="text-danger">(vacibdir)</span> </label>
+                                                <input type="file" class="driver-document-driving-license-back"
+                                                    accept="image/x-png,image/jpeg" required>
+                                                <div class="checkbox-errors"></div>
+                                            </fieldset>
+                                        </div>
+
+                                        <div class="form-group  driver-document__form-group">
+                                            <fieldset>
+                                                <label class="form-label form__label">Texniki Pasport : <span
+                                                        class="text-danger">(vacibdir)</span></label>
+                                                <input type="file" class="driver-document-technical-passport"
+                                                    accept="image/x-png,image/jpeg" required>
+                                                <div class="checkbox-errors"></div>
+                                            </fieldset>
+                                        </div>
+
+                                        <div class="form-group  driver-document__form-group">
+                                            <label class="form-label form__label">Nəqliyyatın İcbari Sığortası :
+                                            </label>
+                                            <input type="file" class="driver-document-compulsory-insurance"
+                                                accept="image/x-png,image/jpeg">
+                                        </div>
+
+                                        <div class="form-group  driver-document__form-group">
+                                            <label class="form-label form__label">Məhkumluq haqqında arayış :
+                                            </label>
+                                            <input type="file" multiple class="driver-document-reference-conviction"
+                                                accept="image/x-png,image/jpeg">
+                                        </div>
+
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <input type="button" name="previous"
+                                            class="previous action-button btn btn-purple text-uppercase  mb-3 "
+                                            value="Previous" />
+                                        <input type="submit" name="submit"
+                                            class="submit action-button btn btn-purple text-uppercase  mb-3 "
+                                            value="Submit" />
+                                    </div>
+
+                                    <!-- <button class="btn btn-purple text-uppercase  driver-document__btn mb-3 "
                                             type="submit" value="validate">Növbəti</button> -->
 
 
-                                    </div>
-                                </fieldset>
-                         
+                                </div>
+                            </fieldset>
+
 
                         </form>
 

@@ -21,12 +21,16 @@ $(document).ready(function () {
                 $(this).css('display', 'block');
                 next();
             });
-            $('#driver-form').css({
+            $('.driver-all-from').css({
                 'display': 'none'
             });
+        
         } else {
-
-            $('#driver-form').delay(1000).queue(function (next) {
+            $('#driver-form-pedestrian').delay(1000).queue(function (next) {
+                $(this).css('display', 'block');
+                next();
+            });
+            $('.driver-all-from').delay(1000).queue(function (next) {
                 $(this).css('display', 'block');
                 next();
             });
