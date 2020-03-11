@@ -20,27 +20,84 @@
                 <!-- LOADING END -->
                 <!--INPUTS STARTS-->
                 <div class="form-text">
-                    <div class="form-group form__group">
+                    <div class="form-group form__group  form__group--from">
                         <label for="startPlace" class="form-label form__label">From :</label>
+                        <button class="btn form__from-address--btn">My address</button>
+
+                        <div class="form__from-address">
+                            <div class="form-group  form__from-address__form-group" data-id="form__from-address">
+                                <input class="form__from-address__input " type="radio" name="form__from-address"
+                                    id="form-from-address-first" fromAddress="fromAddress"
+                                    data-parsley-required-message="Payment's method is required" required
+                                    data-parsley-errors-container="#payment-errors" />
+                                <label class="form__from-address__label" for="form-from-address-first">
+                                    <div class="card shadow-sm form__from-address--card">
+                                        <div class="form__from-address__heading">Address title</div>
+                                        <p class=" form__from-address--name">Home</p>
+                                        <div class=" form__receiver__heading">Address</div>
+                                        <p class=" form__receiver--number mb-0">Azadlıq ave.</p>
+                                    </div>
+                                    <i
+                                        class="fas fa-angle-down ml-auto color-purple fa-2x form__from-address__icon form__from-address__icon--default"></i>
+                                </label>
+                            </div>
+                            <div class="form-group  form__from-address__form-group" data-id="form__from-address">
+                                <input class="form__from-address__input " type="radio" name="form__from-address"
+                                    id="form-from-address-second" fromAddress="fromAddress"
+                                    data-parsley-required-message="Payment's method is required" required
+                                    data-parsley-errors-container="#payment-errors" />
+                                <label class="form__from-address__label" for="form-from-address-second">
+                                    <div class="card shadow-sm form__from-address--card">
+                                        <div class="form__from-address__heading">Address title</div>
+                                        <p class=" form__from-address--name">Home</p>
+                                        <div class=" form__receiver__heading">Address</div>
+                                        <p class=" form__receiver--number mb-0">Koroglu Rehimov</p>
+                                    </div>
+                                    <i
+                                        class="fas fa-angle-down ml-auto color-purple fa-2x form__from-address__icon form__from-address__icon--default"></i>
+                                </label>
+                            </div>
+                            <div class="form-group  form__from-address__form-group" data-id="form__from-address">
+                                <input class="form__from-address__input " type="radio" name="form__from-address"
+                                    id="form-from-address-third" fromAddress="fromAddress"
+                                    data-parsley-required-message="Payment's method is required" required
+                                    data-parsley-errors-container="#payment-errors" />
+                                <label class="form__from-address__label" for="form-from-address-third">
+                                    <div class="card shadow-sm form__from-address--card">
+                                        <div class="form__from-address__heading">Address title</div>
+                                        <p class=" form__from-address--name">Home</p>
+                                        <div class=" form__receiver__heading">Address</div>
+                                        <p class=" form__receiver--number mb-0">28 may</p>
+                                    </div>
+                                    <i
+                                        class="fas fa-angle-down ml-auto color-purple fa-2x form__from-address__icon form__from-address__icon--default"></i>
+                                </label>
+                            </div>
+                        </div>
                         <div id="from-errors"></div>
                         <input type="text" name="from" class="form-control form__control" id="startPlace"
                             placeholder="Insert pick-up address" data-parsley-required-message="From is required"
                             required data-parsley-errors-container="#from-errors">
-
+                        <input type="hidden" id="startPlaceLat">
+                        <input type="hidden" id="startPlaceLng">
                     </div>
-                    <input type="hidden" id="startPlaceLat">
-                    <input type="hidden" id="startPlaceLng">
-                    <div class="form-group form__group">
+
+                 
+
+
+
+
+                    <div class="form-group form__group form__group--destination">
                         <label for="endPlace" class="form-label form__label">Destination :</label>
                         <div id="destination-errors"></div>
                         <input type="text" name="destination" class="form-control form__control" id="endPlace"
                             placeholder="Insert Delivery address"
                             data-parsley-required-message="Destination is required"
                             data-parsley-errors-container="#destination-errors" required>
-
+                        <input type="hidden" id="endPlaceLat">
+                        <input type="hidden" id="endPlaceLng">
                     </div>
-                    <input type="hidden" id="endPlaceLat">
-                    <input type="hidden" id="endPlaceLng">
+
                 </div>
                 <div id="price_for_selected" style="width:100%;"></div>
                 <!-- INPUT END-->
@@ -214,7 +271,7 @@
 
 
 
-              
+
 
 
                 <!-- FORM RECEIVER START-->
@@ -222,7 +279,7 @@
                     <!-- <div id="payment-errors"></div> -->
                     <div class="form-group  form__receiver__form-group" data-id="form__receiver">
                         <input class="form__receiver__input " type="radio" name="form__receiver"
-                            id="form-receiver-first" receiver="receiver"
+                            id="form-receiver-third" receiver="receiver"
                             data-parsley-required-message="Payment's method is required" required
                             data-parsley-errors-container="#payment-errors" />
                         <label class="form__receiver__label" for="form-receiver-first">
@@ -280,59 +337,59 @@
                             <i class="fas fa-angle-down ml-auto color-purple fa-2x form__receiver__icon"></i>
                         </label>
                     </div>
-                    <div class="form__receiver__btn-group">
-                        <button class="btn btn-purple form__receiver__add-btn">Add New Receiver</button>
-                        <button class="btn btn-danger form__receiver__cancel-btn">Cancel</button>
-                    </div>
-                  
+
+
                 </div>
-              
-
-  <!-- INPUTS STARTS-->
-  <div id="receiver">
-    <div class="form-group form__group">
-        <label for="contact-name" class="form-label form__label">Receiver :</label>
-
-        <input type="text" name="contact-name" class="form-control form__control " id="contact-name"
-            placeholder="Mammad Mammadov">
-        <span id="error-receiver"></span>
-
-    </div>
-    <div class="form-group form__group ">
-        <label for="phoneNumber" class="d-block form-label form__label">Receiver number :</label>
-
-        <div class="form-group__phone-div">
-            <div class="form-group__phone">
-                <div class="valid-check valid-hide  valid-check-0">&#10004;</div>
-                <span id="error-receiver-number "></span>
-                <span id="error-msg"
-                    class="valid-hide text-danger d-block text-right error-msg-0"></span>
-                <div class="form__phone-group">
-                    <input type="text" class="form-control form__control form__phone form__phone-0"
-                        value="add-phone-0" name="add-phone-0" id="phoneNumber-0">
-                    <div class=" check-wp">
-                        <input type="checkbox" id="check-wp__input-0"
-                            class="check-wp__input check-wp__input-0" name="check-wp__input-0">
-                        <label for="check-wp__input-0" class="check-wp__label">
-                            <i class="fab fa-whatsapp "></i>
-                            <i class="fas fa-times-circle"></i>
-                        </label>
-                    </div>
-                    <button class="add-phone btn btn-purple">
-
-                        <i class="fas fa-plus "></i>
-                    </button>
+                <div class="form__receiver__btn-group">
+                    <button class="btn btn-purple form__receiver__add-btn">Add New Receiver</button>
+                    <button class="btn btn-danger form__receiver__cancel-btn">Cancel</button>
                 </div>
-                <button class="btn btn-purple add-wp add-wp-0">
-                    <div class="add-wp--square"></div>
-                    <div class="add-wp--text"> Has Whatsapp?</div>
-                </button>
-            </div>
-        </div>
+
+                <!-- INPUTS STARTS-->
+                <div id="receiver">
+                    <div class="form-group form__group">
+                        <label for="contact-name" class="form-label form__label">Receiver :</label>
+
+                        <input type="text" name="contact-name" class="form-control form__control " id="contact-name"
+                            placeholder="Mammad Mammadov">
+                        <span id="error-receiver"></span>
+
+                    </div>
+                    <div class="form-group form__group ">
+                        <label for="phoneNumber" class="d-block form-label form__label">Receiver number :</label>
+
+                        <div class="form-group__phone-div">
+                            <div class="form-group__phone">
+                                <div class="valid-check valid-hide  valid-check-0">&#10004;</div>
+                                <span id="error-receiver-number "></span>
+                                <span id="error-msg"
+                                    class="valid-hide text-danger d-block text-right error-msg-0"></span>
+                                <div class="form__phone-group">
+                                    <input type="text" class="form-control form__control form__phone form__phone-0"
+                                        value="add-phone-0" name="add-phone-0" id="phoneNumber-0">
+                                    <div class=" check-wp">
+                                        <input type="checkbox" id="check-wp__input-0"
+                                            class="check-wp__input check-wp__input-0" name="check-wp__input-0">
+                                        <label for="check-wp__input-0" class="check-wp__label">
+                                            <i class="fab fa-whatsapp "></i>
+                                            <i class="fas fa-times-circle"></i>
+                                        </label>
+                                    </div>
+                                    <button class="add-phone btn btn-purple">
+
+                                        <i class="fas fa-plus "></i>
+                                    </button>
+                                </div>
+                                <button class="btn btn-purple add-wp add-wp-0">
+                                    <div class="add-wp--square"></div>
+                                    <div class="add-wp--text"> Has Whatsapp?</div>
+                                </button>
+                            </div>
+                        </div>
 
 
-    </div>
-</div>
+                    </div>
+                </div>
 
 
 
