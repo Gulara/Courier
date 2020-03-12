@@ -1,0 +1,445 @@
+//= template/header.html
+
+<div class="loader">
+    <div class="loading-animation"></div>
+</div>
+
+<section class="row no-gutters  bg-light min-vh-100 account-sign-in-cover2 p-0">
+
+    <div class="col-sm-12 col-lg-8 col-xl-6 pt-2 ml-auto mr-auto">
+        <section class="p-0">
+            <div class="container min-vh-lg-100 d-flex flex-column justify-content-between text-center">
+
+                <div class="row justify-content-center mb-3">
+                    <div class="col-xl-7 col-lg-8">
+
+                        <form id="step-form">
+                            <!-- progressbar -->
+                            <ul id="driver-progressbar">
+                                <li class="active"></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+
+                            <fieldset
+                                class="card card-body shadow text-left driver-sign driver-fieldset driver-fieldset-first">
+                                <h5 class="h5 text-center">Sürücü kimi qeydiyyatdan keçin</h5>
+                                <div class="transition__div ">
+
+                                    <div class="form-group  transition__form-group" data-id="transition-div">
+                                        <input class="transition__input " type="radio" name="transition"
+                                            transition="transition" id="transition-pedestrian" />
+                                        <label class="transition__label" for="transition-pedestrian">
+                                            <img src="img/pedestrian.png" alt="car" class="transition__label--img">
+                                            <span class="transition__label--span">Piyada</span>
+                                            <i
+                                                class="fas fa-angle-down ml-auto color-purple fa-2x mr-2 transition__icon"></i>
+                                        </label>
+                                    </div>
+
+                                    <div class="form-group  transition__form-group" data-id="transition-div">
+
+                                        <input class="transition__input" type="radio" name="transition"
+                                            transition="transition" id="transition-motorbike" />
+                                        <label class="transition__label" for="transition-motorbike">
+                                            <img src="img/motorbike.png" alt="car" class="transition__label--img">
+                                            <span class="transition__label--span">Motosiklet</span>
+                                            <i
+                                                class="fas fa-angle-down ml-auto color-purple fa-2x mr-2  transition__icon"></i>
+                                        </label>
+
+                                    </div>
+                                    <div class="form-group  transition__form-group" data-id="transition-div">
+                                        <input class="transition__input " type="radio" name="transition"
+                                            id="transition-car" transition="transition"  />
+                                        <label class="transition__label" for="transition-car">
+                                            <img src="img/car.png" alt="car" class="transition__label--img">
+                                            <span class="transition__label--span">Avtomobil</span>
+                                            <i
+                                                class="fas fa-angle-down ml-auto color-purple fa-2x mr-2  transition__icon"></i>
+                                        </label>
+
+                                    </div>
+                                    <div class="form-group transition__form-group" data-id="transition-div">
+                                        <input class="transition__input" type="radio" name="transition"
+                                            id="transition-evacuator" transition="transition" />
+                                        <label class="transition__label" for="transition-evacuator">
+                                            <img src="img/evacuator.png" alt="car" class="transition__label--img">
+                                            <span class="transition__label--span">Evakuator</span>
+                                            <i
+                                                class="fas fa-angle-down ml-auto color-purple fa-2x mr-2 transition__icon"></i>
+                                        </label>
+
+                                    </div>
+                                    <div class="form-group transition__form-group" data-id="transition-div">
+                                        <input class="transition__input" type="radio" name="transition"
+                                            id="transition-truck" transition="transition" />
+                                        <label class="transition__label" for="transition-truck">
+                                            <img src="img/transit.png" alt="car" class="transition__label--img"><span
+                                                class="transition__label--span">Yük maşını</span>
+                                            <i
+                                                class="fas fa-angle-down ml-auto color-purple fa-2x mr-2 transition__icon"></i>
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- LOADING  START  -->
+                                <div class="loading-spinner driver-sign__loading-spinner">
+                                    <div class="spinner-square mx-auto">
+                                        <div class="square-1 square"></div>
+                                        <div class="square-2 square"></div>
+                                        <div class="square-3 square"></div>
+                                    </div>
+
+                                </div>
+                                <!-- FORM FOR PEDESTRIAN -->
+                                <div id="driver-form-pedestrian">
+                                    <div class="driver-form-for-all">
+
+                                        <div class="form-group validation-form mt-4">
+                                            <div class="form-group">
+                                                <label class="form-label form__label">Adınız :</label>
+                                                <input type="text" class="form-control form__control mb-3"
+                                                    placeholder="Mammad" name="name" >
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="form-label form__label">Soyadınız :</label>
+                                                <input type="text" class="form-control form__control mb-3"
+                                                    placeholder="Mammadov" name="surname" >
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="form-label form__label">Doğum tarixiniz : </label>
+                                                <input type="text" id="driver-birthday" autocomplete="off"
+                                                    class="form-control form__control mb-3 " placeholder="20/12/1990"
+                                                    >
+                                                <input class="driver-birthday-hidden" type="hidden" name="" value="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="d-block  form-label form__label">Cinsiniz :</label>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <input class="gender-input form-control form__control "
+                                                            type="radio" name="gender" id="male" />
+                                                        <label class="gender--label" for="male">Kişi</label>
+
+                                                    </div>
+                                                    <div class="col">
+                                                        <input class="gender-input form-control form__control "
+                                                            type="radio" name="gender" id="female" />
+                                                        <label class="gender--label " for="female">Qadın</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- FORM FOR OTHER DRIVERS -->
+                                    <div id="driver-form"  class="driver-all-from">
+                                        <div class="driver-form-for-with-transition">
+                                            <h5 class="h5 text-center">Nəqliyyat vasitəniz haqqında olan məlumatları
+                                                əlavə
+                                                edin
+                                            </h5>
+                                            <div class="form-group">
+                                                <label class="form-label form__label">İstehsalçı :</label>
+                                                <input id="autocomplete-car-producer"
+                                                    list="autocomplete-car-producer-list"
+                                                    class="form-control form__control mb-3" placeholder="Hyundai"
+                                                     value="" />
+                                                <datalist id="autocomplete-car-producer-list">
+                                                    <option value="Hyundai" data-customvalue="1">Hyundai</option>
+                                                    <option value="BMW" data-customvalue="2">BMW</option>
+                                                    <option value="Toyota" data-customvalue="3">Toyota</option>
+                                                </datalist>
+                                                <input type="hidden" name="autocomplete-car-producer"
+                                                    id="autocomplete-car-producer-hidden" value="">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="form-label form__label">Avtomobilin modeli :</label>
+                                                <input id="autocomplete-car-model" list="autocomplete-car-model-list"
+                                                    class="form-control form__control mb-3" placeholder="Corolla"
+                                                     />
+                                                <datalist id="autocomplete-car-model-list">
+                                                    <option value="Corolla" data-customvalue="1"></option>
+                                                    <option value="Matrix" data-customvalue="1"></option>
+                                                    <option value="Camry"></option>
+                                                </datalist>
+                                                <input type="hidden" name="autocomplete-car-producer"
+                                                    id="autocomplete-car-model-hidden" value="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="form-label form__label">Avtomobilin buraxılış ili
+                                                    :</label>
+                                                <input id="autocomplete-release-year"
+                                                    list="autocomplete-release-year-list"
+                                                    class="form-control form__control mb-3" placeholder="2019"
+                                                     />
+                                                <datalist id="autocomplete-release-year-list">
+                                                    <option value="2018" data-customvalue="1"></option>
+                                                    <option value="2019"></option>
+                                                    <option value="2020"></option>
+                                                </datalist>
+                                                <input type="hidden" name="autocomplete-car-producer"
+                                                    id="autocomplete-release-year-hidden" value="">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="form-label form__label">Dövlət Qeydiyyat Nişanı :</label>
+                                                <input type="text" class="form-control form__control mb-3"
+                                                    placeholder="90-AB-123" >
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <label class="driver-sign__label driver-membership">
+                                        <a href="#" class="color-purple membership" data-toggle="modal"
+                                            data-target="#membership-agreement-driver"> Üzvlük müqaviləsi</a>
+                                        şərtlərini
+                                        oxudum və qəbul edirəm.
+                                        <input type="checkbox" class="driver-sign__label--checkbox" checked="checked"
+                                            id="membership-checkbox" >
+                                        <span class="driver-sign__label--checkmark membership-span"></span>
+                                    </label>
+
+
+                                    <input type="button" name="next"
+                                        class="btn btn-purple  text-uppercase  mb-3 mt-3 next action-button"
+                                        value="Next 1" />
+                               
+
+
+
+                                </div>
+
+
+
+           
+                            </fieldset>
+
+
+
+                            <fieldset
+                                class="card card-body shadow text-left driver-document  driver-fieldset driver-fieldset-second">
+
+                                <div id="driver-document-form" >
+                                    <h5 class="h5 text-center">Sizi sürücü kimi qeydiyyatdan keçirmək üçün bəzi
+                                        qanuni
+                                        sənədlər lazımdır. Sənədlərin keyfiyyətli şəkilləri qəbul edilir.</h5>
+                                    <div class="form-group validation-form mt-4 mb-3">
+                                        <div class="form-group driver-document__form-group">
+                                            <fieldset>
+                                                <label class="form-label form__label">Profil şəkli : <span
+                                                        class="text-danger">(vacibdir)</span></label>
+                                                <input type="file" class="driver-document-profile"
+                                                    accept="image/x-png,image/jpeg">
+                                            </fieldset>
+                                        </div>
+
+                                        <div class="form-group  driver-document__form-group">
+                                            <label class="form-label form__label">VÖEN 1-ci üz:</label>
+                                            <input type="file" class="driver-document-voen-front"
+                                                accept="image/x-png,image/jpeg">
+                                        </div>
+
+                                        <div class="form-group  driver-document__form-group">
+                                            <label class="form-label form__label">VÖEN 2-ci üz:</label>
+                                            <input type="file" class="driver-document-voen-back"
+                                                accept="image/x-png,image/jpeg">
+                                        </div>
+
+                                        <div class="form-group  driver-document__form-group">
+                                            <fieldset>
+                                                <label class="form-label form__label">Sürücülük vəsiqəsi 1 : <span
+                                                        class="text-danger">(vacibdir)</span> </label>
+                                                <input type="file" class="driver-document-driving-license-front"
+                                                    accept="image/x-png,image/jpeg">
+                                            </fieldset>
+                                        </div>
+
+                                        <div class="form-group  driver-document__form-group">
+                                            <fieldset>
+                                                <label class="form-label form__label">Sürücülük vəsiqəsi 2 : <span
+                                                        class="text-danger">(vacibdir)</span> </label>
+                                                <input type="file" class="driver-document-driving-license-back"
+                                                    accept="image/x-png,image/jpeg">
+                                            </fieldset>
+                                        </div>
+
+                                        <div class="form-group  driver-document__form-group">
+                                            <fieldset>
+                                                <label class="form-label form__label">Texniki Pasport : <span
+                                                        class="text-danger">(vacibdir)</span></label>
+                                                <input type="file" class="driver-document-technical-passport"
+                                                    accept="image/x-png,image/jpeg">
+                                                <!-- <div class="checkbox-errors"></div> -->
+                                            </fieldset>
+                                        </div>
+
+                                        <div class="form-group  driver-document__form-group">
+                                            <label class="form-label form__label">Nəqliyyatın İcbari Sığortası :
+                                            </label>
+                                            <input type="file" class="driver-document-compulsory-insurance"
+                                                accept="image/x-png,image/jpeg">
+                                        </div>
+
+                                        <div class="form-group  driver-document__form-group">
+                                            <label class="form-label form__label">Məhkumluq haqqında arayış :
+                                            </label>
+                                            <input type="file" multiple class="driver-document-reference-conviction"
+                                                accept="image/x-png,image/jpeg">
+                                        </div>
+
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <input type="button" name="previous"
+                                            class="previous action-button btn btn-purple text-uppercase  mb-3 "
+                                            value="Previous" />
+                                        <input type="submit" name="submit"
+                                            class="submit action-button btn btn-purple text-uppercase  mb-3 "
+                                            value="Submit" />
+                                    </div>
+
+                                    <!-- <button class="btn btn-purple text-uppercase  driver-document__btn mb-3 "
+                                            type="submit" value="validate">Növbəti</button> -->
+
+
+                                </div>
+                            </fieldset>
+
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="modal fade" id="membership-agreement-driver" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Üzvlük müqaviləsi</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">
+                                <img src="assets/img/icons/interface/icon-x.svg" alt="Icon">
+                            </span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+
+
+                        1. SORUMLULUKLAR
+                        a.Firma, fiyatlar ve sunulan ürün ve hizmetler üzerinde değişiklik yapma hakkını her zaman saklı
+                        tutar.
+                        b.Firma, üyenin sözleşme konusu hizmetlerden, teknik arızalar dışında yararlandırılacağını kabul
+                        ve taahhüt eder.
+                        c.Kullanıcı, sitenin kullanımında tersine mühendislik yapmayacağını ya da bunların kaynak kodunu
+                        bulmak veya elde etmek amacına yönelik herhangi bir başka işlemde bulunmayacağını aksi halde ve
+                        3. Kişiler nezdinde doğacak zararlardan sorumlu olacağını, hakkında hukuki ve cezai işlem
+                        yapılacağını peşinen kabul eder.
+                        d.Kullanıcı, site içindeki faaliyetlerinde, sitenin herhangi bir bölümünde veya iletişimlerinde
+                        genel ahlaka ve adaba aykırı, kanuna aykırı, 3. Kişilerin haklarını zedeleyen, yanıltıcı,
+                        saldırgan, müstehcen, pornografik, kişilik haklarını zedeleyen, telif haklarına aykırı, yasa
+                        dışı faaliyetleri teşvik eden içerikler üretmeyeceğini, paylaşmayacağını kabul eder. Aksi halde
+                        oluşacak zarardan tamamen kendisi sorumludur ve bu durumda ‘Site’ yetkilileri, bu tür hesapları
+                        askıya alabilir, sona erdirebilir, yasal süreç başlatma hakkını saklı tutar. Bu sebeple yargı
+                        mercilerinden etkinlik veya kullanıcı hesapları ile ilgili bilgi talepleri gelirse paylaşma
+                        hakkını saklı tutar.
+                        e.Sitenin üyelerinin birbirleri veya üçüncü şahıslarla olan ilişkileri kendi sorumluluğundadır.
+
+                        2. Fikri Mülkiyet Hakları
+
+                        2.1. İşbu Site’de yer alan ünvan, işletme adı, marka, patent, logo, tasarım, bilgi ve yöntem
+                        gibi tescilli veya tescilsiz tüm fikri mülkiyet hakları site işleteni ve sahibi firmaya veya
+                        belirtilen ilgilisine ait olup, ulusal ve uluslararası hukukun koruması altındadır. İşbu
+                        Site’nin ziyaret edilmesi veya bu Site’deki hizmetlerden yararlanılması söz konusu fikri
+                        mülkiyet hakları konusunda hiçbir hak vermez.
+                        2.2. Site’de yer alan bilgiler hiçbir şekilde çoğaltılamaz, yayınlanamaz, kopyalanamaz,
+                        sunulamaz ve/veya aktarılamaz. Site’nin bütünü veya bir kısmı diğer bir internet sitesinde
+                        izinsiz olarak kullanılamaz.
+
+                        3. Gizli Bilgi
+                        3.1. Firma, site üzerinden kullanıcıların ilettiği kişisel bilgileri 3. Kişilere
+                        açıklamayacaktır. Bu kişisel bilgiler; kişi adı-soyadı, adresi, telefon numarası, cep telefonu,
+                        e-posta adresi gibi Kullanıcı’yı tanımlamaya yönelik her türlü diğer bilgiyi içermekte olup,
+                        kısaca ‘Gizli Bilgiler’ olarak anılacaktır.
+
+                        3.2. Kullanıcı, sadece tanıtım, reklam, kampanya, promosyon, duyuru vb. pazarlama faaliyetleri
+                        kapsamında kullanılması ile sınırlı olmak üzere, Site’nin sahibi olan firmanın kendisine ait
+                        iletişim, portföy durumu ve demografik bilgilerini iştirakleri ya da bağlı bulunduğu grup
+                        şirketleri ile paylaşmasına muvafakat ettiğini kabul ve beyan eder. Bu kişisel bilgiler firma
+                        bünyesinde müşteri profili belirlemek, müşteri profiline uygun promosyon ve kampanyalar sunmak
+                        ve istatistiksel çalışmalar yapmak amacıyla kullanılabilecektir.
+
+                        3.3. Gizli Bilgiler, ancak resmi makamlarca usulü dairesinde bu bilgilerin talep edilmesi
+                        halinde ve yürürlükteki emredici mevzuat hükümleri gereğince resmi makamlara açıklama
+                        yapılmasının zorunlu olduğu durumlarda resmi makamlara açıklanabilecektir.
+
+                        4. Garanti Vermeme: İŞBU SÖZLEŞME MADDESİ UYGULANABİLİR KANUNUN İZİN VERDİĞİ AZAMİ ÖLÇÜDE
+                        GEÇERLİ OLACAKTIR. FİRMA TARAFINDAN SUNULAN HİZMETLER "OLDUĞU GİBİ” VE "MÜMKÜN OLDUĞU” TEMELDE
+                        SUNULMAKTA VE PAZARLANABİLİRLİK, BELİRLİ BİR AMACA UYGUNLUK VEYA İHLAL ETMEME KONUSUNDA TÜM
+                        ZIMNİ GARANTİLER DE DÂHİL OLMAK ÜZERE HİZMETLER VEYA UYGULAMA İLE İLGİLİ OLARAK (BUNLARDA YER
+                        ALAN TÜM BİLGİLER DÂHİL) SARİH VEYA ZIMNİ, KANUNİ VEYA BAŞKA BİR NİTELİKTE HİÇBİR GARANTİDE
+                        BULUNMAMAKTADIR.
+
+                        5. Kayıt ve Güvenlik
+                        Kullanıcı, doğru, eksiksiz ve güncel kayıt bilgilerini vermek zorundadır. Aksi halde bu Sözleşme
+                        ihlal edilmiş sayılacak ve Kullanıcı bilgilendirilmeksizin hesap kapatılabilecektir.
+                        Kullanıcı, site ve üçüncü taraf sitelerdeki şifre ve hesap güvenliğinden kendisi sorumludur.
+                        Aksi halde oluşacak veri kayıplarından ve güvenlik ihlallerinden veya donanım ve cihazların
+                        zarar görmesinden Firma sorumlu tutulamaz.
+
+                        6. Mücbir Sebep
+
+                        Tarafların kontrolünde olmayan; tabii afetler, yangın, patlamalar, iç savaşlar, savaşlar,
+                        ayaklanmalar, halk hareketleri, seferberlik ilanı, grev, lokavt ve salgın hastalıklar, altyapı
+                        ve internet arızaları, elektrik kesintisi gibi sebeplerden (aşağıda birlikte "Mücbir Sebep”
+                        olarak anılacaktır.) dolayı sözleşmeden doğan yükümlülükler taraflarca ifa edilemez hale
+                        gelirse, taraflar bundan sorumlu değildir. Bu sürede Taraflar’ın işbu Sözleşme’den doğan hak ve
+                        yükümlülükleri askıya alınır.
+
+                        7. Sözleşmenin Bütünlüğü ve Uygulanabilirlik
+
+                        İşbu sözleşme şartlarından biri, kısmen veya tamamen geçersiz hale gelirse, sözleşmenin geri
+                        kalanı geçerliliğini korumaya devam eder.
+
+                        8. Sözleşmede Yapılacak Değişiklikler
+
+                        Firma, dilediği zaman sitede sunulan hizmetleri ve işbu sözleşme şartlarını kısmen veya tamamen
+                        değiştirebilir. Değişiklikler sitede yayınlandığı tarihten itibaren geçerli olacaktır.
+                        Değişiklikleri takip etmek Kullanıcı’nın sorumluluğundadır. Kullanıcı, sunulan hizmetlerden
+                        yararlanmaya devam etmekle bu değişiklikleri de kabul etmiş sayılır.
+
+                        9. Tebligat
+                        İşbu Sözleşme ile ilgili taraflara gönderilecek olan tüm bildirimler, Firma’nın bilinen e.posta
+                        adresi ve kullanıcının üyelik formunda belirttiği e.posta adresi vasıtasıyla yapılacaktır.
+                        Kullanıcı, üye olurken belirttiği adresin geçerli tebligat adresi olduğunu, değişmesi durumunda
+                        5 gün içinde yazılı olarak diğer tarafa bildireceğini, aksi halde bu adrese yapılacak
+                        tebligatların geçerli sayılacağını kabul eder.
+
+                        10. Delil Sözleşmesi
+                        Taraflar arasında işbu sözleşme ile ilgili işlemler için çıkabilecek her türlü uyuşmazlıklarda
+                        Taraflar’ın defter, kayıt ve belgeleri ile ve bilgisayar kayıtları ve faks kayıtları 6100 sayılı
+                        Hukuk Muhakemeleri Kanunu uyarınca delil olarak kabul edilecek olup, kullanıcı bu kayıtlara
+                        itiraz etmeyeceğini kabul eder.
+
+                        11. Uyuşmazlıkların Çözümü
+                        İşbu Sözleşme’nin uygulanmasından veya yorumlanmasından doğacak her türlü uyuşmazlığın çözümünde
+                        İstanbul (Merkez) Adliyesi Mahkemeleri ve İcra Daireleri yetkilidir.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-purple" data-dismiss="modal">Close</button>
+                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- 
+<a href="#top" class="btn btn-primary rounded-circle btn-back-to-top" data-smooth-scroll data-aos="fade-up"
+    data-aos-offset="2000" data-aos-mirror="true" data-aos-once="false">
+    <img src="assets/img/icons/interface/icon-arrow-up.svg" alt="Icon" class="icon bg-white" data-inject-svg>
+</a> -->
+
+//= template/footer.html
+//= template/footer-demo-driver-sign-in.html
