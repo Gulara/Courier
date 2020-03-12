@@ -28,11 +28,12 @@
   }
 
   &__control {
-    background-color: $color-secondary;
+ 
     width: 100% !important;
     height: 50px !important;
     border-radius: 10px;
     color: $color-secondary-dark;
+    background-color: $color-secondary;
     font-size: 16px;
 
     // &:focus{
@@ -51,6 +52,125 @@
 
   &__group {
     margin-bottom: 1rem;
+
+    
+  }
+  &__from-address{
+    display: flex;
+    flex-wrap: wrap;
+    &--btn{
+      border-radius: 20px;
+      color: #ffffff !important;
+      background: linear-gradient(-45deg, $color-primary, $color-primary-light-1, $color-2, $color-3);
+      animation: gradientBtn 16s linear  infinite;
+      background-size: 600%;
+      margin-bottom: 1rem;
+  
+      padding: 3px 8px;
+      font-size: 12px;
+  display: block;
+      &:hover {
+          background-color: $color-primary-dark !important;
+      }
+    }
+
+    &__form-group {
+      width: 100%;
+
+      &--other {
+        // display: none;
+      }
+
+      @include respondmax(sm) {
+        margin: 0 3px;
+
+      }
+    }
+    &__label {
+      // text-align: center;
+      cursor: pointer;
+      background-color: $color-secondary;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      border-radius: 3px;
+      width: 100%;
+
+      border: 2px solid transparent;
+      border-radius: 10px;
+
+
+
+      &--span {
+        font-size: 16px;
+        text-align: center;
+
+        // font-family: 'Nunito', sans-serif;
+        color: $color-secondary-dark;
+        font-weight: bold;
+        font-weight: bold;
+
+
+
+      }
+
+
+      &:hover {
+        border: 2px solid $color-primary;
+      }
+    }
+
+    &__input[type="radio"] {
+      visibility: hidden;
+      height: 0;
+      width: 0;
+      display: none;
+
+      &:checked+div,
+      &:checked+label {
+        border: 2px solid $color-primary;
+
+      }
+
+      &:checked+label>i {
+        display: flex;
+      }
+    }
+    &__heading {
+      opacity: .5;
+    }
+
+    &--name {
+      padding-bottom: 5px;
+      border-bottom: 1px solid #d0d2d7;
+      margin-bottom: 5px;
+    }
+    &__icon {
+      display: none;
+      position: absolute;
+      right: 10px;
+      top: 39%;
+      width: 40px;
+      // display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f5f5f5;
+
+      // opacity: 1;
+      // &--default {
+      //   display: flex;
+      // }
+      &-left {
+        color: $color-primary;
+      }
+    }
+    &--card {
+      padding: 5px 10px;
+      width: 100%;
+      background: transparent;
+      border: none;
+    }
   }
 
   &__label {
@@ -89,6 +209,7 @@
       &--other {
         margin: 10px 60px 10px 0;
         display: none;
+
       }
     }
 
@@ -113,7 +234,7 @@
       width: 100%;
 
       &--other {
-        display: none;
+        // display: none;
       }
 
       @include respondmax(sm) {
@@ -198,7 +319,8 @@
       }
     }
     &__btn-group{
-      display: none;
+      // display: none;
+      display: flex;
       justify-content: flex-end;
       align-items: center;
       margin-bottom: 10px;
@@ -216,9 +338,8 @@
     
     }
     &__cancel-btn{
-      // display: none;
+      display: none;
    border-radius: 10px;
-     margin-left: 10px;
       text-align: center;
       outline: none;
     }

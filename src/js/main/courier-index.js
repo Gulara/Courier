@@ -1,8 +1,8 @@
 // NEW PAYMENT METHODS WITH RADIO BUTTON
 $(document).ready(function () {
 
-    $('#form-receiver-first').prop('checked', true);
-    $('#form-receiver-first').attr('chk', '1');
+    // $('#form-receiver-first').prop('checked', true);
+    // $('#form-receiver-first').attr('chk', '1');
     $('input[type=radio][receiver=receiver]').change(function () {
 
 
@@ -27,11 +27,12 @@ $(document).ready(function () {
         $.each($(':radio[receiver="' + receiver + '"]'), function () {
             $(this).val(val++);
             $(this).attr('chk', '0');
-            $('#form-receiver-first').attr('chk', '1');
+            // $('#form-receiver-first').attr('chk', '1');
             $(this).on("click", function (event) {
                 SetRadioButtonChkProperty($(this).val(), receiver);
                 let checkedSiblings = $(this).parent().siblings();
                 checkedSiblings.slideToggle('slow');
+                $('.form__receiver__add-btn').slideToggle('slow');
 
             });
         });
@@ -56,6 +57,7 @@ $(document).ready(function () {
                     $('.form__receiver__icon').css({
                         'display': 'none'
                     });
+                   
                 }
             }
         });
@@ -69,14 +71,15 @@ $(document).ready(function () {
 
         $('#receiver').slideDown(1500);
         $('.form__receiver__form-group').slideUp(1500);
-
+        $(this).slideUp(0);
+$('.form__receiver__cancel-btn').slideDown(1500);
 
      
     });
     $('.form__receiver__cancel-btn').click(function (e) {
         e.preventDefault();
-
-
+        $(this).slideUp(0);
+$('.form__receiver__add-btn').slideDown(1500);
         $('#receiver').slideUp(1500);
         $('.form__receiver__form-group').slideDown(1500);
     });
