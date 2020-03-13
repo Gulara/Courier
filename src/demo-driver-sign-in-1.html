@@ -13,12 +13,12 @@
                 <div class="row justify-content-center mb-3">
                     <div class="col-xl-7 col-lg-8">
 
-                        <form id="step-form">
+                        <form id="step-form" style="margin-top: 10px;">
                             <!-- progressbar -->
                             <ul id="driver-progressbar">
                                 <li class="active"></li>
                                 <li></li>
-                                <li></li>
+                                <li class="driver-progressbar-third"></li>
                             </ul>
 
                             <fieldset
@@ -30,7 +30,8 @@
                                         <input class="transition__input " type="radio" name="transition"
                                             transition="transition" id="transition-pedestrian" />
                                         <label class="transition__label" for="transition-pedestrian">
-                                            <img src="img/pedestrian.png" alt="car" class="transition__label--img">
+                                            <img src="img/pedestrian.png" alt="car" class="transition__label--img"
+                                                style="width: 55px !important;">
                                             <span class="transition__label--span">Piyada</span>
                                             <i
                                                 class="fas fa-angle-down ml-auto color-purple fa-2x mr-2 transition__icon"></i>
@@ -42,7 +43,8 @@
                                         <input class="transition__input" type="radio" name="transition"
                                             transition="transition" id="transition-motorbike" />
                                         <label class="transition__label" for="transition-motorbike">
-                                            <img src="img/motorbike.png" alt="car" class="transition__label--img">
+                                            <img src="img/motorbike.png" alt="car" class="transition__label--img"
+                                                style="width: 55px !important;">
                                             <span class="transition__label--span">Motosiklet</span>
                                             <i
                                                 class="fas fa-angle-down ml-auto color-purple fa-2x mr-2  transition__icon"></i>
@@ -51,9 +53,10 @@
                                     </div>
                                     <div class="form-group  transition__form-group" data-id="transition-div">
                                         <input class="transition__input " type="radio" name="transition"
-                                            id="transition-car" transition="transition"  />
+                                            id="transition-car" transition="transition" />
                                         <label class="transition__label" for="transition-car">
-                                            <img src="img/car.png" alt="car" class="transition__label--img">
+                                            <img src="img/car.png" alt="car" class="transition__label--img"
+                                                style="width: 55px !important;">
                                             <span class="transition__label--span">Avtomobil</span>
                                             <i
                                                 class="fas fa-angle-down ml-auto color-purple fa-2x mr-2  transition__icon"></i>
@@ -64,7 +67,8 @@
                                         <input class="transition__input" type="radio" name="transition"
                                             id="transition-evacuator" transition="transition" />
                                         <label class="transition__label" for="transition-evacuator">
-                                            <img src="img/evacuator.png" alt="car" class="transition__label--img">
+                                            <img src="img/evacuator.png" alt="car" class="transition__label--img"
+                                                style="width: 55px !important;">
                                             <span class="transition__label--span">Evakuator</span>
                                             <i
                                                 class="fas fa-angle-down ml-auto color-purple fa-2x mr-2 transition__icon"></i>
@@ -75,7 +79,8 @@
                                         <input class="transition__input" type="radio" name="transition"
                                             id="transition-truck" transition="transition" />
                                         <label class="transition__label" for="transition-truck">
-                                            <img src="img/transit.png" alt="car" class="transition__label--img"><span
+                                            <img src="img/transit.png" alt="car" class="transition__label--img"
+                                                style="width: 55px !important;"><span
                                                 class="transition__label--span">Yük maşını</span>
                                             <i
                                                 class="fas fa-angle-down ml-auto color-purple fa-2x mr-2 transition__icon"></i>
@@ -99,18 +104,17 @@
                                             <div class="form-group">
                                                 <label class="form-label form__label">Adınız :</label>
                                                 <input type="text" class="form-control form__control mb-3"
-                                                    placeholder="Mammad" name="name" >
+                                                    placeholder="Mammad" name="name">
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label form__label">Soyadınız :</label>
                                                 <input type="text" class="form-control form__control mb-3"
-                                                    placeholder="Mammadov" name="surname" >
+                                                    placeholder="Mammadov" name="surname">
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label form__label">Doğum tarixiniz : </label>
                                                 <input type="text" id="driver-birthday" autocomplete="off"
-                                                    class="form-control form__control mb-3 " placeholder="20/12/1990"
-                                                    >
+                                                    class="form-control form__control mb-3 " placeholder="20/12/1990">
                                                 <input class="driver-birthday-hidden" type="hidden" name="" value="">
                                             </div>
                                             <div class="form-group">
@@ -132,7 +136,7 @@
                                         </div>
                                     </div>
                                     <!-- FORM FOR OTHER DRIVERS -->
-                                    <div id="driver-form"  class="driver-all-from">
+                                    <div id="driver-form" class="driver-all-from">
                                         <div class="driver-form-for-with-transition">
                                             <h5 class="h5 text-center">Nəqliyyat vasitəniz haqqında olan məlumatları
                                                 əlavə
@@ -143,7 +147,7 @@
                                                 <input id="autocomplete-car-producer"
                                                     list="autocomplete-car-producer-list"
                                                     class="form-control form__control mb-3" placeholder="Hyundai"
-                                                     value="" />
+                                                    value="" />
                                                 <datalist id="autocomplete-car-producer-list">
                                                     <option value="Hyundai" data-customvalue="1">Hyundai</option>
                                                     <option value="BMW" data-customvalue="2">BMW</option>
@@ -156,8 +160,7 @@
                                             <div class="form-group">
                                                 <label class="form-label form__label">Avtomobilin modeli :</label>
                                                 <input id="autocomplete-car-model" list="autocomplete-car-model-list"
-                                                    class="form-control form__control mb-3" placeholder="Corolla"
-                                                     />
+                                                    class="form-control form__control mb-3" placeholder="Corolla" />
                                                 <datalist id="autocomplete-car-model-list">
                                                     <option value="Corolla" data-customvalue="1"></option>
                                                     <option value="Matrix" data-customvalue="1"></option>
@@ -171,8 +174,7 @@
                                                     :</label>
                                                 <input id="autocomplete-release-year"
                                                     list="autocomplete-release-year-list"
-                                                    class="form-control form__control mb-3" placeholder="2019"
-                                                     />
+                                                    class="form-control form__control mb-3" placeholder="2019" />
                                                 <datalist id="autocomplete-release-year-list">
                                                     <option value="2018" data-customvalue="1"></option>
                                                     <option value="2019"></option>
@@ -185,7 +187,7 @@
                                             <div class="form-group">
                                                 <label class="form-label form__label">Dövlət Qeydiyyat Nişanı :</label>
                                                 <input type="text" class="form-control form__control mb-3"
-                                                    placeholder="90-AB-123" >
+                                                    placeholder="90-AB-123">
                                             </div>
 
                                         </div>
@@ -196,7 +198,7 @@
                                         şərtlərini
                                         oxudum və qəbul edirəm.
                                         <input type="checkbox" class="driver-sign__label--checkbox" checked="checked"
-                                            id="membership-checkbox" >
+                                            id="membership-checkbox">
                                         <span class="driver-sign__label--checkmark membership-span"></span>
                                     </label>
 
@@ -204,7 +206,7 @@
                                     <input type="button" name="next"
                                         class="btn btn-purple  text-uppercase  mb-3 mt-3 next action-button"
                                         value="Next 1" />
-                               
+
 
 
 
@@ -212,16 +214,18 @@
 
 
 
-           
+
                             </fieldset>
 
 
 
                             <fieldset
-                                class="card card-body shadow text-left driver-document  driver-fieldset driver-fieldset-second">
+                                class="card card-body shadow text-left driver-document  driver-fieldset driver-fieldset-second"
+                                style="margin-top: 1rem;">
 
-                                <div id="driver-document-form" >
-                                    <h5 class="h5 text-center">Sizi sürücü kimi qeydiyyatdan keçirmək üçün bəzi
+                                <div id="driver-document-form">
+                                    <h5 class="h5 text-center" style="font-size: 17px;">Sizi sürücü kimi qeydiyyatdan
+                                        keçirmək üçün bəzi
                                         qanuni
                                         sənədlər lazımdır. Sənədlərin keyfiyyətli şəkilləri qəbul edilir.</h5>
                                     <div class="form-group validation-form mt-4 mb-3">
@@ -289,14 +293,19 @@
                                         </div>
 
                                     </div>
-                                    <div class="d-flex justify-content-between">
+                                   
                                         <input type="button" name="previous"
                                             class="previous action-button btn btn-purple text-uppercase  mb-3 "
-                                            value="Previous" />
-                                        <input type="submit" name="submit"
+                                            value="Previous" style="padding: 0px 10px;height: 45px;" />
+                                        <!-- <input type="submit" name="submit"
                                             class="submit action-button btn btn-purple text-uppercase  mb-3 "
-                                            value="Submit" />
-                                    </div>
+                                            value="Submit" style="    padding: 0px 10px;
+                                            height: 45px;
+                                        " /> -->
+                                         <input type="button" name="next"
+                                         class="btn btn-purple  text-uppercase  mb-3  next next-for-apply action-button" style="padding: 0px 10px;height: 45px;"
+                                         value="Next" />
+                                   
 
                                     <!-- <button class="btn btn-purple text-uppercase  driver-document__btn mb-3 "
                                             type="submit" value="validate">Növbəti</button> -->
@@ -305,7 +314,45 @@
                                 </div>
                             </fieldset>
 
+                            <fieldset  class="card card-body shadow text-left driver-document  driver-fieldset driver-fieldset-third"
+                            style="margin-top: 1rem;">
+                            
+                                    <!-- LOADING  START  -->
+                                    <div id="spinner-apply-success"></div>
 
+                                    <div id="spinner-template" style="display:none;">
+                                        <div class="spinner-container">
+                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" x="0px"
+                                                y="0px" viewBox="0, 0, 100, 100">
+                                                <g>
+                                                    <g class="spinner-g">
+                                                        <circle class="path" fill="none" stroke="#7b2bfc"
+                                                            stroke-width="7" stroke-miterlimit="10"
+                                                            stroke-linecap="round" cx="50" cy="50" r="44" />
+                                                    </g>
+                                                    <polyline class="check" fill="none" stroke="#7b2bfc"
+                                                        stroke-width="8" stroke-linecap="round" stroke-miterlimit="10"
+                                                        stroke-linejoin="round" points="70,35 45,65 30,52" />
+                                                    <path class="cross" fill="none" stroke="#7b2bfc" stroke-width="16"
+                                                        stroke-linecap="round" stroke-miterlimit="10"
+                                                        d="M70,30 l-40,40 M70,70 l-40,-40" />
+                                                </g>
+                                            </svg>
+
+                                        </div>
+
+                                    </div>
+                                    <!-- LOADING END -->
+                                    <div class="driver-apply__content">
+                                        <h5 class="h5 text-center color-purple">Qeydiyyatdan keçdiyiniz üçün sizə
+                                            təşəkkürlər</h5>
+                                        <p class="color-purple">Sizinlə qısa müddətdə əlaqə saxlanılacaq</p>
+                                        <a href="#" class="btn btn-purple m-auto">Proseslə tanış olun</a>
+                                    </div>
+
+                             
+                            </fieldset>
                         </form>
 
                     </div>
