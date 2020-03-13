@@ -1,8 +1,6 @@
 // NEW PAYMENT METHODS WITH RADIO BUTTON
 $(document).ready(function () {
 
-    // $('#form-receiver-first').prop('checked', true);
-    // $('#form-receiver-first').attr('chk', '1');
     $('input[type=radio][receiver=receiver]').change(function () {
 
 
@@ -20,16 +18,16 @@ $(document).ready(function () {
 
     // UNCHECKED RADIO BUTTON
 
-    InitRadio('receiver');
+    InitRadioReceiver('receiver');
 
-    function InitRadio(receiver) {
+    function InitRadioReceiver(receiver) {
         val = 0;
         $.each($(':radio[receiver="' + receiver + '"]'), function () {
             $(this).val(val++);
-            $(this).attr('chk', '0');
+            $(this).attr('chkReceiver', '0');
             // $('#form-receiver-first').attr('chk', '1');
             $(this).on("click", function (event) {
-                SetRadioButtonChkProperty($(this).val(), receiver);
+                SetRadioButtonChkReceiverProperty($(this).val(), receiver);
                 let checkedSiblings = $(this).parent().siblings();
                 checkedSiblings.slideToggle('slow');
                 $('.form__receiver__add-btn').slideToggle('slow');
@@ -38,21 +36,21 @@ $(document).ready(function () {
         });
     }
 
-    function SetRadioButtonChkProperty(val, receiver) {
+    function SetRadioButtonChkReceiverProperty(val, receiver) {
         $.each($(':radio[receiver="' + receiver + '"]'), function () {
 
 
 
             if ($(this).val() != val)
-                $(this).attr('chk', '0');
+                $(this).attr('chkReceiver', '0');
 
 
             else {
-                if ($(this).attr('chk') == '0')
-                    $(this).attr('chk', '1');
+                if ($(this).attr('chkReceiver') == '0')
+                    $(this).attr('chkReceiver', '1');
 
                 else {
-                    $(this).attr('chk', '0');
+                    $(this).attr('chkReceiver', '0');
                     $(this).prop('checked', false);
                     $('.form__receiver__icon').css({
                         'display': 'none'

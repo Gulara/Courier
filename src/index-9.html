@@ -21,12 +21,13 @@
                 <!--INPUTS STARTS-->
                 <div class="form-text">
                     <div class="form-group form__group  form__group--from">
-                        <label for="startPlace" class="form-label form__label">From :</label>
-                        <button class="btn form__from-address--btn">My address</button>
+                        <label for="startPlace" class="form-label form__label d-block">From :</label>
+                        <button class="btn form__from-address--add-btn">My address</button>
+                        <button class=" btn  btn-danger form__from-address--close-btn">Close</button>
 
                         <div class="form__from-address">
                             <div class="form-group  form__from-address__form-group" data-id="form__from-address">
-                                <input class="form__from-address__input " type="radio" name="form__from-address"
+                                <input class="form__from-address__input " type="radio" name="form__from-address" data-id="from-address-input"
                                     id="form-from-address-first" fromAddress="fromAddress"
                                     data-parsley-required-message="Payment's method is required" required
                                     data-parsley-errors-container="#payment-errors" />
@@ -42,7 +43,7 @@
                                 </label>
                             </div>
                             <div class="form-group  form__from-address__form-group" data-id="form__from-address">
-                                <input class="form__from-address__input " type="radio" name="form__from-address"
+                                <input class="form__from-address__input " type="radio" name="form__from-address"  data-id="from-address-input"
                                     id="form-from-address-second" fromAddress="fromAddress"
                                     data-parsley-required-message="Payment's method is required" required
                                     data-parsley-errors-container="#payment-errors" />
@@ -58,7 +59,7 @@
                                 </label>
                             </div>
                             <div class="form-group  form__from-address__form-group" data-id="form__from-address">
-                                <input class="form__from-address__input " type="radio" name="form__from-address"
+                                <input class="form__from-address__input " type="radio" name="form__from-address" data-id="from-address-input"
                                     id="form-from-address-third" fromAddress="fromAddress"
                                     data-parsley-required-message="Payment's method is required" required
                                     data-parsley-errors-container="#payment-errors" />
@@ -88,7 +89,60 @@
 
 
                     <div class="form-group form__group form__group--destination">
-                        <label for="endPlace" class="form-label form__label">Destination :</label>
+                        <label for="endPlace" class="form-label form__label d-block">Destination :</label>
+                        <button class="btn form__to-address--add-btn">My address</button>
+                        <button class=" btn  btn-danger form__to-address--close-btn">Close</button>
+
+                        <div class="form__to-address">
+                            <div class="form-group  form__to-address__form-group" data-id="form__to-address">
+                                <input class="form__to-address__input " type="radio" name="form__to-address" data-id="to-address-input"
+                                    id="form-to-address-first" toAddress="toAddress"
+                                    data-parsley-required-message="Payment's method is required" required
+                                    data-parsley-errors-container="#payment-errors" />
+                                <label class="form__to-address__label" for="form-to-address-first">
+                                    <div class="card shadow-sm form__to-address--card">
+                                        <div class="form__to-address__heading">Address title</div>
+                                        <p class=" form__to-address--name">Home</p>
+                                        <div class=" form__receiver__heading">Address</div>
+                                        <p class=" form__receiver--number mb-0">Azadlıq ave.</p>
+                                    </div>
+                                    <i
+                                        class="fas fa-angle-down ml-auto color-purple fa-2x form__to-address__icon form__to-address__icon--default"></i>
+                                </label>
+                            </div>
+                            <div class="form-group  form__to-address__form-group" data-id="form__to-address">
+                                <input class="form__to-address__input " type="radio" name="form__to-address"  data-id="to-address-input"
+                                    id="form-to-address-second" toAddress="toAddress"
+                                    data-parsley-required-message="Payment's method is required" required
+                                    data-parsley-errors-container="#payment-errors" />
+                                <label class="form__to-address__label" for="form-to-address-second">
+                                    <div class="card shadow-sm form__to-address--card">
+                                        <div class="form__to-address__heading">Address title</div>
+                                        <p class=" form__to-address--name">Home</p>
+                                        <div class=" form__receiver__heading">Address</div>
+                                        <p class=" form__receiver--number mb-0">Koroglu Rehimov</p>
+                                    </div>
+                                    <i
+                                        class="fas fa-angle-down ml-auto color-purple fa-2x form__to-address__icon form__to-address__icon--default"></i>
+                                </label>
+                            </div>
+                            <div class="form-group  form__to-address__form-group" data-id="form__to-address">
+                                <input class="form__to-address__input " type="radio" name="form__to-address" data-id="to-address-input"
+                                    id="form-to-address-third" toAddress="toAddress"
+                                    data-parsley-required-message="Payment's method is required" required
+                                    data-parsley-errors-container="#payment-errors" />
+                                <label class="form__to-address__label" for="form-to-address-third">
+                                    <div class="card shadow-sm form__to-address--card">
+                                        <div class="form__to-address__heading">Address title</div>
+                                        <p class=" form__to-address--name">Home</p>
+                                        <div class=" form__receiver__heading">Address</div>
+                                        <p class=" form__receiver--number mb-0">28 may</p>
+                                    </div>
+                                    <i
+                                        class="fas fa-angle-down ml-auto color-purple fa-2x form__to-address__icon form__to-address__icon--default"></i>
+                                </label>
+                            </div>
+                        </div>
                         <div id="destination-errors"></div>
                         <input type="text" name="destination" class="form-control form__control" id="endPlace"
                             placeholder="Insert Delivery address"
@@ -279,7 +333,7 @@
                     <!-- <div id="payment-errors"></div> -->
                     <div class="form-group  form__receiver__form-group" data-id="form__receiver">
                         <input class="form__receiver__input " type="radio" name="form__receiver"
-                            id="form-receiver-third" receiver="receiver"
+                            id="form-receiver-first" receiver="receiver"
                             data-parsley-required-message="Payment's method is required" required
                             data-parsley-errors-container="#payment-errors" />
                         <label class="form__receiver__label" for="form-receiver-first">
