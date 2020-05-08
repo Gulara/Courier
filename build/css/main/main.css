@@ -4723,7 +4723,7 @@ label.error {
       grid-template-rows: 1.5fr repeat(5, 2fr);
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
-  grid-template-areas: "date . reception reception" "clock clock clock clock" "clock clock clock clock" "clock clock clock clock" "clock clock clock clock" "clock clock clock clock"; }
+  grid-template-areas: "date . reception reception" "clock clock clock clock" "clock clock clock clock" "clock clock clock clock" "clock clock clock clock" "clock clock clock clock"; }
 
 .row-1-time {
   grid-area: date;
