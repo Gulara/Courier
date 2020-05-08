@@ -31,13 +31,12 @@ $(document).ready(function () {
                     ' "  value="' + tomorrowSlash +
                     ' " name="days" data-item-id="date" id="' + i + '"/>' +
                     ' <label class="date__label form-check-label "  for="' + i + '" >' +
-                    // '<span class="date__day">' + todayWeekDayName + '</span>' +
                     '<span class="date__date">' + todayDate + '</span>' +
                     '<span class="date__month">' + thisMonth + '</span>' +
                     '</label>\n' +
                     '</div>';
 
-                // $(".date__input:first-child").prop("checked", true);
+          
 
             }
             $('.date').html(response);
@@ -184,7 +183,6 @@ $(document).ready(function () {
                 $("input:radio[data-item-id='calendar-date']").attr('value', '');
 
                 dateChecked();
-                // $( "input[data-item-id=date]:checked" ).parent().nextAll().slideUp(800);
                 $('.delivery-btn--up').delay(500).queue(function (next) {
                     $(this).css({
                         'display': 'none'
@@ -320,7 +318,7 @@ $(document).ready(function () {
             $('input:radio[data-item-id="calendar-date"]').change(function () {
                 $("input:radio[data-item-id='date']").prop("checked", false);
                 $('#day-errors').html('');
-                // $("input:radio[data-item-id='calendar-date']").prop( "checked", true);
+           
 
 
                 let deliveryTimeNext = '';
@@ -370,7 +368,7 @@ $(document).ready(function () {
 
                     $(".times__form-check:nth-child(5)").nextAll().slideDown(300);
                     $("input[data-item-id=times]:checked").parent().prevAll().slideDown(300);
-                    // $(".times__form-check:nth-child(5)").nextAll().slideDown(800);
+                
                     $("input[data-item-id=calendar-times]:checked").parent().prevAll().slideDown(300);
                 });
             });
@@ -474,9 +472,6 @@ $(document).ready(function () {
                     $(".date__list").slideUp(800);
                 }
 
-                // else if($("input[data-item-id=date]").prop("checked") == true){
-                //     $(".date__list:nth-child(4)").nextAll().slideDown(800);
-                // }
 
 
                 dateChecked();

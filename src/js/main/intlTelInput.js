@@ -21,9 +21,6 @@ $(document).ready(function () {
     separateDialCode: false,
     initialCountry: "az",
     autoPlaceholder: "polite",
-    // allowDropdown: false,
-
-    // separateDialCode: true,
 
   });
 
@@ -34,7 +31,7 @@ $(document).ready(function () {
   input.addEventListener('countrychange', function () {
 
     var countryDialCode = $("#phoneNumber").intlTelInput("getSelectedCountryData").dialCode;
-    // console.log(countryDialCode);
+
     $('#phoneNumber').val('+' + countryDialCode);
     
 
@@ -44,7 +41,6 @@ $(document).ready(function () {
     input.classList.remove("error");
     errorMsg.innerHTML = "";
     errorMsg.classList.add("valid-hide");
-    // validMsg.classList.add("valid-hide");
     validCheck.classList.add("valid-hide");
   };
 
@@ -55,7 +51,6 @@ $(document).ready(function () {
     reset();
     if (input.value.trim()) {
       if (iti.isValidNumber()) {
-        // validMsg.classList.remove("valid-hide");
         validCheck.classList.remove("valid-hide");
       } else {
         input.classList.add("error");

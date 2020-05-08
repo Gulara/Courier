@@ -24,11 +24,7 @@ $(document).ready(function () {
         var f = $(this);
         f.parsley().validate();
         
-        // if (f.parsley().isValid()) {
-          
-        // } else {
-        //     alert('There are validation errors');
-        // }
+       
       
 
        

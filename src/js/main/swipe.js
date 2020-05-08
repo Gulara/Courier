@@ -75,9 +75,9 @@ $(document).ready(function () {
 
         //Open Tab to location hash
         if ($(locationHash).length) {
-            // console.log("exists");
+       
         } else {
-            // console.log("no hash");
+           
         }
 
 

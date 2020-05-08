@@ -2,7 +2,6 @@
 
 $(document).ready(function () {
 
-    // $('input[data-item-id=date]').removeAttr('required');​​​​​
     $('#first_form').parsley().on('field:validated', function () {
             var ok = $('.parsley-error').length === 0
 
@@ -34,16 +33,6 @@ $(document).ready(function () {
               }
 
 
-            // var group = document.getElementsByTagName('data-id', 'payment-div');
-            // console.log(group);
-            // for (var i = 0; i < group.length; i++) {
-            //     if (group[i].checked)
-            //         break;
-            // }
-            // if (i == group.length)
-            //     return alert("No radio button is checked");
-            // alert("Radio Button " + (i + 1) + " is checked.");
-
             
             if ($("#day-errors").find('.parsley-errors-list').hasClass("filled")) {
                 $("#date-error").removeClass('d-none');
@@ -57,19 +46,12 @@ $(document).ready(function () {
                 $("#time-error").addClass('d-none');
               }
 
-            //   if ( $(".parsley-errors-list").parents("#day-errors").length == 1 ) { 
-            //     $("#date-time-error").removeClass('d-block');
-             
-            //  } else {
-              
-            //     // NO, it is not inside
-             
-            //  }
+         
 
         })
 
         .on('#first_form:submit', function () {
-            //  $('input[data-item-id=date]').removeAttr('required');​​​​​
+         
             return false; // Don't submit form for this demo
         });
 

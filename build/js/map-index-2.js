@@ -7,9 +7,9 @@ $(document).ready(function () {
 
     function initialize() {
         var mapOptions = {
-            zoom: 13, //  BÖYÜTMƏK
-            center: new google.maps.LatLng(40.42557252485824, 49.84169001645499), // ENLİK UZUNLUQ
-            mapTypeId: google.maps.MapTypeId.ROADMAP //  XƏRİTƏ NÖVÜ
+            zoom: 13, 
+            center: new google.maps.LatLng(40.42557252485824, 49.84169001645499), 
+            mapTypeId: google.maps.MapTypeId.ROADMAP 
         };
 
         var geocoder = new google.maps.Geocoder;
@@ -48,7 +48,7 @@ $(document).ready(function () {
                         '</div>',
                     ].join('\n'),
                     suggestion: function (data) {
-                        // console.log(data);
+                  
                         return ['<div class="custom-result" data-place-id="' + data.placeId +
                             '" ><div class=" custom-result__icon"><i class="fas fa-map-marker-alt "></i></div><div class="custom-result__text"><div class="custom-result__text--all"> ' +
                             data.address +
@@ -61,8 +61,7 @@ $(document).ready(function () {
             });
 
             var formatAddress = function (predictions, status) {
-                // console.log("Predictions", predictions);
-                // console.log("Status", status);
+              
                 var formatttedAddress = [];
                 var placeObj = {};
                 if (status === "OK") {
@@ -133,8 +132,7 @@ $(document).ready(function () {
             });
 
             $(document).on("click", ".custom-result__text", function () {
-                // this input is the input that needs the imdb_id value
-                //alert(datum.placeId);
+           
                 var inpResultPlaceId = $(this).parent().data("place-id");
                 var forFrom = $(".typeahead").parent().next().data("id");
                 console.log('forForm', forFrom);

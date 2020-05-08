@@ -83,11 +83,11 @@ $(document).ready(function () {
 
             } else if (checkedSiblings == 0) {
                 $("input[data-item-id=date]:checked").parent().prevAll(':gt(2)').slideUp(800);
-                // $(".date").children().slideUp(800);
+        
 
             }
 
-            // $( "input[data-item-id=date]:checked" ).parent().nextAll().slideUp(800);
+           
             $('.delivery-btn--up').delay(500).queue(function (next) {
                 $(this).css({
                     'display': 'none'
@@ -313,7 +313,6 @@ $(document).ready(function () {
                     var dataSlash = $('input[data-item-id=date]:checked').attr('data-slash');
                     $("input:radio[data-item-id='calendar-date']").attr('value', '');
 
-                    // valueSelected.value = dataSlash + " " + TimeVal;
 
                     $("input:radio[data-item-id='date']:not(:checked)").attr('value', '');
 
@@ -380,11 +379,6 @@ $(document).ready(function () {
                     var valueSelected = document.querySelector('input[data-item-id="date"]:checked');
                     var TimeVal = $('input[data-item-id=times]:checked').val();
                     var dataSlash = $('input[data-item-id=date]:checked').attr('data-slash');
-
-
-                    // valueSelected.value = dataSlash + " " + TimeVal;
-                    
-
                     var checkedSiblings = $("input[data-item-id=times]:checked").parent().nextAll().length;
 
 
@@ -418,7 +412,7 @@ $(document).ready(function () {
                     var dataSlash = $('input[data-item-id=date]:checked').attr('data-slash');
                     $("input:radio[data-item-id='calendar-date']").attr('value', '');
 
-                    // valueSelected.value = dataSlash + " " + TimeVal;
+            
 
                     $("input:radio[data-item-id='date']:not(:checked)").attr('value', '');
                     $(".times__btn--down").css({
@@ -569,14 +563,7 @@ $(document).ready(function () {
         }
 
 
-
-        // else if($("input[data-item-id=date]").prop("checked") == true){
-        //     $(".date__list:nth-child(4)").nextAll().slideDown(800);
-        // }
-
         if (checkedSiblings > 3 && dateChildren > 4) {
-
-            // $("input[data-item-id=date]:checked").parent().prevAll().slideUp(800);
             $("input[data-item-id=date]:checked").parent().nextAll(':gt(2)').slideUp(800);
         } else if (checkedSiblings == 3) {
             $("input[data-item-id=date]:checked").parent().prevAll().slideUp(800);

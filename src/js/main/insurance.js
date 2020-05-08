@@ -16,15 +16,14 @@ $(document).ready(function () {
             ' </div>'+
             ' </div>');
 
-            // $(".insurance__div").animate({ "display": "block" }, 3000  );
+        
             $(".insurance__div").slideDown(800);
-            // $('.insurance__div').html('<div class="form-label form__label mb-2">Daşınacaq yükün dəyəri :</div> <div class="input-group insurance__div--input-group">  <input type="text" pattern="\d*" class="form-control insurance__div--input" min="0" aria-label="Insurance input" aria-describedby="insurance__div--money" required> <div class="input-group-append">     <span class="input-group-text" id="insurance__div--money">AZN</span> </div> </div>');
-         
+          
 
       
         }
         else {
-            // $(".insurance__div").animate({ "display": "none" }, 3000  );
+         
             $(".insurance__div").slideUp(800);
             var insuranceInputVal = $(".insurance__div--input").val();
             insuranceInputVal = $(".insurance__div--input").val('');

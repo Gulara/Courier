@@ -25,23 +25,6 @@ $(document).ready(function () {
     });
 
 
-    //    $('.ios-switch').click(function () {
-    //         var iosSwitch;
-    //         var currentClass = $(this).attr('data-id');
-    //         if ($(this)[0].checked &&) {
-    //             iosSwitch = "true";
-    //             $(currentClass).prop('checked', true);
-    //             $(this).parent().parent().removeClass('ios-switch-disable');
-
-    //         } else {
-    //             iosSwitch = "false";
-    //             currentClass.prop('checked', false);
-    //             $(this).parent().parent().addClass('ios-switch-disable');
-
-    //         }
-
-    //     });
-
 
     //   COPY CODE ON MODAL
 
@@ -66,40 +49,9 @@ $(document).ready(function () {
             document.execCommand("Copy");
             $tempElement.remove();
         })
-        // .on('change', `input[data-check=ios-switch-${num}]`, function () {
-        //     var checked = $(this).is(':checked');
-        //     if (checked) {
-        //         $(`input[data-check=ios-switch-${num}]`).each(function () {
-        //             $(this).prop("checked", true);
-        //             $(this).parent().parent().removeClass('ios-switch-disable');
-        //         });
-        //     } else {
-        //         $(`input[data-check=ios-switch-${num}]`).each(function () {
-        //             $(this).prop("checked", false);
-        //             $(this).parent().parent().addClass('ios-switch-disable');
-        //         });
-        //     }
-        // })
+      
         .on('change', 'input[data-check=ios-switch-1]', function () {
-            // $(".ios-switch[data-check-modal]").attr("data-check-modal", function (arr) {
-            //         return "ios-switch-" + arr;
-            //     })
-            //     .each(function () {
-            //         let modalCheck = $(this).attr("data-check-modal");
-            //         console.log($("data-check-modal", this));
-            //     });
-
-            // $(".ios-switch[data-check]").attr("data-check", function (arr) {
-            //         return "ios-switch-" + arr;
-
-            //     })
-            //     .each(function () {
-
-            //         const dataCheck = $('input').attr("data-check");
-            //         // console.log(dataCheck);
-            //         console.log($("data-check", this).attr());
-            //     });
-
+         
             var checked = $(this).is(':checked');
             if (checked) {
                 $('input[data-check=ios-switch-1]').each(function () {
@@ -235,7 +187,7 @@ $(document).ready(function () {
 
         })
         .on('change', 'input[data-check]', function () {
-            // var checked = $(this).is(':checked');
+          
 console.log($('input[data-check]:checked').length);
             if ($('input[data-check]:checked').length == 0) {
                 $('.ios-switch--modal-btn, .loading-info__code--container, .loading-info__or, .loading-info__social').css({

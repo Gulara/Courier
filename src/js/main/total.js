@@ -3,7 +3,6 @@ $(document).ready(function () {
 
     var priceText = parseInt($(".price").text());
     totalPrice = $('.total__money').text(priceText);
-    // console.log(totalPrice, 'this');
     
 
     $(document).on('keyup keypress blur', '.insurance__div--input', function (event) {
@@ -26,7 +25,6 @@ $(document).ready(function () {
             var totalPercentValRound = Math.ceil(totalPercentVal * 100) / 100;
             var InsurancePercent = $(".insurance__percent").text(totalPercentValRound +' AZN');
             var totalPrice = parseInt($('.total__money').text());
-            // var total =totalPrice + totalPercentValRound;
             var total =Math.ceil((totalPrice + totalPercentValRound) *100) / 100;
             var totalMoney = $('.total__money').text(total);
         } else {

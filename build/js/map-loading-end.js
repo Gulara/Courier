@@ -195,8 +195,8 @@ $(document).ready(function () {
         this.travelMode = 'WALKING';
         this.directionsService = new google.maps.DirectionsService;
         this.directionsRenderer = new google.maps
-            .DirectionsRenderer; //  məsafə, növbələrin sayı və digər amilləri göstərmək üçün  istifadə olunur
-        this.directionsRenderer.setMap(map); //  xəritənin yenilənməsi
+            .DirectionsRenderer; 
+        this.directionsRenderer.setMap(map);
 
         // var originInput = document.getElementById('startPlace');
         // var destinationInput = document.getElementById('endPlace');

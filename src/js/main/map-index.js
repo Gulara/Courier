@@ -1,11 +1,11 @@
 $(document).ready(function () {
  
     var directionsDisplay;
-    var directionsService = new google.maps.DirectionsService(); // ISTİQAMƏTİ ÖLÇMƏK
+    var directionsService = new google.maps.DirectionsService(); 
     var map;
     var autocomplete_start, autocomplete_end;
     var place_start, place_end, marker;
-    var startPos = [40.4050531, 49.8346519]; // BAKININ KOORDİNATI
+    var startPos = [40.4050531, 49.8346519]; 
     var speed = 80; // km/h
     var delay = 100;
 
@@ -16,9 +16,9 @@ $(document).ready(function () {
         coords.push([startPos[0], startPos[1]]);
 
         function goToPoint() {
-            var lat = marker.position.lat(); // enlik 
-            var lng = marker.position.lng(); // uzunluq
-            var step = (km_h * 1000 * delay) / 3600000; // in meters
+            var lat = marker.position.lat(); 
+            var lng = marker.position.lng(); 
+            var step = (km_h * 1000 * delay) / 3600000; 
 
             var dest = new google.maps.LatLng(
                 coords[target][0], coords[target][1]);
@@ -58,15 +58,15 @@ $(document).ready(function () {
     function initialize() {
 
         directionsDisplay = new google.maps
-            .DirectionsRenderer(); //  məsafə, növbələrin sayı və digər amilləri göstərmək üçün  istifadə olunur
+            .DirectionsRenderer(); 
         var thisCity = new google.maps.LatLng(40.4050531, 49.8346519); //  enlik uzunluq
         var myOptions = {
             zoom: 12, // BÖYÜTMƏK
-            mapTypeId: google.maps.MapTypeId.ROADMAP, //  XƏRİTƏ  NÖVÜ
+            mapTypeId: google.maps.MapTypeId.ROADMAP, 
             center: thisCity // KOORDINAT 
         }
-        map = new google.maps.Map(document.getElementById("map_canvas"), myOptions); // XƏRİTƏNİN GÖSTƏRİLƏCƏYİ YER
-        directionsDisplay.setMap(map); // XƏRİTƏNİN SON VERSİYASININ GÖSTƏRİLMƏSİ    
+        map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+        directionsDisplay.setMap(map); 
         new AutocompleteDirectionsHandler(map);
 
         var image = { // AVTOMOBİLLƏ DAŞIMA 
